@@ -54,6 +54,9 @@ description="Submit components to artifice a new item."
 # default list type
 list_type="components"
 
+# Modifier tags
+modifiers=["Volatile", "Amplifier", "Stabillizer"]
+
 #-------------------------------------------------------------------------------
 # First, we generat a list of available components from the component files
 # Generate a blank dictionary
@@ -318,10 +321,38 @@ while True:
                 window["-item_image-"].update("resources/images/success.png")
 
     elif event=="Artifice!":
+        # So long as more than one material is entered, artificing begins
         if len(materials)>1:
-            window["-item_description_2-"].update(materials)
+            # we sort the materials to see if they'll match recipes later
             materials.sort()
-            if materials in recipe_values and len(materials) > 0:
+            # make an initial and total type pool
+            type_pool_1=[]
+            type_pool=[]
+            for i in materials:
+                if type_pool_1==[]:
+                    type_pool_1=components[i.lower()].types
+                else:
+                    type_pool_2=components[i.lower()].types
+                    # if the first component shares types with the iterating component or is a modifying tag, it gets added to the pool
+                    for j in type_pool_1:
+                        if j.lower() in types:
+                            if j in type_pool_2 or j in modifiers:
+                                type_pool.append(j)
+                    # if the pool has a type that isn't shared by the iterating component or is in the modifiers, it gets removed
+                    for j in type_pool:
+                        if j not in type_pool_2 and j not in modifiers:
+                            type_pool.remove(j)
+            # Now we take the unique list of shared types and modifiers
+            type_pool=list(set(type_pool))
+
+            # If the materials share no common types, and don't make a recipe, failure happens
+            if len(type_pool)==0 and materials not in recipe_values:
+                description="Nothing was produced..."
+                window["-item_description_2-"].update(description)
+                window["-item_image-"].update("resources/images/failure.png")
+
+            # If the components can make a recipe and nothing else, the recipe is made
+            elif materials in recipe_values and len(type_pool) < 1:
                 recipe_index=recipe_values.index(materials)
                 selected_name=recipe_keys[recipe_index].lower()
                 desc_name=recipes[selected_name].name
@@ -335,25 +366,14 @@ while True:
                     window["-item_image-"].update("resources/images/"+selected_name+".png")
                 else:
                     window["-item_image-"].update("resources/images/success.png")
+
+            # If the components all share types, they make a random, shared type
             else:
-                type_pool_1=[]
-                type_pool=[]
-                for i in materials:
-                    if type_pool_1==[]:
-                        type_pool_1=components[i.lower()].types
-                    else:
-                        type_pool_2=components[i.lower()].types
-                        for j in type_pool_1:
-                            if j.lower() in types:
-                                if j in type_pool_2 or j == "Volatile":
-                                    type_pool.append(j)
-
-                if len(type_pool)==0:
-                    description="Nothing was produced..."
-                    window["-item_description_2-"].update(description)
-                    window["-item_image-"].update("resources/images/failure.png")
-
-                else:
+                good=False
+                for i in type_pool:
+                    if i not in modifiers:
+                        good=True
+                if good == True:
                     if len(type_pool) > 1:
                         selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
                     else:
@@ -372,10 +392,15 @@ while True:
                         window["-item_image-"].update("resources/images/"+selected_name+".png")
                     else:
                         window["-item_image-"].update("resources/images/success.png")
+                else:
+                    description="Nothing was produced..."
+                    window["-item_description_2-"].update(description)
+                    window["-item_image-"].update("resources/images/failure.png")
 
             materials=[]
             secret_materials=[]
             window["-lb_2-"].update(materials)
+        # if less than two materials are used, nothing is produced
         else:
             description="Insufficient materials used"
             window["-item_description_2-"].update(description)
