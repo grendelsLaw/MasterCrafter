@@ -138,6 +138,7 @@ known_recipes=recipe_keys
 component_list=[]
 for i in components:
     component_list.append(components[i].name)
+component_list.sort()
 
 #-------------------------------------------------------------------------------
 # Now we get the list of the possible files
@@ -335,23 +336,23 @@ while True:
                 else:
                     window["-item_image-"].update("resources/images/success.png")
             else:
+                type_pool_1=[]
                 type_pool=[]
                 for i in materials:
-                    if type_pool==[]:
-                        type_pool=components[i.lower()].types
+                    if type_pool_1==[]:
+                        type_pool_1=components[i.lower()].types
                     else:
-                        for j in type_pool:
+                        type_pool_2=components[i.lower()].types
+                        for j in type_pool_1:
                             if j.lower() in types:
-                                if j not in components[i.lower()].types and j != "Volatile":
-                                    type_pool.remove(j)
-                                if "Volatile" in components[i.lower()].types:
-                                    type_pool.append("Volatile")
-                            else:
-                                type_pool.remove(j)
+                                if j in type_pool_2 or j == "Volatile":
+                                    type_pool.append(j)
+
                 if len(type_pool)==0:
                     description="Nothing was produced..."
                     window["-item_description_2-"].update(description)
                     window["-item_image-"].update("resources/images/failure.png")
+
                 else:
                     if len(type_pool) > 1:
                         selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
