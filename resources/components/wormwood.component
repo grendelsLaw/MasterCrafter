@@ -1,5 +1,6 @@
-Wormwood
-A evergreen plant with known medicinal properties. Toxic in high doses as it may induce delirium. (3 SP)
-Poison_A creature exposed to this poison has disadvantage on their next wisdom saving throw
-Potion-self_Cures Poison status
-Gas_Creatures within this gas subtract RANDOM3DICE from all wisdom saving throws while in the gas cloud.
+Name: Wormwood
+Description: A evergreen plant with known medicinal properties. Toxic in high doses as it may induce delirium. (3 SP)
+Types: Poison, Potion, Gas
+Poison: A creature exposed to this poison has disadvantage on their next wisdom saving throw
+Potion: Cures Poison status
+Gas: Creatures within this gas subtract RANDOM3DICE from all wisdom saving throws while in the gas cloud.

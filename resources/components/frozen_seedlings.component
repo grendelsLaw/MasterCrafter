@@ -1,0 +1,5 @@
+Name: Frozen Seedlings
+Description: These black seedlings condense and super cool the moisture in the air around themselves, causing tiny snowflakes to appear and frost to creep outward from them over inert surfaces.
+Types: Potion, Bomb
+Potion: A creature ingesting this potion gains resistance to fire damage for one minute, and they and objects they are holding cannot be set on fire for the duration.
+Bomb: Creatures within the impact radius must succeed on a Strength Saving Throw or become Paralyzed as frost begins forming on their bodies. Any creature may end this effect by taking an Action to clear the ice on themselves or another creature.

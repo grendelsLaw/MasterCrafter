@@ -1,0 +1,5 @@
+Name: Ironwood Heart
+Description: The dark heartwood of an Ironwood tree, smells not unlike an active smithy on a crips winter's day.
+Types: Potion, Bomb
+Potion: Grants resistance to nonmagical slashing and bludgeoning damage for 1 minute.
+Bomb: Throws shrapnel dealing RANDOM3DICE piercing damage to a creature within 10 feet of impact. 

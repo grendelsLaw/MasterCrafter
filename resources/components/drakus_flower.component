@@ -1,0 +1,6 @@
+Name: Drakus Flower
+Description: These carnivorous flowers secrete an oil within the folds of their lobed petals which combust when exposed to organic matter. Handle and mix with inert materials only.
+Types: Potion, Bomb, Poison
+Potion: Cures Charmed status and the creature takes RANDOM2DICE fire damage at the start of their next turn.
+Bomb: Creatures within 10 feet of impact take RANDOM3DICE fire damage. This bomb has no effect on constructs and non-organic creatures.
+Poison: Creatures exposed to this poison must succeed on a Constitution Saving Throw or become vulnerable to fire damage. A creature may repeat this saving throw at the start of their turn, ending the effect on a success.
