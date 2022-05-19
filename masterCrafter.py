@@ -23,10 +23,11 @@ class Component:
 
 # Define the Recipe class
 class Recipe:
-    def __init__(self, name, description, components):
+    def __init__(self, name, description, components, types):
         self.name=name
         self.description=description
         self.components=components
+        self.types=types
 
     def roll_desc(self):
         return
@@ -113,7 +114,8 @@ for i in recipe_files:
                 new_recipe=Recipe(
                 name_i,
                 loaded_recipe[1].split("Description:")[1].strip(),
-                loaded_recipe[2].split("Components:")[1].strip().split(", ")
+                loaded_recipe[3].split("Components:")[1].strip().split(", "),
+                loaded_recipe[2].split("Types:")[1].strip()
                 )
                 recipes[name_i.lower()]=new_recipe
                 for j in new_recipe.components:
@@ -170,7 +172,7 @@ for i in type_files:
                 new_type=Type(
                 name_i,
                 loaded_i[1].split("Description:")[1].strip(),
-                [loaded_i[2].split("Requirements:")[1].strip()]
+                [loaded_i[2].split("Requirements:")[1].strip()],
                 )
                 types[name_i.lower()]=new_type
         except:
@@ -311,7 +313,9 @@ while True:
             desc_name=recipes[selected_name].name
             desc_desc=recipes[selected_name].description
             desc_components=recipes[selected_name].components
-            description=desc_name+"\n\n"+desc_desc+"\n\nRequired components:"
+            desc_types=recipes[selected_name].types
+
+            description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
             for i in desc_components:
                 description+="\n   -"+i
             window["-item_description_2-"].update(description)
@@ -358,7 +362,8 @@ while True:
                 desc_name=recipes[selected_name].name
                 desc_desc=recipes[selected_name].description
                 desc_components=recipes[selected_name].components
-                description=desc_name+"\n\n"+desc_desc+"\n\nRequired components:"
+                desc_types=recipes[selected_name].types
+                description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
                 for i in desc_components:
                     description+="\n   -"+i
                 window["-item_description_2-"].update(description)
@@ -374,24 +379,44 @@ while True:
                     if i not in modifiers:
                         good=True
                 if good == True:
-                    if len(type_pool) > 1:
-                        selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
+                    if materials in recipe_values:
+                        print("found a matching recipe!")
+                        # Popup here to pick recipe or tinker
                     else:
-                        selected_name=type_pool[0].lower()
-                    desc_name=types[selected_name].name
-                    desc_desc=types[selected_name].description
-                    desc_requirements=types[selected_name].requirements
-                    description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
-                    if len(desc_requirements)>0:
-                        for i in desc_requirements:
-                            description+="\n   -"+i
-                    else:
-                        description+="\n   -None"
-                    window["-item_description_2-"].update(description)
-                    if selected_name+".png" in images_list:
-                        window["-item_image-"].update("resources/images/"+selected_name+".png")
-                    else:
-                        window["-item_image-"].update("resources/images/success.png")
+                        if len(type_pool) > 1:
+                            selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
+                        else:
+                            selected_name=type_pool[0].lower()
+                        desc_name=types[selected_name].name
+                        desc_desc=types[selected_name].description
+                        desc_requirements=types[selected_name].requirements
+                        description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
+                        if len(desc_requirements)>0:
+                            for i in desc_requirements:
+                                description+="\n   -"+i
+                            else:
+                                description+="\n   -None"
+                                window["-item_description_2-"].update(description)
+                                if selected_name+".png" in images_list:
+                                    window["-item_image-"].update("resources/images/"+selected_name+".png")
+                                else:
+                                    window["-item_image-"].update("resources/images/success.png")
+                        new_recipe=Recipe(
+                        "New thing",
+                        desc_desc,
+                        materials,
+                        selected_name
+                        )
+                        recipes["new thing"]=new_recipe
+                        recipe_keys=[]
+                        recipe_values=[]
+                        for i in recipes:
+                            recipe_keys.append(recipes[i].name)
+                            hit_value=recipes[i].components
+                            hit_value.sort()
+                            recipe_values.append(hit_value)
+
+                        known_recipes=recipe_keys
                 else:
                     description="Nothing was produced..."
                     window["-item_description_2-"].update(description)
