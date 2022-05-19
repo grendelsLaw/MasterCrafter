@@ -12,7 +12,7 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 2) ___Type files___ are the basic types of objects that can be created from components. While different combinations of components may all generate the same object type, these types must be defined as a file before that type of object is crafted. Although components may alter the exact effect of its object type, the basic characteristics and use of an object is inherited from its type. Type files have the 3 aspects:
     - Name: Name of the type
     - Description: A basic description of how the object type is used by a player
-    - 
+    - Requirments: Certain types may require very specific type of component to be made. Example - an explosive device may require a *volatile* component to be one of the components used to generate it, while a potion does not require anything special (other than the alchemist's and/or brewing equipment, of course. But it is assumed you're enforcing this requirement on your own...)
 
 3) ___Recipe files___ are templates for what may be crafted. You may develop your own but the files also auto-generate every time you stumble-on a combination of components that make an object. For this reason, each player may like to have their own set of MasterCrafter folders so that known recipes aren't shared between players. Recipe files have the 4 parts as well:
     - Name: The Name of the recipe. When a new recipe is discovered, you will be asked to name the combination. This name is then used to write a new recipe file that can be pulled back up from the GUI.
