@@ -347,6 +347,7 @@ while True:
                         if j not in type_pool_2 and j not in modifiers:
                             type_pool.remove(j)
             # Now we take the unique list of shared types and modifiers
+            reduntant_type_pool=type_pool
             type_pool=list(set(type_pool))
 
             # If the materials share no common types, and don't make a recipe, failure happens
@@ -380,9 +381,31 @@ while True:
                         good=True
                 if good == True:
                     if materials in recipe_values:
-                        print("found a matching recipe!")
-                        # Popup here to pick recipe or tinker
                         matching_recipe_type=[]
+                        matching_recipe_names=[]
+                        count=0
+                        for i in recipe_values:
+                            if i == materials:
+                                matching_recipe_type.append(recipes[recipe_keys[count].lower()].types)
+                                matching_recipe_names.append(recipes[recipe_keys[count].lower()].name)
+                            count+=1
+                        print(matching_recipe_type)
+                        for i in type_pool:
+                            if i not in matching_recipe_type and i not in modifiers:
+                                print("Other combinations possible")
+                                matching_recipe_names.append("Tinker")
+                                break
+
+            # -------This part needs to work-----------------------------------------------------------
+                        window["-lb_1-"].update(matching_recipe_names)
+                        sg.Popup("Multiple possible outcomes exist!", "Select which recipe you'd like to use, or select 'Tinker' to discover new recipes!")
+                        if event=="Submit" and len(values["-lb_1-"]):
+                            print(values["-lb_1-"])
+                            if values["-lb_1-"] == "Tinker":
+                                print("Tinker")
+                            else:
+                                print(values["-lb_1-"])
+            #--------------------------------------------------------
                     else:
                         if len(type_pool) > 1:
                             selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
