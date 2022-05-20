@@ -382,6 +382,7 @@ while True:
                     if materials in recipe_values:
                         print("found a matching recipe!")
                         # Popup here to pick recipe or tinker
+                        matching_recipe_type=[]
                     else:
                         if len(type_pool) > 1:
                             selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
@@ -401,13 +402,23 @@ while True:
                                     window["-item_image-"].update("resources/images/"+selected_name+".png")
                                 else:
                                     window["-item_image-"].update("resources/images/success.png")
+                        new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
                         new_recipe=Recipe(
-                        "New thing",
+                        new_name,
                         desc_desc,
                         materials,
-                        selected_name
+                        types[selected_name].name
                         )
-                        recipes["new thing"]=new_recipe
+
+                        write_file="Name: "+new_name+"\nDescription: "+desc_desc+"\nTypes: "+types[selected_name].name+"\nComponents: "
+                        for i in materials:
+                            write_file+=i+", "
+                        write_file=write_file[0:len(write_file)-2]
+                        file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                        file_in.write(write_file)
+                        file_in.close()
+
+                        recipes[new_name.lower()]=new_recipe
                         recipe_keys=[]
                         recipe_values=[]
                         for i in recipes:
