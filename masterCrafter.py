@@ -187,10 +187,14 @@ for i in recipe_files:
                 # Set the first lsit value to be the description of the recipe
                 new_recipe=Recipe(
                 name_i,
-                loaded_recipe[1].split("Description:")[1].strip(),
-                loaded_recipe[3].split("Components:")[1].strip().split(", "),
-                loaded_recipe[2].split("Types:")[1].strip()
+                loaded_recipe[3:len(loaded_recipe)],
+                loaded_recipe[2].split("Components:")[1].strip().split(", "),
+                loaded_recipe[1].split("Types:")[1].strip()
                 )
+                thingo=""
+                for desc_effect in new_recipe.description:
+                    thingo+=desc_effect+"\n"
+                new_recipe.description=thingo
                 recipes[name_i.lower()]=new_recipe
                 for j in new_recipe.components:
                     if j.lower() not in components:
@@ -549,12 +553,25 @@ while True:
                             if values["-subclass_perf-"]==True:
                                 reroll_desc=sg.popup_yes_no("You are perfectionist, who already knows this recipe. Would you like to attempt to improve the recipe?")
                                 if reroll_desc=="Yes":
-                                    desc_desc=roll_desc(types[desc_types.lower()].description, prof_bonus+rand.randint(1,4))
+                                    desc_desc=types[desc_types.lower()].description
+
+                                    # if the user is a holistic crafter, then a random component effect is added
+                                    if values["-subclass_holistic-"]==True:
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+
+                                    # If the item is a potion, a random component effect is added
+                                    if desc_types=="Potion":
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+
+                                    desc_desc=roll_desc(desc_desc, prof_bonus+rand.randint(1,4))
                                     recipes[selected_name].description=desc_desc
-                                    write_file="Name: "+desc_name+"\nDescription: "+desc_desc+"\nTypes: "+desc_types+"\nComponents: "
+                                    write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                                     for i in materials:
                                         write_file+=i+", "
                                     write_file=write_file[0:len(write_file)-2]
+                                    write_file+="\nDescription: "+desc_desc
                                     file_in=open("resources/recipes/"+selected_name+".recipe", "w")
                                     file_in.write(write_file)
                                     file_in.close()
@@ -580,6 +597,16 @@ while True:
                             desc_name=types[selected_name].name
                             desc_desc=types[selected_name].description
 
+                            # if the user is a holistic crafter, then a random component effect is added
+                            if values["-subclass_holistic-"]==True:
+                                random_material=materials[rand.randint(0,len(materials)-1)]
+                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
+                            # If the item is a potion, a random component effect is added
+                            if desc_name=="Potion":
+                                random_material=materials[rand.randint(0,len(materials)-1)]
+                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
                             desc_desc=roll_desc(desc_desc, prof_bonus)
 
                             desc_requirements=types[selected_name].requirements
@@ -603,10 +630,12 @@ while True:
                                 types[selected_name].name
                                 )
 
-                                write_file="Name: "+new_name+"\nDescription: "+desc_desc+"\nTypes: "+types[selected_name].name+"\nComponents: "
+                                write_file="Name: "+new_name+"\nTypes: "+types[selected_name].name+"\nComponents: "
                                 for i in materials:
                                     write_file+=i+", "
                                 write_file=write_file[0:len(write_file)-2]
+                                write_file+="\nDescription: "+desc_desc
+
                                 file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
                                 file_in.write(write_file)
                                 file_in.close()
@@ -628,6 +657,16 @@ while True:
                             selected_name=type_pool[0].lower()
                         desc_name=types[selected_name].name
                         desc_desc=types[selected_name].description
+
+                        # if the user is a holistic crafter, then a random component effect is added
+                        if values["-subclass_holistic-"]==True:
+                            random_material=materials[rand.randint(0,len(materials)-1)]
+                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
+                        # If the item is a potion, a random component effect is added
+                        if desc_name=="Potion":
+                            random_material=materials[rand.randint(0,len(materials)-1)]
+                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                         desc_desc=roll_desc(desc_desc, prof_bonus)
 
@@ -652,10 +691,11 @@ while True:
                             types[selected_name].name
                             )
 
-                            write_file="Name: "+new_name+"\nDescription: "+desc_desc+"\nTypes: "+types[selected_name].name+"\nComponents: "
+                            write_file="Name: "+new_name+"\nTypes: "+types[selected_name].name+"\nComponents: "
                             for i in materials:
                                 write_file+=i+", "
                             write_file=write_file[0:len(write_file)-2]
+                            write_file+="\nDescription: "+desc_desc
                             file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
                             file_in.write(write_file)
                             file_in.close()
