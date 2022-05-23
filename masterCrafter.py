@@ -29,9 +29,9 @@ distance_boost_number=0):
                 spot=i.split("-")
                 low_number=int(spot[0])
                 high_number=int(spot[1])
-                theNumber=int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency_boost+damage_boost)/20)
-                if damage_boost==True:
-                    desc+=str(low_number)
+                theNumber=int(rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+damage_boost_number))/20)
+                if damage_boost!=True:
+                    theNumber=low_number
                 desc+=str(theNumber)
             else:
                 desc+=i
@@ -46,9 +46,9 @@ distance_boost_number=0):
                 spot=i.split("-")
                 low_number=int(spot[0])
                 high_number=int(spot[1])
-                theNumber=int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency_boost+damage_boost)/20)
-                if damage_boost==True:
-                    desc+=str(low_number)
+                theNumber=int(rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+time_boost_number))/20)
+                if time_boost!=True:
+                    theNumber=low_number
                 desc+=str(theNumber)
             else:
                 desc+=i
@@ -63,9 +63,9 @@ distance_boost_number=0):
                 spot=i.split("-")
                 low_number=int(spot[0])
                 high_number=int(spot[1])
-                theNumber=5*(int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency_boost+damage_boost)/20)//5)
-                if damage_boost==True:
-                    desc+=str(low_number)
+                theNumber=5*(int(rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+distance_boost_number))/20)//5)
+                if distance_boost!=True:
+                    theNumber=low_number
                 desc+=str(theNumber)
             else:
                 desc+=i
@@ -81,10 +81,10 @@ def popup_select(text_choice, the_list,select_multiple=False):
     event, values = window.read()
     window.close()
     del window
-    if select_multiple or values['_LIST_'] is None:
-        return values['_LIST_']
-    else:
+    if len(values['_LIST_']):
         return values['_LIST_'][0]
+    else:
+        return the_list[0]
 
 
 #------------------------------------------------------------------------------
@@ -127,6 +127,9 @@ list_type="components"
 
 # Modifier tags
 modifiers=["Volatile", "Amplifier", "Stabillizer"]
+
+# types that get effects by default
+types_w_effects=["Potion", "Gas"]
 
 #-------------------------------------------------------------------------------
 # First, we generat a list of available components from the component files
@@ -277,9 +280,6 @@ all_submitted_column = [
     sg.Button("Submit"),
     sg.Button("Clear list"),
     sg.Listbox(values=materials, size = (40,10), key="-lb_2-"),
-    sg.Text("Added proficiency score:"),
-    sg.In(size=(15,1), key="-prof-"),
-    sg.Button("Artifice!"),
 ]
 # Third column shows the item image and the procedurally generated description
 main_font=("Arial bold", 11)
@@ -304,6 +304,9 @@ layout=[
     material_entry_column,
     subclass_buttons,
     all_submitted_column,
+    [sg.Text("Added proficiency score:"),
+    sg.In(size=(15,1), key="-prof-"),
+    sg.Button("Artifice!"),],
     item_description,
 ]
 window=sg.Window("Artificing made easy!", layout)
@@ -336,7 +339,6 @@ while True:
         # if the list type is reicpes, recipes are searched
         elif list_type=="recipes":
             for i in recipes:
-                print(i)
                 if values["-search_key-"].lower() in recipes[i].name.lower():
                     search_list.append(recipes[i].name)
         # Finally, listbox 1 is updated with the search list
@@ -428,6 +430,7 @@ while True:
 
     # Here's where the crafting/procerdual generating starts!
     elif event=="Artifice!":
+
         # First, we determine what the user's crafting proficiency is.
         # If left blank, we assume 0
         if isinstance(values["-prof-"], str):
@@ -488,7 +491,7 @@ while True:
                 if values["-subclass_perf-"]==True:
                     reroll_desc=sg.popup_yes_no("You are perfectionist, who already knows this recipe. Would you like to attempt to improve the recipe?")
                     if reroll_desc=="Yes":
-                        desc_desc=roll_desc(types[desc_types.lower()].description, prof_bonus+rand.randint(1,4))
+                        desc_desc=roll_desc(types[desc_types.lower()].description, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                         recipes[selected_name].description=desc_desc
                         write_file="Name: "+desc_name+"\nDescription: "+desc_desc+"\nTypes: "+desc_types+"\nComponents: "
                         for i in materials:
@@ -561,11 +564,11 @@ while True:
                                         desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
 
                                     # If the item is a potion, a random component effect is added
-                                    if desc_types=="Potion":
+                                    if desc_types in types_w_effects:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                         desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
 
-                                    desc_desc=roll_desc(desc_desc, prof_bonus+rand.randint(1,4))
+                                    desc_desc=roll_desc(desc_desc, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                                     recipes[selected_name].description=desc_desc
                                     write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                                     for i in materials:
@@ -603,11 +606,11 @@ while True:
                                 desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                             # If the item is a potion, a random component effect is added
-                            if desc_name=="Potion":
+                            if desc_name in types_w_effects:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
-                            desc_desc=roll_desc(desc_desc, prof_bonus)
+                            desc_desc=roll_desc(desc_desc, prof_bonus+rand.randint(1,4), values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
 
                             desc_requirements=types[selected_name].requirements
                             description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
@@ -664,7 +667,7 @@ while True:
                             desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                         # If the item is a potion, a random component effect is added
-                        if desc_name=="Potion":
+                        if desc_name in types_w_effects:
                             random_material=materials[rand.randint(0,len(materials)-1)]
                             desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
