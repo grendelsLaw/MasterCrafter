@@ -73,6 +73,20 @@ distance_boost_number=0):
         new_desc=desc
     return new_desc
 
+# Makes the popups
+def popup_select(text_choice, the_list,select_multiple=False):
+    layout = [[sg.Text(text_choice)],
+    [sg.Listbox(the_list,key='_LIST_',size=(45,len(the_list)),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
+    window = sg.Window('Select One',layout=layout)
+    event, values = window.read()
+    window.close()
+    del window
+    if select_multiple or values['_LIST_'] is None:
+        return values['_LIST_']
+    else:
+        return values['_LIST_'][0]
+
+
 #------------------------------------------------------------------------------
 # Define the Component class
 class Component:
@@ -243,11 +257,8 @@ for i in types:
     type_list.append(types[i].name)
 
 #-------------------------------------------------------------------------------
-# Here's where we'll load the subclasses when we.... get there
-
-#-------------------------------------------------------------------------------
 # Generate the columns
-# First column where you add the components
+# First column is the search box and buttons to toggle between components, recipes, and types
 material_entry_column = [
     sg.Button("Search"),
     sg.In(size=(10, 2), key="-search_key-"),
@@ -255,9 +266,9 @@ material_entry_column = [
     sg.Button("Types"),
     sg.Button("Known recipes")
 ]
-#
+# Second column has the first listbox, which you can select items to check characteristics,
+# and the second listbox, which shows you list items you've selected, as well as the artifice button
 all_submitted_column = [
-#    sg.Text(list_type+":", key="-lb_type-"),
     sg.Listbox(values=component_list, enable_events=True, size = (40,10), key="-lb_1-"),
     sg.Button("Submit"),
     sg.Button("Clear list"),
@@ -266,61 +277,83 @@ all_submitted_column = [
     sg.In(size=(15,1), key="-prof-"),
     sg.Button("Artifice!"),
 ]
-
+# Third column shows the item image and the procedurally generated description
 main_font=("Arial bold", 11)
 item_description = [
     sg.Image("resources/images/none.png", key = "-item_image-"),
     sg.Multiline(description, size=(50,15),key = "-item_description_2-", font=main_font),
 ]
 
-layout=[
-    material_entry_column,
-    all_submitted_column,
-    item_description
+# This new column lets you select a artificing subtype. It may get switched to a checkbox system
+# depending on Shepherd's thoughts
+subclass_buttons=[
+    sg.Radio("Damage specialist", "subclass", default=False, key = "-subclass_damage-"),
+    sg.Radio("Duration specialist", "subclass", default=False, key = "-subclass_duration-"),
+    sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-"),
+    sg.Radio("Versatile crafter", "subclass", default=False, key = "-subclass_versa-"),
+    sg.Radio("Careful crafter", "subclass", default=False, key = "-subclass_care-"),
+    sg.Radio("Perfectionist", "subclass", default=False, key = "-subclass_perf-")
 ]
 
+# Now all four columns get placed into a singlular layout, which gets called
+layout=[
+    material_entry_column,
+    subclass_buttons,
+    all_submitted_column,
+    item_description,
+]
 window=sg.Window("Artificing made easy!", layout)
 
+# This while true loop is where all the magic happens
 while True:
+    # events and values are read as the first thing
     event, values = window.read()
+    # If the exit button is pressed or the window is otherwise closed, the loop breaks
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
 
+    # If the search button is pressed, a search list is generated depending on if
+    # you're searching through the components, types, or recipes
     elif event == "Search":
+        # First, a blank list is generated
         search_list=[]
-
+        # if the list type is components, components are searched
         if list_type=="components":
             for i in components:
                 if values["-search_key-"].lower() in components[i].name.lower():
                     search_list.append(components[i].name)
 
+        # if the list type is types, types are searched
         elif list_type=="types":
             for i in types:
                 if values["-search_key-"].lower() in types[i].name.lower():
                     search_list.append(types[i].name)
 
+        # if the list type is reicpes, recipes are searched
         elif list_type=="recipes":
             for i in recipes:
                 print(i)
                 if values["-search_key-"].lower() in recipes[i].name.lower():
                     search_list.append(recipes[i].name)
+        # Finally, listbox 1 is updated with the search list
         window["-lb_1-"].update(search_list)
 
+    #Switches list_type to components and updates listbox 1
     elif event=="Components":
         list_type="components"
         window["-lb_1-"].update(component_list)
-#        window["-lb_type-"].update(list_type)
 
+    # Switched list_type to types and updates listbox 1
     elif event=="Types":
         list_type="types"
         window["-lb_1-"].update(type_list)
-#        window["-lb_type-"].update(list_type)
 
+    # Switches list_type to recipes and updats listbox 11
     elif event=="Known recipes":
         list_type="recipes"
         window["-lb_1-"].update(known_recipes)
-#        window["-lb_type-"].update(list_type)
 
+    # Adds selected components or selected recipes components to listbox 2 for artificing
     elif event=="Submit" and len(values["-lb_1-"]):
         for i in values["-lb_1-"]:
             if i in component_list and list_type=="components":
@@ -328,8 +361,10 @@ while True:
                 secret_materials.append(i)
             elif i in recipe_keys and list_type=="recipes":
                 materials=recipes[i.lower()].components
+        # Updates listbox 2
         window["-lb_2-"].update(materials)
 
+    # Clears listbox 2 to refresh component selection
     elif event == "Clear list":
         materials=[]
         secret_materials=[]
@@ -339,7 +374,7 @@ while True:
     elif event=="-lb_1-":
         selected_name=values["-lb_1-"][0].lower()
 
-        if selected_name in components:
+        if selected_name in components and list_type=="components":
             desc_name=components[selected_name].name
             desc_desc=components[selected_name].description
             desc_types=components[selected_name].types
@@ -355,7 +390,7 @@ while True:
             else:
                 window["-item_image-"].update("resources/images/success.png")
 
-        elif selected_name in types:
+        elif selected_name in types and list_type=="types":
             desc_name=types[selected_name].name
             desc_desc=types[selected_name].description
             desc_requirements=types[selected_name].requirements
@@ -372,7 +407,7 @@ while True:
                 window["-item_image-"].update("resources/images/success.png")
 
 
-        elif selected_name in recipes:
+        elif selected_name in recipes and list_type=="recipes":
             desc_name=recipes[selected_name].name
             desc_desc=recipes[selected_name].description
             desc_components=recipes[selected_name].components
@@ -387,7 +422,10 @@ while True:
             else:
                 window["-item_image-"].update("resources/images/success.png")
 
+    # Here's where the crafting/procerdual generating starts!
     elif event=="Artifice!":
+        # First, we determine what the user's crafting proficiency is.
+        # If left blank, we assume 0
         if isinstance(values["-prof-"], str):
             try:
                 prof_bonus=int(values["-prof-"])
@@ -395,6 +433,7 @@ while True:
                 prof_bonus=0
         else:
             prof_bonus=0
+
         # So long as more than one material is entered, artificing begins
         if len(materials)>1:
             # we sort the materials to see if they'll match recipes later
@@ -416,9 +455,13 @@ while True:
                     for j in type_pool:
                         if j not in type_pool_2 and j not in modifiers:
                             type_pool.remove(j)
-            # Now we take the unique list of shared types and modifiers
+            # We'll save a redundant list for magic later
             reduntant_type_pool=type_pool
+            # and we take the unique list of shared types and modifiers
             type_pool=list(set(type_pool))
+            for modifier in modifiers:
+                if modifier in type_pool:
+                    type_pool.remove(modifier)
 
             # If the materials share no common types, and don't make a recipe, failure happens
             if len(type_pool)==0 and materials not in recipe_values:
@@ -427,13 +470,30 @@ while True:
                 window["-item_image-"].update("resources/images/failure.png")
 
             # If the components can make a recipe and nothing else, the recipe is made
-            elif materials in recipe_values and len(type_pool) < 1:
+            elif materials in recipe_values and len(type_pool) < 2:
+
                 recipe_index=recipe_values.index(materials)
                 selected_name=recipe_keys[recipe_index].lower()
                 desc_name=recipes[selected_name].name
                 desc_desc=recipes[selected_name].description
                 desc_components=recipes[selected_name].components
                 desc_types=recipes[selected_name].types
+
+                # If perfectionist is the subclass, user is given the chance to
+                # reroll the description with a bonus 1d4 to proficiency
+                if values["-subclass_perf-"]==True:
+                    reroll_desc=sg.popup_yes_no("You are perfectionist, who already knows this recipe. Would you like to attempt to improve the recipe?")
+                    if reroll_desc=="Yes":
+                        desc_desc=roll_desc(types[desc_types.lower()].description, prof_bonus+rand.randint(1,4))
+                        recipes[selected_name].description=desc_desc
+                        write_file="Name: "+desc_name+"\nDescription: "+desc_desc+"\nTypes: "+desc_types+"\nComponents: "
+                        for i in materials:
+                            write_file+=i+", "
+                        write_file=write_file[0:len(write_file)-2]
+                        file_in=open("resources/recipes/"+selected_name+".recipe", "w")
+                        file_in.write(write_file)
+                        file_in.close()
+
                 description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
                 for i in desc_components:
                     description+="\n   -"+i
@@ -445,44 +505,122 @@ while True:
 
             # If the components all share types, they make a random, shared type
             else:
+                # First, lets make sure that modiers aren't the only thing in the type pool
                 good=False
                 for i in type_pool:
                     if i not in modifiers:
                         good=True
+                # If there's at least one other type then...
                 if good == True:
+                    # First we'll see if a recipe exists for this combination
                     if materials in recipe_values:
                         matching_recipe_type=[]
                         matching_recipe_names=[]
                         count=0
+                        # First, lets pull all the recipes that ARE known
                         for i in recipe_values:
                             if i == materials:
                                 matching_recipe_type.append(recipes[recipe_keys[count].lower()].types)
                                 matching_recipe_names.append(recipes[recipe_keys[count].lower()].name)
                             count+=1
+                        # Then lets see if there are missing, potential recipes
                         for i in type_pool:
                             if i not in matching_recipe_type and i not in modifiers:
-                                print("Other combinations possible")
                                 matching_recipe_names.append("Tinker")
-                                break
 
 #------------ Need to check Requirements
 
 #------------Need to add effects
 
 #-----------Need to parse modiers
+                        if "Tinker" in matching_recipe_names:
+                            choice=popup_select("This combination may generate a known recipe or you could tinker with it and try to make something new. What would you like to do?", matching_recipe_names)
+                        else:
+                            choice=popup_select("This combination may generates multiple recipes. Which would you like to create?", matching_recipe_names)
+                        if choice != "Tinker":
+                            selected_name=choice.lower()
+                            desc_name=recipes[selected_name].name
+                            desc_desc=recipes[selected_name].description
+                            desc_components=recipes[selected_name].components
+                            desc_types=recipes[selected_name].types
 
+                            # If perfectionist is the subclass, user is given the chance to
+                            # reroll the description with a bonus 1d4 to proficiency
+                            if values["-subclass_perf-"]==True:
+                                reroll_desc=sg.popup_yes_no("You are perfectionist, who already knows this recipe. Would you like to attempt to improve the recipe?")
+                                if reroll_desc=="Yes":
+                                    desc_desc=roll_desc(types[desc_types.lower()].description, prof_bonus+rand.randint(1,4))
+                                    recipes[selected_name].description=desc_desc
+                                    write_file="Name: "+desc_name+"\nDescription: "+desc_desc+"\nTypes: "+desc_types+"\nComponents: "
+                                    for i in materials:
+                                        write_file+=i+", "
+                                    write_file=write_file[0:len(write_file)-2]
+                                    file_in=open("resources/recipes/"+selected_name+".recipe", "w")
+                                    file_in.write(write_file)
+                                    file_in.close()
 
+                            description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
+                            for i in desc_components:
+                                description+="\n   -"+i
+                            window["-item_description_2-"].update(description)
+                            if selected_name+".png" in images_list:
+                                window["-item_image-"].update("resources/images/"+selected_name+".png")
+                            else:
+                                window["-item_image-"].update("resources/images/success.png")
+                        # If the user decides to tinker, then a different type is explored
+                        else:
+                            for known_type in matching_recipe_type:
+                                if known_type in type_pool:
+                                    type_pool.remove(known_type)
 
-            # -------This part needs to work-----------------------------------------------------------
-#                        window["-lb_1-"].update(matching_recipe_names)
-#                        sg.Popup("Multiple possible outcomes exist!", "Select which recipe you'd like to use, or select 'Tinker' to discover new recipes!")
-#                        if event=="Submit" and len(values["-lb_1-"]):
-#                            print(values["-lb_1-"])
-#                            if values["-lb_1-"] == "Tinker":
-#                                print("Tinker")
-#                            else:
-#                                print(values["-lb_1-"])
-            #--------------------------------------------------------
+                            if len(type_pool) > 1:
+                                selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
+                            else:
+                                selected_name=type_pool[0].lower()
+                            desc_name=types[selected_name].name
+                            desc_desc=types[selected_name].description
+
+                            desc_desc=roll_desc(desc_desc, prof_bonus)
+
+                            desc_requirements=types[selected_name].requirements
+                            description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
+                            if len(desc_requirements)>0:
+                                for i in desc_requirements:
+                                    description+="\n   -"+i
+                                else:
+                                    description+="\n   -None"
+                                    window["-item_description_2-"].update(description)
+                                    if selected_name+".png" in images_list:
+                                        window["-item_image-"].update("resources/images/"+selected_name+".png")
+                                    else:
+                                        window["-item_image-"].update("resources/images/success.png")
+                            new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
+                            if isinstance(new_name, str):
+                                new_recipe=Recipe(
+                                new_name,
+                                desc_desc,
+                                materials,
+                                types[selected_name].name
+                                )
+
+                                write_file="Name: "+new_name+"\nDescription: "+desc_desc+"\nTypes: "+types[selected_name].name+"\nComponents: "
+                                for i in materials:
+                                    write_file+=i+", "
+                                write_file=write_file[0:len(write_file)-2]
+                                file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                                file_in.write(write_file)
+                                file_in.close()
+
+                                recipes[new_name.lower()]=new_recipe
+                                recipe_keys=[]
+                                recipe_values=[]
+                                for i in recipes:
+                                    recipe_keys.append(recipes[i].name)
+                                    hit_value=recipes[i].components
+                                    hit_value.sort()
+                                    recipe_values.append(hit_value)
+
+                                known_recipes=recipe_keys
                     else:
                         if len(type_pool) > 1:
                             selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
