@@ -12,6 +12,7 @@ sg.theme("LightGrey1")
 #-------------------------------------------------------------------------------
 
 def roll_desc(first_desc,
+read_only=False,
 proficiency_boost=0,
 damage_boost=False,
 damage_boost_number=0,
@@ -32,6 +33,8 @@ distance_boost_number=0):
                 theNumber=int(rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+damage_boost_number))/20)
                 if damage_boost!=True:
                     theNumber=low_number
+                if read_only:
+                    theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
             else:
                 desc+=i
@@ -49,6 +52,8 @@ distance_boost_number=0):
                 theNumber=int(rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+time_boost_number))/20)
                 if time_boost!=True:
                     theNumber=low_number
+                if read_only:
+                    theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
             else:
                 desc+=i
@@ -66,6 +71,8 @@ distance_boost_number=0):
                 theNumber=5*(int(rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+distance_boost_number))/20)//5)
                 if distance_boost!=True:
                     theNumber=low_number
+                if read_only:
+                    theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
             else:
                 desc+=i
@@ -390,6 +397,8 @@ while True:
                 for i in desc_types:
                     description+="\n   -"+i+": "+components[selected_name].effects[i]
 
+            description=roll_desc(description, True)
+
             window["-item_description_2-"].update(description)
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
@@ -406,6 +415,8 @@ while True:
                     description+="\n   -"+i
             else:
                 description+="\n   -None"
+
+            description=roll_desc(description, True)
             window["-item_description_2-"].update(description)
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
@@ -420,6 +431,7 @@ while True:
             desc_types=recipes[selected_name].types
 
             description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
+            description=roll_desc(description, True)
             for i in desc_components:
                 description+="\n   -"+i
             window["-item_description_2-"].update(description)
