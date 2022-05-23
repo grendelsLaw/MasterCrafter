@@ -18,8 +18,29 @@ class Component:
         self.types=types
         self.effects=effects
 
-    def roll_desc(self):
-        return
+    def roll_desc(self, proficiency_boost,
+    damage_boost, damage_boost_number,
+    time_boost, time_boost_number,
+    distance_boost, distance_boost_number):
+        if "DAMAGE" in self.description:
+            new_desc=self.description.split("DAMAGE")
+            ticker=1
+            desc=""
+            for i in new_desc:
+                if ticker%2==0:
+                    spot=i.split("-")
+                    low_number=int(spot[0])
+                    high_number=int(spot[1])
+                    theNumber=int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency+damage_boost)/20, 0)
+                    desc+=theNumber
+                else:
+                    desc+=i
+                ticker+=1
+            self.description=desc
+        if "TIME" in self.description:
+            return
+        if "DISTANCE" in self.description:
+            return
 
 # Define the Recipe class
 class Recipe:
