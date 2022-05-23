@@ -10,6 +10,70 @@ import random as rand
 sg.theme("LightGrey1")
 
 #-------------------------------------------------------------------------------
+
+def roll_desc(first_desc,
+proficiency_boost=0,
+damage_boost=False,
+damage_boost_number=0,
+time_boost=False,
+time_boost_number=0,
+distance_boost=False,
+distance_boost_number=0):
+    new_desc=first_desc
+    if "DAMAGE" in new_desc:
+        new_desc=new_desc.split("DAMAGE")
+        ticker=1
+        desc=""
+        for i in new_desc:
+            if ticker%2==0:
+                spot=i.split("-")
+                low_number=int(spot[0])
+                high_number=int(spot[1])
+                theNumber=int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency_boost+damage_boost)/20)
+                if damage_boost==True:
+                    desc+=str(low_number)
+                desc+=str(theNumber)
+            else:
+                desc+=i
+            ticker+=1
+        new_desc=desc
+    if "TIME" in new_desc:
+        new_desc=new_desc.split("TIME")
+        ticker=1
+        desc=""
+        for i in new_desc:
+            if ticker%2==0:
+                spot=i.split("-")
+                low_number=int(spot[0])
+                high_number=int(spot[1])
+                theNumber=int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency_boost+damage_boost)/20)
+                if damage_boost==True:
+                    desc+=str(low_number)
+                desc+=str(theNumber)
+            else:
+                desc+=i
+            ticker+=1
+        new_desc=desc
+    if "DISTANCE" in new_desc:
+        new_desc=new_desc.split("DISTANCE")
+        ticker=1
+        desc=""
+        for i in new_desc:
+            if ticker%2==0:
+                spot=i.split("-")
+                low_number=int(spot[0])
+                high_number=int(spot[1])
+                theNumber=5*(int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency_boost+damage_boost)/20)//5)
+                if damage_boost==True:
+                    desc+=str(low_number)
+                desc+=str(theNumber)
+            else:
+                desc+=i
+            ticker+=1
+        new_desc=desc
+    return new_desc
+
+#------------------------------------------------------------------------------
 # Define the Component class
 class Component:
     def __init__(self, name, description, types, effects):
@@ -17,30 +81,6 @@ class Component:
         self.description=description
         self.types=types
         self.effects=effects
-
-    def roll_desc(self, proficiency_boost,
-    damage_boost, damage_boost_number,
-    time_boost, time_boost_number,
-    distance_boost, distance_boost_number):
-        if "DAMAGE" in self.description:
-            new_desc=self.description.split("DAMAGE")
-            ticker=1
-            desc=""
-            for i in new_desc:
-                if ticker%2==0:
-                    spot=i.split("-")
-                    low_number=int(spot[0])
-                    high_number=int(spot[1])
-                    theNumber=int(rand.randint(low_number, high_number)*(rand.randint(1, 21)+proficiency+damage_boost)/20, 0)
-                    desc+=theNumber
-                else:
-                    desc+=i
-                ticker+=1
-            self.description=desc
-        if "TIME" in self.description:
-            return
-        if "DISTANCE" in self.description:
-            return
 
 # Define the Recipe class
 class Recipe:
@@ -50,8 +90,6 @@ class Recipe:
         self.components=components
         self.types=types
 
-    def roll_desc(self):
-        return
 
 # Define the Type class
 class Type:
@@ -59,9 +97,6 @@ class Type:
         self.name=name
         self.description=description
         self.requirements=requirements
-
-    def roll_desc(self):
-        return
 
 #-------------------------------------------------------------------------------
 # Define default values
@@ -104,8 +139,12 @@ for i in component_list:
                 name_i,
                 loaded_i[1].split("Description:")[1].strip(),
                 loaded_i[2].split("Types:")[1].strip().split(", "),
-                loaded_i[3:len(loaded_i)]
+                {}
                 )
+                for j in loaded_i[3:len(loaded_i)]:
+                    effect_type=j.split(":")[0].rstrip()
+                    effect_effect=j.split(":")[1].rstrip()
+                    new_comp.effects[effect_type]=j.split(":")[1]
                 components[name_i.lower()]=new_comp
         except:
             print("Unable to parse file: "+i)
@@ -145,7 +184,7 @@ for i in recipe_files:
                         j,
                         "A material of unknown use.",
                         [name_i],
-                        []
+                        {}
                         )
                         components[j.lower()]=new_comp
         except:
@@ -304,9 +343,12 @@ while True:
             desc_name=components[selected_name].name
             desc_desc=components[selected_name].description
             desc_types=components[selected_name].types
-            description=desc_name+"\n\n"+desc_desc+"\n\nTypes:"
-            for i in desc_types:
-                description+="\n   -"+i
+            description=desc_name+"\n\n"+desc_desc
+            if len(components[selected_name].effects) > 0:
+                description=description+"\n\nTypes:"
+                for i in desc_types:
+                    description+="\n   -"+i+": "+components[selected_name].effects[i]
+
             window["-item_description_2-"].update(description)
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
@@ -346,6 +388,13 @@ while True:
                 window["-item_image-"].update("resources/images/success.png")
 
     elif event=="Artifice!":
+        if isinstance(values["-prof-"], str):
+            try:
+                prof_bonus=int(values["-prof-"])
+            except:
+                prof_bonus=0
+        else:
+            prof_bonus=0
         # So long as more than one material is entered, artificing begins
         if len(materials)>1:
             # we sort the materials to see if they'll match recipes later
@@ -410,22 +459,29 @@ while True:
                                 matching_recipe_type.append(recipes[recipe_keys[count].lower()].types)
                                 matching_recipe_names.append(recipes[recipe_keys[count].lower()].name)
                             count+=1
-                        print(matching_recipe_type)
                         for i in type_pool:
                             if i not in matching_recipe_type and i not in modifiers:
                                 print("Other combinations possible")
                                 matching_recipe_names.append("Tinker")
                                 break
 
+#------------ Need to check Requirements
+
+#------------Need to add effects
+
+#-----------Need to parse modiers
+
+
+
             # -------This part needs to work-----------------------------------------------------------
-                        window["-lb_1-"].update(matching_recipe_names)
-                        sg.Popup("Multiple possible outcomes exist!", "Select which recipe you'd like to use, or select 'Tinker' to discover new recipes!")
-                        if event=="Submit" and len(values["-lb_1-"]):
-                            print(values["-lb_1-"])
-                            if values["-lb_1-"] == "Tinker":
-                                print("Tinker")
-                            else:
-                                print(values["-lb_1-"])
+#                        window["-lb_1-"].update(matching_recipe_names)
+#                        sg.Popup("Multiple possible outcomes exist!", "Select which recipe you'd like to use, or select 'Tinker' to discover new recipes!")
+#                        if event=="Submit" and len(values["-lb_1-"]):
+#                            print(values["-lb_1-"])
+#                            if values["-lb_1-"] == "Tinker":
+#                                print("Tinker")
+#                            else:
+#                                print(values["-lb_1-"])
             #--------------------------------------------------------
                     else:
                         if len(type_pool) > 1:
@@ -434,6 +490,9 @@ while True:
                             selected_name=type_pool[0].lower()
                         desc_name=types[selected_name].name
                         desc_desc=types[selected_name].description
+
+                        desc_desc=roll_desc(desc_desc, prof_bonus)
+
                         desc_requirements=types[selected_name].requirements
                         description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
                         if len(desc_requirements)>0:
@@ -447,31 +506,32 @@ while True:
                                 else:
                                     window["-item_image-"].update("resources/images/success.png")
                         new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
-                        new_recipe=Recipe(
-                        new_name,
-                        desc_desc,
-                        materials,
-                        types[selected_name].name
-                        )
+                        if isinstance(new_name, str):
+                            new_recipe=Recipe(
+                            new_name,
+                            desc_desc,
+                            materials,
+                            types[selected_name].name
+                            )
 
-                        write_file="Name: "+new_name+"\nDescription: "+desc_desc+"\nTypes: "+types[selected_name].name+"\nComponents: "
-                        for i in materials:
-                            write_file+=i+", "
-                        write_file=write_file[0:len(write_file)-2]
-                        file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
-                        file_in.write(write_file)
-                        file_in.close()
+                            write_file="Name: "+new_name+"\nDescription: "+desc_desc+"\nTypes: "+types[selected_name].name+"\nComponents: "
+                            for i in materials:
+                                write_file+=i+", "
+                            write_file=write_file[0:len(write_file)-2]
+                            file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                            file_in.write(write_file)
+                            file_in.close()
 
-                        recipes[new_name.lower()]=new_recipe
-                        recipe_keys=[]
-                        recipe_values=[]
-                        for i in recipes:
-                            recipe_keys.append(recipes[i].name)
-                            hit_value=recipes[i].components
-                            hit_value.sort()
-                            recipe_values.append(hit_value)
+                            recipes[new_name.lower()]=new_recipe
+                            recipe_keys=[]
+                            recipe_values=[]
+                            for i in recipes:
+                                recipe_keys.append(recipes[i].name)
+                                hit_value=recipes[i].components
+                                hit_value.sort()
+                                recipe_values.append(hit_value)
 
-                        known_recipes=recipe_keys
+                            known_recipes=recipe_keys
                 else:
                     description="Nothing was produced..."
                     window["-item_description_2-"].update(description)
