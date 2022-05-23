@@ -3,4 +3,4 @@ Description: A evergreen plant with known medicinal properties. Toxic in high do
 Types: Poison, Potion, Gas
 Poison: A creature exposed to this poison has disadvantage on their next wisdom saving throw
 Potion: Cures Poison status
-Gas: Creatures within this gas subtract RANDOM3DICE from all wisdom saving throws while in the gas cloud.
+Gas: Creatures within this gas subtract DAMAGE1-4DAMAGE from all wisdom saving throws while in the gas cloud.
