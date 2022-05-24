@@ -19,7 +19,8 @@ damage_boost_number=0,
 time_boost=False,
 time_boost_number=0,
 distance_boost=False,
-distance_boost_number=0):
+distance_boost_number=0,
+amplify=False):
     new_desc=first_desc
     if "DAMAGE" in new_desc:
         new_desc=new_desc.split("DAMAGE")
@@ -128,12 +129,11 @@ known_recipes=[]
 
 # A description of the artificed item
 description="Submit components to artifice a new item."
-
 # default list type
 list_type="components"
 
 # Modifier tags
-modifiers=["Volatile", "Amplifier", "Stabillizer"]
+modifiers=["Volatile", "Amplifier", "Stabillizer", "Nebulizer"]
 
 # types that get effects by default
 types_w_effects=["Potion", "Gas"]
@@ -453,6 +453,7 @@ while True:
         else:
             prof_bonus=0
 
+        can_run=True
         # So long as more than one material is entered, artificing begins
         if len(materials)>1:
             # we sort the materials to see if they'll match recipes later
@@ -461,26 +462,26 @@ while True:
             type_pool_1=[]
             type_pool=[]
             for i in materials:
-                if type_pool_1==[]:
-                    type_pool_1=components[i.lower()].types
-                else:
-                    type_pool_2=components[i.lower()].types
-                    # if the first component shares types with the iterating component or is a modifying tag, it gets added to the pool
-                    for j in type_pool_1:
-                        if j.lower() in types:
-                            if j in type_pool_2 or j in modifiers:
-                                type_pool.append(j)
-                    # if the pool has a type that isn't shared by the iterating component or is in the modifiers, it gets removed
-                    for j in type_pool:
-                        if j not in type_pool_2 and j not in modifiers:
-                            type_pool.remove(j)
+                type_pool_1=components[i.lower()].types
+                for j in type_pool_1:
+                    type_pool.append(j)
+            type_pool=list(set(type_pool))
+            for i in materials:
+                for j in type_pool:
+                    if j not in components[i.lower()].types:
+                        type_pool.remove(j)
+            for i in materials:
+                for j in components[i.lower()].types:
+                    if j in modifiers:
+                        type_pool.append(j)
             # We'll save a redundant list for magic later
             reduntant_type_pool=type_pool
             # and we take the unique list of shared types and modifiers
             type_pool=list(set(type_pool))
-            for modifier in modifiers:
-                if modifier in type_pool:
-                    type_pool.remove(modifier)
+            small_type_pool=[]
+            for i in type_pool:
+                if i not in modifiers:
+                    small_type_pool.append(i)
 
             # If the materials share no common types, and don't make a recipe, failure happens
             if len(type_pool)==0 and materials not in recipe_values:
@@ -503,12 +504,29 @@ while True:
                 if values["-subclass_perf-"]==True:
                     reroll_desc=sg.popup_yes_no("You are perfectionist, who already knows this recipe. Would you like to attempt to improve the recipe?")
                     if reroll_desc=="Yes":
-                        desc_desc=roll_desc(types[desc_types.lower()].description, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                        desc_desc=types[desc_types.lower()].description
+
+                        # if the user is a holistic crafter, then a random component effect is added
+                        if values["-subclass_holistic-"]==True:
+                            random_material=materials[rand.randint(0,len(materials)-1)]
+                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+
+                        # If the item is a potion, a random component effect is added
+                        if desc_types in types_w_effects:
+                            random_material=materials[rand.randint(0,len(materials)-1)]
+                            poss_effects=components[random_material.lower()].effects
+                            while desc_name not in poss_effects:
+                                random_material=materials[rand.randint(0,len(materials)-1)]
+                                poss_effects=components[random_material.lower()].effects
+                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+
+                        desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                         recipes[selected_name].description=desc_desc
-                        write_file="Name: "+desc_name+"\nDescription: "+desc_desc+"\nTypes: "+desc_types+"\nComponents: "
+                        write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                         for i in materials:
                             write_file+=i+", "
                         write_file=write_file[0:len(write_file)-2]
+                        write_file+="\nDescription: "+desc_desc
                         file_in=open("resources/recipes/"+selected_name+".recipe", "w")
                         file_in.write(write_file)
                         file_in.close()
@@ -522,11 +540,24 @@ while True:
                 else:
                     window["-item_image-"].update("resources/images/success.png")
 
+                if "Volatile" in reduntant_type_pool:
+                    for vol in reduntant_type_pool:
+                        if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
+                            reduntant_type_pool.remove("Volatile")
+                if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
+                    backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+                    if backfire=="Volatile":
+                        sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                    else:
+                        sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+                else:
+                    sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+
             # If the components all share types, they make a random, shared type
             else:
                 # First, lets make sure that modiers aren't the only thing in the type pool
                 good=False
-                for i in type_pool:
+                for i in small_type_pool:
                     if i not in modifiers:
                         good=True
                 # If there's at least one other type then...
@@ -543,15 +574,10 @@ while True:
                                 matching_recipe_names.append(recipes[recipe_keys[count].lower()].name)
                             count+=1
                         # Then lets see if there are missing, potential recipes
-                        for i in type_pool:
-                            if i not in matching_recipe_type and i not in modifiers:
+                        for i in small_type_pool:
+                            if i not in matching_recipe_type:
                                 matching_recipe_names.append("Tinker")
 
-#------------ Need to check Requirements
-
-#------------Need to add effects
-
-#-----------Need to parse modiers
                         if "Tinker" in matching_recipe_names:
                             choice=popup_select("This combination may generate a known recipe or you could tinker with it and try to make something new. What would you like to do?", matching_recipe_names)
                         else:
@@ -578,9 +604,13 @@ while True:
                                     # If the item is a potion, a random component effect is added
                                     if desc_types in types_w_effects:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
+                                        poss_effects=components[random_material.lower()].effects
+                                        while desc_name not in poss_effects:
+                                            random_material=materials[rand.randint(0,len(materials)-1)]
+                                            poss_effects=components[random_material.lower()].effects
                                         desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
 
-                                    desc_desc=roll_desc(desc_desc, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                                    desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                                     recipes[selected_name].description=desc_desc
                                     write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                                     for i in materials:
@@ -599,19 +629,129 @@ while True:
                                 window["-item_image-"].update("resources/images/"+selected_name+".png")
                             else:
                                 window["-item_image-"].update("resources/images/success.png")
-                        # If the user decides to tinker, then a different type is explored
-                        else:
-                            for known_type in matching_recipe_type:
-                                if known_type in type_pool:
-                                    type_pool.remove(known_type)
 
-                            if len(type_pool) > 1:
-                                selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
+                            if "Volatile" in reduntant_type_pool:
+                                for vol in reduntant_type_pool:
+                                    if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
+                                        reduntant_type_pool.remove("Volatile")
+                            if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
+                                backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+                                if backfire=="Volatile":
+                                    sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                else:
+                                    sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
                             else:
-                                selected_name=type_pool[0].lower()
+                                sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+                        # If the user decides to tinker, then a different type is explored
+                        elif choice=="Tinker":
+                            for known_type in matching_recipe_type:
+                                if known_type in small_type_pool:
+                                    small_type_pool.remove(known_type)
+
+                            if len(small_type_pool) > 1:
+                                selected_name=small_type_pool[rand.randint(1,len(small_type_pool))-1].lower()
+                            else:
+                                selected_name=small_type_pool[0].lower()
                             desc_name=types[selected_name].name
                             desc_desc=types[selected_name].description
+                            desc_requirements=types[selected_name].requirements
+                            for rq in desc_requirements:
+#                                print("Requirement found for "+desc_name+": "+rq)
+                                if rq not in type_pool and rq != "None" and values["-subclass_versa-"]!=True:
+                                    description="Despite there being other kinds of objects, nothing was produced..."
+                                    window["-item_description_2-"].update(description)
+                                    window["-item_image-"].update("resources/images/failure.png")
+                                    can_run=False
 
+                            if can_run:
+                                # if the user is a holistic crafter, then a random component effect is added
+                                if values["-subclass_holistic-"]==True:
+                                    random_material=materials[rand.randint(0,len(materials)-1)]
+                                    desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
+                                # If the item is a potion, a random component effect is added
+                                if desc_name in types_w_effects:
+                                    random_material=materials[rand.randint(0,len(materials)-1)]
+                                    poss_effects=components[random_material.lower()].effects
+                                    while desc_name not in poss_effects:
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                        poss_effects=components[random_material.lower()].effects
+                                    desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
+                                desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+
+                                description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
+                                if len(desc_requirements)>0:
+                                    for i in desc_requirements:
+                                        description+="\n   -"+i
+                                    else:
+                                        description+="\n   -None"
+                                        window["-item_description_2-"].update(description)
+                                        if selected_name+".png" in images_list:
+                                            window["-item_image-"].update("resources/images/"+selected_name+".png")
+                                        else:
+                                            window["-item_image-"].update("resources/images/success.png")
+                                new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
+                                if isinstance(new_name, str):
+                                    new_recipe=Recipe(
+                                    new_name,
+                                    desc_desc,
+                                    materials,
+                                    types[selected_name].name
+                                    )
+
+                                    write_file="Name: "+new_name+"\nTypes: "+types[selected_name].name+"\nComponents: "
+                                    for i in materials:
+                                        write_file+=i+", "
+                                    write_file=write_file[0:len(write_file)-2]
+                                    write_file+="\nDescription: "+desc_desc
+
+                                    file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                                    file_in.write(write_file)
+                                    file_in.close()
+
+                                    recipes[new_name.lower()]=new_recipe
+                                    recipe_keys=[]
+                                    recipe_values=[]
+                                    for i in recipes:
+                                        recipe_keys.append(recipes[i].name)
+                                        hit_value=recipes[i].components
+                                        hit_value.sort()
+                                        recipe_values.append(hit_value)
+
+                                    known_recipes=recipe_keys
+
+                                    if "Volatile" in reduntant_type_pool:
+                                        for vol in reduntant_type_pool:
+                                            if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
+                                                reduntant_type_pool.remove("Volatile")
+                                    if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
+                                        backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+                                        if backfire=="Volatile":
+                                            sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                        else:
+                                            sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
+                                    else:
+                                        sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
+
+
+                    # If the materials are not part of known recipe, then we'll look for new ones!
+                    else:
+                        if len(small_type_pool) > 1:
+                            selected_name=small_type_pool[rand.randint(0,len(small_type_pool))-1].lower()
+                        else:
+                            selected_name=small_type_pool[0].lower()
+                        desc_name=types[selected_name].name
+                        desc_desc=types[selected_name].description
+                        desc_requirements=types[selected_name].requirements
+                        for rq in desc_requirements:
+#                            print("Requirement found for "+desc_name+": "+rq)
+                            if rq not in type_pool and rq != "None" and values["-subclass_versa-"]!=True:
+                                description="Nothing was produced...But it was close"
+                                window["-item_description_2-"].update(description)
+                                window["-item_image-"].update("resources/images/failure.png")
+                                can_run=False
+                        if can_run:
                             # if the user is a holistic crafter, then a random component effect is added
                             if values["-subclass_holistic-"]==True:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
@@ -620,11 +760,14 @@ while True:
                             # If the item is a potion, a random component effect is added
                             if desc_name in types_w_effects:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
+                                poss_effects=components[random_material.lower()].effects
+                                while desc_name not in poss_effects:
+                                    random_material=materials[rand.randint(0,len(materials)-1)]
+                                    poss_effects=components[random_material.lower()].effects
                                 desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
-                            desc_desc=roll_desc(desc_desc, prof_bonus+rand.randint(1,4), values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                            desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
 
-                            desc_requirements=types[selected_name].requirements
                             description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
                             if len(desc_requirements)>0:
                                 for i in desc_requirements:
@@ -650,7 +793,6 @@ while True:
                                     write_file+=i+", "
                                 write_file=write_file[0:len(write_file)-2]
                                 write_file+="\nDescription: "+desc_desc
-
                                 file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
                                 file_in.write(write_file)
                                 file_in.close()
@@ -665,66 +807,21 @@ while True:
                                     recipe_values.append(hit_value)
 
                                 known_recipes=recipe_keys
-                    else:
-                        if len(type_pool) > 1:
-                            selected_name=type_pool[rand.randint(1,len(type_pool))-1].lower()
-                        else:
-                            selected_name=type_pool[0].lower()
-                        desc_name=types[selected_name].name
-                        desc_desc=types[selected_name].description
 
-                        # if the user is a holistic crafter, then a random component effect is added
-                        if values["-subclass_holistic-"]==True:
-                            random_material=materials[rand.randint(0,len(materials)-1)]
-                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
-
-                        # If the item is a potion, a random component effect is added
-                        if desc_name in types_w_effects:
-                            random_material=materials[rand.randint(0,len(materials)-1)]
-                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
-
-                        desc_desc=roll_desc(desc_desc, prof_bonus)
-
-                        desc_requirements=types[selected_name].requirements
-                        description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
-                        if len(desc_requirements)>0:
-                            for i in desc_requirements:
-                                description+="\n   -"+i
-                            else:
-                                description+="\n   -None"
-                                window["-item_description_2-"].update(description)
-                                if selected_name+".png" in images_list:
-                                    window["-item_image-"].update("resources/images/"+selected_name+".png")
+                                if "Volatile" in reduntant_type_pool:
+                                    for vol in reduntant_type_pool:
+                                        if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
+                                            reduntant_type_pool.remove("Volatile")
+                                if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
+                                    backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+                                    if backfire=="Volatile":
+                                        sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                    else:
+                                        sg.Popup("Your "+desc_types+" was successfully created with no issues!")
                                 else:
-                                    window["-item_image-"].update("resources/images/success.png")
-                        new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
-                        if isinstance(new_name, str):
-                            new_recipe=Recipe(
-                            new_name,
-                            desc_desc,
-                            materials,
-                            types[selected_name].name
-                            )
+                                    sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
 
-                            write_file="Name: "+new_name+"\nTypes: "+types[selected_name].name+"\nComponents: "
-                            for i in materials:
-                                write_file+=i+", "
-                            write_file=write_file[0:len(write_file)-2]
-                            write_file+="\nDescription: "+desc_desc
-                            file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
-                            file_in.write(write_file)
-                            file_in.close()
 
-                            recipes[new_name.lower()]=new_recipe
-                            recipe_keys=[]
-                            recipe_values=[]
-                            for i in recipes:
-                                recipe_keys.append(recipes[i].name)
-                                hit_value=recipes[i].components
-                                hit_value.sort()
-                                recipe_values.append(hit_value)
-
-                            known_recipes=recipe_keys
                 else:
                     description="Nothing was produced..."
                     window["-item_description_2-"].update(description)

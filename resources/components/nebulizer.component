@@ -1,0 +1,4 @@
+Name: Nebulizer
+Description: A curious simple machine used to vaporize an array of liquids.
+Types: Nebulizer
+Nebulizer: Required for gas contraptions
