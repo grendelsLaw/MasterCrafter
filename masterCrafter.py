@@ -11,6 +11,31 @@ sg.theme("LightGrey1")
 
 #-------------------------------------------------------------------------------
 
+# Define default values
+# A list of the components
+materials=[]
+secret_materials=[]
+known_recipes=[]
+
+# A description of the artificed item
+description="Submit components to artifice a new item."
+# default list type
+list_type="components"
+
+# Modifier tags - these gets skipped when assessing type
+# Add requirement tags here as well
+modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon"]
+
+# Types that get effects by default
+# Add type here if you want a random effect to always be added to that type
+types_w_effects=["Potion", "Gas", "Magic weapon", "Poison"]
+
+# Backfire tags
+# Add Modifier tag that you wish to possibly explode as soon its made
+backfire_type = ["Volatile", "Nebulizer"]
+
+#-------------------------------------------------------------------------------
+
 def roll_desc(first_desc,
 read_only=False,
 proficiency_boost=0,
@@ -121,27 +146,7 @@ class Type:
         self.requirements=requirements
 
 #-------------------------------------------------------------------------------
-# Define default values
-# A list of the components
-materials=[]
-secret_materials=[]
-known_recipes=[]
 
-# A description of the artificed item
-description="Submit components to artifice a new item."
-# default list type
-list_type="components"
-
-# Modifier tags
-modifiers=["Volatile", "Amplifier", "Stabillizer", "Nebulizer"]
-
-# types that get effects by default
-types_w_effects=["Potion", "Gas"]
-
-# Backfire tags
-backfire_type = ["Volatile"]
-
-#-------------------------------------------------------------------------------
 # First, we generat a list of available components from the component files
 # Generate a blank dictionary
 components={}
@@ -467,23 +472,27 @@ while True:
             type_pool_2=[]
             comp_count=0
             for i in materials:
-                if len(components[i.lower()].types)>1 and components[i.lower()].types[0] not in modifiers:
-                    comp_count+=1
                 type_pool_1=components[i.lower()].types
                 for j in type_pool_1:
                     type_pool_2.append(j)
+                for j in components[i.lower()].types:
+                    if j not in modifiers:
+                        comp_count+=1
+                        break
 
             min_set=list(set(type_pool_2))
-
+#            print(min_set)
             type_pool=[]
+#            print(comp_count)
             for i in min_set:
+#                print(i)
                 mat_count=0
                 for j in type_pool_2:
                     if i == j:
                         mat_count+=1
                 if mat_count==comp_count or i in modifiers:
                     type_pool.append(i)
-
+#                print(mat_count)
             # We'll save a redundant list for magic later
             reduntant_type_pool=type_pool_2
             # and we take the unique list of shared types and modifiers
@@ -492,6 +501,9 @@ while True:
             for i in type_pool:
                 if i not in modifiers:
                     small_type_pool.append(i)
+
+#            print(type_pool)
+#            print(small_type_pool)
 
             # If the materials share no common types, and don't make a recipe, failure happens
             if len(type_pool)==0 and materials not in recipe_values:
@@ -557,9 +569,9 @@ while True:
                 for bkf in backfire_type:
                     if bkf in reduntant_type_pool:
                         for vol in reduntant_type_pool:
-                            if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                            if vol=="Stabilizer" and bkf in reduntant_type_pool:
                                 reduntant_type_pool.remove(bkf)
-                                reduntant_type_pool.remove("Stabillizer")
+                                reduntant_type_pool.remove("Stabilizer")
                 for bkf in backfire_type:
                     if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
                         backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
@@ -567,8 +579,10 @@ while True:
                             sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
                         else:
                             sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+                        break
                     else:
-                        sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+                        if bkf==backfire_type[len(backfire_type)-1]:
+                            sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
 
             # If the components all share types, they make a random, shared type
             else:
@@ -656,9 +670,9 @@ while True:
                             for bkf in backfire_type:
                                 if bkf in reduntant_type_pool:
                                     for vol in reduntant_type_pool:
-                                        if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                                        if vol=="Stabilizer" and bkf in reduntant_type_pool:
                                             reduntant_type_pool.remove(bkf)
-                                            reduntant_type_pool.remove("Stabillizer")
+                                            reduntant_type_pool.remove("Stabilizer")
                             for bkf in backfire_type:
 #                                print(reduntant_type_pool)
                                 if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
@@ -668,8 +682,10 @@ while True:
                                         sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
                                     else:
                                         sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+                                    break
                                 else:
-                                    sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+                                    if bkf==backfire_type[len(backfire_type)-1]:
+                                        sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
                         # If the user decides to tinker, then a different type is explored
                         elif choice=="Tinker":
                             for known_type in matching_recipe_type:
@@ -756,9 +772,9 @@ while True:
                                     for bkf in backfire_type:
                                         if bkf in reduntant_type_pool:
                                             for vol in reduntant_type_pool:
-                                                if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                                                if vol=="Stabilizer" and bkf in reduntant_type_pool:
                                                     reduntant_type_pool.remove(bkf)
-                                                    reduntant_type_pool.remove("Stabillizer")
+                                                    reduntant_type_pool.remove("Stabilizer")
                                     for bkf in backfire_type:
                                         if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
                                             backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
@@ -766,8 +782,10 @@ while True:
                                                 sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
                                             else:
                                                 sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
+                                            break
                                         else:
-                                            sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
+                                            if bkf==backfire_type[len(backfire_type)-1]:
+                                                sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
 
 
                     # If the materials are not part of known recipe, then we'll look for new ones!
@@ -851,9 +869,9 @@ while True:
                                 for bkf in backfire_type:
                                     if bkf in reduntant_type_pool:
                                         for vol in reduntant_type_pool:
-                                            if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                                            if vol=="Stabilizer" and bkf in reduntant_type_pool:
                                                 reduntant_type_pool.remove(bkf)
-                                                reduntant_type_pool.remove("Stabillizer")
+                                                reduntant_type_pool.remove("Stabilizer")
                                 for bkf in backfire_type:
                                     if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
                                         backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
@@ -861,8 +879,10 @@ while True:
                                             sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
                                         else:
                                             sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
+                                        break
                                     else:
-                                        sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
+                                        if bkf==backfire_type[len(backfire_type)-1]:
+                                            sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
 
 
                 else:
