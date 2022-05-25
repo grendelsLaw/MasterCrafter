@@ -138,6 +138,9 @@ modifiers=["Volatile", "Amplifier", "Stabillizer", "Nebulizer"]
 # types that get effects by default
 types_w_effects=["Potion", "Gas"]
 
+# Backfire tags
+backfire_type = ["Volatile"]
+
 #-------------------------------------------------------------------------------
 # First, we generat a list of available components from the component files
 # Generate a blank dictionary
@@ -459,23 +462,30 @@ while True:
             # we sort the materials to see if they'll match recipes later
             materials.sort()
             # make an initial and total type pool
+#            print(materials)
             type_pool_1=[]
-            type_pool=[]
+            type_pool_2=[]
+            comp_count=0
             for i in materials:
+                if len(components[i.lower()].types)>1 and components[i.lower()].types[0] not in modifiers:
+                    comp_count+=1
                 type_pool_1=components[i.lower()].types
                 for j in type_pool_1:
-                    type_pool.append(j)
-            type_pool=list(set(type_pool))
-            for i in materials:
-                for j in type_pool:
-                    if j not in components[i.lower()].types:
-                        type_pool.remove(j)
-            for i in materials:
-                for j in components[i.lower()].types:
-                    if j in modifiers:
-                        type_pool.append(j)
+                    type_pool_2.append(j)
+
+            min_set=list(set(type_pool_2))
+
+            type_pool=[]
+            for i in min_set:
+                mat_count=0
+                for j in type_pool_2:
+                    if i == j:
+                        mat_count+=1
+                if mat_count==comp_count or i in modifiers:
+                    type_pool.append(i)
+
             # We'll save a redundant list for magic later
-            reduntant_type_pool=type_pool
+            reduntant_type_pool=type_pool_2
             # and we take the unique list of shared types and modifiers
             type_pool=list(set(type_pool))
             small_type_pool=[]
@@ -544,18 +554,21 @@ while True:
                 else:
                     window["-item_image-"].update("resources/images/success.png")
 
-                if "Volatile" in reduntant_type_pool:
-                    for vol in reduntant_type_pool:
-                        if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
-                            reduntant_type_pool.remove("Volatile")
-                if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
-                    backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
-                    if backfire=="Volatile":
-                        sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                for bkf in backfire_type:
+                    if bkf in reduntant_type_pool:
+                        for vol in reduntant_type_pool:
+                            if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                                reduntant_type_pool.remove(bkf)
+                                reduntant_type_pool.remove("Stabillizer")
+                for bkf in backfire_type:
+                    if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
+                        backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+                        if backfire in backfire_type:
+                            sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                        else:
+                            sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
                     else:
                         sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
-                else:
-                    sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
 
             # If the components all share types, they make a random, shared type
             else:
@@ -584,8 +597,10 @@ while True:
 
                         if "Tinker" in matching_recipe_names:
                             choice=popup_select("This combination may generate a known recipe or you could tinker with it and try to make something new. What would you like to do?", matching_recipe_names)
-                        else:
+                        elif len(matching_recipe_names) > 1:
                             choice=popup_select("This combination may generates multiple recipes. Which would you like to create?", matching_recipe_names)
+                        else:
+                            choice=matching_recipe_names[0]
                         if choice != "Tinker":
                             selected_name=choice.lower()
                             desc_name=recipes[selected_name].name
@@ -638,18 +653,23 @@ while True:
                             else:
                                 window["-item_image-"].update("resources/images/success.png")
 
-                            if "Volatile" in reduntant_type_pool:
-                                for vol in reduntant_type_pool:
-                                    if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
-                                        reduntant_type_pool.remove("Volatile")
-                            if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
-                                backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
-                                if backfire=="Volatile":
-                                    sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                            for bkf in backfire_type:
+                                if bkf in reduntant_type_pool:
+                                    for vol in reduntant_type_pool:
+                                        if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                                            reduntant_type_pool.remove(bkf)
+                                            reduntant_type_pool.remove("Stabillizer")
+                            for bkf in backfire_type:
+#                                print(reduntant_type_pool)
+                                if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
+                                    backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+#                                    print(backfire)
+                                    if backfire in backfire_type:
+                                        sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                    else:
+                                        sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
                                 else:
                                     sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
-                            else:
-                                sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
                         # If the user decides to tinker, then a different type is explored
                         elif choice=="Tinker":
                             for known_type in matching_recipe_type:
@@ -696,13 +716,13 @@ while True:
                                 if len(desc_requirements)>0:
                                     for i in desc_requirements:
                                         description+="\n   -"+i
-                                    else:
+                                else:
                                         description+="\n   -None"
-                                        window["-item_description_2-"].update(description)
-                                        if selected_name+".png" in images_list:
-                                            window["-item_image-"].update("resources/images/"+selected_name+".png")
-                                        else:
-                                            window["-item_image-"].update("resources/images/success.png")
+                                window["-item_description_2-"].update(description)
+                                if selected_name+".png" in images_list:
+                                    window["-item_image-"].update("resources/images/"+selected_name+".png")
+                                else:
+                                    window["-item_image-"].update("resources/images/"+types[selected_name].name.lower()+".png")
                                 new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
                                 if isinstance(new_name, str):
                                     new_recipe=Recipe(
@@ -733,18 +753,21 @@ while True:
 
                                     known_recipes=recipe_keys
 
-                                    if "Volatile" in reduntant_type_pool:
-                                        for vol in reduntant_type_pool:
-                                            if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
-                                                reduntant_type_pool.remove("Volatile")
-                                    if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
-                                        backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
-                                        if backfire=="Volatile":
-                                            sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                    for bkf in backfire_type:
+                                        if bkf in reduntant_type_pool:
+                                            for vol in reduntant_type_pool:
+                                                if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                                                    reduntant_type_pool.remove(bkf)
+                                                    reduntant_type_pool.remove("Stabillizer")
+                                    for bkf in backfire_type:
+                                        if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
+                                            backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+                                            if backfire in backfire_type:
+                                                sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                            else:
+                                                sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
                                         else:
                                             sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
-                                    else:
-                                        sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
 
 
                     # If the materials are not part of known recipe, then we'll look for new ones!
@@ -785,16 +808,17 @@ while True:
                             desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
 
                             description=desc_name+"\n\n"+desc_desc+"\n\nSpecific requirements:"
+                            desc_requirements=list(set(desc_requirements))
                             if len(desc_requirements)>0:
                                 for i in desc_requirements:
                                     description+="\n   -"+i
-                                else:
-                                    description+="\n   -None"
-                                    window["-item_description_2-"].update(description)
-                                    if selected_name+".png" in images_list:
-                                        window["-item_image-"].update("resources/images/"+selected_name+".png")
-                                    else:
-                                        window["-item_image-"].update("resources/images/success.png")
+                            else:
+                                description+="\n   -None"
+                            window["-item_description_2-"].update(description)
+                            if selected_name+".png" in images_list:
+                                window["-item_image-"].update("resources/images/"+selected_name+".png")
+                            else:
+                                    window["-item_image-"].update("resources/images/success.png")
                             new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
                             if isinstance(new_name, str):
                                 new_recipe=Recipe(
@@ -824,18 +848,21 @@ while True:
 
                                 known_recipes=recipe_keys
 
-                                if "Volatile" in reduntant_type_pool:
-                                    for vol in reduntant_type_pool:
-                                        if vol=="Stabillizer" and "Volatile" in reduntant_type_pool:
-                                            reduntant_type_pool.remove("Volatile")
-                                if "Volatile" in reduntant_type_pool and values["-subclass_care-"] == False:
-                                    backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
-                                    if backfire=="Volatile":
-                                        sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                for bkf in backfire_type:
+                                    if bkf in reduntant_type_pool:
+                                        for vol in reduntant_type_pool:
+                                            if vol=="Stabillizer" and bkf in reduntant_type_pool:
+                                                reduntant_type_pool.remove(bkf)
+                                                reduntant_type_pool.remove("Stabillizer")
+                                for bkf in backfire_type:
+                                    if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
+                                        backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
+                                        if backfire in backfire_type:
+                                            sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
+                                        else:
+                                            sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
                                     else:
-                                        sg.Popup("Your "+desc_types+" was successfully created with no issues!")
-                                else:
-                                    sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
+                                        sg.Popup("Your "+types[selected_name].name.lower()+" was successfully created with no issues!")
 
 
                 else:
