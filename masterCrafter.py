@@ -509,6 +509,10 @@ while True:
                         # if the user is a holistic crafter, then a random component effect is added
                         if values["-subclass_holistic-"]==True:
                             random_material=materials[rand.randint(0,len(materials)-1)]
+                            poss_effects=components[random_material.lower()].effects
+                            while desc_name not in poss_effects:
+                                random_material=materials[rand.randint(0,len(materials)-1)]
+                                poss_effects=components[random_material.lower()].effects
                             desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
 
                         # If the item is a potion, a random component effect is added
@@ -599,6 +603,10 @@ while True:
                                     # if the user is a holistic crafter, then a random component effect is added
                                     if values["-subclass_holistic-"]==True:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
+                                        poss_effects=components[random_material.lower()].effects
+                                        while desc_name not in poss_effects:
+                                            random_material=materials[rand.randint(0,len(materials)-1)]
+                                            poss_effects=components[random_material.lower()].effects
                                         desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
 
                                     # If the item is a potion, a random component effect is added
@@ -667,6 +675,10 @@ while True:
                                 # if the user is a holistic crafter, then a random component effect is added
                                 if values["-subclass_holistic-"]==True:
                                     random_material=materials[rand.randint(0,len(materials)-1)]
+                                    poss_effects=components[random_material.lower()].effects
+                                    while desc_name not in poss_effects:
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                        poss_effects=components[random_material.lower()].effects
                                     desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                                 # If the item is a potion, a random component effect is added
@@ -755,6 +767,10 @@ while True:
                             # if the user is a holistic crafter, then a random component effect is added
                             if values["-subclass_holistic-"]==True:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
+                                poss_effects=components[random_material.lower()].effects
+                                while desc_name not in poss_effects:
+                                    random_material=materials[rand.randint(0,len(materials)-1)]
+                                    poss_effects=components[random_material.lower()].effects
                                 desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                             # If the item is a potion, a random component effect is added
