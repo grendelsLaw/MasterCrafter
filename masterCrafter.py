@@ -536,8 +536,10 @@ while True:
                             desc_desc=types[desc_types.lower()].description
 
                             # if the user is a holistic crafter, then a random component effect is added
+                            picked_material=""
                             if values["-subclass_holistic-"]==True:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
+                                picked_material=random_material
                                 poss_effects=components[random_material.lower()].effects
                                 while desc_name not in poss_effects:
                                     random_material=materials[rand.randint(0,len(materials)-1)]
@@ -550,12 +552,17 @@ while True:
                                 mat_count=0
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 poss_effects=components[random_material.lower()].effects
-                                while desc_name not in poss_effects or mat_count<len(materials):
-                                    random_material=materials[rand.randint(0,len(materials)-1)]
-                                    if str(components[random_material.lower()].effects) not in desc_desc:
+                                while mat_count<len(materials):
+                                    if random_material==picked_material:
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                    elif len(components[random_material.lower()].types)<2 and components[random_material.lower()].types in modifiers:
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                    else:
                                         poss_effects=components[random_material.lower()].effects
+                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+                                        break
                                     mat_count+=1
-                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
 
                             desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                             recipes[selected_name].description=desc_desc
@@ -649,8 +656,10 @@ while True:
                                     desc_desc=types[desc_types.lower()].description
 
                                     # if the user is a holistic crafter, then a random component effect is added
+                                    picked_material=""
                                     if values["-subclass_holistic-"]==True:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
+                                        picked_material=random_material
                                         poss_effects=components[random_material.lower()].effects
                                         while desc_name not in poss_effects:
                                             random_material=materials[rand.randint(0,len(materials)-1)]
@@ -662,12 +671,18 @@ while True:
                                         mat_count=0
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                         poss_effects=components[random_material.lower()].effects
-                                        while desc_name not in poss_effects or mat_count<len(materials):
+                                        while mat_count<len(materials):
                                             random_material=materials[rand.randint(0,len(materials)-1)]
-                                            if str(components[random_material.lower()].effects) not in desc_desc:
+                                            if random_material==picked_material:
+                                                random_material=materials[rand.randint(0,len(materials)-1)]
+                                            elif len(components[random_material.lower()].types)<2 and components[random_material.lower()].types[0] in modifiers:
+                                                random_material=materials[rand.randint(0,len(materials)-1)]
+                                            else:
                                                 poss_effects=components[random_material.lower()].effects
+                                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+                                                break
                                             mat_count+=1
-                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+
 
                                     desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                                     recipes[selected_name].description=desc_desc
@@ -741,8 +756,10 @@ while True:
 
                             if can_run:
                                 # if the user is a holistic crafter, then a random component effect is added
+                                picked_material=""
                                 if values["-subclass_holistic-"]==True:
                                     random_material=materials[rand.randint(0,len(materials)-1)]
+                                    picked_material=random_material
                                     poss_effects=components[random_material.lower()].effects
                                     while desc_name not in poss_effects:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
@@ -753,13 +770,17 @@ while True:
                                 if desc_name in types_w_effects:
                                     mat_count=0
                                     random_material=materials[rand.randint(0,len(materials)-1)]
-                                    poss_effects=components[random_material.lower()].effects
-                                    while desc_name not in poss_effects or mat_count<len(materials):
-                                        random_material=materials[rand.randint(0,len(materials)-1)]
-                                        if str(components[random_material.lower()].effects) not in desc_desc:
+                                    while mat_count<len(materials):
+                                        if random_material==picked_material:
+                                            random_material=materials[rand.randint(0,len(materials)-1)]
+                                        elif len(components[random_material.lower()].types)<2 and components[random_material.lower()].types[0] in modifiers:
+                                            random_material=materials[rand.randint(0,len(materials)-1)]
+                                        else:
                                             poss_effects=components[random_material.lower()].effects
+                                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+                                            break
                                         mat_count+=1
-                                    desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
 
                                 desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
 
@@ -841,11 +862,13 @@ while True:
                                 can_run=False
                         if can_run:
                             # if the user is a holistic crafter, then a random component effect is added
+                            picked_material=""
                             if values["-subclass_holistic-"]==True:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 poss_effects=components[random_material.lower()].effects
                                 while desc_name not in poss_effects:
                                     random_material=materials[rand.randint(0,len(materials)-1)]
+                                    picked_material=random_material
                                     poss_effects=components[random_material.lower()].effects
                                 desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
@@ -854,12 +877,17 @@ while True:
                                 mat_count=0
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 poss_effects=components[random_material.lower()].effects
-                                while desc_name not in poss_effects or mat_count<len(materials):
-                                    random_material=materials[rand.randint(0,len(materials)-1)]
-                                    if str(components[random_material.lower()].effects) not in desc_desc:
+                                while mat_count<len(materials):
+                                    if random_material == picked_material:
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                    elif len(components[random_material.lower()].types)<2 and components[random_material.lower()].types[0] in modifiers:
+                                        random_material=materials[rand.randint(0,len(materials)-1)]
+                                    else:
                                         poss_effects=components[random_material.lower()].effects
+                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+                                        break
                                     mat_count+=1
-                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+
 
                             desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
 
