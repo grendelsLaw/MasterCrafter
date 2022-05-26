@@ -1,4 +1,0 @@
-**Name: Wire**
-Types: Wire
-Components: Metal, String
-Description: A thin piece of metal, excellent for conducting energy.
