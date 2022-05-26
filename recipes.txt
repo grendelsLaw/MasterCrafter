@@ -1,0 +1,68 @@
+**Name: Wire**
+Types: Wire
+Components: Metal, String
+Description: A thin piece of metal, excellent for conducting energy.
+
+
+
+**Name: Tough bomb**
+Types: Bomb
+Components: Combustive powder, Ironwood Heart, Luminous Cap Dust
+Description: An explosive device. When detonated, creatures within 5 feet must take a dexterity saving throw or take 1d4 force damage and fall prone. If they pass the check, they take half damage and avoid other effects.
+
+
+**Name: Con poison**
+Types: Poison
+Components: Voidroot, Wormwood
+Description: A viscous, dangerous-looking concoction. This can be used to poison food and drink, or rubbed into a weapon. If used to augment a weapon, the next 1 attacks are considered poisonous.
+   - A creature exposed to this poison must succeed on a Constitution Saving Throw or become Stunned. The creature may repeat this saving throw at the end of each of its turns, ending this effect on a success. If the creature takes damage from any source, this effect immediately ends.
+
+
+**Name: Esuna**
+Types: Potion
+Components: Voidroot, Wormwood
+Description: A murky, shimmery solution of who-knows-what. Drink it and find out!
+   - Cures Poison status
+
+
+**Name: Fire resistance potion**
+Types: Potion
+Components: Frozen Seedlings, Ironwood Heart
+Description: A murky, shimmery solution of who-knows-what. Drink it and find out!
+   - A creature ingesting this potion gains resistance to fire damage for one minute, and they and objects they are holding cannot be set on fire for the duration.
+
+
+**Name: Grenade**
+Types: Bomb
+Components: Combustive powder, Frozen Seedlings, Ironwood Heart
+Description: An explosive device. When detonated, creatures within 5 feet must take a dexterity saving throw or take 1d4 force damage and fall prone. If they pass the check, they take half damage and avoid other effects.
+
+
+**Name: PowerUp**
+Types: Potion
+Components: Nebulizer, Radiant Synthseed, Stabilizer, Voidroot
+Description: A murky, shimmery solution of who-knows-what. Drink it and find out!
+   - Cures one level of Exhaustion.
+
+
+**Name: Dark gas**
+Types: Gas
+Components: Nebulizer, Radiant Synthseed, Stabilizer, Voidroot
+Description: A canister of a nebulous solution. After releasing the pin, a 5-wide cloud of gas is released.
+   - The area within this gas is pitch-black, as if under the effects of the Darkness spell, for the duration.
+
+
+**Name: Wisdom gas**
+Types: Gas
+Components: Nebulizer, Voidroot, Wormwood
+Description: A canister of a nebulous solution. After releasing the pin, a 5-wide cloud of gas is released.
+   - Creatures within this gas subtract 1 from all wisdom saving throws while in the gas cloud.
+
+
+**Name: Another fire resistance potion**
+Types: Potion
+Components: Combustive powder, Frozen Seedlings, Ironwood Heart
+Description: A murky, shimmery solution of who-knows-what. Drink it and find out!
+   - A creature ingesting this potion gains resistance to fire damage for one minute, and they and objects they are holding cannot be set on fire for the duration.
+
+
