@@ -444,11 +444,10 @@ while True:
             window["-item_description_2-"].update(description)
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
+            elif "resources/images/"+desc_types.lower()+".png" in images_list:
+                window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
             else:
-                try:
-                    window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
-                except:
-                    window["-item_image-"].update("resources/images/success.png")
+                window["-item_image-"].update("resources/images/success.png")
 
     # Here's where the crafting/procerdual generating starts!
     elif event=="Artifice!":
@@ -570,11 +569,10 @@ while True:
                     window["-item_description_2-"].update(description)
                     if selected_name+".png" in images_list:
                         window["-item_image-"].update("resources/images/"+selected_name+".png")
+                    elif "resources/images/"+desc_types.lower()+".png" in images_list:
+                        window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
                     else:
-                        try:
-                            window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
-                        except:
-                            window["-item_image-"].update("resources/images/success.png")
+                        window["-item_image-"].update("resources/images/success.png")
 
                     for bkf in backfire_type:
                         if bkf in reduntant_type_pool:
@@ -689,11 +687,10 @@ while True:
 
                                 if selected_name+".png" in images_list:
                                     window["-item_image-"].update("resources/images/"+selected_name+".png")
+                                elif "resources/images/"+desc_types.lower()+".png" in images_list:
+                                    window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
                                 else:
-                                    try:
-                                        window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
-                                    except:
-                                        window["-item_image-"].update("resources/images/success.png")
+                                    window["-item_image-"].update("resources/images/success.png")
 
                                 for bkf in backfire_type:
                                     if bkf in reduntant_type_pool:
@@ -762,17 +759,16 @@ while True:
                                 desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
 
                                 description="New "+desc_name.lower()+"\n\n"+desc_desc+"\n\nRequired components:"
-                                for i in desc_components:
+                                for i in materials:
                                     description+="\n   -"+i
 
                                 window["-item_description_2-"].update(description)
                                 if selected_name+".png" in images_list:
                                     window["-item_image-"].update("resources/images/"+selected_name+".png")
+                                elif "resources/images/"+types[selected_name].name.lower()+".png" in images_list:
+                                    window["-item_image-"].update("resources/images/"+types[selected_name].name.lower()+".png")
                                 else:
-                                    try:
-                                        window["-item_image-"].update("resources/images/"+types[selected_name].name.lower()+".png")
-                                    except:
-                                        window["-item_image-"].update("resources/images/success.png")
+                                    window["-item_image-"].update("resources/images/success.png")
                                 new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
                                 if isinstance(new_name, str):
                                     new_recipe=Recipe(
@@ -872,11 +868,10 @@ while True:
                             window["-item_description_2-"].update(description)
                             if selected_name+".png" in images_list:
                                 window["-item_image-"].update("resources/images/"+selected_name+".png")
+                            elif "resources/images/"+desc_name.lower()+".png" in images_list:
+                                window["-item_image-"].update("resources/images/"+desc_name.lower()+".png")
                             else:
-                                try:
-                                    window["-item_image-"].update("resources/images/"+desc_name.lower()+".png")
-                                except:
-                                    window["-item_image-"].update("resources/images/success.png")
+                                window["-item_image-"].update("resources/images/success.png")
                             new_name=sg.popup_get_text("New recipe discovered! What should it be name?")
                             if isinstance(new_name, str):
                                 new_recipe=Recipe(
