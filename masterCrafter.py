@@ -541,13 +541,17 @@ while True:
                                 desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
 
                             # If the item is a potion, a random component effect is added
-                            if desc_types in types_w_effects:
+
+                            if desc_name in types_w_effects:
+                                mat_count=0
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 poss_effects=components[random_material.lower()].effects
-                                while desc_name not in poss_effects:
+                                while desc_name not in poss_effects or mat_count<len(materials):
                                     random_material=materials[rand.randint(0,len(materials)-1)]
-                                    poss_effects=components[random_material.lower()].effects
-                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+                                    if str(components[random_material.lower()].effects) not in desc_desc:
+                                        poss_effects=components[random_material.lower()].effects
+                                    mat_count+=1
+                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                             desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                             recipes[selected_name].description=desc_desc
@@ -652,11 +656,14 @@ while True:
 
                                     # If the item is a potion, a random component effect is added
                                     if desc_types in types_w_effects:
+                                        mat_count=0
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                         poss_effects=components[random_material.lower()].effects
-                                        while desc_name not in poss_effects:
+                                        while desc_name not in poss_effects or mat_count<len(materials):
                                             random_material=materials[rand.randint(0,len(materials)-1)]
-                                            poss_effects=components[random_material.lower()].effects
+                                            if str(components[random_material.lower()].effects) not in desc_desc:
+                                                poss_effects=components[random_material.lower()].effects
+                                            mat_count+=1
                                         desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
 
                                     desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
@@ -742,11 +749,14 @@ while True:
 
                                 # If the item is a potion, a random component effect is added
                                 if desc_name in types_w_effects:
+                                    mat_count=0
                                     random_material=materials[rand.randint(0,len(materials)-1)]
                                     poss_effects=components[random_material.lower()].effects
-                                    while desc_name not in poss_effects:
+                                    while desc_name not in poss_effects or mat_count<len(materials):
                                         random_material=materials[rand.randint(0,len(materials)-1)]
-                                        poss_effects=components[random_material.lower()].effects
+                                        if str(components[random_material.lower()].effects) not in desc_desc:
+                                            poss_effects=components[random_material.lower()].effects
+                                        mat_count+=1
                                     desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                                 desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
@@ -840,11 +850,14 @@ while True:
 
                             # If the item is a potion, a random component effect is added
                             if desc_name in types_w_effects:
+                                mat_count=0
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 poss_effects=components[random_material.lower()].effects
-                                while desc_name not in poss_effects:
+                                while desc_name not in poss_effects or mat_count<len(materials):
                                     random_material=materials[rand.randint(0,len(materials)-1)]
-                                    poss_effects=components[random_material.lower()].effects
+                                    if str(components[random_material.lower()].effects) not in desc_desc:
+                                        poss_effects=components[random_material.lower()].effects
+                                    mat_count+=1
                                 desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
 
                             desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
