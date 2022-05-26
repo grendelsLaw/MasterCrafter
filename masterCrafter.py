@@ -305,6 +305,7 @@ item_description = [
 # This new column lets you select a artificing subtype. It may get switched to a checkbox system
 # depending on Shepherd's thoughts
 subclass_buttons=[
+    sg.Radio("Novice", "subclass", default=False, key = "-subclass_novice-"),
     sg.Radio("Damage specialist", "subclass", default=False, key = "-subclass_damage-"),
     sg.Radio("Duration specialist", "subclass", default=False, key = "-subclass_duration-"),
     sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-"),
@@ -521,7 +522,8 @@ while True:
                 desc_desc=recipes[selected_name].description
                 desc_components=recipes[selected_name].components
                 desc_types=recipes[selected_name].types
-                if desc_types != small_type_pool[0]:
+                if desc_types == small_type_pool[0]:
+
                     # If perfectionist is the subclass, user is given the chance to
                     # reroll the description with a bonus 1d4 to proficiency
                     if values["-subclass_perf-"]==True:
@@ -565,7 +567,10 @@ while True:
                     if selected_name+".png" in images_list:
                         window["-item_image-"].update("resources/images/"+selected_name+".png")
                     else:
-                        window["-item_image-"].update("resources/images/"+desc_types+".png")
+                        try:
+                            window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
+                        except:
+                            window["-item_image-"].update("resources/images/success.png")
 
                     for bkf in backfire_type:
                         if bkf in reduntant_type_pool:
