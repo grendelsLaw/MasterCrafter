@@ -291,7 +291,7 @@ material_entry_column = [
 # and the second listbox, which shows you list items you've selected, as well as the artifice button
 all_submitted_column = [
     sg.Listbox(values=component_list, enable_events=True, size = (40,15), key="-lb_1-"),
-    [sg.Button("Submit component(s)"),
+    [sg.Button("Add component"),
     sg.Button("Clear list"),
     sg.Button("Remove component")],
     sg.Listbox(values=materials, size = (40,15), key="-lb_2-"),
@@ -376,7 +376,7 @@ while True:
         window["-lb_1-"].update(known_recipes)
 
     # Adds selected components or selected recipes components to listbox 2 for artificing
-    elif event=="Submit component(s)" and len(values["-lb_1-"]):
+    elif event=="Add component" and len(values["-lb_1-"]):
         for i in values["-lb_1-"]:
             if i in component_list and list_type=="components":
                 materials.append(i)
