@@ -1,6 +1,6 @@
 Name: Wormwood
-Description: A evergreen plant with known medicinal properties. Toxic in high doses as it may induce delirium. VALUE1-10VALUE GP
+Description: A evergreen plant with known medicinal properties. Toxic in high doses as it may induce delirium. VALUE20-30VALUE GP
 Types: Gas, Poison, Potion
-Gas: Creatures within this gas subtract DAMAGE1-4DAMAGE from all wisdom saving throws while in the gas cloud.
-Poison: A creature exposed to this poison has disadvantage on their next wisdom saving throw
-Potion: Cures Poison status
+Gas: Creatures within this gas subtract DAMAGE1-4DAMAGE from all Wisdom saving throws while in the gas cloud.
+Poison: A creature exposed to this poison has disadvantage on their next Wisdom taving throw.
+Potion: Cures Poison status.
