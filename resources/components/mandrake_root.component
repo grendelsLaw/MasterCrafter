@@ -3,3 +3,4 @@ Description: The roots from a Mandrake plant are known for having small pockets 
 Types: Bomb, Potion, Volatile
 Bomb: Double the number of all damage dice for this bomb. 
 Potion: Damage that you would take from sources that deal psychic damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Volatile: May cause a backfire.
