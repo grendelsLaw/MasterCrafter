@@ -1,4 +1,4 @@
 Name: Glowing Duscle
-Description: An herb that reaches a height of nearly 50 inches, with long, ovate leaves. THe flowers have off-white petals and yellow dots. VALUE1-10VALUE GP
-Types: Bomb
+Description: An herb that reaches a height of nearly 50 inches, with long, ovate leaves. THe flowers have off-white petals and yellow dots. VALUE1-5VALUE GP
+Types: Bomb, Volatile
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 lightning damage on a failed save, or half as much damage on a successful one.
