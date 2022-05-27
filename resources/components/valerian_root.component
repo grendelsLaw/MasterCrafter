@@ -3,3 +3,4 @@ Description: This dried root is obtained from the Valerian, a flowering plant th
 Types: Gas, Poison, Nebulizer
 Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw or have its speed reduced by DISTANCE5-20DISTANCE feet for TIME2-4TIME turns.
 Poison: The target must succeed on a Constitution saving throw or fall asleep for TIME1-4TIME turns. 
+Nebulizer: May cause a backfire.
