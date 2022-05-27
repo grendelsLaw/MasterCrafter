@@ -1,4 +1,4 @@
 Name: Blue Cress
 Description: A plant with long stems topped with loose heads of blue, four-petalled flowers. VALUE1-10VALUE GP
 Types: Potion
-Potion: When you make a ranged attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll for the duration of the potion's effect.
+Potion: When you make a ranged attack roll, you have a +DAMAGE1-4DAMAGE bonus on that roll for the duration of the potion's effect.
