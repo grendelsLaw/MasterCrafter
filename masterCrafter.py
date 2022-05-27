@@ -514,12 +514,14 @@ while True:
                     inv_desc=inv_desc.split("VALUE")
                     values=inv_desc[1].split("-")
                     if len(values)<2:
-                        values=values[0]
+                        values=str(values[0])
                     else:
                         values=rand.randint(int(values[0]), int(values[1]))
+                        values=str(values)+" GP"
                 else:
                     values=rand.randint(1,20)
-                inventory.append(component_list[hit]+" - "+str(values)+" GP")
+                    values=str(values)+" GP"
+                inventory.append(component_list[hit]+" - "+values)
         tick=popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
 
     # Here's where the crafting/procerdual generating starts!

@@ -1,4 +1,4 @@
 Name: Weapon
-Description: A standard, nonmagical weapon
+Description: A standard, nonmagical weapon VALUEMarket priceVALUE
 Types: Weapon
 Weapon: Required for weapon enchantments

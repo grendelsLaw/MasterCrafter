@@ -1,4 +1,4 @@
 Name: Item
-Description: A standard, nonmagical item
+Description: A standard, nonmagical item VALUEMarket priceVALUE
 Types: Item
 Item: Required for equipment enchantments.

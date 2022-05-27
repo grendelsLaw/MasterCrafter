@@ -1,4 +1,4 @@
 Name: Chitin Plate
-Description: These flexible shells of chitinous creatures such as giant crabs or remorhaz are used to craft armors, known to be lighter than metallic armor. VALUE20-40VALUE
+Description: These flexible shells of chitinous creatures such as giant crabs or remorhaz are used to craft armors, known to be lighter than metallic armor. VALUEMarket priceVALUE
 Types: Magic armor
 Magic armor: Replaces the metal. While wearing a medium armor (non-hide) made with chitin, the armor's Dexterity bonus increases by DAMAGE1-3DAMAGE. While wearing a heavy armor made with chitin, reduce the Strength requirement by DAMAGE1-3DAMAGE.

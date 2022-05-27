@@ -1,5 +1,5 @@
 Name: Deathstalker Scorpion
-Description: These highly-venemous predatory arachnids feature a signature pattern of dots ressembling a humanoid skull on their abdomens. Extreme caution is recommended when attempting to differentiate between these and other scorpion species. VALUE10-15VALUE gp
+Description: These highly-venemous predatory arachnids feature a signature pattern of dots ressembling a humanoid skull on their abdomens. Extreme caution is recommended when attempting to differentiate between these and other scorpion species. VALUE10-15VALUE GP
 Types: Bomb, Gas, Poison, Volatile
 Bomb: Each creature within the bomb's area of effect must succeed on a Dexterity saving throw or take DAMAGE1-4DAMAGEd4 poison damage and become paralyzed for TIME1-4TIME turns. On a successful save the target takes half damage and is not paralyzed.
 Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw or become paralyzed. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
