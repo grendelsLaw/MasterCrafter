@@ -1,4 +1,4 @@
 Name: Olina Petals
 Description: These pink petals from an Olina flower have small bright red dots, known for its poisonous properties. VALUE1-10VALUE GP
 Types: Poison
-Poison: When you make a Dexterity ability check or saving throw, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Poison: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.

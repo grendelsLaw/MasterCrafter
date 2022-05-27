@@ -1,0 +1,6 @@
+Name: Tiger Snake
+Description: These highly aggressive and extremely venemous snakes, with black and yellow banding, can reach up to 4 feet in length and are often found in coastal regions. VALUE10-15VALUE gp
+Types: Bomb, Gas, Poison, Nebulizer 
+Bomb: The effects of this bomb ignore resistance.
+Gas: The effects of this gas ignore resistance. 
+Poison: The effects of this poison ignore resistance.

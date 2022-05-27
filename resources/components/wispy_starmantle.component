@@ -1,4 +1,4 @@
 Name: Wispy Starmantle
 Description: This tiny flower looks like a bright blue dandelion seed head. Even though it looks pretty, the stem is the only usable part for alchemical concoctions. VALUE1-10VALUE GP
 Types: Potion
-Potion: When you make a Strength ability check or saving throw, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Potion: When you make a Strength ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.

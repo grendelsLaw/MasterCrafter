@@ -1,4 +1,5 @@
 Name: Abyss Flower
 Description: A dark pink flower with a thorny stem. VALUE1-10VALUE GP
-Types: Poison
-Poison: When the creature makes a melee attack roll, it has a DAMAGE1-4DAMAGE penalty to that roll.
+Types: Bomb, Poison, Volatile 
+Bomb: A dark energy rips out from the point of impact. Each creature in the bomb's area must make a Constitution Saving Throw or be blinded for TIME2-4TIME turns.
+Poison: When the creature makes a melee attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll.
