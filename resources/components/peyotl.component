@@ -1,0 +1,5 @@
+Name: Peyotl
+Description: This spineless blue-green cactus, growing in clustered bulbs resembling caterpillar cocoons, is known to contain strong psychoactive alkaloids. 
+Types: Gas, Poison
+Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw or be stricken with hallucinations until the start of its next turn. When the target makes an attack roll while under the effects of this gas, it must succeed on an Intelligence saving throw or choose a new target for the attack. If no other valid target is available, the attack automatically misses.
+Poison: The target must succeed on a Constitution saving throw or be stricken with hallucinations for TIME2-4TIME turns. When the target makes an attack roll while under the effects of this poison, it must succeed on an Intelligence saving throw or choose a new target for the attack. If no other valid target is available, the attack automatically misses.
