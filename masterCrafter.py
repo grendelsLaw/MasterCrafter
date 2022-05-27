@@ -73,10 +73,10 @@ amplify=False):
             if ticker%2==0:
                 spot=i.split("-")
                 low_number=int(spot[0])
-                high_number=int(spot[1])+mat_boost
-                theNumber=round(rand.randint(low_number, high_number)+((amp*rand.randint(1, 20))+proficiency_boost+damage_boost_number)/20)
+                high_number=int(spot[1])+mat_boost+1
+                theNumber=round(rand.randint(low_number, high_number)+((amp*rand.randint(1, 21))+proficiency_boost+damage_boost_number)/20)
                 if damage_boost!=True:
-                    theNumber=int(rand.randint(low_number, high_number)+((amp*rand.randint(1, 20))/20))
+                    theNumber=int(rand.randint(low_number, high_number)+((amp*rand.randint(1, 21))/20))
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
@@ -92,10 +92,10 @@ amplify=False):
             if ticker%2==0:
                 spot=i.split("-")
                 low_number=int(spot[0])
-                high_number=int(spot[1])+mat_boost
-                theNumber=round(rand.randint(low_number, high_number)+((amp*rand.randint(1, 20))+proficiency_boost+time_boost_number)/20)
+                high_number=int(spot[1])+mat_boost+1
+                theNumber=round(rand.randint(low_number, high_number)+((amp*rand.randint(1, 21))+proficiency_boost+time_boost_number)/20)
                 if time_boost!=True:
-                    theNumber=int(rand.randint(low_number, high_number)+(amp*rand.randint(1, 20))/20)
+                    theNumber=int(rand.randint(low_number, high_number)+(amp*rand.randint(1, 21))/20)
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
@@ -111,10 +111,10 @@ amplify=False):
             if ticker%2==0:
                 spot=i.split("-")
                 low_number=int(spot[0])
-                high_number=int(spot[1])+mat_boost
-                theNumber=5*(round(rand.randint(low_number, high_number)+5*(((amp*rand.randint(1, 20))+proficiency_boost+distance_boost_number)/20))//5)
+                high_number=int(spot[1])+mat_boost+1
+                theNumber=5*(round(rand.randint(low_number, high_number)+5*(((amp*rand.randint(1, 21))+proficiency_boost+distance_boost_number)/20))//5)
                 if distance_boost!=True:
-                    theNumber==5*(int(rand.randint(low_number, high_number)+5*(((amp*rand.randint(1, 20)))/20))//5)
+                    theNumber==5*(int(rand.randint(low_number, high_number)+5*(((amp*rand.randint(1, 21)))/20))//5)
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
