@@ -1,5 +1,5 @@
 Name: Frenn Moss
-Description: A blue-gray moss that grows in swamps and marshes. VALUE1-10VALUE GP
+Description: A blue-gray moss that grows in swamps and marshes. VALUE1-5VALUE GP
 Types: Poison, Nebulizer
 Poison: Damage that the creature would take from a source that deals poison damage is increased by DAMAGE1-4DAMAGE.
 Nebulizer: May cause a backfire.
