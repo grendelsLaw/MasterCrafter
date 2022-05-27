@@ -35,9 +35,9 @@ backfire_type = ["Volatile", "Nebulizer"]
 
 subclass_types={
 "Novice":"Novice:\n\nYou know little but are eager. With your learning you know just enough to be dangerous. To your enemies, to your allies, and to yourself...",
-"Damage specialist": "Damage specialist:\n\nAfter years of study, you've found ways to sneak pain into very contraption you make.\n\nYou can alter the number of dice to be rolled. Potency assignations can round up and your proficiency score is added to your rolls.",
-"Duration specialist": "Duration specialist:\n\nDespite multiple setbacks, you've learned how to sustain and spread effects. \n\nTime and distance rolls for your creations can round up and your proficiency score is added to radnom time/distance rolls.",
-"Holistic crafter": "Holistic crafter:\n\nWhile other's see components as merely the 'means to an end', you understand that every component add its own unique function. \n\nAn additional effect, if possible, is added to ever item you craft.",
+"Damage specialist": "Damage specialist:\n\nAfter years of study, you've found ways to sneak pain into every contraption you make.\n\nYou can alter the number of dice to be rolled. Potency assignations can round up and your proficiency score is added to your rolls.",
+"Duration specialist": "Duration specialist:\n\nDespite multiple setbacks, you've learned how to sustain and spread effects. \n\nTime and distance rolls for your creations can round up and your proficiency score is added to random time/distance rolls.",
+"Holistic crafter": "Holistic crafter:\n\nWhile other's see components as merely the 'means to an end', you understand that every component add its own unique function. \n\nAn additional effect, if possible, is added to every item you craft.",
 "Versatile crafter": "Versatile crafter:\n\nAlthough many squander efficiency in the opulance of the university, you've learned to make do with less. \n\nYou do not need requirements to craft contraptions that require certain types.",
 "Careful crafter": "Careful crafter:\n\nAfter watching many of your peers succumb to carelessness, you've learned that the only old crafters are careful crafters. \n\nCreations you craft will not backfire.",
 "Perfectionist": "Perfectionist:\n\nSome crafters stop working after success but you've learned that practice makes perfect. \n\nYou are able to re-roll stats (for better or worse) when remaking known recipes."
@@ -140,7 +140,7 @@ def popup_select(text_choice, the_list,select_multiple=False):
 
 def popup_shop(text_choice, the_list,select_multiple=False):
     layout = [[sg.Text(text_choice)],
-    [sg.Listbox(the_list,key='_LIST_',size=(45,len(the_list)),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
+    [sg.Listbox(the_list,key='_LIST_',size=(45,20),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
     window = sg.Window('Select One',layout=layout)
     event, values = window.read()
     window.close()
@@ -504,17 +504,24 @@ while True:
         except:
             inventory_number=rand.randint(5, 10)
         inventory=[]
+        inv_names=[]
         while len(inventory)<inventory_number:
             hit=rand.randint(0,len(components)-1)
-            if component_list[hit] not in inventory:
+            if component_list[hit] not in inv_names:
+                inv_names.append(component_list[hit])
                 inv_desc=components[component_list[hit].lower()].description
                 if "VALUE" in inv_desc:
                     inv_desc=inv_desc.split("VALUE")
                     values=inv_desc[1].split("-")
-                    values=rand.randint(int(values[0]), int(values[1]))
+                    if len(values)<2:
+                        values=str(values[0])
+                    else:
+                        values=rand.randint(int(values[0]), int(values[1]))
+                        values=str(values)+" GP"
                 else:
                     values=rand.randint(1,20)
-                inventory.append(component_list[hit]+" - "+str(values)+" GP")
+                    values=str(values)+" GP"
+                inventory.append(component_list[hit]+" - "+values)
         tick=popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
 
     # Here's where the crafting/procerdual generating starts!

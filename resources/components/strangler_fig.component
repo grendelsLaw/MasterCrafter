@@ -1,6 +1,6 @@
 Name: Strangler Fig
-Description: A parasitic branching plant that grows on host trees, often resulting in the host's death. VALUE1-10VALUE gp
-Types: Gas, Poison, Nebulizer 
+Description: A parasitic branching plant that grows on host trees, often resulting in the host's death. VALUE1-10VALUE GP
+Types: Gas, Poison, Nebulizer
 Gas: Each creature that starts its turn or enters this gas must succeed on a Wisdom saving throw. On a failed save the target considers all creatures hostile and chooses targets to attack at random. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
 Poison: The next time the target casts a spell within TIME1-4TIME hours of being poisoned, they take DAMAGE1-3DAMAGEd6 force damage and must succeed on a Concentration check or the spell fails.
 Nebulizer: May cause a backfire.
