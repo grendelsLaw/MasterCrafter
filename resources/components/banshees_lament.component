@@ -1,4 +1,5 @@
 Name: Banshee's Lament
 Description: A plant with leaf rosettes and bright, vibrant colours, with either blooms or inflorescence being produced on a stalk. The color varies between blue and pink. VALUE1-10VALUE GP
-Types: Bomb
+Types: Bomb, Poison, Volatile
 Bomb: Each creature in the bomb area must make a Wisdom Saving Throw. A target takes DAMAGE1-3DAMAGEd6 psychic damage on a failed save, or half as much damage on a successful one.
+Poison: When the creature makes a ranged attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll. 
