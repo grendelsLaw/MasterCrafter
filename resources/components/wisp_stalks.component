@@ -4,3 +4,4 @@ Types: Bomb, Potion, Volatile
 Bomb: Creatures within DISTANCE5-20DISTANCE feet of the radius are subjected to the bomb's effect as if they were within the affected area.
 Potion: Melee attacks made with a metallic weapon deal an extra DAMAGE1-5DAMAGE lightning damage on a hit while under the effects of this potion.
 Potion: Cures Paralyzed status.
+Volatile: May cause a backfire.
