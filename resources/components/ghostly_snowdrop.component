@@ -3,3 +3,4 @@ Description: A tiny plant with two linear leaves and a single small semi-translu
 Types: Bomb, Poison, Volatile
 Bomb: A dense fog appears in the area, obscuring vision for TIME2-4TIME turns or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.
 Poison: Damage that the creature would take from a source that deals necrotic damage is increased by DAMAGE1-4DAMAGE.
+Volatile: May cause a backfire.

@@ -1,0 +1,4 @@
+Name: Item
+Description: A standard, nonmagical item
+Types: Item
+Item: Required for equipment enchantments.

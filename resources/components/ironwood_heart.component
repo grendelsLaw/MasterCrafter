@@ -3,3 +3,4 @@ Description: The dark heartwood of an Ironwood tree, smells not unlike an active
 Types: Bomb, Potion, Volatile
 Bomb: Throws shrapnel dealing DAMAGE1-5DAMAGEd4 piercing damage to a creature within DISTANCE5-20DISTANCE feet of impact.
 Potion: Grants resistance to nonmagical slashing and bludgeoning damage for 1 minute.
+Volatile: May cause a backfire.

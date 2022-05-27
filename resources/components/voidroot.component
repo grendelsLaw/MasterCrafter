@@ -1,6 +1,7 @@
 Name: Voidroot
-Description: These jet-black seeds seem to absorb surrounding light, giving them a darker-than-life appearance. Caution should be taken when preparing elixirs, as mishandling can leave ones-self susceptible to a fugue-like state of crushing despair. VALUE20-30VALUE GP
-Types: Gas, Poison, Potion
+Description: These jet-black seeds seem to absorb surrounding light, giving them a darker-than-life appearance. Caution should be taken when preparing elixirs, as mishandling can leave ones-self susceptible to a fugue-like state of crushing despair. VALUE25-35VALUE GP
+Types: Gas, Poison, Potion, Stabilizer
 Gas: The area within this gas is pitch-black, as if under the effects of the Darkness spell, for the duration.
 Poison: A creature exposed to this poison must succeed on a Constitution Saving Throw or become Stunned. The creature may repeat this saving throw at the end of each of its turns, ending this effect on a success. If the creature takes damage from any source, this effect immediately ends.
 Potion: Cures one level of Exhaustion.
+Stabilizer: Reduces the chance of spontaneous detonation.
