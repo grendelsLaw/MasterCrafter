@@ -504,14 +504,19 @@ while True:
         except:
             inventory_number=rand.randint(5, 10)
         inventory=[]
+        inv_names=[]
         while len(inventory)<inventory_number:
             hit=rand.randint(0,len(components)-1)
-            if component_list[hit] not in inventory:
+            if component_list[hit] not in inv_names:
+                inv_names.append(component_list[hit])
                 inv_desc=components[component_list[hit].lower()].description
                 if "VALUE" in inv_desc:
                     inv_desc=inv_desc.split("VALUE")
                     values=inv_desc[1].split("-")
-                    values=rand.randint(int(values[0]), int(values[1]))
+                    if len(values)<2:
+                        values=values[0]
+                    else:
+                        values=rand.randint(int(values[0]), int(values[1]))
                 else:
                     values=rand.randint(1,20)
                 inventory.append(component_list[hit]+" - "+str(values)+" GP")
