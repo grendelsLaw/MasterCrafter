@@ -1,4 +1,4 @@
 Name: Ebrium Fungus
 Description: A brown fungus which is known by its strong odor and potent poison when dried and ground. VALUE1-10VALUE GP
 Types: Poison
-Poison: When the creature makes a Strength ability check or saving throw, it has a DAMAGE1-4DAMAGE penalty to that roll.
+Poison: When the creature makes a Strength ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
