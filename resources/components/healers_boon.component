@@ -1,4 +1,4 @@
 Name: Healer's Boon
-Description: A medicinal red herb that grows near freshwater sources like rivers and lakes. VALUE1-10VALUE GP
+Description: A medicinal red herb that grows near freshwater sources like rivers and lakes. VALUE5-15VALUE GP
 Types: Potion, Stabilizer
 Potion: When you drink this potion, you regain DAMAGE1-4DAMAGEd4 + 4 hit points.
