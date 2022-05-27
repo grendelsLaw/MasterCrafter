@@ -1,5 +1,5 @@
 Name: Spineflower Berries
 Description: These tiny purple-brown berries grow in the center of the Spineflower, a rare plant with sharp petals and a stem filled with spines. VALUE1-10VALUE GP
-Types: Bomb, Potion, Volaile
+Types: Bomb, Potion, Volatile
 Bomb: Each creature within the bomb's area must succeed on a Dexterity Saving Throw or take DAMAGE1-4DAMAGEd4 piercing damage.
 Potion: When you make a Charisma ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
