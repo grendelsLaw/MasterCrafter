@@ -1,5 +1,5 @@
 Name: Blue Toadshade
-Description: Contrary to its name, this white mushroom has a relatively slender cap which gently vaporizes liquid in the immediate area, causing them to generally be found within small, localized clouds. VALUE10-20VALUE GP
-Types: Gas, Potion
+Description: Contrary to its name, this white mushroom has a relatively slender cap which gently vaporizes liquid in the immediate area, causing them to generally be found within small, localized clouds. VALUE1-10VALUE GP
+Types: Gas, Potion, Volatile
 Gas: Effects repeat for an extra TIME2-4TIME rounds for creatures remaining in the gas until it dissipates.
 Potion: A creature ingesting this potion fades from the material plane, as if under the effects of the Etherealness spell, for one minute.
