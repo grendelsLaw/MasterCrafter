@@ -1,6 +1,6 @@
 Name: Radiant Synthseed
 Description: These crystals vibrate at soothing harmonic frequencies when exposed to natural sunlight. When crushed, the powder make a delightfully invigorating snuff. VALUE20-30VALUE GP
 Types: Bomb, Gas, Potion
-Bomb: Double the number of all damage dice.
+Bomb: Double the number of all damage dice for this bomb.
 Gas: Creatures within this gas have advantage on saving throws against being Charmed or Frightened, and cannot be put to sleep magically.
 Potion: A creature ingesting this potion gains advantage on Charisma checks and saving throws for one minute.
