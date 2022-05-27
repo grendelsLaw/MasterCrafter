@@ -140,7 +140,7 @@ def popup_select(text_choice, the_list,select_multiple=False):
 
 def popup_shop(text_choice, the_list,select_multiple=False):
     layout = [[sg.Text(text_choice)],
-    [sg.Listbox(the_list,key='_LIST_',size=(45,len(the_list)),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
+    [sg.Listbox(the_list,key='_LIST_',size=(45,20),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
     window = sg.Window('Select One',layout=layout)
     event, values = window.read()
     window.close()
