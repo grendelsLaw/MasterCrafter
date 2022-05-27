@@ -520,7 +520,11 @@ while True:
                     inv_desc=inv_desc.split("VALUE")
                     values=inv_desc[1].split("-")
                     if len(values)<2:
-                        values=str(values[0])
+                        values=values[0]
+                        try:
+                            values=str(int(values))+" GP"
+                        except:
+                            values=str(values)
                     else:
                         values=rand.randint(int(values[0]), int(values[1]))
                         values=str(values)+" GP"
