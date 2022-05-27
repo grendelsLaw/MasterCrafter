@@ -59,7 +59,12 @@ time_boost_number=0,
 distance_boost=False,
 distance_boost_number=0,
 amplify=False):
+    mat_boost=int((len(materials)-2)/2)
     new_desc=first_desc
+    if amplify==True:
+        amp=2
+    else:
+        amp=1
     if "DAMAGE" in new_desc:
         new_desc=new_desc.split("DAMAGE")
         ticker=1
@@ -68,10 +73,10 @@ amplify=False):
             if ticker%2==0:
                 spot=i.split("-")
                 low_number=int(spot[0])
-                high_number=int(spot[1])
-                theNumber=round(rand.randint(low_number, high_number)+(rand.randint(1, 20)+proficiency_boost+damage_boost_number)/20)
+                high_number=int(spot[1])+mat_boost
+                theNumber=round(rand.randint(low_number, high_number)+((amp*rand.randint(1, 20))+proficiency_boost+damage_boost_number)/20)
                 if damage_boost!=True:
-                    theNumber=int(rand.randint(low_number, high_number)+rand.randint(1, 20)/20)
+                    theNumber=int(rand.randint(low_number, high_number)+((amp*rand.randint(1, 20))/20))
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
@@ -87,10 +92,10 @@ amplify=False):
             if ticker%2==0:
                 spot=i.split("-")
                 low_number=int(spot[0])
-                high_number=int(spot[1])
-                theNumber=round(rand.randint(low_number, high_number)+(rand.randint(1, 20)+proficiency_boost+time_boost_number)/20)
+                high_number=int(spot[1])+mat_boost
+                theNumber=round(rand.randint(low_number, high_number)+((amp*rand.randint(1, 20))+proficiency_boost+time_boost_number)/20)
                 if time_boost!=True:
-                    theNumber=int(rand.randint(low_number, high_number)+rand.randint(1, 20)/20)
+                    theNumber=int(rand.randint(low_number, high_number)+(amp*rand.randint(1, 20))/20)
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
@@ -106,10 +111,10 @@ amplify=False):
             if ticker%2==0:
                 spot=i.split("-")
                 low_number=int(spot[0])
-                high_number=int(spot[1])
-                theNumber=5*(round(rand.randint(low_number, high_number)+5*((rand.randint(1, 20)+proficiency_boost+distance_boost_number)/20))//5)
+                high_number=int(spot[1])+mat_boost
+                theNumber=5*(round(rand.randint(low_number, high_number)+5*(((amp*rand.randint(1, 20))+proficiency_boost+distance_boost_number)/20))//5)
                 if distance_boost!=True:
-                    theNumber==5*(int(rand.randint(low_number, high_number)+5*((rand.randint(1, 20))/20))//5)
+                    theNumber==5*(int(rand.randint(low_number, high_number)+5*(((amp*rand.randint(1, 20)))/20))//5)
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
@@ -249,6 +254,7 @@ for i in recipe_files:
                         [name_i],
                         {}
                         )
+                        modifiers.append(j)
                         components[j.lower()]=new_comp
         except:
             print("Unable to parse file: "+i)
@@ -578,6 +584,10 @@ while True:
                 if i not in modifiers:
                     small_type_pool.append(i)
 
+            if "Amplifier" in type_pool:
+                amp_it=True
+            else:
+                amp_it=False
 #            print(type_pool)
 #            print(small_type_pool)
 
@@ -633,8 +643,7 @@ while True:
                                         break
                                     mat_count+=1
 
-
-                            desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                            desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
                             recipes[selected_name].description=desc_desc
                             write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                             for i in materials:
@@ -754,7 +763,7 @@ while True:
                                             mat_count+=1
 
 
-                                    desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                                    desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
                                     recipes[selected_name].description=desc_desc
                                     write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                                     for i in materials:
@@ -849,7 +858,7 @@ while True:
                                         mat_count+=1
 
 
-                                desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                                desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
 
                                 description="New "+desc_name.lower()+"\n\n"+desc_desc+"\n\nRequired components:"
                                 for i in materials:
@@ -956,7 +965,7 @@ while True:
                                     mat_count+=1
 
 
-                            desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                            desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
 
                             description="New "+desc_name.lower()+"\n\n"+desc_desc+"\n\nSpecific requirements:"
                             desc_requirements=list(set(desc_requirements))
