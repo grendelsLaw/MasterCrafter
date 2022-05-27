@@ -1,0 +1,4 @@
+Name: Wolf Hair
+Description: A pale gray moss that looks and feels like fur, which grows on trees and rocks in temperate environments. VALUE1-10VALUE GP
+Types: Poison
+Poison: Damage that the creature would take from a source that deals thunder damage is increased by DAMAGE1-4DAMAGE.

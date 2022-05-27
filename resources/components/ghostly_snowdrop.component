@@ -1,0 +1,5 @@
+Name: Ghostly Snowdrop
+Description: A tiny plant with two linear leaves and a single small semi-translucent white drooping bell-shaped flower with blue markings. VALUE10-20VALUE GP
+Types: Bomb, Poison
+Bomb: A dense fog appears in the area, obscuring vision for TIME2-4TIME turns or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.
+Poison: Damage that the creature would take from a source that deals necrotic damage is increased by DAMAGE1-4DAMAGE.

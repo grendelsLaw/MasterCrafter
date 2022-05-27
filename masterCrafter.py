@@ -23,15 +23,29 @@ list_type="components"
 
 # Modifier tags - these gets skipped when assessing type
 # Add requirement tags here as well
-modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon"]
+modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor"]
 
 # Types that get effects by default
 # Add type here if you want a random effect to always be added to that type
-types_w_effects=["Potion", "Gas", "Magic weapon", "Poison"]
+types_w_effects=["Potion", "Gas", "Magic weapon", "Poison", "Magic armor"]
 
 # Backfire tags
 # Add Modifier tag that you wish to possibly explode as soon its made
 backfire_type = ["Volatile", "Nebulizer"]
+
+subclass_types={
+"Novice":"Novice:\n\nYou know little but are eager. With your learning you know just enough to be dangerous. To your enemies, to your allies, and to yourself...",
+"Damage specialist": "Damage specialist:\n\nAfter years of study, you've found ways to sneak pain into very contraption you make.\n\nDamage assignations can round up and your proficiency score is added to your random damage rolls.",
+"Duration specialist": "Duration specialist:\n\nDespite multiple setbacks, you've learned how to sustain and spread effects. \n\nTime and distance rolls for your creations can round up and your proficiency score is added to radnom time/distance rolls.",
+"Holistic crafter": "Holistic crafter:\n\nWhile other's see components as merely the 'means to an end', you understand that every component add its own unique function. \n\nAn additional effect, if possible, is added to ever item you craft.",
+"Versatile crafter": "Versatile crafter:\n\nAlthough many squander efficiency in the opulance of the university, you've learned to make do with less. \n\nYou do not need requirements to craft contraptions that require certain types.",
+"Careful crafter": "Careful crafter:\n\nAfter watching many of your peers succumb to carelessness, you've learned that the only old crafters are careful crafters. \n\nCreations you craft will not backfire.",
+"Perfectionist": "Perfectionist:\n\nSome crafters stop working after success but you've learned that practice makes perfect. \n\nYou are able to re-roll stats (for better or worse) when remaking known recipes."
+}
+
+sub_names=[]
+for i in subclass_types:
+    sub_names.append(i)
 
 #-------------------------------------------------------------------------------
 
@@ -55,9 +69,9 @@ amplify=False):
                 spot=i.split("-")
                 low_number=int(spot[0])
                 high_number=int(spot[1])
-                theNumber=int(1+rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+damage_boost_number))/20)
+                theNumber=round(rand.randint(low_number, high_number)+(rand.randint(1, 20)+proficiency_boost+damage_boost_number)/20)
                 if damage_boost!=True:
-                    theNumber=low_number
+                    theNumber=int(rand.randint(low_number, high_number)+rand.randint(1, 20)/20)
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
@@ -74,9 +88,9 @@ amplify=False):
                 spot=i.split("-")
                 low_number=int(spot[0])
                 high_number=int(spot[1])
-                theNumber=int(1+rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+time_boost_number))/20)
+                theNumber=round(rand.randint(low_number, high_number)+(rand.randint(1, 20)+proficiency_boost+time_boost_number)/20)
                 if time_boost!=True:
-                    theNumber=low_number
+                    theNumber=int(rand.randint(low_number, high_number)+rand.randint(1, 20)/20)
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
@@ -93,15 +107,21 @@ amplify=False):
                 spot=i.split("-")
                 low_number=int(spot[0])
                 high_number=int(spot[1])
-                theNumber=5*(1+int(rand.randint(low_number, high_number)*((rand.randint(1, 21)+proficiency_boost+distance_boost_number))/20)//5)
+                theNumber=5*(round(rand.randint(low_number, high_number)+5*((rand.randint(1, 20)+proficiency_boost+distance_boost_number)/20))//5)
                 if distance_boost!=True:
-                    theNumber=low_number
+                    theNumber==5*(int(rand.randint(low_number, high_number)+5*((rand.randint(1, 20))/20))//5)
                 if read_only:
                     theNumber=str(low_number)+"-"+str(high_number)
                 desc+=str(theNumber)
             else:
                 desc+=i
             ticker+=1
+        new_desc=desc
+    if "VALUE" in new_desc:
+        new_desc=new_desc.split("VALUE")
+        desc=""
+        for i in new_desc:
+            desc+=i
         new_desc=desc
     return new_desc
 
@@ -117,6 +137,14 @@ def popup_select(text_choice, the_list,select_multiple=False):
         return values['_LIST_'][0]
     else:
         return the_list[0]
+
+def popup_shop(text_choice, the_list,select_multiple=False):
+    layout = [[sg.Text(text_choice)],
+    [sg.Listbox(the_list,key='_LIST_',size=(45,len(the_list)),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
+    window = sg.Window('Select One',layout=layout)
+    event, values = window.read()
+    window.close()
+    del window
 
 
 #------------------------------------------------------------------------------
@@ -285,7 +313,8 @@ material_entry_column = [
     sg.In(size=(10, 2), key="-search_key-"),
     sg.Button("Components"),
     sg.Button("Types"),
-    sg.Button("Known recipes")
+    sg.Button("Known recipes"),
+    sg.Button("Subclasses")
 ]
 # Second column has the first listbox, which you can select items to check characteristics,
 # and the second listbox, which shows you list items you've selected, as well as the artifice button
@@ -322,8 +351,9 @@ layout=[
     all_submitted_column,
     [sg.Text("Added proficiency score:"),
     sg.In(size=(15,1), key="-prof-"),
-    sg.Button("Artifice!"),],
-    item_description,
+    sg.Button("Artifice!"),
+    sg.Button("Shop")],
+    item_description
 ]
 window=sg.Window("Artificing made easy!", layout)
 
@@ -395,6 +425,10 @@ while True:
         materials.remove(values["-lb_2-"][0])
         window["-lb_2-"].update(materials)
 
+    elif event=="Subclasses":
+        list_type="subclass"
+        window["-lb_1-"].update(sub_names)
+
 # This code will pull the descriptions of compone, item types, or recipes selected in the box
     elif event=="-lb_1-":
         selected_name=values["-lb_1-"][0].lower()
@@ -411,6 +445,14 @@ while True:
 
             description=roll_desc(description, True)
 
+            window["-item_description_2-"].update(description)
+            if selected_name+".png" in images_list:
+                window["-item_image-"].update("resources/images/"+selected_name+".png")
+            else:
+                window["-item_image-"].update("resources/images/general_component.png")
+
+        elif list_type=="subclass" and selected_name.capitalize() in subclass_types:
+            description=subclass_types[selected_name.capitalize()]
             window["-item_description_2-"].update(description)
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
@@ -453,6 +495,27 @@ while True:
                 window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
             else:
                 window["-item_image-"].update("resources/images/success.png")
+
+    elif event=="Shop":
+        total_components=len(components)
+        inventory_number=sg.popup_get_text("How many items would you like? ("+str(total_components)+" available, 5-10 as default.)")
+        try:
+            inventory_number=int(inventory_number)
+        except:
+            inventory_number=rand.randint(5, 10)
+        inventory=[]
+        while len(inventory)<inventory_number:
+            hit=rand.randint(0,len(components)-1)
+            if component_list[hit] not in inventory:
+                inv_desc=components[component_list[hit].lower()].description
+                if "VALUE" in inv_desc:
+                    inv_desc=inv_desc.split("VALUE")
+                    values=inv_desc[1].split("-")
+                    values=rand.randint(int(values[0]), int(values[1]))
+                else:
+                    values=rand.randint(1,20)
+                inventory.append(component_list[hit]+" - "+str(values)+" GP")
+        tick=popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
 
     # Here's where the crafting/procerdual generating starts!
     elif event=="Artifice!":
@@ -698,20 +761,18 @@ while True:
                                     for i in desc_components:
                                         description+="\n   -"+i
 
-                                else:
-                                    description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
-                                    for i in desc_components:
-                                        description+="\n   -"+i
+                            else:
+                                description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
+                                for i in desc_components:
+                                    description+="\n   -"+i
 
-                                window["-item_description_2-"].update(description)
-
-                                if selected_name+".png" in images_list:
-                                    window["-item_image-"].update("resources/images/"+selected_name+".png")
-                                elif "resources/images/"+desc_types.lower()+".png" in images_list:
-                                    window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
-                                else:
-                                    window["-item_image-"].update("resources/images/success.png")
-
+                            window["-item_description_2-"].update(description)
+                            if selected_name+".png" in images_list:
+                                window["-item_image-"].update("resources/images/"+selected_name+".png")
+                            elif "resources/images/"+desc_types.lower()+".png" in images_list:
+                                window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
+                            else:
+                                window["-item_image-"].update("resources/images/success.png")
                                 for bkf in backfire_type:
                                     if bkf in reduntant_type_pool:
                                         for vol in reduntant_type_pool:
@@ -719,19 +780,18 @@ while True:
                                                 reduntant_type_pool.remove(bkf)
                                                 reduntant_type_pool.remove("Stabilizer")
                                 for bkf in backfire_type:
-    #                                print(reduntant_type_pool)
+#                                   print(reduntant_type_pool)
                                     if bkf in reduntant_type_pool and values["-subclass_care-"] == False:
                                         backfire=reduntant_type_pool[rand.randint(0,len(reduntant_type_pool)-1)]
-    #                                    print(backfire)
-                                        if backfire in backfire_type:
-                                            sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
-                                        else:
-                                            sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
-                                        break
+#                                    print(backfire)
+                                    if backfire in backfire_type:
+                                        sg.Popup("Something went wrong! Your contraption activates immediately originating at your position.")
                                     else:
-                                        if bkf==backfire_type[len(backfire_type)-1]:
-                                            sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
-
+                                        sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
+                                    break
+                                else:
+                                    if bkf==backfire_type[len(backfire_type)-1]:
+                                        sg.Popup("Your "+desc_types.lower()+" was successfully created with no issues!")
 
                         # If the user decides to tinker, then a different type is explored
                         elif choice=="Tinker":
@@ -818,7 +878,7 @@ while True:
                                     recipe_keys=[]
                                     recipe_values=[]
                                     for i in recipes:
-                                        recipe_keys.append(recipes[i].name)
+                                        recipe_.append(recipes[i].name)
                                         hit_value=recipes[i].components
                                         hit_value.sort()
                                         recipe_values.append(hit_value)

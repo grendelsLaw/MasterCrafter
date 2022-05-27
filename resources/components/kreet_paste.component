@@ -1,0 +1,4 @@
+Name: Kreet Paste
+Description: A thick viscous fluid extracted from a Kreet mushroom, found in cold, damp environments. VALUE1-10VALUE GP
+Types: Potion
+Potion: Damage that you would take from sources that deal lightning damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.

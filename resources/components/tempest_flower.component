@@ -1,0 +1,4 @@
+Name: Tempest Flower
+Description: A plant that grows up to 10 feet tall, with simple or branched stems. The leaves are spirally arranged and the flowers are produced in daisy-like inforlescences, with yellow and orange florets arranged in a prominent, cone-shaped head. VALUE1-10VALUE GP
+Types: Bomb
+Bomb: Each creature in the bomb area must make a Constitution Saving Throw. A target takes DAMAGE1-3DAMAGEd6 thunder damage on a failed save, or half as much damage on a successful one.
