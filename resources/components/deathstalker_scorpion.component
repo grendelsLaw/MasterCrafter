@@ -4,3 +4,4 @@ Types: Bomb, Gas, Poison, Volatile
 Bomb: Each creature within the bomb's area of effect must succeed on a Dexterity saving throw or take DAMAGE1-4DAMAGEd4 poison damage and become paralyzed for TIME1-4TIME turns. On a successful save the target takes half damage and is not paralyzed.
 Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw or become paralyzed. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
 Poison: The target must succeed on a Constitution saving throw or take DAMAGE2-5DAMAGEd6 poison damage and become paralyzed for TIME2-5TIME turns. On a successful save the target takes half damage and is not paralyzed.
+Volatile: May cause backfire.
