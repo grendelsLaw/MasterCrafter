@@ -134,10 +134,10 @@ amplify=False):
 def popup_select(text_choice, the_list,select_multiple=False):
     layout = [[sg.Text(text_choice)],
     [sg.Listbox(the_list,key='_LIST_',size=(45,len(the_list)),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
-    window = sg.Window('Select One',layout=layout)
-    event, values = window.read()
-    window.close()
-    del window
+    window3 = sg.Window('Select One',layout=layout)
+    event, values = window3.read()
+    window3.close()
+    del window3
     if len(values['_LIST_']):
         return values['_LIST_'][0]
     else:
@@ -145,11 +145,42 @@ def popup_select(text_choice, the_list,select_multiple=False):
 
 def popup_shop(text_choice, the_list,select_multiple=False):
     layout = [[sg.Text(text_choice)],
-    [sg.Listbox(the_list,key='_LIST_',size=(45,20),select_mode='extended' if select_multiple else 'single',bind_return_key=True),sg.OK()]]
-    window = sg.Window('Select One',layout=layout)
-    event, values = window.read()
-    window.close()
-    del window
+    [sg.Listbox(the_list,key='_LIST_',size=(45,20),select_mode='extended' if select_multiple else 'single',bind_return_key=True),
+    [sg.Button("Add to player pocket"),
+    sg.Listbox(list(pocket.keys()), size=(10,3),key="-shop_name-"),
+    sg.OK(key="-OK-")]]]
+
+    window2 = sg.Window('Select One',layout=layout)
+    event2, values2 = window2.read()
+    while event2 != "-OK-":
+        event2, values2 = window2.read()
+        if event == "Exit" or event == sg.WIN_CLOSED:
+            break
+
+        elif event2 == "_LIST_" and len(values2["_LIST_"]):
+            selected_name=values2["_LIST_"][0].split(" - ")[0].lower()
+            desc_name=components[selected_name].name
+            desc_desc=components[selected_name].description
+            desc_types=components[selected_name].types
+            description=desc_name+"\n\n"+desc_desc
+            if len(components[selected_name].effects) > 0:
+                description=description+"\n\nTypes:"
+                for i in desc_types:
+                    description+="\n   -"+i+": "+components[selected_name].effects[i]
+            description=roll_desc(description, True)
+            window["-item_description_2-"].update(description)
+
+        elif event2=="Add to player pocket" and len(values2["_LIST_"]):
+            if len(values2["-shop_name-"]):
+                item_name=values2["_LIST_"][0].split(" - ")[0]
+                pocket[values2["-shop_name-"][0]].append(item_name)
+                pocket[values2["-shop_name-"][0]].sort()
+                if pocket_name==values2["-shop_name-"][0] and list_type=="pocket":
+                    pocket_now=pocket[pocket_name]
+                    window["-lb_1-"].update(pocket_now)
+
+    window2.close()
+    del window2
 
 
 #------------------------------------------------------------------------------
@@ -312,6 +343,32 @@ for i in types:
     type_list.append(types[i].name)
 
 #-------------------------------------------------------------------------------
+pocket={}
+temp_pocket=[]
+if ".pockets" in os.listdir():
+    pocket_file=open(".pockets", "r")
+    pocket_start=pocket_file.read()
+    pocket_file.close()
+    pocket_start=pocket_start.strip().split("-")
+    for i in pocket_start:
+        piq=[]
+        if len(i) >0:
+            pname=i.split("\n")
+            if len(pocket)==0:
+                pocket_name=pname[1].strip()
+            pocket[pname[1].strip()]=[]
+            for j in range(2, len(pname)):
+                if len(pname[j])>0:
+                    piq.append(pname[j])
+            if pocket_name==pname[1].strip():
+                pocket_now=piq
+            pocket[pname[1].strip()]=piq
+            pocket[pname[1].strip()].sort()
+else:
+    pocket_name="None"
+    pocket_now=[]
+
+#-------------------------------------------------------------------------------
 # Generate the columns
 # First column is the search box and buttons to toggle between components, recipes, and types
 material_entry_column = [
@@ -326,9 +383,10 @@ material_entry_column = [
 # and the second listbox, which shows you list items you've selected, as well as the artifice button
 all_submitted_column = [
     sg.Listbox(values=component_list, enable_events=True, size = (40,15), key="-lb_1-"),
-    [sg.Button("Add component"),
+    [[sg.Button("Add component"),
     sg.Button("Clear list"),
     sg.Button("Remove component")],
+    sg.Button("Add to pocket")],
     sg.Listbox(values=materials, size = (40,15), key="-lb_2-"),
 ]
 # Third column shows the item image and the procedurally generated description
@@ -341,13 +399,21 @@ item_description = [
 # This new column lets you select a artificing subtype. It may get switched to a checkbox system
 # depending on Shepherd's thoughts
 subclass_buttons=[
-    sg.Radio("Novice", "subclass", default=False, key = "-subclass_novice-"),
+    [sg.Radio("Novice", "subclass", default=False, key = "-subclass_novice-"),
     sg.Radio("Damage specialist", "subclass", default=False, key = "-subclass_damage-"),
     sg.Radio("Duration specialist", "subclass", default=False, key = "-subclass_duration-"),
-    sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-"),
-    sg.Radio("Versatile crafter", "subclass", default=False, key = "-subclass_versa-"),
+    sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-")],
+    [sg.Radio("Versatile crafter", "subclass", default=False, key = "-subclass_versa-"),
     sg.Radio("Careful crafter", "subclass", default=False, key = "-subclass_care-"),
-    sg.Radio("Perfectionist", "subclass", default=False, key = "-subclass_perf-")
+    sg.Radio("Perfectionist", "subclass", default=False, key = "-subclass_perf-")]
+]
+
+pockets_column=[
+    sg.In(pocket_name, size=(10, 2),key="-pocket-"),
+    sg.Button("View pocket"),
+    sg.Button("Switch pocket"),
+    sg.Button("Add new"),
+    sg.Button("Delete pocket")
 ]
 
 # Now all four columns get placed into a singlular layout, which gets called
@@ -359,7 +425,8 @@ layout=[
     sg.In(size=(15,1), key="-prof-"),
     sg.Button("Artifice!"),
     sg.Button("Shop")],
-    item_description
+    item_description,
+    pockets_column
 ]
 window=sg.Window("Artificing made easy!", layout)
 
@@ -394,6 +461,7 @@ while True:
                 if values["-search_key-"].lower() in recipes[i].name.lower():
                     search_list.append(recipes[i].name)
         # Finally, listbox 1 is updated with the search list
+        search_list.sort()
         window["-lb_1-"].update(search_list)
 
     #Switches list_type to components and updates listbox 1
@@ -411,6 +479,33 @@ while True:
         list_type="recipes"
         window["-lb_1-"].update(known_recipes)
 
+    # View the contents of current pocket
+    elif event=="View pocket":
+        list_type="pocket"
+        window["-lb_1-"].update(pocket_now)
+
+    elif event=="Switch pocket":
+        pocket[pocket_name]=pocket_now
+        if len(pocket):
+            try:
+                pocket_name=popup_select("Which pocket you would you like to explore:", list(pocket.keys()))
+            except:
+                pass
+            pocket_now=pocket[pocket_name]
+            window["-pocket-"].update(pocket_name)
+            if list_type=="pocket":
+                window["-lb_1-"].update(pocket_now)
+        else:
+            sg.Popup("There are no pockets! Try making one.")
+
+    elif event == "Add new":
+        pocket_name=sg.popup_get_text("What is player's name:")
+        pocket[pocket_name]=[]
+        pocket_now=pocket[pocket_name]
+        window["-pocket-"].update(pocket_name)
+        if list_type=="pocket":
+            window["-lb_1-"].update(pocket_now)
+
     # Adds selected components or selected recipes components to listbox 2 for artificing
     elif event=="Add component" and len(values["-lb_1-"]):
         for i in values["-lb_1-"]:
@@ -419,8 +514,31 @@ while True:
             elif i in recipe_keys and list_type=="recipes":
                 for j in recipes[i.lower()].components:
                     materials.append(j)
+            elif i in component_list and list_type=="pocket":
+                materials.append(i)
+                pocket_now.remove(i)
+                window["-lb_1-"].update(pocket_now)
         # Updates listbox 2
         window["-lb_2-"].update(materials)
+
+    elif event == "Add to pocket" and len(values["-lb_1-"]) and list_type=="components":
+        for i in values["-lb_1-"]:
+            pocket_now.append(i)
+            pocket_now.sort()
+
+    elif event == "Delete pocket":
+        try:
+            delet_name=popup_select("Which pocket should be deleted?", list(pocket.keys()))
+            actual_delete=sg.popup_yes_no("Are you sure you want to delete "+delet_name+"'s pocket?")
+            if actual_delete=="Yes":
+                if pocket_name==delet_name:
+                    pocket_name="None"
+                    pocket_now=[]
+                    window["-lb_1-"].update(pocket_now)
+                    window["-pocket-"].update(pocket_name)
+                    pocket.pop(delet_name)
+        except:
+            pass
 
     # Clears listbox 2 to refresh component selection
     elif event == "Clear list":
@@ -431,6 +549,10 @@ while True:
         materials.remove(values["-lb_2-"][0])
         window["-lb_2-"].update(materials)
 
+    elif event=="Remove component" and list_type=="pocket" and len(values["-lb_1-"]):
+        pocket_now.remove(values["-lb_1-"][0])
+        window["-lb_1-"].update(pocket_now)
+
     elif event=="Subclasses":
         list_type="subclass"
         window["-lb_1-"].update(sub_names)
@@ -439,7 +561,7 @@ while True:
     elif event=="-lb_1-":
         selected_name=values["-lb_1-"][0].lower()
 
-        if selected_name in components and list_type=="components":
+        if selected_name in components and (list_type=="components" or list_type=="pocket"):
             desc_name=components[selected_name].name
             desc_desc=components[selected_name].description
             desc_types=components[selected_name].types
@@ -537,6 +659,8 @@ while True:
     # Here's where the crafting/procerdual generating starts!
     elif event=="Artifice!":
 
+        pocket[pocket_name]=pocket_now
+
         # First, we determine what the user's crafting proficiency is.
         # If left blank, we assume 0
         if isinstance(values["-prof-"], str):
@@ -628,7 +752,7 @@ while True:
                                 while desc_name not in poss_effects:
                                     random_material=materials[rand.randint(0,len(materials)-1)]
                                     poss_effects=components[random_material.lower()].effects
-                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+                                desc_desc+="\n   -"+poss_effects[desc_types]
 
                             # If the item is a potion, a random component effect is added
 
@@ -643,7 +767,7 @@ while True:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                     else:
                                         poss_effects=components[random_material.lower()].effects
-                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+                                        desc_desc+="\n   -"+poss_effects[desc_types]
                                         break
                                     mat_count+=1
 
@@ -747,7 +871,7 @@ while True:
                                         while desc_name not in poss_effects:
                                             random_material=materials[rand.randint(0,len(materials)-1)]
                                             poss_effects=components[random_material.lower()].effects
-                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+                                        desc_desc+="\n   -"+poss_effects[desc_types]
 
                                     # If the item is a potion, a random component effect is added
                                     if desc_types in types_w_effects:
@@ -762,7 +886,7 @@ while True:
                                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                             else:
                                                 poss_effects=components[random_material.lower()].effects
-                                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_types]
+                                                desc_desc+="\n   -"+poss_effects[desc_types]
                                                 break
                                             mat_count+=1
 
@@ -844,7 +968,7 @@ while True:
                                     while desc_name not in poss_effects:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                         poss_effects=components[random_material.lower()].effects
-                                    desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+                                    desc_desc+="\n   -"+poss_effects[desc_name]
 
                                 # If the item is a potion, a random component effect is added
                                 if desc_name in types_w_effects:
@@ -857,7 +981,7 @@ while True:
                                             random_material=materials[rand.randint(0,len(materials)-1)]
                                         else:
                                             poss_effects=components[random_material.lower()].effects
-                                            desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+                                            desc_desc+="\n   -"+poss_effects[desc_name]
                                             break
                                         mat_count+=1
 
@@ -950,7 +1074,7 @@ while True:
                                     random_material=materials[rand.randint(0,len(materials)-1)]
                                     picked_material=random_material
                                     poss_effects=components[random_material.lower()].effects
-                                desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+                                desc_desc+="\n   -"+poss_effects[desc_name]
 
                             # If the item is a potion, a random component effect is added
                             if desc_name in types_w_effects:
@@ -964,7 +1088,7 @@ while True:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                     else:
                                         poss_effects=components[random_material.lower()].effects
-                                        desc_desc+="\n   -"+components[random_material.lower()].effects[desc_name]
+                                        desc_desc+="\n   -"+poss_effects[desc_name]
                                         break
                                     mat_count+=1
 
@@ -1071,44 +1195,61 @@ compo=open("components.txt", "w")
 compo.write(all_files)
 compo.close()
 
-all_files=""
-file_names=os.listdir("resources/types/")
-for i in file_names:
-    if i.endswith(".type"):
-        compo=open("resources/types/"+i, "r")
-        loaded_comp=compo.read()
-        compo.close()
+#all_files=""
+#file_names=os.listdir("resources/types/")
+#for i in file_names:#
+#    if i.endswith(".type"):
+#        compo=open("resources/types/"+i, "r")
+#        loaded_comp=compo.read()
+#        compo.close()
+#
+#        loaded_comp=loaded_comp.split("\n")
+#        for i in loaded_comp:
+#            if i == loaded_comp[0]:
+#                all_files+="**"+i+"**\n"
+#            elif i == loaded_comp[len(loaded_comp)-1]:
+#                all_files+=i+"\n\n\n"
+#            else:
+#                all_files+=i+"\n"
 
-        loaded_comp=loaded_comp.split("\n")
-        for i in loaded_comp:
-            if i == loaded_comp[0]:
-                all_files+="**"+i+"**\n"
-            elif i == loaded_comp[len(loaded_comp)-1]:
-                all_files+=i+"\n\n\n"
-            else:
-                all_files+=i+"\n"
+#compo=open("types.txt", "w")
+#compo.write(all_files)
+#compo.close()
 
-compo=open("types.txt", "w")
-compo.write(all_files)
-compo.close()
+#all_files=""
+#file_names=os.listdir("resources/recipes/")
+#for i in file_names:
+#    if i.endswith(".recipe"):
+#        compo=open("resources/recipes/"+i, "r")
+#        loaded_comp=compo.read()
+#        compo.close()
+#
+#        loaded_comp=loaded_comp.split("\n")
+#        for i in loaded_comp:
+#                all_files+="**"+i+"**\n"
+#            elif i == loaded_comp[len(loaded_comp)-1]:
+#                all_files+=i+"\n\n\n"
+#            else:
+#                all_files+=i+"\n"
 
-all_files=""
-file_names=os.listdir("resources/recipes/")
-for i in file_names:
-    if i.endswith(".recipe"):
-        compo=open("resources/recipes/"+i, "r")
-        loaded_comp=compo.read()
-        compo.close()
-
-        loaded_comp=loaded_comp.split("\n")
-        for i in loaded_comp:
-            if i == loaded_comp[0]:
-                all_files+="**"+i+"**\n"
-            elif i == loaded_comp[len(loaded_comp)-1]:
-                all_files+=i+"\n\n\n"
-            else:
-                all_files+=i+"\n"
-
-compo=open("recipes.txt", "w")
-compo.write(all_files)
-compo.close()
+#compo=open("recipes.txt", "w")
+#compo.write(all_files)
+#compo.close()
+if len(pocket)>0 and pocket_name != "None":
+    pocket_start=""
+    pocket_start+="-\n"+pocket_name+"\n"
+    for i in pocket_now:
+        pocket_start+=i+"\n"
+    if len(pocket)>1:
+        for i in pocket:
+            if i != "None":
+                pocket_start+="-\n"+i+"\n"
+                for j in pocket[i]:
+                    pocket_start+=j+"\n"
+    pocket_start+="-"
+    pocket_file=open(".pockets", "w")
+    pocket_file.write(pocket_start)
+    pocket_file.close()
+else:
+    if ".pockets" in os.listdir():
+        os.remove(".pockets")
