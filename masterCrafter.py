@@ -374,6 +374,7 @@ else:
 material_entry_column = [
     sg.Button("Search"),
     sg.In(size=(10, 2), key="-search_key-"),
+    sg.Push(),
     sg.Button("Components"),
     sg.Button("Types"),
     sg.Button("Known recipes"),
@@ -399,7 +400,7 @@ item_description = [
 # This new column lets you select a artificing subtype. It may get switched to a checkbox system
 # depending on Shepherd's thoughts
 subclass_buttons=[
-    [sg.Radio("Novice", "subclass", default=False, key = "-subclass_novice-"),
+    [sg.Radio("Novice", "subclass", default=True, key = "-subclass_novice-"),
     sg.Radio("Damage specialist", "subclass", default=False, key = "-subclass_damage-"),
     sg.Radio("Duration specialist", "subclass", default=False, key = "-subclass_duration-"),
     sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-")],
@@ -412,6 +413,7 @@ pockets_column=[
     sg.In(pocket_name, size=(10, 2),key="-pocket-"),
     sg.Button("View pocket"),
     sg.Button("Switch pocket"),
+    sg.Push(),
     sg.Button("Add new"),
     sg.Button("Delete pocket")
 ]
@@ -421,10 +423,11 @@ layout=[
     material_entry_column,
     subclass_buttons,
     all_submitted_column,
-    [sg.Text("Added proficiency score:"),
+    [sg.Button("Shop"),
+    sg.Push(),
+    sg.Text("Added proficiency score:"),
     sg.In(size=(15,1), key="-prof-"),
-    sg.Button("Artifice!"),
-    sg.Button("Shop")],
+    sg.Button("Artifice!")],
     item_description,
     pockets_column
 ]
