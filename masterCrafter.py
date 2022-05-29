@@ -389,11 +389,13 @@ material_entry_column = [
 # Second column has the first listbox, which you can select items to check characteristics,
 # and the second listbox, which shows you list items you've selected, as well as the artifice button
 all_submitted_column = [
-    sg.Listbox(values=component_list, enable_events=True, size = (40,15), key="-lb_1-"),
+    sg.Listbox(values=component_list, enable_events=True, size = (43,15), key="-lb_1-"),
     [sg.Button("Add component"),
-    sg.Button("Clear list"),
-    sg.Button("Remove component")],
-    sg.Listbox(values=materials, size = (40,15), key="-lb_2-"),
+    sg.Button("Remove component"),
+    sg.Push(),
+    sg.Button("Clear list"),],
+    sg.Push(),
+    sg.Listbox(values=materials, size = (43,15), key="-lb_2-"),
 ]
 # Third column shows the item image and the procedurally generated description
 main_font=("Arial bold", 11)
@@ -405,13 +407,17 @@ item_description = [
 # This new column lets you select a artificing subtype. It may get switched to a checkbox system
 # depending on Shepherd's thoughts
 subclass_buttons=[
-    [sg.Radio("Novice", "subclass", default=True, key = "-subclass_novice-"),
+    [sg.Push(),
+    sg.Radio("Novice", "subclass", default=True, key = "-subclass_novice-"),
     sg.Radio("Damage specialist", "subclass", default=False, key = "-subclass_damage-"),
     sg.Radio("Duration specialist", "subclass", default=False, key = "-subclass_duration-"),
-    sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-")],
-    [sg.Radio("Versatile crafter", "subclass", default=False, key = "-subclass_versa-"),
+    sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-"),
+    sg.Push()],
+    [sg.Push(),
+    sg.Radio("Versatile crafter", "subclass", default=False, key = "-subclass_versa-"),
     sg.Radio("Careful crafter", "subclass", default=False, key = "-subclass_care-"),
-    sg.Radio("Perfectionist", "subclass", default=False, key = "-subclass_perf-")]
+    sg.Radio("Perfectionist", "subclass", default=False, key = "-subclass_perf-"),
+    sg.Push()]
 ]
 
 pockets_column=[
