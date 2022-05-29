@@ -151,36 +151,42 @@ def popup_shop(text_choice, the_list,select_multiple=False):
     sg.OK(key="-OK-")]]]
 
     window2 = sg.Window('Select One',layout=layout)
-    event2, values2 = window2.read()
-    while event2 != "-OK-":
+    try:
         event2, values2 = window2.read()
-        if event == "Exit" or event == sg.WIN_CLOSED:
-            break
+        if event2 == "Exit" or event2 == sg.WIN_CLOSED:
+            window2.close()
+            del window2
+        while event2 != "-OK-":
+            event2, values2 = window2.read()
+            if event2 == "Exit" or event2 == sg.WIN_CLOSED:
+                break
 
-        elif event2 == "_LIST_" and len(values2["_LIST_"]):
-            selected_name=values2["_LIST_"][0].split(" - ")[0].lower()
-            desc_name=components[selected_name].name
-            desc_desc=components[selected_name].description
-            desc_types=components[selected_name].types
-            description=desc_name+"\n\n"+desc_desc
-            if len(components[selected_name].effects) > 0:
-                description=description+"\n\nTypes:"
-                for i in desc_types:
-                    description+="\n   -"+i+": "+components[selected_name].effects[i]
-            description=roll_desc(description, True)
-            window["-item_description_2-"].update(description)
+            elif event2 == "_LIST_" and len(values2["_LIST_"]):
+                selected_name=values2["_LIST_"][0].split(" - ")[0].lower()
+                desc_name=components[selected_name].name
+                desc_desc=components[selected_name].description
+                desc_types=components[selected_name].types
+                description=desc_name+"\n\n"+desc_desc
+                if len(components[selected_name].effects) > 0:
+                    description=description+"\n\nTypes:"
+                    for i in desc_types:
+                        description+="\n   -"+i+": "+components[selected_name].effects[i]
+                description=roll_desc(description, True)
+                window["-item_description_2-"].update(description)
 
-        elif event2=="Add to player pocket" and len(values2["_LIST_"]):
-            if len(values2["-shop_name-"]):
-                item_name=values2["_LIST_"][0].split(" - ")[0]
-                pocket[values2["-shop_name-"][0]].append(item_name)
-                pocket[values2["-shop_name-"][0]].sort()
-                if pocket_name==values2["-shop_name-"][0] and list_type=="pocket":
-                    pocket_now=pocket[pocket_name]
-                    window["-lb_1-"].update(pocket_now)
+            elif event2=="Add to player pocket" and len(values2["_LIST_"]):
+                if len(values2["-shop_name-"]):
+                    item_name=values2["_LIST_"][0].split(" - ")[0]
+                    pocket[values2["-shop_name-"][0]].append(item_name)
+                    pocket[values2["-shop_name-"][0]].sort()
+                    if pocket_name==values2["-shop_name-"][0] and list_type=="pocket":
+                        pocket_now=pocket[pocket_name]
+                        window["-lb_1-"].update(pocket_now)
 
-    window2.close()
-    del window2
+        window2.close()
+        del window2
+    except:
+        pass
 
 
 #------------------------------------------------------------------------------
@@ -384,10 +390,9 @@ material_entry_column = [
 # and the second listbox, which shows you list items you've selected, as well as the artifice button
 all_submitted_column = [
     sg.Listbox(values=component_list, enable_events=True, size = (40,15), key="-lb_1-"),
-    [[sg.Button("Add component"),
+    [sg.Button("Add component"),
     sg.Button("Clear list"),
     sg.Button("Remove component")],
-    sg.Button("Add to pocket")],
     sg.Listbox(values=materials, size = (40,15), key="-lb_2-"),
 ]
 # Third column shows the item image and the procedurally generated description
@@ -423,7 +428,9 @@ layout=[
     material_entry_column,
     subclass_buttons,
     all_submitted_column,
-    [sg.Button("Shop"),
+    [sg.Button("Add to pocket"),
+    sg.Push(),
+    sg.Button("Shop"),
     sg.Push(),
     sg.Text("Added proficiency score:"),
     sg.In(size=(15,1), key="-prof-"),
@@ -539,7 +546,7 @@ while True:
                     pocket_now=[]
                     window["-lb_1-"].update(pocket_now)
                     window["-pocket-"].update(pocket_name)
-                    pocket.pop(delet_name)
+                pocket.pop(delet_name)
         except:
             pass
 
@@ -1238,7 +1245,11 @@ compo.close()
 #compo=open("recipes.txt", "w")
 #compo.write(all_files)
 #compo.close()
-if len(pocket)>0 and pocket_name != "None":
+
+if pocket_name=="None" and len(pocket)>=1:
+    pocket_name=list(pocket.keys())[0]
+    pocket_now=pocket[pocket_name]
+if len(pocket)>0:
     pocket_start=""
     pocket_start+="-\n"+pocket_name+"\n"
     for i in pocket_now:
