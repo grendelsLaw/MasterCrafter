@@ -35,7 +35,7 @@ backfire_type = ["Volatile", "Nebulizer"]
 
 subclass_types={
 "Novice":"Novice:\n\nYou know little but are eager. With your learning you know just enough to be dangerous. To your enemies, to your allies, and to yourself...",
-"Damage specialist": "Damage specialist:\n\nAfter years of study, you've found ways to sneak pain into every contraption you make.\n\nYou can alter the number of dice to be rolled. Potency assignations can round up and your proficiency score is added to your rolls.",
+"Potency specialist": "Potency specialist:\n\nAfter years of study, you've found ways get the most 'boom' for the buck.\n\nYou can alter the number of dice to be rolled. Potency assignations can round up and your proficiency score is added to your rolls.",
 "Duration specialist": "Duration specialist:\n\nDespite multiple setbacks, you've learned how to sustain and spread effects. \n\nTime and distance rolls for your creations can round up and your proficiency score is added to random time/distance rolls.",
 "Holistic crafter": "Holistic crafter:\n\nWhile other's see components as merely the 'means to an end', you understand that every component add its own unique function. \n\nAn additional effect, if possible, is added to every item you craft.",
 "Versatile crafter": "Versatile crafter:\n\nAlthough many squander efficiency in the opulance of the university, you've learned to make do with less. \n\nYou do not need requirements to craft contraptions that require certain types.",
@@ -409,7 +409,7 @@ item_description = [
 subclass_buttons=[
     [sg.Push(),
     sg.Radio("Novice", "subclass", default=True, key = "-subclass_novice-"),
-    sg.Radio("Damage specialist", "subclass", default=False, key = "-subclass_damage-"),
+    sg.Radio("Potency specialist", "subclass", default=False, key = "-subclass_damage-"),
     sg.Radio("Duration specialist", "subclass", default=False, key = "-subclass_duration-"),
     sg.Radio("Holistic crafter", "subclass", default=False, key = "-subclass_holistic-"),
     sg.Push()],
