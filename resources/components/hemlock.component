@@ -1,5 +1,5 @@
 Name: Hemlock
-Description: This notoriously poisonous plant produces umbrella-like clusters of white flowers in warm, humid climates. It can be found in damp places such as ditches, riverbanks, and waste ground. VALUE10-20VALUE GP
+Description: This notoriously poisonous plant produces umbrella-like clusters of white flowers in warm, humid climates. It can be found in damp places such as ditches, riverbanks, and waste ground among swamps, plains, and forests. VALUE10-20VALUE GP
 Types: Gas, Poison
 Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw or be poisoned. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
 Poison: The target must succeed on a Constitution saving throw or be poisoned for TIME2-4TIME turns.
