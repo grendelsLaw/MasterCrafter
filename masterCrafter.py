@@ -51,7 +51,7 @@ subclass_types={
 "Versatile crafter": "Versatile crafter:\n\nAlthough many squander efficiency in the opulance of the university, you've learned to make do with less. \n\nYou do not need requirements to craft contraptions that require certain types.",
 "Careful crafter": "Careful crafter:\n\nAfter watching many of your peers succumb to carelessness, you've learned that the only old crafters are careful crafters. \n\nCreations you craft will not backfire.",
 "Perfectionist": "Perfectionist:\n\nSome crafters stop working after success but you've learned that practice makes perfect. \n\nYou are able to re-roll stats (for better or worse) when remaking known recipes.",
-"Forager": "Forager:\n\nWhile other crafter focus on the products, you have excelled at finding the components. \n\nWhen foraging, you are guaranteed to find at least one component and maye even find nonnative components."
+"Forager": "Forager:\n\nWhile other crafter focus on the products, you have excelled at finding the components. \n\nWhen foraging, you are guaranteed to find at least one component and may even find nonnative components."
 }
 
 sub_names=[]
@@ -783,6 +783,9 @@ while True:
                 else:
                     forage_pool=[]
                     trick=0
+                    if values["-subclass_for-"]==True:
+                        trick+=1
+                        forage_pool.append(component_list[rand.randint(0, len(components)-1)])
                     while trick < forage_found:
                         forage_pool.append(terrains[terrain_type][rand.randint(0,len(terrains[terrain_type])-1)])
                         trick+=1
