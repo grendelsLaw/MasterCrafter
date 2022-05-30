@@ -1,5 +1,5 @@
 Name: Wrackwort Bulbs
-Description: These bulbs smell faintly of burnt bread and broken dreams, releasing a cloud of fine particles when smashed. Under no circumstances should they be smashed in an enclosed environment. Found in deserts, swamps, and plains. VALUE1-5VALUE GP
+Description: These silver bulbs smell faintly of burnt bread and broken dreams, releasing a cloud of fine particles when smashed. Under no circumstances should they be smashed in an enclosed environment. Found in deserts, swamps, and plains. VALUE1-5VALUE GP
 Types: Gas, Nebulizer
 Gas: Creatures within this gas must succeed on a Wisdom Saving Throw or become Frightened and must use their Action on their next turn to Dash in a random direction. If a creature starts its turn within this gas while already under its effect, the creature becomes Incapacitated. A creature may repeat this saving throw at the end of each of its turns. Creatures outside of this gas have advantage on saving throws to end this effect.
 Nebulizer: May cause a backfire.
