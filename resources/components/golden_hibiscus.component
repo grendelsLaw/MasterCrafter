@@ -1,4 +1,4 @@
 Name: Golden Hibiscus
-Description: A plant with lanceolate leaves with a toothed margin and a large, trumpet-like yellow flower with five petals. VALUE1-10VALUE GP
+Description: A plant with lanceolate leaves with a toothed margin and a large, trumpet-like yellow flower with five petals. Commonly found in disturbed areas of deserts, plains, and coastal regions. VALUE1-10VALUE GP
 Types: Poison
 Poison: When the creature makes a Intelligence ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
