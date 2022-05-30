@@ -184,6 +184,10 @@ def popup_shop(text_choice, the_list,remove_item=False,select_multiple=False):
                         description+="\n   -"+i+": "+components[selected_name].effects[i]
                 description=roll_desc(description, True)
                 window["-item_description_2-"].update(description)
+                if selected_name+".png" in images_list:
+                    window["-item_image-"].update("resources/images/"+selected_name+".png")
+                else:
+                    window["-item_image-"].update("resources/images/general_component.png")
 
             elif event2=="Add to player pocket" and len(values2["_LIST_"]):
                 if len(values2["-shop_name-"]):
@@ -196,6 +200,8 @@ def popup_shop(text_choice, the_list,remove_item=False,select_multiple=False):
                         item_name=values2["_LIST_"][0]
                     pocket[values2["-shop_name-"][0]].append(item_name)
                     pocket[values2["-shop_name-"][0]].sort()
+                    secret_pocket[values2["-shop_name-"][0]].append(item_name)
+                    secret_pocket[values2["-shop_name-"][0]].sort()
                     if pocket_name==values2["-shop_name-"][0] and list_type=="pocket":
                         pocket_now=pocket[pocket_name]
                         window["-lb_1-"].update(pocket_now)
@@ -367,7 +373,7 @@ for i in types:
 
 #-------------------------------------------------------------------------------
 pocket={}
-temp_pocket=[]
+secret_pocket={}
 if ".pockets" in os.listdir():
     pocket_file=open(".pockets", "r")
     pocket_start=pocket_file.read()
@@ -380,6 +386,7 @@ if ".pockets" in os.listdir():
             if len(pocket)==0:
                 pocket_name=pname[1].strip()
             pocket[pname[1].strip()]=[]
+            secret_pocket[pname[1].strip()]=[]
             for j in range(2, len(pname)):
                 if len(pname[j])>0:
                     piq.append(pname[j])
@@ -387,6 +394,8 @@ if ".pockets" in os.listdir():
                 pocket_now=piq
             pocket[pname[1].strip()]=piq
             pocket[pname[1].strip()].sort()
+            secret_pocket[pname[1].strip()]=piq
+            secret_pocket[pname[1].strip()].sort()
 else:
     pocket_name="None"
     pocket_now=[]
@@ -531,7 +540,11 @@ while True:
     # View the contents of current pocket
     elif event=="View pocket":
         list_type="pocket"
+        pocket[pocket_name]=list(secret_pocket[pocket_name])
+        pocket_now=list(secret_pocket[pocket_name])
         window["-lb_1-"].update(pocket_now)
+        materials=[]
+        window["-lb_2-"].update(materials)
 
     elif event=="Switch pocket":
         pocket[pocket_name]=pocket_now
@@ -550,6 +563,7 @@ while True:
     elif event == "Add new":
         pocket_name=sg.popup_get_text("What is player's name:")
         pocket[pocket_name]=[]
+        secret_pocket[pocket_name]=[]
         pocket_now=pocket[pocket_name]
         window["-pocket-"].update(pocket_name)
         if list_type=="pocket":
@@ -574,6 +588,8 @@ while True:
         for i in values["-lb_1-"]:
             pocket_now.append(i)
             pocket_now.sort()
+            secret_pocket[pocket_name].append(i)
+            secret_pocket[pocket_name].sort()
 
     elif event == "Delete pocket":
         try:
@@ -586,6 +602,7 @@ while True:
                     window["-lb_1-"].update(pocket_now)
                     window["-pocket-"].update(pocket_name)
                 pocket.pop(delet_name)
+                secret_pocket.pop(delet_name)
         except:
             pass
 
@@ -599,8 +616,9 @@ while True:
         window["-lb_2-"].update(materials)
 
     elif event=="Remove component" and list_type=="pocket" and len(values["-lb_1-"]):
-        pocket_now.remove(values["-lb_1-"][0])
-        window["-lb_1-"].update(pocket_now)
+        pocket[pocket_name].remove(values["-lb_1-"][0])
+        secret_pocket[pocket_name].remove(values["-lb_1-"][0])
+        window["-lb_1-"].update(pocket[pocket_name])
 
     elif event=="Subclasses":
         list_type="subclass"
@@ -703,7 +721,7 @@ while True:
                     values=rand.randint(1,20)
                     values=str(values)+" GP"
                 inventory.append(component_list[hit]+" - "+values)
-        tick=popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
+        popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
 
 
     elif event=="Forage":
@@ -779,6 +797,7 @@ while True:
     elif event=="Craft!":
 
         pocket[pocket_name]=pocket_now
+        secret_pocket[pocket_name]=pocket_now
 
         # First, we determine what the user's crafting proficiency is.
         # If left blank, we assume 0
@@ -1291,7 +1310,7 @@ while True:
 
 
 window.close()
-
+pocket=secret_pocket
 
 all_files=""
 file_names=os.listdir("resources/components/")
@@ -1361,7 +1380,7 @@ if pocket_name=="None" and len(pocket)>=1:
 if len(pocket)>0:
     pocket_start=""
     pocket_start+="-\n"+pocket_name+"\n"
-    for i in pocket_now:
+    for i in pocket[pocket_name]:
         pocket_start+=i+"\n"
     if len(pocket)>1:
         for i in pocket:
