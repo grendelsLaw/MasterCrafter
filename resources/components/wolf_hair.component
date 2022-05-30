@@ -1,4 +1,4 @@
 Name: Wolf Hair
-Description: A pale gray moss that grows dull orange hairs which looks and feels like fur, growing on trees and rocks in temperate environments. Found in forests, plains, and hills. VALUE1-10VALUE GP
+Description: A pale gray moss that grows dull orange fibers which looks and feels like fur, growing on trees and rocks in temperate environments. Found in forests, plains, and hills. VALUE1-10VALUE GP
 Types: Poison
 Poison: Damage that the creature would take from a source that deals thunder damage is increased by DAMAGE1-4DAMAGE.
