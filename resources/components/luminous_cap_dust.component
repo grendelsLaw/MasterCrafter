@@ -1,5 +1,5 @@
 Name: Luminous Cap Dust
-Description: These spores glow with a sickly green light and tend to corrode anything they are in contact with for extended periods of time. Ensure proper protective precautions are taken, never handle directly. VALUE10-20VALUE GP
+Description: These spores glow with a sickly green light and tend to corrode anything they are in contact with for extended periods of time. Ensure proper protective precautions are taken, never handle directly. Commonly found in swamps, forests, and hills. VALUE10-20VALUE GP
 Types: Bomb, Gas
 Bomb: Creatures within the impact radius take DAMAGE1-5DAMAGEd4 acid damage on contact.
 Gas: Creatures within this gas glow brightly, as if under the effect of the Fairy Fire spell, for the duration.
