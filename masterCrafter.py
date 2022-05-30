@@ -785,7 +785,10 @@ while True:
                     trick=0
                     if values["-subclass_for-"]==True:
                         trick+=1
-                        forage_pool.append(component_list[rand.randint(0, len(components)-1)])
+                        nonnative=component_list[rand.randint(0, len(components)-1)]
+                        while "-" not in components[nonnative.lower()].description.split("VALUE")[1]:
+                            nonnative=component_list[rand.randint(0, len(components)-1)]
+                        forage_pool.append(nonnative)
                     while trick < forage_found:
                         forage_pool.append(terrains[terrain_type][rand.randint(0,len(terrains[terrain_type])-1)])
                         trick+=1
