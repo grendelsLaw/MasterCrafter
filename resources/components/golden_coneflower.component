@@ -1,5 +1,5 @@
 Name: Golden Coneflower
-Description: A plant that grows up to 4 feet tall with erect stems and leaves arranged alternately. The leaves are normally hairy with a rough texture, and the yellow flowers are collected together into single, rounded heads. VALUE10-20VALUE GP
+Description: A plant that grows up to 4 feet tall with erect stems and leaves arranged alternately. The leaves are normally hairy with a rough texture, and the yellow flowers are collected together into single, rounded heads. Can be found in hills and mountainous regions. VALUE10-20VALUE GP
 Types: Bomb, Potion
 Bomb: Each creature in the bomb area must make a Constitution Saving Throw. A target takes DAMAGE1-3DAMAGEd6 radiant damage on a failed save, or half as much damage on a successful one.
 Potion: Cures one disease.
