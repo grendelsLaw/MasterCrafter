@@ -7,7 +7,7 @@ import PySimpleGUI as sg
 import os.path
 import random as rand
 
-sg.theme("LightGrey1")
+sg.theme("DarkTanBlue")
 
 #-------------------------------------------------------------------------------
 
@@ -15,9 +15,19 @@ sg.theme("LightGrey1")
 # A list of the components
 materials=[]
 known_recipes=[]
+terrains={
+"Desert":[],
+"Forest":[],
+"Hill":[],
+"Mountain":[],
+"Plain":[],
+"Swamp":[],
+"Coast":[],
+"None":[]
+}
 
 # A description of the artificed item
-description="Submit components to artifice a new item."
+description="Submit components to craft an item."
 # default list type
 list_type="components"
 
@@ -40,7 +50,8 @@ subclass_types={
 "Holistic crafter": "Holistic crafter:\n\nWhile other's see components as merely the 'means to an end', you understand that every component add its own unique function. \n\nAn additional effect, if possible, is added to every item you craft.",
 "Versatile crafter": "Versatile crafter:\n\nAlthough many squander efficiency in the opulance of the university, you've learned to make do with less. \n\nYou do not need requirements to craft contraptions that require certain types.",
 "Careful crafter": "Careful crafter:\n\nAfter watching many of your peers succumb to carelessness, you've learned that the only old crafters are careful crafters. \n\nCreations you craft will not backfire.",
-"Perfectionist": "Perfectionist:\n\nSome crafters stop working after success but you've learned that practice makes perfect. \n\nYou are able to re-roll stats (for better or worse) when remaking known recipes."
+"Perfectionist": "Perfectionist:\n\nSome crafters stop working after success but you've learned that practice makes perfect. \n\nYou are able to re-roll stats (for better or worse) when remaking known recipes.",
+"Forager": "Forager:\n\nWhile other crafter focus on the products, you have excelled at finding the components. \n\nWhen foraging, you are guaranteed to find at least one component and may even find nonnative components."
 }
 
 sub_names=[]
@@ -143,7 +154,7 @@ def popup_select(text_choice, the_list,select_multiple=False):
     else:
         return the_list[0]
 
-def popup_shop(text_choice, the_list,select_multiple=False):
+def popup_shop(text_choice, the_list,remove_item=False,select_multiple=False):
     layout = [[sg.Text(text_choice)],
     [sg.Listbox(the_list,key='_LIST_',size=(45,20),select_mode='extended' if select_multiple else 'single',bind_return_key=True),
     [sg.Button("Add to player pocket"),
@@ -173,12 +184,24 @@ def popup_shop(text_choice, the_list,select_multiple=False):
                         description+="\n   -"+i+": "+components[selected_name].effects[i]
                 description=roll_desc(description, True)
                 window["-item_description_2-"].update(description)
+                if selected_name+".png" in images_list:
+                    window["-item_image-"].update("resources/images/"+selected_name+".png")
+                else:
+                    window["-item_image-"].update("resources/images/general_component.png")
 
             elif event2=="Add to player pocket" and len(values2["_LIST_"]):
                 if len(values2["-shop_name-"]):
-                    item_name=values2["_LIST_"][0].split(" - ")[0]
+                    if remove_item==True:
+                        the_list.remove(values2["_LIST_"][0])
+                        window2["_LIST_"].update(the_list)
+                    if " - " in values2["_LIST_"][0]:
+                        item_name=values2["_LIST_"][0].split(" - ")[0]
+                    else:
+                        item_name=values2["_LIST_"][0]
                     pocket[values2["-shop_name-"][0]].append(item_name)
                     pocket[values2["-shop_name-"][0]].sort()
+                    secret_pocket[values2["-shop_name-"][0]].append(item_name)
+                    secret_pocket[values2["-shop_name-"][0]].sort()
                     if pocket_name==values2["-shop_name-"][0] and list_type=="pocket":
                         pocket_now=pocket[pocket_name]
                         window["-lb_1-"].update(pocket_now)
@@ -350,7 +373,7 @@ for i in types:
 
 #-------------------------------------------------------------------------------
 pocket={}
-temp_pocket=[]
+secret_pocket={}
 if ".pockets" in os.listdir():
     pocket_file=open(".pockets", "r")
     pocket_start=pocket_file.read()
@@ -363,6 +386,7 @@ if ".pockets" in os.listdir():
             if len(pocket)==0:
                 pocket_name=pname[1].strip()
             pocket[pname[1].strip()]=[]
+            secret_pocket[pname[1].strip()]=[]
             for j in range(2, len(pname)):
                 if len(pname[j])>0:
                     piq.append(pname[j])
@@ -370,9 +394,22 @@ if ".pockets" in os.listdir():
                 pocket_now=piq
             pocket[pname[1].strip()]=piq
             pocket[pname[1].strip()].sort()
+            secret_pocket[pname[1].strip()]=piq
+            secret_pocket[pname[1].strip()].sort()
 else:
     pocket_name="None"
     pocket_now=[]
+
+#-------------------------------------------------------------------------------
+# Now we parse the component files and look for terrain key words so that
+# they can get added to the terrain dictionary
+for i in components:
+    for j in terrains:
+        if j != "None":
+            if j.lower() in components[i].description.lower():
+                terrains[j].append(components[i].name)
+            else:
+                terrains["None"].append(components[i].name)
 
 #-------------------------------------------------------------------------------
 # Generate the columns
@@ -419,6 +456,7 @@ subclass_buttons=[
     sg.Radio("Versatile crafter", "subclass", default=False, key = "-subclass_versa-"),
     sg.Radio("Careful crafter", "subclass", default=False, key = "-subclass_care-"),
     sg.Radio("Perfectionist", "subclass", default=False, key = "-subclass_perf-"),
+    sg.Radio("Forager", "subclass", default=False, key = "-subclass_for-"),
     sg.Push()]
 ]
 
@@ -438,15 +476,17 @@ layout=[
     all_submitted_column,
     [sg.Button("Add to pocket"),
     sg.Push(),
-    sg.Button("Shop"),
     sg.Push(),
-    sg.Text("Added proficiency score:"),
+    sg.Button("Shop"),
+    sg.Button("Forage"),
+    sg.Push(),
+    sg.Text("Proficiency bonus:"),
     sg.In(size=(15,1), key="-prof-"),
-    sg.Button("Artifice!")],
+    sg.Button("Craft!")],
     item_description,
     pockets_column
 ]
-window=sg.Window("Artificing made easy!", layout)
+window=sg.Window("Crafting made easy!", layout)
 
 # This while true loop is where all the magic happens
 while True:
@@ -500,7 +540,11 @@ while True:
     # View the contents of current pocket
     elif event=="View pocket":
         list_type="pocket"
+        pocket[pocket_name]=list(secret_pocket[pocket_name])
+        pocket_now=list(secret_pocket[pocket_name])
         window["-lb_1-"].update(pocket_now)
+        materials=[]
+        window["-lb_2-"].update(materials)
 
     elif event=="Switch pocket":
         pocket[pocket_name]=pocket_now
@@ -519,6 +563,7 @@ while True:
     elif event == "Add new":
         pocket_name=sg.popup_get_text("What is player's name:")
         pocket[pocket_name]=[]
+        secret_pocket[pocket_name]=[]
         pocket_now=pocket[pocket_name]
         window["-pocket-"].update(pocket_name)
         if list_type=="pocket":
@@ -543,6 +588,8 @@ while True:
         for i in values["-lb_1-"]:
             pocket_now.append(i)
             pocket_now.sort()
+            secret_pocket[pocket_name].append(i)
+            secret_pocket[pocket_name].sort()
 
     elif event == "Delete pocket":
         try:
@@ -555,6 +602,7 @@ while True:
                     window["-lb_1-"].update(pocket_now)
                     window["-pocket-"].update(pocket_name)
                 pocket.pop(delet_name)
+                secret_pocket.pop(delet_name)
         except:
             pass
 
@@ -568,8 +616,9 @@ while True:
         window["-lb_2-"].update(materials)
 
     elif event=="Remove component" and list_type=="pocket" and len(values["-lb_1-"]):
-        pocket_now.remove(values["-lb_1-"][0])
-        window["-lb_1-"].update(pocket_now)
+        pocket[pocket_name].remove(values["-lb_1-"][0])
+        secret_pocket[pocket_name].remove(values["-lb_1-"][0])
+        window["-lb_1-"].update(pocket[pocket_name])
 
     elif event=="Subclasses":
         list_type="subclass"
@@ -637,7 +686,7 @@ while True:
             window["-item_description_2-"].update(description)
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
-            elif "resources/images/"+desc_types.lower()+".png" in images_list:
+            elif desc_types.lower()+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
             else:
                 window["-item_image-"].update("resources/images/success.png")
@@ -672,12 +721,89 @@ while True:
                     values=rand.randint(1,20)
                     values=str(values)+" GP"
                 inventory.append(component_list[hit]+" - "+values)
-        tick=popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
+        popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
+
+
+    elif event=="Forage":
+        try:
+            terrain_type=popup_select("What terrain will you be foraging in?", list(terrains.keys()))
+#            print(terrain_type)
+            if len(terrains[terrain_type])>0:
+                time_spent=popup_select("How long will you be foraging", ["1 minute", "10 minutes", "1 hour"])
+#                print(time_spent)
+                try:
+                    prof=int(values["-prof-"])
+                except:
+                    prof=0
+                extra_found=0
+                if values["-subclass_for-"]==True:
+                    prof+=2
+                    extra_found+=1
+                forage_roll=rand.randint(0,21)+prof
+#                print(forage_roll)
+                if time_spent=="1 minute":
+#                    print("1 min")
+                    if forage_roll < 6:
+                        forage_found=0+extra_found
+                    elif forage_roll > 5 and forage_roll < 11:
+                        forage_found=rand.randint(0,2)+extra_found
+                    elif forage_roll < 16 and forage_roll > 10:
+                        forage_found=rand.randint(0,3)+extra_found
+                    elif forage_roll < 20 and forage_roll > 15:
+                        forage_found=rand.randint(1,4)+extra_found
+                    elif forage_roll > 20:
+                        forage_found=rand.randint(2,5)+extra_found
+                elif time_spent=="10 minutes":
+#                    print("10 min")
+                    if forage_roll < 6:
+                        forage_found=rand.randint(0,2)+extra_found
+                    elif forage_roll > 5 and forage_roll < 11:
+                        forage_found=rand.randint(0,3)+extra_found
+                    elif forage_roll < 16 and forage_roll > 10:
+                        forage_found=rand.randint(1,4)+extra_found
+                    elif forage_roll < 20 and forage_roll > 15:
+                        forage_found=rand.randint(2,5)+extra_found
+                    elif forage_roll > 20:
+                        forage_found=rand.randint(3,6)+extra_found
+                elif time_spent=="1 hour":
+#                    print("1 hour")
+                    if forage_roll < 6:
+                        forage_found=rand.randint(0,3)+extra_found
+                    elif forage_roll > 5 and forage_roll < 11:
+                        forage_found=rand.randint(1,4)+extra_found
+                    elif forage_roll < 16 and forage_roll > 10:
+                        forage_found=rand.randint(2,5)+extra_found
+                    elif forage_roll < 20 and forage_roll > 15:
+                        forage_found=rand.randint(3,6)+extra_found
+                    elif forage_roll > 20:
+                        forage_found=rand.randint(4,7)+extra_found
+
+                if forage_found==0:
+                    sg.Popup("You found nothing while searching.")
+                else:
+                    forage_pool=[]
+                    trick=0
+                    if values["-subclass_for-"]==True:
+                        trick+=1
+                        nonnative=component_list[rand.randint(0, len(components)-1)]
+                        while "-" not in components[nonnative.lower()].description.split("VALUE")[1]:
+                            nonnative=component_list[rand.randint(0, len(components)-1)]
+                        forage_pool.append(nonnative)
+                    while trick < forage_found:
+                        forage_pool.append(terrains[terrain_type][rand.randint(0,len(terrains[terrain_type])-1)])
+                        trick+=1
+                    popup_shop("You found the following components while searching.", forage_pool, True)
+            else:
+                sg.Popup("No components can be found in "+terrain_type+" terrain. Sorry.")
+
+        except:
+            pass
 
     # Here's where the crafting/procerdual generating starts!
-    elif event=="Artifice!":
+    elif event=="Craft!":
 
         pocket[pocket_name]=pocket_now
+        secret_pocket[pocket_name]=pocket_now
 
         # First, we determine what the user's crafting proficiency is.
         # If left blank, we assume 0
@@ -1190,7 +1316,7 @@ while True:
 
 
 window.close()
-
+pocket=secret_pocket
 
 all_files=""
 file_names=os.listdir("resources/components/")
@@ -1260,7 +1386,7 @@ if pocket_name=="None" and len(pocket)>=1:
 if len(pocket)>0:
     pocket_start=""
     pocket_start+="-\n"+pocket_name+"\n"
-    for i in pocket_now:
+    for i in pocket[pocket_name]:
         pocket_start+=i+"\n"
     if len(pocket)>1:
         for i in pocket:
