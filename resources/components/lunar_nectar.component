@@ -1,5 +1,5 @@
 Name: Lunar Nectar
-Description: The nectar from the silver tiny flower named Lunar Dust, which can only be harvested under full moonlight. VALUE5-15VALUE GP
+Description: The nectar from a small silver flower, named Lunar Dust, which can only be harvested under full moonlight. Exclusively found in mountainous regions. VALUE5-15VALUE GP
 Types: Potion, Stabilizer
 Potion: Damage that you would take from sources that deal force damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
 Stabilizer: Reduces the chance of spontaneous detonation.

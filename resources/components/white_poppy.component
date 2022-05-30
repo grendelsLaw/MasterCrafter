@@ -1,5 +1,5 @@
 Name: White Poppy
-Description: A beautiful white flower that grows up to 4 feet tall, with 5 petals which give it a star-like silhouette. VALUE1-5VALUE GP
+Description: A beautiful flower that grows up to 4 feet tall, with 5 petals surrounding a central, glowing bulb which give it a star-like silhouette. Generally found in disturbed areas of deserts, plains, and forests. VALUE1-5VALUE GP
 Types: Potion, Volatile
 Potion: Damage that you would take from sources that deal necrotic damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
 Volatile: May cause a backfire.

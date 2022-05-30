@@ -1,4 +1,4 @@
 Name: Goblin Mud
-Description: A thick and dense bright green mud that appears under rocks in swamps and marshes. VALUE1-10VALUE GP
+Description: A thick and dense bright green bulb that appears under rocks in swamps and plains-marshes. VALUE1-10VALUE GP
 Types: Poison
 Poison: Damage that the creature would take from a source that deals acid damage is increased by DAMAGE1-4DAMAGE.

@@ -1,5 +1,5 @@
 Name: Raven Silkweed
-Description: A plant that grows up to 5 feet tall with simple and opposite leaves that are up to 1 feet long. The highly-fragrant star-shaped flowers vary from black through vibrant purple. VALUE1-10VALUE GP
+Description: A plant that grows up to 5 feet tall with simple and opposite leaves that are up to 1 feet long. The highly-fragrant bell-shaped flowers vary from black through vibrant purple. Typically found in swamps, damp forests, and coastal regions. VALUE1-10VALUE GP
 Types: Potion, Poison, Volatile
 Potion: You gain darkvision out to a range of DISTANCE30-90DISTANCE feet for the duration of the potion's effect. If you already have darkvision, your range increases by that amount instead.
 Poison: The creature must succeed on a Constitution Saving Throw or be blinded for TIME1-4TIME turns.

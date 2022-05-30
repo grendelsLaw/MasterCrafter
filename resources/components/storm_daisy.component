@@ -1,4 +1,4 @@
 Name: Storm Daisy
-Description: A plant with rosettes of small rounded leaves that grow flat to the ground with a spiked, silver flower. VALUE1-10VALUE GP
+Description: A plant with rosettes of long, flat leaves that grow toward the sky with a spiked, silver flower. Commonly found in disturbed areas of plains, deserts, and forests. VALUE1-10VALUE GP
 Types: Poison
 Poison: Damage that the creature would take from a source that deals lightning damage is increased by DAMAGE1-4DAMAGE.
