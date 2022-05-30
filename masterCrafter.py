@@ -539,12 +539,13 @@ while True:
 
     # View the contents of current pocket
     elif event=="View pocket":
-        list_type="pocket"
-        pocket[pocket_name]=list(secret_pocket[pocket_name])
-        pocket_now=list(secret_pocket[pocket_name])
-        window["-lb_1-"].update(pocket_now)
-        materials=[]
-        window["-lb_2-"].update(materials)
+        if pocket_name != "None":
+            list_type="pocket"
+            pocket[pocket_name]=list(secret_pocket[pocket_name])
+            pocket_now=list(secret_pocket[pocket_name])
+            window["-lb_1-"].update(pocket_now)
+            materials=[]
+            window["-lb_2-"].update(materials)
 
     elif event=="Switch pocket":
         pocket[pocket_name]=pocket_now
@@ -585,11 +586,12 @@ while True:
         window["-lb_2-"].update(materials)
 
     elif event == "Add to pocket" and len(values["-lb_1-"]) and list_type=="components":
-        for i in values["-lb_1-"]:
-            pocket_now.append(i)
-            pocket_now.sort()
-            secret_pocket[pocket_name].append(i)
-            secret_pocket[pocket_name].sort()
+        if pocket_name != "None":
+            for i in values["-lb_1-"]:
+                pocket_now.append(i)
+                pocket_now.sort()
+                secret_pocket[pocket_name].append(i)
+                secret_pocket[pocket_name].sort()
 
     elif event == "Delete pocket":
         try:
