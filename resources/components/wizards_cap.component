@@ -1,5 +1,5 @@
-Name: Wizard's Clover
-Description: A small evergreen plant with three leaves (rarely four) and dense spikes of small red and yellow flowers. Found in open fields of plains, hills, forests, and coastal regions. VALUE5-15VALUE GP
+Name: Wizard's Cap
+Description: A small pale-orange mushroom which grows a gray-blue cap that is similar in appearance to a traditional Wizard's pointed hat. Found in open fields of plains, hills, forests, and coastal regions. VALUE5-15VALUE GP
 Types: Bomb, Stabilizer
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 force damage on a failed save, or half as much damage on a successful one.
 Stabilizer: Reduces the chance of spontaneous detonation.
