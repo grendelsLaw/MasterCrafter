@@ -391,6 +391,8 @@ material_entry_column = [
 all_submitted_column = [
     sg.Listbox(values=component_list, enable_events=True, size = (43,15), key="-lb_1-"),
     [sg.Button("Add component"),
+    sg.Push(),
+    sg.Push(),
     sg.Button("Remove component"),
     sg.Push(),
     sg.Button("Clear list"),],
