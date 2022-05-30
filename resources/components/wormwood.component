@@ -1,5 +1,5 @@
 Name: Wormwood
-Description: A purple shrub with known medicinal properties. Toxic in high doses as it may induce delirium. Found in temperate forests, plains, and hills. VALUE20-30VALUE GP
+Description: A conical purple shrub with known medicinal properties. Toxic in high doses as it may induce delirium. Found in temperate forests, plains, and hills. VALUE20-30VALUE GP
 Types: Gas, Poison, Potion
 Gas: Creatures within this gas subtract DAMAGE1-4DAMAGE from all Wisdom saving throws while in the gas cloud.
 Poison: A creature exposed to this poison has disadvantage on their next Wisdom taving throw.
