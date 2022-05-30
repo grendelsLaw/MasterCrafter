@@ -1,4 +1,4 @@
 Name: Sugar-Hibiscus Berries
-Description: A plant with simple leaves on purple stems and a large white taproot. The flowers are also white, followed by purple-black berries which are highly poisonous. VALUE1-10VALUE GP
+Description: A plant with simple leaves on purple stems and a large white taproot. The flowers are also white, followed by purple-black berries which are highly poisonous. Typically found in swamps, forests, hills, and coastal regions. VALUE1-10VALUE GP
 Types: Poison
 Poison: Damage that the creature would take from a source that deals radiant damage is increased by DAMAGE1-4DAMAGE.
