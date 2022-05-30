@@ -1,5 +1,5 @@
 Name: Cane Toad
-Description: These giant neotropical toads have large toxin glands behind their eyes, making them poisonous. Their skin varies in color and can be grey, tinged yellow, auburn, or dark green, and are typically found near bodies of water. VALUE1-10VALUE gp
+Description: These giant neotropical toads have large toxin glands behind their eyes, making them poisonous. Their skin varies in color and can be grey, tinged yellow, auburn, or dark green, and are typically found near bodies of water in forests and swamps. VALUE1-10VALUE gp
 Types: Gas, Poison, Nebulizer
 Gas: Increase the DC of saving throws to avoid the effects of this gas by DAMAGE1-5DAMAGE.
 Poison: Increase the DC of saving throws to avoid the effects of this poison by DAMAGE1-5DAMAGE.
