@@ -1,4 +1,4 @@
 Name: Viper Thistle
-Description: A poisonous flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. The flowerhead have a bright red-purple hue. VALUE1-10VALUE GP
+Description: A poisonous flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. The flowerhead have a bright red-purple hue. Typically found in arid deserts, plains, hills, and mountainous regions. VALUE1-10VALUE GP
 Types: Bomb
 Bomb: Each creature in the bomb area must make a Constitution Saving Throw. A target takes DAMAGE1-3DAMAGEd6 poison damage on a failed save, or half as much damage on a successful one.
