@@ -203,8 +203,7 @@ def popup_shop(text_choice, the_list,remove_item=False,select_multiple=False):
                     secret_pocket[values2["-shop_name-"][0]].append(item_name)
                     secret_pocket[values2["-shop_name-"][0]].sort()
                     if pocket_name==values2["-shop_name-"][0] and list_type=="pocket":
-                        pocket_now=pocket[pocket_name]
-                        window["-lb_1-"].update(pocket_now)
+                        window["-lb_1-"].update(pocket[pocket_name])
 
         window2.close()
         del window2
@@ -390,15 +389,12 @@ if ".pockets" in os.listdir():
             for j in range(2, len(pname)):
                 if len(pname[j])>0:
                     piq.append(pname[j])
-            if pocket_name==pname[1].strip():
-                pocket_now=piq
             pocket[pname[1].strip()]=piq
             pocket[pname[1].strip()].sort()
             secret_pocket[pname[1].strip()]=piq
             secret_pocket[pname[1].strip()].sort()
 else:
     pocket_name="None"
-    pocket_now=[]
 
 #-------------------------------------------------------------------------------
 # Now we parse the component files and look for terrain key words so that
@@ -542,22 +538,19 @@ while True:
         if pocket_name != "None":
             list_type="pocket"
             pocket[pocket_name]=list(secret_pocket[pocket_name])
-            pocket_now=list(secret_pocket[pocket_name])
-            window["-lb_1-"].update(pocket_now)
+            window["-lb_1-"].update(pocket[pocket_name])
             materials=[]
             window["-lb_2-"].update(materials)
 
     elif event=="Switch pocket":
-        pocket[pocket_name]=pocket_now
         if len(pocket):
             try:
                 pocket_name=popup_select("Which pocket you would you like to explore:", list(pocket.keys()))
             except:
                 pass
-            pocket_now=pocket[pocket_name]
             window["-pocket-"].update(pocket_name)
             if list_type=="pocket":
-                window["-lb_1-"].update(pocket_now)
+                window["-lb_1-"].update(pocket[pocket_name])
         else:
             sg.Popup("There are no pockets! Try making one.")
 
@@ -565,10 +558,9 @@ while True:
         pocket_name=sg.popup_get_text("What is player's name:")
         pocket[pocket_name]=[]
         secret_pocket[pocket_name]=[]
-        pocket_now=pocket[pocket_name]
         window["-pocket-"].update(pocket_name)
         if list_type=="pocket":
-            window["-lb_1-"].update(pocket_now)
+            window["-lb_1-"].update(pocket[pocket_name])
 
     # Adds selected components or selected recipes components to listbox 2 for artificing
     elif event=="Add component" and len(values["-lb_1-"]):
@@ -580,16 +572,16 @@ while True:
                     materials.append(j)
             elif i in component_list and list_type=="pocket":
                 materials.append(i)
-                pocket_now.remove(i)
-                window["-lb_1-"].update(pocket_now)
+                pocket[pocket_name].remove(i)
+                window["-lb_1-"].update(pocket[pocket_name])
         # Updates listbox 2
         window["-lb_2-"].update(materials)
 
     elif event == "Add to pocket" and len(values["-lb_1-"]) and list_type=="components":
         if pocket_name != "None":
             for i in values["-lb_1-"]:
-                pocket_now.append(i)
-                pocket_now.sort()
+                pocket[pocket_name].append(i)
+                pocket[pocket_name].sort()
                 secret_pocket[pocket_name].append(i)
                 secret_pocket[pocket_name].sort()
 
@@ -600,8 +592,7 @@ while True:
             if actual_delete=="Yes":
                 if pocket_name==delet_name:
                     pocket_name="None"
-                    pocket_now=[]
-                    window["-lb_1-"].update(pocket_now)
+                    window["-lb_1-"].update([""])
                     window["-pocket-"].update(pocket_name)
                 pocket.pop(delet_name)
                 secret_pocket.pop(delet_name)
@@ -804,8 +795,7 @@ while True:
     # Here's where the crafting/procerdual generating starts!
     elif event=="Craft!":
 
-        pocket[pocket_name]=pocket_now
-        secret_pocket[pocket_name]=pocket_now
+        secret_pocket[pocket_name]=list(pocket[pocket_name])
 
         # First, we determine what the user's crafting proficiency is.
         # If left blank, we assume 0
@@ -1384,7 +1374,6 @@ compo.close()
 
 if pocket_name=="None" and len(pocket)>=1:
     pocket_name=list(pocket.keys())[0]
-    pocket_now=pocket[pocket_name]
 if len(pocket)>0:
     pocket_start=""
     pocket_start+="-\n"+pocket_name+"\n"
