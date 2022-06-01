@@ -33,7 +33,7 @@ list_type="components"
 
 # Modifier tags - these gets skipped when assessing type
 # Add requirement tags here as well
-modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot"]
+modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot", "Progression"]
 
 # Types that get effects by default
 # Add type here if you want a random effect to always be added to that type
@@ -42,6 +42,10 @@ types_w_effects=["Potion", "Gas", "Magic weapon", "Poison", "Magic armor"]
 # Backfire tags
 # Add Modifier tag that you wish to possibly explode as soon its made
 backfire_type = ["Volatile", "Nebulizer"]
+
+#Progression types
+# These types get added as components upon completion
+progression_type=["Rune"]
 
 subclass_types={
 "Novice":"Novice:\n\nYou know little but are eager. With your learning you know just enough to be dangerous. To your enemies, to your allies, and to yourself...",
@@ -259,9 +263,10 @@ for i in component_list:
             # If the component isn't in the component dictionary, it gets added
             if name_i not in components:
                 pre_splice=loaded_i[1].split("Description:")[1].strip()
+
                 if "SPACE" in pre_splice:
                     post_splice=""
-                    for exon in pre_splice[0].split("SPACE"):
+                    for exon in pre_splice.split("SPACE"):
                         post_splice+=exon+"\n"
                     post_splice=post_splice[0:len(post_splice)-2]
                 else:
@@ -285,6 +290,7 @@ for i in component_list:
                         tick = effect_effect
                     new_comp.effects[effect_type]=tick
                 components[name_i.lower()]=new_comp
+
         except:
             print("Unable to parse file: "+i)
 
@@ -331,7 +337,7 @@ for i in recipe_files:
                         new_comp=Component(
                         j,
                         "A material of unknown use.",
-                        [name_i],
+                        [loaded_recipe[1].split("Types:")[1].strip()],
                         {}
                         )
                         modifiers.append(j)
@@ -594,13 +600,17 @@ while True:
     # Adds selected components or selected recipes components to listbox 2 for artificing
     elif event=="Add component" and len(values["-lb_1-"]):
         for i in values["-lb_1-"]:
+            if "Personal " in i:
+                k=i.replace("Personal ", "")
+            else:
+                k=i
             if i in component_list and list_type=="components":
                 materials.append(i)
-            elif i in recipe_keys and list_type=="recipes":
-                for j in recipes[i.lower()].components:
+            elif k in recipe_keys and list_type=="recipes":
+                for j in recipes[k.lower()].components:
                     materials.append(j)
             elif i in component_list and list_type=="pocket":
-                materials.append(i)
+                materials.append(k)
                 pocket[pocket_name].remove(i)
                 window["-lb_1-"].update(pocket[pocket_name])
         # Updates listbox 2
@@ -663,6 +673,8 @@ while True:
             description=roll_desc(description, True)
 
             window["-item_description_2-"].update(description)
+            if "personal " in selected_name:
+                selected_name=selected_name.replace("personal ", "")
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
             else:
@@ -824,7 +836,7 @@ while True:
     # Here's where the crafting/procerdual generating starts!
     elif event=="Craft!":
 
-        if len(pocket)>1 and pocket_name != "None":
+        if len(pocket)>0 and pocket_name != "None":
             secret_pocket[pocket_name]=list(pocket[pocket_name])
 
         # First, we determine what the user's crafting proficiency is.
@@ -951,6 +963,7 @@ while True:
                     description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
                     for i in desc_components:
                         description+="\n   -"+i
+                    description=roll_desc(description, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
                     window["-item_description_2-"].update(description)
                     if selected_name+".png" in images_list:
                         window["-item_image-"].update("resources/images/"+selected_name+".png")
@@ -958,6 +971,28 @@ while True:
                         window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
                     else:
                         window["-item_image-"].update("resources/images/success.png")
+
+# If its a progression type object, it gets saved as a personal object
+                    if desc_types in progression_type:
+                        prog_comp=Component("Personal "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
+                        components[prog_comp.name.lower()]=prog_comp
+                        component_list=[]
+                        for i in components:
+                            component_list.append(components[i].name)
+                        component_list.sort()
+                        if "\n" in desc_desc:
+                            desc_desc=desc_desc.replace("\n", "SPACE")
+
+                        write_file="Name: "+prog_comp.name+"\n"+desc_desc+"\nTypes: "+desc_types+"\n"
+#                        print(write_file)
+                        for ty in prog_comp.effects:
+                            write_file+=ty+": "+prog_comp.effects[ty]
+                        file_in=open("resources/components/."+prog_comp.name.lower().replace(" ", "_")+".component", "w")
+                        file_in.write(write_file)
+                        file_in.close()
+                        if len(pocket)>0 and pocket_name != "None":
+                            pocket[pocket_name].append(prog_comp.name)
+                            secret_pocket[pocket_name].append(prog_comp.name)
 
                     for bkf in backfire_type:
                         if bkf in reduntant_type_pool:
@@ -1075,6 +1110,29 @@ while True:
                                 description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
                                 for i in desc_components:
                                     description+="\n   -"+i
+                                description=roll_desc(description, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
+
+                            if desc_types in progression_type:
+                                prog_comp=Component("Personal "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
+                                components[prog_comp.name.lower()]=prog_comp
+                                component_list=[]
+                                for i in components:
+                                    component_list.append(components[i].name)
+                                component_list.sort()
+                                if "\n" in desc_desc:
+                                    desc_desc=desc_desc.replace("\n", "SPACE")
+
+                                write_file="Name: "+prog_comp.name+"\n"+desc_desc+"\nTypes: "+desc_types+"\n"
+                                for ty in prog_comp.effects:
+                                    write_file+=ty+": "+prog_comp.effects[ty]
+                                file_in=open("resources/components/."+prog_comp.name.lower().replace(" ", "_")+".component", "w")
+                                file_in.write(write_file)
+                                file_in.close()
+                                if len(pocket)>0 and pocket_name != "None":
+                                    pocket[pocket_name].append(prog_comp.name)
+                                    secret_pocket[pocket_name].append(prog_comp.name)
+
+
 
                             window["-item_description_2-"].update(description)
                             if selected_name+".png" in images_list:
@@ -1416,9 +1474,19 @@ if len(pocket)>0:
                 for j in pocket[i]:
                     pocket_start+=j+"\n"
     pocket_start+="-"
+    components_files=os.listdir("resources/components/")
+    for i in components_files:
+        if i.startswith(".personal"):
+            real_name=i.split(".")[1].replace("_", " ")
+            if real_name not in pocket_start.lower():
+                os.remove("resources/components/"+i)
     pocket_file=open(".pockets", "w")
     pocket_file.write(pocket_start)
     pocket_file.close()
 else:
     if ".pockets" in os.listdir():
         os.remove(".pockets")
+    components_files=os.listdir("resources/components/")
+    for i in components_files:
+        if i.startswith(".personal"):
+            os.remove("resources/components/"+i)

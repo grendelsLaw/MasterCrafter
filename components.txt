@@ -871,9 +871,6 @@ Rune: While wearing or using an item imbued with this rune, you gain the followi
 
 
 
-
-
-
 **Name: Epic Aett Rune**
 Description: This rune symbolizes the words from a noble's mouth, the speech of a leader, the silvertongue of a merchant. It grants those who channel it greater charm and influence.
 Types: Rune
@@ -898,56 +895,6 @@ Rune: While wearing or using an item imbued with this rune, you gain the followi
 Description: This rune symbolizes the words from a noble's mouth, the speech of a leader, the silvertongue of a merchant. It grants those who channel it greater charm and influence.
 Types: Rune
 Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACESPACECommanding SpeechSPACEAs an action, you give a speech to a creature within 60 feet of you that can hear you. The target must succeed on a Wisdom saving throw or be charmed by you. While charmed by you in this way, the target must take the Hide action on their turn. The creature may repeat this saving throw at the end of each of their turns, ending this effect on a success.
-
-
-
-
-
-
-**Name: Level 1 Spell Slot**
-Description: A spell slot of the first level.
-Types: Spell slot
-Spell slot: Consumes a spell slot of the associated level.
-
-
-
-
-
-
-**Name: Level 2 Spell Slot**
-Description: A spell slot of the second level.
-Types: Spell slot
-Spell slot: Consumes a spell slot of the associated level.
-
-
-
-
-
-
-**Name: Level 3 Spell Slot**
-Description: A spell slot of the third level.
-Types: Spell slot
-Spell slot: Consumes a spell slot of the associated level.
-
-
-
-
-
-
-**Name: Level 4 Spell Slot**
-Description: A spell slot of the fourth level.
-Types: Spell slot
-Spell slot: Consumes a spell slot of the associated level.
-
-
-
-
-
-
-**Name: Level 5 Spell Slot**
-Description: A spell slot of the fifth level.
-Types: Spell slot
-Spell slot: Consumes a spell slot of the associated level.
 
 
 
