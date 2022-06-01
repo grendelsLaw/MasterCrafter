@@ -1,0 +1,5 @@
+Name: Level 1 Spell Slot
+Description: A spell slot of the first level.
+Types: Spell slot
+Spell slot: Consumes a spell slot of the associated level.
+
