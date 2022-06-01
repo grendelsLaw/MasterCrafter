@@ -258,9 +258,17 @@ for i in component_list:
             name_i=loaded_i[0].strip().split("Name:")[1].strip()
             # If the component isn't in the component dictionary, it gets added
             if name_i not in components:
+                pre_splice=loaded_i[1].split("Description:")[1].strip()
+                if "SPACE" in pre_splice:
+                    post_splice=""
+                    for exon in pre_splice.split("SPACE"):
+                        post_splice+=exon+"\n"
+                    post_splice=post_splice[0:len(post_splice)-2]
+                else:
+                    post_splice=pre_splice
                 new_comp=Component(
                 name_i,
-                loaded_i[1].split("Description:")[1].strip(),
+                post_splice,
                 loaded_i[2].split("Types:")[1].strip().split(", "),
                 {}
                 )
@@ -294,9 +302,17 @@ for i in recipe_files:
             # If the name isn't in the recipe list, we add it
             if name_i not in recipes:
                 # Set the first list value to be the description of the recipe
+                pre_splice=loaded_recipe[3:len(loaded_recipe)]
+                if "SPACE" in pre_splice:
+                    post_splice=""
+                    for exon in pre_splice.split("SPACE"):
+                        post_splice+=exon+"\n"
+                    post_splice=post_splice[0:len(post_splice)-2]
+                else:
+                    post_splice=pre_splice
                 new_recipe=Recipe(
                 name_i,
-                loaded_recipe[3:len(loaded_recipe)],
+                post_splice,
                 loaded_recipe[2].split("Components:")[1].strip().split(", "),
                 loaded_recipe[1].split("Types:")[1].strip()
                 )
@@ -357,9 +373,17 @@ for i in type_files:
             name_i=loaded_i[0].split("Name:")[1].strip()
             # If the type doesn't exist int he type directory, it gets added!
             if name_i.lower() not in types:
+                pre_splice=loaded_i[1].split("Description:")[1].strip()
+                if "SPACE" in pre_splice:
+                    post_splice=""
+                    for exon in pre_splice.split("SPACE"):
+                        post_splice+=exon+"\n"
+                    post_splice=post_splice[0:len(post_splice)-2]
+                else:
+                    post_splice=pre_splice
                 new_type=Type(
                 name_i,
-                loaded_i[1].split("Description:")[1].strip(),
+                post_splice,
                 [loaded_i[2].split("Requirements:")[1].strip()],
                 )
                 types[name_i.lower()]=new_type
