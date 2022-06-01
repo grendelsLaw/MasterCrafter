@@ -1,4 +1,4 @@
 Name: Runestone
 Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued.
-Types: Runestone
-Runestone: Required for Runesmithing.
+Types: Rune
+Rune: Required for Runesmithing.

@@ -33,7 +33,7 @@ list_type="components"
 
 # Modifier tags - these gets skipped when assessing type
 # Add requirement tags here as well
-modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor"]
+modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot"]
 
 # Types that get effects by default
 # Add type here if you want a random effect to always be added to that type
@@ -302,23 +302,20 @@ for i in recipe_files:
             # If the name isn't in the recipe list, we add it
             if name_i not in recipes:
                 # Set the first list value to be the description of the recipe
-                pre_splice=loaded_recipe[3:len(loaded_recipe)]
-                if "SPACE" in pre_splice:
-                    post_splice=""
-                    for exon in pre_splice.split("SPACE"):
-                        post_splice+=exon+"\n"
-                    post_splice=post_splice[0:len(post_splice)-2]
-                else:
-                    post_splice=pre_splice
                 new_recipe=Recipe(
                 name_i,
-                post_splice,
+                loaded_recipe[3:len(loaded_recipe)],
                 loaded_recipe[2].split("Components:")[1].strip().split(", "),
                 loaded_recipe[1].split("Types:")[1].strip()
                 )
                 thingo=""
                 for desc_effect in new_recipe.description:
-                    thingo+=desc_effect+"\n"
+                    if "SPACE" in desc_effect:
+                        desc_effect=desc_effect.split("SPACE")
+                        for exon in desc_effect:
+                            thingo+=exon+"\n"
+                    else:
+                        thingo+=desc_effect+"\n"
                 new_recipe.description=thingo
                 recipes[name_i.lower()]=new_recipe
                 for j in new_recipe.components:
@@ -819,7 +816,8 @@ while True:
     # Here's where the crafting/procerdual generating starts!
     elif event=="Craft!":
 
-        secret_pocket[pocket_name]=list(pocket[pocket_name])
+        if len(pocket)>1 and pocket_name != "None":
+            secret_pocket[pocket_name]=list(pocket[pocket_name])
 
         # First, we determine what the user's crafting proficiency is.
         # If left blank, we assume 0
