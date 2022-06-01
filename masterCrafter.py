@@ -261,7 +261,7 @@ for i in component_list:
                 pre_splice=loaded_i[1].split("Description:")[1].strip()
                 if "SPACE" in pre_splice:
                     post_splice=""
-                    for exon in pre_splice.split("SPACE"):
+                    for exon in pre_splice[0].split("SPACE"):
                         post_splice+=exon+"\n"
                     post_splice=post_splice[0:len(post_splice)-2]
                 else:
@@ -275,7 +275,15 @@ for i in component_list:
                 for j in loaded_i[3:len(loaded_i)]:
                     effect_type=j.split(":")[0].rstrip()
                     effect_effect=j.split(":")[1].rstrip()
-                    new_comp.effects[effect_type]=j.split(":")[1]
+                    if "SPACE" in effect_effect:
+                        spliced=effect_effect.split("SPACE")
+                        tick=""
+                        for exon in spliced:
+                            tick+=exon+"\n"
+                        tick=tick[0:len(tick)-2]
+                    else:
+                        tick = effect_effect
+                    new_comp.effects[effect_type]=tick
                 components[name_i.lower()]=new_comp
         except:
             print("Unable to parse file: "+i)
@@ -371,9 +379,9 @@ for i in type_files:
             # If the type doesn't exist int he type directory, it gets added!
             if name_i.lower() not in types:
                 pre_splice=loaded_i[1].split("Description:")[1].strip()
-                if "SPACE" in pre_splice:
+                if "SPACE" in pre_splice[0]:
                     post_splice=""
-                    for exon in pre_splice.split("SPACE"):
+                    for exon in pre_splice[0].split("SPACE"):
                         post_splice+=exon+"\n"
                     post_splice=post_splice[0:len(post_splice)-2]
                 else:
