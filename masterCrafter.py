@@ -33,7 +33,7 @@ list_type="components"
 
 # Modifier tags - these gets skipped when assessing type
 # Add requirement tags here as well
-modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot", "Progression"]
+modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot"]
 
 # Types that get effects by default
 # Add type here if you want a random effect to always be added to that type
@@ -600,7 +600,9 @@ while True:
     # Adds selected components or selected recipes components to listbox 2 for artificing
     elif event=="Add component" and len(values["-lb_1-"]):
         for i in values["-lb_1-"]:
-            if "Personal " in i:
+            if pocket_name+"s " in i:
+                k=i.replace(pocket_name+"s ", "")
+            elif "Personal " in i:
                 k=i.replace("Personal ", "")
             else:
                 k=i
@@ -673,8 +675,11 @@ while True:
             description=roll_desc(description, True)
 
             window["-item_description_2-"].update(description)
-            if "personal " in selected_name:
-                selected_name=selected_name.replace("personal ", "")
+            if pocket_name+"s " in selected_name:
+                selected_name=selected_name.replace(pocket_name+"s ", "")
+            elif "Personal " in selected_name:
+                selected_name=selected_name.replace("Personal ", "")
+
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
             else:
@@ -734,27 +739,42 @@ while True:
             inventory_number=rand.randint(5, 10)
         inventory=[]
         inv_names=[]
+        mat_count=0
         while len(inventory)<inventory_number:
             hit=rand.randint(0,len(components)-1)
+            mat_count+=1
+            if mat_count > total_components:
+                break
             if component_list[hit] not in inv_names:
-                inv_names.append(component_list[hit])
-                inv_desc=components[component_list[hit].lower()].description
-                if "VALUE" in inv_desc:
-                    inv_desc=inv_desc.split("VALUE")
-                    values=inv_desc[1].split("-")
-                    if len(values)<2:
-                        values=values[0]
-                        try:
-                            values=str(int(values))+" GP"
-                        except:
-                            values=str(values)
+                good=True
+                posssible_persons=["Personals "]
+                for pers in pocket:
+                    if pers != "None":
+                        posssible_persons.append(pers+"s ")
+                for pers in posssible_persons:
+                    if pers in component_list[hit]:
+                        good=False
+
+                if good ==True:
+                    inv_names.append(component_list[hit])
+                    inv_desc=components[component_list[hit].lower()].description
+                    if "VALUE" in inv_desc:
+                        inv_desc=inv_desc.split("VALUE")
+                        values=inv_desc[1].split("-")
+                        if len(values)<2:
+                            values=values[0]
+                            try:
+                                values=str(int(values))+" GP"
+                            except:
+                                values=str(values)
+                        else:
+                            values=rand.randint(int(values[0]), int(values[1]))
+                            values=str(values)+" GP"
                     else:
-                        values=rand.randint(int(values[0]), int(values[1]))
+                        values=rand.randint(1,20)
                         values=str(values)+" GP"
-                else:
-                    values=rand.randint(1,20)
-                    values=str(values)+" GP"
-                inventory.append(component_list[hit]+" - "+values)
+                    inventory.append(component_list[hit]+" - "+values)
+
         popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
 
 
@@ -820,6 +840,7 @@ while True:
                     if values["-subclass_for-"]==True:
                         trick+=1
                         nonnative=component_list[rand.randint(0, len(components)-1)]
+
                         while "-" not in components[nonnative.lower()].description.split("VALUE")[1]:
                             nonnative=component_list[rand.randint(0, len(components)-1)]
                         forage_pool.append(nonnative)
@@ -974,7 +995,11 @@ while True:
 
 # If its a progression type object, it gets saved as a personal object
                     if desc_types in progression_type:
-                        prog_comp=Component("Personal "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
+                        if pocket_name == "None":
+                            owner="Personal"
+                        else:
+                            owner=pocket_name
+                        prog_comp=Component(owner+"s "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
                         components[prog_comp.name.lower()]=prog_comp
                         component_list=[]
                         for i in components:
@@ -1113,7 +1138,11 @@ while True:
                                 description=roll_desc(description, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
 
                             if desc_types in progression_type:
-                                prog_comp=Component("Personal "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
+                                if pocket_name == "None":
+                                    owner="Personal"
+                                else:
+                                    owner=pocket_name
+                                prog_comp=Component(owner+"s "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
                                 components[prog_comp.name.lower()]=prog_comp
                                 component_list=[]
                                 for i in components:
@@ -1476,7 +1505,7 @@ if len(pocket)>0:
     pocket_start+="-"
     components_files=os.listdir("resources/components/")
     for i in components_files:
-        if i.startswith(".personal"):
+        if i.startswith("."):
             real_name=i.split(".")[1].replace("_", " ")
             if real_name not in pocket_start.lower():
                 os.remove("resources/components/"+i)
@@ -1488,5 +1517,5 @@ else:
         os.remove(".pockets")
     components_files=os.listdir("resources/components/")
     for i in components_files:
-        if i.startswith(".personal"):
+        if i.startswith("."):
             os.remove("resources/components/"+i)
