@@ -999,16 +999,16 @@ while True:
                             owner="Personal"
                         else:
                             owner=pocket_name
-                        prog_comp=Component(owner+"s "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
+                        prog_comp=Component(owner+"s "+desc_name, description, [desc_types], {desc_types:"Inherent"})
                         components[prog_comp.name.lower()]=prog_comp
                         component_list=[]
                         for i in components:
                             component_list.append(components[i].name)
                         component_list.sort()
-                        if "\n" in desc_desc:
-                            desc_desc=desc_desc.replace("\n", "SPACE")
+                        if "\n" in description:
+                            description=description.replace("\n", "SPACE")
 
-                        write_file="Name: "+prog_comp.name+"\n"+desc_desc+"\nTypes: "+desc_types+"\n"
+                        write_file="Name: "+prog_comp.name+"\n"+description+"\nTypes: "+desc_types+"\n"
 #                        print(write_file)
                         for ty in prog_comp.effects:
                             write_file+=ty+": "+prog_comp.effects[ty]
@@ -1142,16 +1142,16 @@ while True:
                                     owner="Personal"
                                 else:
                                     owner=pocket_name
-                                prog_comp=Component(owner+"s "+desc_name, desc_desc, [desc_types], {desc_types:"Inherent"})
+                                prog_comp=Component(owner+"s "+desc_name, description, [desc_types], {desc_types:"Inherent"})
                                 components[prog_comp.name.lower()]=prog_comp
                                 component_list=[]
                                 for i in components:
                                     component_list.append(components[i].name)
                                 component_list.sort()
-                                if "\n" in desc_desc:
-                                    desc_desc=desc_desc.replace("\n", "SPACE")
+                                if "\n" in description:
+                                    description=description.replace("\n", "SPACE")
 
-                                write_file="Name: "+prog_comp.name+"\n"+desc_desc+"\nTypes: "+desc_types+"\n"
+                                write_file="Name: "+prog_comp.name+"\n"+description+"\nTypes: "+desc_types+"\n"
                                 for ty in prog_comp.effects:
                                     write_file+=ty+": "+prog_comp.effects[ty]
                                 file_in=open("resources/components/."+prog_comp.name.lower().replace(" ", "_")+".component", "w")
