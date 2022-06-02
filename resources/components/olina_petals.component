@@ -1,4 +1,5 @@
 Name: Olina Petals
-Description: These pink petals from an Olina flower have small bright red dots, known for its poisonous properties. Typically found in dense swamps and forests. VALUE1-10VALUE GP
-Types: Poison
+Description: These pink petals from an Olina flower have small bright red dots, known for its poisonous properties. Typically found in dense swamps and forests. VALUE90-140VALUE GP
+Types: Poison, Infuser
 Poison: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+Infuser: Adds a random component effect to the finished product.

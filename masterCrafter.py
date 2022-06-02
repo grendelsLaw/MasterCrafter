@@ -33,7 +33,7 @@ list_type="components"
 
 # Modifier tags - these gets skipped when assessing type
 # Add requirement tags here as well
-modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot", "Infuser"]
+modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot", "Infuser", "Dampener"]
 
 # Types that get effects by default
 # Add type here if you want a random effect to always be added to that type
@@ -73,11 +73,14 @@ time_boost=False,
 time_boost_number=0,
 distance_boost=False,
 distance_boost_number=0,
-amplify=False):
+amplify=False,
+dampen=False):
     mat_boost=int((len(materials)-2)/2)
     new_desc=first_desc
     if amplify==True:
         amp=2
+    elif dampen==True:
+        amp=0.5
     else:
         amp=1
     if "DAMAGE" in new_desc:
@@ -911,10 +914,15 @@ while True:
                 if i not in modifiers:
                     small_type_pool.append(i)
 
-            if "Amplifier" in type_pool:
+            if "Amplifier" in type_pool and "Dampener" not in type_pool:
                 amp_it=True
+                damp_it=False
+            elif "Amplifier" not in type_pool and "Dampener" in type_pool:
+                amp_it=False
+                damp_it=True
             else:
                 amp_it=False
+                damp_it=False
 #            print(type_pool)
 #            print(small_type_pool)
 
@@ -970,7 +978,7 @@ while True:
                                         break
                                     mat_count+=1
 
-                            desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
+                            desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
                             recipes[selected_name].description=desc_desc
                             write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                             for i in materials:
@@ -984,7 +992,7 @@ while True:
                     description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
                     for i in desc_components:
                         description+="\n   -"+i
-                    description=roll_desc(description, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
+                    description=roll_desc(description, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
                     window["-item_description_2-"].update(description)
                     if selected_name+".png" in images_list:
                         window["-item_image-"].update("resources/images/"+selected_name+".png")
@@ -1117,7 +1125,7 @@ while True:
                                             mat_count+=1
 
 
-                                    desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
+                                    desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
                                     recipes[selected_name].description=desc_desc
                                     write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                                     for i in materials:
@@ -1135,7 +1143,7 @@ while True:
                                 description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
                                 for i in desc_components:
                                     description+="\n   -"+i
-                                description=roll_desc(description, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
+                                description=roll_desc(description, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
 
                             if desc_types in progression_type:
                                 if pocket_name == "None":
@@ -1239,7 +1247,7 @@ while True:
                                         mat_count+=1
 
 
-                                desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
+                                desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
 
                                 description="New "+desc_name.lower()+"\n\n"+desc_desc+"\n\nRequired components:"
                                 for i in materials:
@@ -1346,7 +1354,7 @@ while True:
                                     mat_count+=1
 
 
-                            desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it)
+                            desc_desc=roll_desc(desc_desc, False, prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
 
                             description="New "+desc_name.lower()+"\n\n"+desc_desc+"\n\nSpecific requirements:"
                             desc_requirements=list(set(desc_requirements))

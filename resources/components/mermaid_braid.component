@@ -1,4 +1,5 @@
 Name: Mermaid Braid
 Description: A reddish-gold seaweed with purple tips that grows up to 30 feet long from its holdfast, found under the ocean and in deep, brackish rivers and lakes of plains, swamps, and coastal regions. VALUE1-10VALUE GP
-Types: Poison
+Types: Poison, Dampener
 Poison: When the creature makes a Charisma ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
+Dampener: Decreases the potency of contraptions made with it.

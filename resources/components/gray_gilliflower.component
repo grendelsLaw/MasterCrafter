@@ -1,4 +1,5 @@
 Name: Gray Gilliflower
 Description: A plant that grows up to 30 inches tall, with glaucous, slender leaves. The silvery-purple flowers are produced singly or up to five together in a cyme. Typically found in swamps and plains-marshes. VALUE1-10VALUE GP
-Types: Bomb
+Types: Bomb, Amplifier
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 lightning damage on a failed save, or half as much damage on a successful one.
+Amplifier: Increases effectiveness of contraptions.

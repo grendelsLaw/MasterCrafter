@@ -1,5 +1,6 @@
 Name: Kreet Paste
 Description: A thick viscous fluid extracted from a Kreet mushroom, found in cold, damp environments among hills, forests, and swamps. VALUE1-5VALUE GP
-Types: Potion, Volatile
+Types: Potion, Volatile, Infuser
 Potion: Damage that you would take from sources that deal lightning damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
 Volatile: May cause a backfire.
+Infuser: Adds a random component effect to the finished product.

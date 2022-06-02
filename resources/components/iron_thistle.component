@@ -1,4 +1,5 @@
 Name: Iron Thistle
 Description: A silver-flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. Generally found in disturbed areas of deserts and plains. VALUE1-10VALUE GP
-Types: Potion
+Types: Potion, Dampener
 Potion: When you make a melee attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Dampener: Decreases effectiveness of contraptions.

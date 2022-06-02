@@ -1,4 +1,5 @@
 Name: Ellond Shrub
 Description: A dried-looking woody plant with several main stems arising at or near the ground. Commonly found in arid deserts, plains, and mountains. VALUE1-10VALUE GP
-Types: Bomb
+Types: Bomb, Dampener
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 fire damage on a failed save, or half as much damage on a successful one.
+Dampener: Decreases effectiveness of contraptions.

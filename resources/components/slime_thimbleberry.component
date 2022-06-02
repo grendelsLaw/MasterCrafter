@@ -1,4 +1,5 @@
 Name: Slime Thimbleberry
 Description: A dense shrub that grows up to 8 feet tall with several canes growing in large clumps. This shrub produces a green fruit filled with a thick paste. Generally found in swamps, dense forests, and hilly regions. VALUE1-10VALUE GP
-Types: Bomb
+Types: Bomb, Dampener
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 acid damage on a failed save, or half as much damage on a successful one.
+Dampener: Decreases the potency of contraptions made with it.
