@@ -2,7 +2,7 @@
 Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 
   This project is meant to be a (relatively) easy way to develop and deploy a crafting option for your D&D players. The script uses three main types of files to do this: Component files, Recipe files, and Type files. All of these can be edited, removed, or added easily to adapt to the player or campaign - so long as they follow the generic formula.
-  
+
 1) ___Component files___ represent the array of components that can be combined to generate objects. Components that are submitted are compared to see if they share common possible types (see below). Any combination of components can **only** generate objects of a shared type. Components may also possess modifier types, which may alter the likelihood of certain object types being crafted. These files have 4 parts:
     - Name: The name of the Component
     - Description: A flavorful description of the component
@@ -20,30 +20,48 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
     - Requirements: The specific components required to make this recipe. Unique recipes may have components that are *not* found in the component files but generated recipes will list the exact components used during the initial crafting.
     - Type: The type of object this recipe generates. Since a combination of components may generate more than one type of object, this is used to track which types of a component combination have already been discovered.
 
-4) ___Runic Attunement Slot___ 
+## Types of crafting objects
+  First and foremost - all crafted objects require at least two components and all components must share a common "type". If all the objects share a "Potion-type", they can craft a potion. If the components share __multiple__ types, a type will be randomly selected from the list of shared types. All created objects will generate a recipe file which can be used to re-craft the object exactly as it was originally made. If a list of components can make multiple types, but not all types have been explored, you have the option to either create a known recipe or __tinker__ and try to craft __other types__. Therefore, the greater number of components used in a craft, the smaller the odds they will share a common type. However, the potential potency of a crafted object will increase with the number of components used. Some types require specific kinds of components to be crafted, which are listed in the recipe files. An example are bombs that require at least one `volatile` component. Certain subtypes have the ability to ___backfire___ and detonate immediately upon crafting. Currently, the only two types that will backfire are `volatile` and `nebulizer` but this can be changed in the python file. Additionally, some types will pull a random component effect. These are currently the `poison`s, `potion`s, and `magic armor/weapon`s but this too can be tweaked in the python script. Finally, there are other component subtypes that do not effect the type of final product, but will change the variables of crafting. Currently there are:
+    - Amplifiers: boost the damage, duration, and area rolls during crafting
+    - Stabilizers: decrease the odds of backfire depending on the ratio of volatile to stabilizers. For each stabilizer in the components, one volatile/nebulizer component's chance of backfiring is removed. Types that require volatile/nebulizer components can still be crafted with the addition of a stabilizer - they just have a decreased chance of backfiring.
+    - Infusers: mimic the holistic crafter's ability and add a component effect to the crafted object.
+
+1) ___Potions___ Crafting a potion will pull one random component effect, which will last for a duration specified on the generated recipe file.
+
+2) ___Bombs___ By default, bombs deal force damage over a certain area. They require at least one `volatile` component.
+
+3) ___Poisons___ Like potions, poisons will pull one random component effect. Unlike potions, which must be ingested, poisons can be used to coat weapons or be ingested. The poison effects then last for the specified number of attacks or duration, respectively.
+
+4) ___Gases___ Gases require `nebulizer`s and disperse a given area for a certain amount of time. Similar to potions and poisons, gases will also pull at least one component effect.
+
+5) ___Magic weapons and armor___ Combining certain items with generic weapons or armor can add component effects and require `weapon` and `armor`, respectively.
+
+6) ___Runic Attunement Slot___ Runes are a special type known as a `progression` type, which - upon crafting - become a new type of component that can be used in additional craftings. Runes have specific abilities  which increase and change with their progression.
 	- Runes require a creature to form a bond with them before their magical properties can be invoked. This bond is called attunement, and all runes have a prerequisite number of runic attunement slots which they occupy as part of the attuning process.
 	- Attuning to a rune requires a creature to spend a Short Rest focused on only that rune while being in physical contact with it. If the Short Rest is interrupted, or if the creature does not meet the necessary prerequisites for attunement to the rune, the attunement attempt fails. Otherwise, at the end of this short rest, the creature gains an intuitive understanding of how to activate the rune's magical properties, as well as any necessary Command words, and may choose a weapon, piece of armor, or item they are holding or wearing to imbue with the power of the rune. The creature may imbue a new weapon, piece of armor, or item they are holding or wearing with the power of the rune they are attuned to by spending a Short Rest while being in physical contact with the rune and the new item; this process removes the rune's power from the originally-imbued weapon, piece of armor, or item.
 	- A rune may be attuned to only one creature at a time, and creatures have a set number of runic attunemtent slots, as outlined in the runic attunement table below. Any attempt to attune to a rune while lacking the required number of unoccupied runic attunement slots fails; the creature must end its attunement to a number of runes which satisfies the new rune's runic attunement slot requirements. Additionally, a creature can't attune to more than one copy of a rune. However, a creature may attune to more than one rune at a time, provided they have the required number of unoccupied runic attunement slots.
->-    Level	-	Runic Attunement Slots
->-	1st		-	1
->-	2nd		-	1
->-	3rd		-	2
->-	4th		-	2
->-	5th		-	3
->-	6th		-	3
->-	7th		-	4
->-	8th		-	4
->-	9th		-	5
->-	10th	-	5
->-	11th	-	6
->-	12th	-	6
->-	13th	-	7
->-	14th	-	7
->-	15th	-	8
->-	16th	-	8
->-	17th	-	9
->-	18th	-	9
->-	19th	-	10
->-	20th	-	10
-  
-  Yay! Okay, but how do you use it? Great question. I'll get back to you on that....
+
+  Level:	|	Runic Attunement Slots | | |
+--- | --- | --- | ---| ---|
+1st:		1   | 11th:  6|
+2nd:		1   | 12th: 	6|
+3rd:		2   | 13th: 	7|
+4th:		2   | 14th: 	7|
+5th:		3   | 15th: 	8|
+6th:		3   | 16th: 	8|
+7th:		4   | 17th: 	9|
+8th:		4   | 18th: 	9|
+9th:		5   | 19th: 	10|
+10th: 	5   | 20th: 	10|
+
+## Other goodies
+1) ___Pockets___ If you're playing with multiple players using this system, it can be hard to keep track of what components each player has and wants to use. Therefore, you can create a *pocket* for each player. Each pocket gets saved and can be altered independently. Pockets can be added or deleted as you require.
+
+2) ___Shop___ Hitting the `shop` button allows you to simulate a shop for your players. You will be prompted for a number of components you would like the shop to have, after which the specified number of components will be selected randomly from the list of components along with a random price determined from the component file. Some components are listed at `market price` and should be up to the discretion of the GM given that these items are rare or extremely useful. Products can be viewed in the main window by double-clicking them, and can be loaded into specific pockets.
+
+3) ___Forage___ Since most of these components are natural products, the players should have the opportunity to find them in the wild. By hitting the `forage` button, you will be prompted to choose the type of terrain your players are in as well as an amount of time the player is spending to look for items. Based on the location and time spent, a random number of items native to that terrain will be presented. Similar the shop mechanic, these components can be viewed in the main window by double-clicking them, and can be loaded into specific pockets.
+
+4) ___Subclasses___ Several subclasses have also been written into the program. It is up the GM how they would like these subclasses to be claimed by players, but a list and description of the subclasses can be found by selecting the `subclasses` button.
+
+## Conclusion
+  We hope that you enjoy the MasterCrafter system and encourage you to experiment with it as well as modify the files to meet your own needs and desires. Simply add or remove files in the `resources` directories and verify they've loaded correctly in the program.

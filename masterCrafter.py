@@ -33,7 +33,7 @@ list_type="components"
 
 # Modifier tags - these gets skipped when assessing type
 # Add requirement tags here as well
-modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot"]
+modifiers=["Volatile", "Amplifier", "Stabilizer", "Nebulizer", "Weapon", "Armor", "Spell slot", "Infuser"]
 
 # Types that get effects by default
 # Add type here if you want a random effect to always be added to that type
@@ -944,7 +944,7 @@ while True:
 
                             # if the user is a holistic crafter, then a random component effect is added
                             picked_material=""
-                            if values["-subclass_holistic-"]==True:
+                            if values["-subclass_holistic-"]==True or "Infuser" in type_pool:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 picked_material=random_material
                                 poss_effects=components[random_material.lower()].effects
@@ -1090,7 +1090,7 @@ while True:
 
                                     # if the user is a holistic crafter, then a random component effect is added
                                     picked_material=""
-                                    if values["-subclass_holistic-"]==True:
+                                    if values["-subclass_holistic-"]==True or "Infuser" in type_pool:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                         picked_material=random_material
                                         poss_effects=components[random_material.lower()].effects
@@ -1214,7 +1214,7 @@ while True:
                             if can_run:
                                 # if the user is a holistic crafter, then a random component effect is added
                                 picked_material=""
-                                if values["-subclass_holistic-"]==True:
+                                if values["-subclass_holistic-"]==True or "Infuser" in type_pool:
                                     random_material=materials[rand.randint(0,len(materials)-1)]
                                     picked_material=random_material
                                     poss_effects=components[random_material.lower()].effects
@@ -1320,7 +1320,7 @@ while True:
                         if can_run:
                             # if the user is a holistic crafter, then a random component effect is added
                             picked_material=""
-                            if values["-subclass_holistic-"]==True:
+                            if values["-subclass_holistic-"]==True or "Infuser" in type_pool:
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 poss_effects=components[random_material.lower()].effects
                                 while desc_name not in poss_effects:
