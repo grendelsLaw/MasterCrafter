@@ -24,7 +24,10 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 
 ## Types of crafting objects
   First and foremost - all crafted objects require at least two components and all components must share a common "type". If all the objects share a "Potion-type", they can craft a potion. If the components share __multiple__ types, a type will be randomly selected from the list of shared types. All created objects will generate a recipe file which can be used to re-craft the object exactly as it was originally made. If a list of components can make multiple types, but not all types have been explored, you have the option to either create a known recipe or __tinker__ and try to craft __other types__. Therefore, the greater number of components used in a craft, the smaller the odds they will share a common type. However, the potential potency of a crafted object will increase with the number of components used. Some types require specific kinds of components to be crafted, which are listed in the recipe files. An example are bombs that require at least one `volatile` component. Certain subtypes have the ability to ___backfire___ and detonate immediately upon crafting. Currently, the only two types that will backfire are `volatile` and `nebulizer` but this can be changed in the python file. Additionally, some types will pull a random component effect. These are currently the `poison`s, `potion`s, and `magic armor/weapon`s but this too can be tweaked in the python script. Finally, there are other component subtypes that do not effect the type of final product, but will change the variables of crafting. Currently there are:
-    - Amplifiers: boost the damage, duration, and area rolls during crafting
+    - Volatile: As mentioned previously, these are required to make bombs. Furthermore, they may cause the product to explode upon completion.
+    - Nebulizer: As mentioned previously, these are required to make gases. Furthermore, they may cause the product to explode upon completion.
+    - Amplifiers: boost the damage, duration, and area rolls during crafting.
+    - Dampeners: correspondingly, these decrease the damage, duration, and area rolls during crafting.
     - Stabilizers: decrease the odds of backfire depending on the ratio of volatile to stabilizers. For each stabilizer in the components, one volatile/nebulizer component's chance of backfiring is removed. Types that require volatile/nebulizer components can still be crafted with the addition of a stabilizer - they just have a decreased chance of backfiring.
     - Infusers: mimic the holistic crafter's ability and add a component effect to the crafted object.
 
@@ -44,10 +47,10 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 
 	- A rune may be attuned to only one creature at a time, and creatures have a set number of runic attunemtent slots, as outlined in the runic attunement table below. Any attempt to attune to a rune while lacking the required number of unoccupied runic attunement slots fails; the creature must end its attunement to a number of runes which satisfies the new rune's runic attunement slot requirements. Additionally, a creature can't attune to more than one copy of a rune. However, a creature may attune to more than one rune at a time, provided they have the required number of unoccupied runic attunement slots.
 
-  Level: Runic Attunement Slots 
-  
+  Level: Runic Attunement Slots
+
   1-10 | 11-20
---- | --- 
+--- | ---
 1st:		1   | 11th:  6
 2nd:		1   | 12th: 	6
 3rd:		2   | 13th: 	7
@@ -70,4 +73,3 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 
 ## Conclusion
   We hope that you enjoy the MasterCrafter system and encourage you to experiment with it as well as modify the files to meet your own needs and desires. Simply add or remove files in the `resources` directories and verify they've loaded correctly in the program.
-
