@@ -1,0 +1,5 @@
+Name: Ghost Ectoplasm
+Description: The curious, glowing residual fluid left after a ghost. VALUE100-150VALUE GP
+Types: Potion, Infuser
+Infuser: Adds a random component effect to the finished product.
+Potion: Creature becomes invisible for the duration of this potion.

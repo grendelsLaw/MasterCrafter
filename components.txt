@@ -1170,3 +1170,20 @@ Rune: While wearing or using an item imbued with this rune, you gain the followi
 
 
 
+**Name: Fomorian Stomach Lining**
+Description: In inner flesh from the stomach of a deformed giant. Known for their curious ability to digest anything. VALUE100-150VALUE GP
+Types: Potion, Infuser, Poison
+Infuser: Adds a random component effect to the finished product.
+Potion: Grants protection from disease and poisoned status.
+Poison: Creature must make a constitution saving throw (DC=TIME10-20TIME) or take DAMAGE2-4DAMAGEd4 poisoned damage. At the end of each turn, the creature may attempt an additional constitution saving throw. Upon a successful saving throw, the effects of the poison end.
+
+
+
+**Name: Ghost Ectoplasm**
+Description: The curious, glowing residual fluid left after a ghost. VALUE100-150VALUE GP
+Types: Potion, Infuser
+Infuser: Adds a random component effect to the finished product.
+Potion: Creature becomes invisible for the duration of this potion.
+
+
+
