@@ -24,26 +24,6 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 	- Runes require a creature to form a bond with them before their magical properties can be invoked. This bond is called attunement, and all runes have a prerequisite number of runic attunement slots which they occupy as part of the attuning process.
 	- Attuning to a rune requires a creature to spend a Short Rest focused on only that rune while being in physical contact with it. If the Short Rest is interrupted, or if the creature does not meet the necessary prerequisites for attunement to the rune, the attunement attempt fails. Otherwise, at the end of this short rest, the creature gains an intuitive understanding of how to activate the rune's magical properties, as well as any necessary Command words, and may choose a weapon, piece of armor, or item they are holding or wearing to imbue with the power of the rune. The creature may imbue a new weapon, piece of armor, or item they are holding or wearing with the power of the rune they are attuned to by spending a Short Rest while being in physical contact with the rune and the new item; this process removes the rune's power from the originally-imbued weapon, piece of armor, or item.
 	- A rune may be attuned to only one creature at a time, and creatures have a set number of runic attunemtent slots, as outlined in the runic attunement table below. Any attempt to attune to a rune while lacking the required number of unoccupied runic attunement slots fails; the creature must end its attunement to a number of runes which satisfies the new rune's runic attunement slot requirements. Additionally, a creature can't attune to more than one copy of a rune. However, a creature may attune to more than one rune at a time, provided they have the required number of unoccupied runic attunement slots.
-    Level	-	Runic Attunement Slots
-  	1st		-	1
-  	2nd		-	1
-  	3rd		-	2
-  	4th		-	2
-  	5th		-	3
-  	6th		-	3
-  	7th		-	4
-  	8th		-	4
-  	9th		-	5
-  	10th	-	5
-  	11th	-	6
-  	12th	-	6
-  	13th	-	7
-  	14th	-	7
-  	15th	-	8
-  	16th	-	8
-  	17th	-	9
-  	18th	-	9
-  	19th	-	10
-  	20th	-	10
+    Level	-	Runic Attunement Slots\n  1st		-	1\n  2nd		-	1\n  3rd		-	2\n  4th		-	2\n  5th		-	3\n  6th		-	3\n  7th		-	4\n  8th		-	4\n  9th		-	5\n  10th	-	5\n  11th	-	6\n  12th	-	6\n  13th	-	7\n  14th	-	7\n  15th	-	8\n  16th	-	8\n  17th	-	9\n  18th	-	9\n  19th	-	10\n  20th	-	10\n
   
   Yay! Okay, but how do you use it? Great question. I'll get back to you on that....
