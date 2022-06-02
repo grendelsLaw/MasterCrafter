@@ -42,8 +42,9 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 
 	- A rune may be attuned to only one creature at a time, and creatures have a set number of runic attunemtent slots, as outlined in the runic attunement table below. Any attempt to attune to a rune while lacking the required number of unoccupied runic attunement slots fails; the creature must end its attunement to a number of runes which satisfies the new rune's runic attunement slot requirements. Additionally, a creature can't attune to more than one copy of a rune. However, a creature may attune to more than one rune at a time, provided they have the required number of unoccupied runic attunement slots.
 
-  __Level: Runic Attunement Slots __
+  Level: Runic Attunement Slots 
   
+  1-10 | 11-20
 --- | --- 
 1st:		1   | 11th:  6
 2nd:		1   | 12th: 	6
