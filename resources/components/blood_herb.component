@@ -1,4 +1,4 @@
 Name: Blood Herb
-Description: A dark red poisonous herb with a similar shape to the Healer's Boon herb, which can be found in hills and coastal regions. VALUE1-10VALUE GP
+Description: A dark red poisonous herb which can be found in hills and coastal regions, with a similar shape to the Healer's Boon herb. VALUE1-10VALUE GP
 Types: Poison
 Poison: The creature takes DAMAGE1-2DAMAGEd6 poison damage.
