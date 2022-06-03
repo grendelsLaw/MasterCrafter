@@ -1,6 +1,6 @@
 Name: Fomorian Stomach Lining
-Description: In inner flesh from the stomach of a deformed giant. Known for their curious ability to digest anything. VALUE100-150VALUE GP
-Types: Potion, Infuser, Poison
+Description: The inner flesh from the stomach of a deformed giant - known for their curious ability to digest anything. VALUE100-150VALUE GP
+Types: Poison, Potion, Infuser
+Poison: On a failed save, the target takes an additional DAMAGE2-4DAMAGEd4 poison damage immediately and at the start of their turn for TIME1-5TIME turns. At the end of each turn the creature may repeat their saving throw, ending all effects of this poison on a success.
+Potion: Grants protection from disease and advantage on saving throws to avoid the poisoned status for the duration of the potion's effects.
 Infuser: Adds a random component effect to the finished product.
-Potion: Grants protection from disease and poisoned status.
-Poison: Creature must make a constitution saving throw (DC=TIME10-20TIME) or take DAMAGE2-4DAMAGEd4 poisoned damage. At the end of each turn, the creature may attempt an additional constitution saving throw. Upon a successful saving throw, the effects of the poison end.
