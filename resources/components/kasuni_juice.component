@@ -1,5 +1,6 @@
 Name: Kasuni Juice
 Description: A viscous white liquid extracted from the spherical fruit of a Kasuni shrub. Often found in freshwater environments among forests, hills, and plains. VALUE10-20VALUE GP
-Types: Bomb, Potion
-Bomb: Slippery oil is released on the ground in the bomb area. Each creature that enters or starts its turn in the area must make a Dexterity saving throw or be knocked prone.
+Types: Bomb, Potion, Infuser
+Bomb: Slippery oil is released on the ground in a DISTANCE5-20DISTANCE foot square centered on the point of impact, becoming difficult terrain for TIME1-5TIME turns. Each creature that failed its saving throw to avoid the effects of this bomb falls prone. Each creature that enters or starts its turn in the area must make a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or be knocked prone.
 Potion: When you make a Intelligence ability check or saving throw, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Infuser: Adds a random component effect to the finished product.
