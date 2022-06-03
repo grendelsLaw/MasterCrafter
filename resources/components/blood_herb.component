@@ -1,4 +1,4 @@
 Name: Blood Herb
 Description: A dark red poisonous herb which can be found in hills and coastal regions, with a similar shape to the Healer's Boon herb. VALUE1-10VALUE GP
 Types: Poison
-Poison: The creature takes DAMAGE1-2DAMAGEd6 poison damage.
+Poison: A creature that fails its saving throw to avoid the effects of this poison takes an additional DAMAGE1-3DAMAGEd6 poison damage and is poisoned for the duration of the poison's effects, or half as much damage and is not poisoned on a successful one. The creature may repeat this saving throw at the end of each of its turns, ending the poisoned condition on a success.
