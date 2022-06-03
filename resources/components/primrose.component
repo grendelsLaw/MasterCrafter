@@ -1,5 +1,5 @@
 Name: Primrose
 Description: An herbacious perennial that has fragrant, showy yellow to red-gold flowers. It forms a basal rosette of wrinkled leaves and blooms in temperate climates. Often found in the forests and hills near coastal regions. VALUE5-15VALUE GP
 Types: Potion, Stabilizer
-Potion: Grants DAMAGE1-5DAMAGEd6 temporary hit points for TIME1-10TIME hours.
+Potion: Grants DAMAGE1-5DAMAGEd6 temporary hit points for the duration of the potion's effects. While a creature has these temporary hitpoints its skin is suffused with an alluring glow, and it has advantage on Charisma (Persuasion) and Charisma (Performance) checks.
 Stabilizer: Reduces the chance of spontaneous detonation.
