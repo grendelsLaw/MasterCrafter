@@ -1,5 +1,5 @@
 Name: Viper Thistle
-Description: A poisonous flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the banded leaves. The flowerhead have a bright red-purple hue. Typically found in arid deserts, plains, hills, and mountainous regions. VALUE1-10VALUE GP
+Description: A poisonous flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the banded leaves. The flowerhead have a bright red-purple hue. Typically found in arid deserts, plains, hills, and mountainous regions. VALUE5-15VALUE GP
 Types: Bomb, Infuser
 Bomb: Sharp, poisonous spines explode out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 poison damage and is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the paralyzed condition on a success.
 Infuser: Adds a random component effect to the finished product.
