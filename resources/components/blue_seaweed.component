@@ -1,5 +1,5 @@
 Name: Blue Seaweed
 Description: A bright blue seaweed that appears as a fuzzy patch of tubular fingers that hang down from rocks nearby water. Typically found in brackish coastal regions and swamps. VALUE5-15VALUE GP
 Types: Potion, Stabilizer
-Potion: You can breathe underwater for TIME10-60TIME minutes.
+Potion: You can breathe underwater for the duration of the potion's effects.
 Stabilizer: Reduces the chance of spontaneous detonation.
