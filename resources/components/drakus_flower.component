@@ -3,6 +3,6 @@ Description: These carnivorous flowers secrete an oil within the folds of their 
 Types: Bomb, Poison, Potion, Volatile, Amplifier
 Bomb: A sticky burning mixture sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-10DAMAGE fire damage immediately and at the start of their turn for TIME1-5TIME turns. This bomb has no effect on constructs and non-organic creatures.
 Poison: On a failed save, the target becomes vulnerable to fire damage. A creature may repeat this saving throw at the start of each of their turns, ending the effect on a success.
-Potion: Cures Charmed status and the creature must succeed on a Constitution saving throw or take DAMAGE1-10DAMAGE fire damage at the start of their next turn.
+Potion: Cures Charmed status and the creature must succeed on a Constitution saving throw (DC=DAMAGE1-10DAMAGE) or take DAMAGE1-10DAMAGE fire damage at the start of their next turn.
 Volatile: May cause a backfire.
 Amplifier: Boosts effectiveness of contraptions.
