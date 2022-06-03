@@ -1,6 +1,7 @@
 Name: Feverfew
 Description: These short, blue perennial plants produce flat, dimly glowing, white flowers with a long stem and white petals. Known for its anti-toxin properties. Generally found among other plants in plains, forests, and hills. VALUE5-15VALUE GP
-Types: Poison, Potion, Stabilizer
+Types: Poison, Potion, Stabilizer, Dampener
 Poison: The effects of this poison are negated, rendering it inert.
 Potion: Cures the poisoned condition.
 Stabilizer: Reduces the chance of spontaneous detonation.
+Dampener: Decreases effectiveness of contraptions.
