@@ -1,6 +1,8 @@
 Name: Radiant Synthseed
-Description: These crystals vibrate at soothing harmonic frequencies when exposed to natural sunlight. When crushed, the powder make a delightfully invigorating snuff. Rare, though generally found in hills and mountains near coastal regions. VALUE20-30VALUE GP
-Types: Bomb, Gas, Potion
-Bomb: Double the number of all damage dice for this bomb.
+Description: These crystals vibrate at soothing harmonic frequencies when exposed to natural sunlight. When crushed, the powder make a delightfully invigorating snuff. Rare, though generally found in hills and mountains near coastal regions. VALUE50-70VALUE GP
+Types: Bomb, Gas, Potion, Amplifier, Infuser
+Bomb: Double the number of all damage dice for this bomb. Extend the radius of this bomb by DISTANCE5-10DISTANCE feet.
 Gas: Creatures within this gas have advantage on saving throws against being Charmed or Frightened, and cannot be put to sleep magically.
-Potion: A creature ingesting this potion gains advantage on Charisma checks and saving throws for one minute.
+Potion: A creature ingesting this potion gains advantage on Charisma checks and saving throws for the duration of the potion's effects.
+Amplifier: Boosts effectiveness of contraptions.
+Infuser: Adds a random component effect to the finished product.
