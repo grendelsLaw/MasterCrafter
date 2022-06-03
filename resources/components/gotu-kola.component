@@ -1,6 +1,7 @@
 Name: Gotu-Kola
 Description: This leafy, perennial plant indigenous to tropical wetlands is commonly used as a juice, tea, or green leafy vegetable. Known for its ability to absorb and retain ambient magical energy. Generally found in swamps, humid forests, and coastal regions. VALUE1-10VALUE GP
-Types: Potion, Volatile
+Types: Potion, Volatile, Amplifier
 Potion: Restores one first level spell slot.
-Potion: Consuming spellcaster may add +DAMAGE1-5DAMAGE to the DC of their spells for TIME1-10TIME hours.
+Potion: If the creature is a spellcaster, it may add +DAMAGE1-5DAMAGE to the DC of their spells for the duration of the potion's effects.
 Volatile: May cause a backfire.
+Amplifier: Boosts effectiveness of contraptions.
