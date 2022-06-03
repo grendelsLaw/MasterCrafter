@@ -1,5 +1,5 @@
 Name: Ellond Shrub
 Description: A dried-looking woody plant with several main stems arising at or near the ground. Commonly found in arid deserts, plains, and mountains. VALUE1-10VALUE GP
 Types: Bomb, Dampener
-Bomb: A resounding crack emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 thunder damage and is deafened for TIME1-3TIME turns on a failed save, or half as much damage on a successful one and is not deafened.
+Bomb: A resounding crack emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 thunder damage and is deafened for TIME1-3TIME turns, or half as much damage and is not deafened on a successful one.
 Dampener: Decreases effectiveness of contraptions.
