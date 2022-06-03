@@ -1,3 +1,3 @@
 Name: Bomb
-Description: An explosive device. When detonated, creatures within DISTANCE5-20DISTANCE feet must take a dexterity saving throw or take DAMAGE1-3DAMAGEd4 force damage and fall prone. If they pass the check, they take half damage and avoid other effects.
+Description: An explosive device. When detonated, creatures within DISTANCE5-20DISTANCE feet must make a Dexterity saving throw. On a failed save, a creature takes DAMAGE1-3DAMAGEd4 force damage, taking half damage and avoiding any other effects on a successful one.
 Requirements: Volatile
