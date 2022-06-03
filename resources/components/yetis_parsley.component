@@ -1,5 +1,6 @@
 Name: Yeti's Parsley
-Description: A short fungus with a thick stem and a clumped blue cap, producing red spores. Only produces spores in cold, mountainous climates. VALUE5-15VALUE GP
-Types: Bomb, Amplifier
+Description: A short fungus with a thick stem and a clumped blue cap, producing red spores. Only produces spores in cold, mountainous climates. VALUE15-25VALUE GP
+Types: Bomb, Potion, Amplifier
 Bomb: A wave of red-tinged freezing water blasts out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 cold damage and is restrained, or half as much damage and is not restrained on a successful one. Any creature may take an Action to remove the ice from themselves or another creature, ending the restrained condition.
+Potion: Gain resistance to cold damage for the duration of the potion's effects.
 Amplifier: Boosts effectiveness of contraptions.
