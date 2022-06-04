@@ -1,5 +1,5 @@
 Name: Chromatic Mud
 Description: A strange viscous fungus that reflects the light from any light source, glowing faintly. It can be found near oceans, rivers, and lakes in hills, swamps, and coastal areas. VALUE10-20VALUE GP
 Types: Bomb, Potion
-Bomb: A wave of sticky mud is released when the bomb explodes. Each creature in the area that fails its saving throw to avoid the effects of this bomb is blinded for TIME1-5TIME turns.
+Bomb: A flash of sticky mud explodes out from the point of impact. Each creature in the area that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 radiant damage and is blinded for TIME1-5TIME turns. Any creature may take an Action to clear the mud from themselves or another creature, ending the blinded condition.
 Potion: Damage that you would take from a source that deals acid damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effects.
