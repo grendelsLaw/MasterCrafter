@@ -1,6 +1,6 @@
 Name: Banshee's Lament
 Description: A plant with leaf rosettes and bright, vibrant colours, with either blooms or inflorescence being produced on a stalk. The color varies between blue and pink. Found exclusively in swamps. VALUE1-10VALUE GP
 Types: Bomb, Poison, Volatile
-Bomb: A bloodcurdling shriek emanates from the point of impact as the bomb explodes. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-2DAMAGEd4 psychic damage and is frightened of the point of impact for TIME1-5TIME turns, or half as much damage and is not frightened on a successful one.
+Bomb: A bloodcurdling shriek emanates from the point of impact as the bomb explodes. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 psychic damage and is frightened of the point of impact for TIME1-5TIME turns, or half as much damage and is not frightened on a successful one.
 Poison: When the creature makes a ranged attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll. 
 Volatile: May cause a backfire.
