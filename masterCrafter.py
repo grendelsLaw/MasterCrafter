@@ -6,6 +6,7 @@
 import PySimpleGUI as sg
 import os.path
 import random as rand
+import copy
 
 sg.theme("DarkTanBlue")
 
@@ -1029,7 +1030,7 @@ while True:
                 window["-item_image-"].update("resources/images/failure.png")
 
             elif len(small_type_pool)==1 and small_type_pool[0] in progression_type:
-                print("Found a progression")
+#                print("Found a progression")
                 prog_type=prog_dict[small_type_pool[0]]
                 prog_possibilities=list(prog_type.keys())
                 prog_possibilities.append("Random")
@@ -1064,7 +1065,7 @@ while True:
                             upgrade_flavor="Random"
                         if upgrade_flavor=="Random":
                             upgrade_flavor=list(prog_type.keys())[rand.randint(0,len(list(prog_type.keys()))-1)]
-                        new_comp=components[progression_map[0].lower()]
+                        new_comp=copy.copy(components[progression_map[0].lower()])
                         new_comp.name=new_name
                         new_desc=new_comp.description+"\n\n"
                         upgrade_dict={}
@@ -1106,12 +1107,13 @@ while True:
                                                 for tier2 in mod_tiers:
                                                     if tier2 in upgrade_dict and tier2 != upgrade:
                                                         if mod_type=="ADD":
-                                                            print("adding")
+#                                                            print("adding")
                                                             for letter in mod_desc[1:len(mod_desc)-1]:
-                                                                upgrade_dict[tier2]+=" "+letter
+                                                                upgrade_dict[tier2]+=letter+" "
 #                                                            print(upgrade_dict[tier2])
                                                         elif mod_type=="REMOVE":
-                                                            print("removing")
+#                                                            print("removing")
+                                                            slip=""
                                                             for letter in mod_desc[1:len(mod_desc)-1]:
                                                                 slip+=letter+" "
                                                             slip=slip.strip()
@@ -1119,7 +1121,7 @@ while True:
                                                                 upgrade_dict[tier2]=upgrade_dict[tier2].replace(slip, "")
 #                                                            print(upgrade_dict[tier2])
                                                         else:
-                                                            print(mod_type+"ing")
+#                                                            print(mod_type+"ing")
                                                             if mod_type in upgrade_dict[tier2]:
                                                                 newest_dec=""
                                                                 old_desc=upgrade_dict[tier2].split(mod_type)
@@ -1138,7 +1140,46 @@ while True:
                                                     else:
                                                         break
                                             else:
-                                                print("Now we add to just everything..")
+                                                mod_desc=new_tier[exon].strip().split(" ")
+                                                mod_type=mod_desc[0].upper()
+#                                                print(mod_type)
+
+                                                for tier2 in progression_map[1:len(progression_map)-1]:
+#                                                    print(tier2)
+                                                    if tier2 in upgrade_dict and tier2 != upgrade:
+                                                        if mod_type=="ADD":
+#                                                            print("adding to all")
+                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                                upgrade_dict[tier2]+=letter+" "
+#                                                            print(upgrade_dict[tier2])
+                                                        elif mod_type=="REMOVE":
+#                                                            print("removing from all")
+                                                            slip=""
+                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                                slip+=letter+" "
+                                                            slip=slip.strip()
+                                                            if slip in upgrade_dict[tier2]:
+                                                                upgrade_dict[tier2]=upgrade_dict[tier2].replace(slip, "")
+#                                                            print(upgrade_dict[tier2])
+                                                        else:
+#                                                            print(mod_type+"ing on all")
+                                                            if mod_type in upgrade_dict[tier2]:
+                                                                newest_dec=""
+                                                                old_desc=upgrade_dict[tier2].split(mod_type)
+                                                                tick2=1
+                                                                for exon2 in old_desc:
+                                                                    if tick2%2==0:
+                                                                        newest_dec+=mod_type
+                                                                        exon2=exon2.split("-")
+                                                                        min_number=int(exon2[0])+int(mod_desc[1])
+                                                                        max_number=int(exon2[1])+int(mod_desc[1])
+                                                                        newest_dec+=str(min_number)+"-"+str(max_number)+mod_type
+                                                                    else:
+                                                                        newest_dec+=exon2
+                                                                    tick2+=1
+                                                                upgrade_dict[tier2]=newest_dec
+                                                    else:
+                                                        break
                                         else:
                                             best+=new_tier[exon]
                                         tick+=1
@@ -1150,6 +1191,8 @@ while True:
                                 new_desc+=upgrade_dict[tier]+"\n\n"
                         new_desc=roll_desc(new_desc, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
                         new_comp.description=new_desc
+                        if new_comp.name.lower() in components:
+                            components.pop(new_comp.name.lower())
                         components[new_comp.name.lower()]=new_comp
                         if original_item!=progression_map[0]:
                             components.pop(original_item.lower())
