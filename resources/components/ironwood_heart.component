@@ -1,6 +1,6 @@
 Name: Ironwood Heart
 Description: The dark heartwood of an Ironwood tree, smells not unlike an active smithy on a crips winter's day. Often found in swamps, forests, and hills. VALUE1-10VALUE GP
 Types: Bomb, Potion, Volatile
-Bomb: Throws shrapnel dealing DAMAGE1-5DAMAGEd4 piercing damage to a creature within DISTANCE5-20DISTANCE feet of impact.
-Potion: Grants resistance to nonmagical slashing and bludgeoning damage for 1 minute.
+Bomb: Piercing shrapnel shoots out from the point of impact, and a DISTANCE5-20DISTANCE foot circle centered on the point of impact becomes difficult terrain for TIME1-5TIME turns. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 piercing damage or half as much damage on a successful save. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or take DAMAGE1-2DAMAGEd4 piercing damage.
+Potion: Grants resistance to nonmagical piercing, slashing, and bludgeoning damage for the duration of the potion's effects.
 Volatile: May cause a backfire.

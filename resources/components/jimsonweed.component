@@ -1,6 +1,7 @@
 Name: Jimsonweed
 Description: Also called Thorn Apple or Devil's Snare, this member of the nightshade family grows up to 5 feet tall with long, ovate leaves that are reddish-purple in color and produce flowers with cyan petals which glow faintly in dim light. Found in lowlands among plains, swamps, forests, and coastal regions. VALUE1-10VALUE GP
-Types: Gas, Poison, Nebulizer
-Gas: Each creature that starts its turn or enters this gas must succeed on a Charisma saving throw or be Frightened of the closest living creature. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This gas has no effect on undead and constructs.
-Poison: The target must succeed on a Charisma saving throw or be Frightened of the closest living creature. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This poison has no effect on undead and constructs.
+Types: Gas, Poison, Nebulizer, Infuser
+Gas: Each creature that starts its turn or enters this gas must succeed on a Charisma saving throw (DC=DAMAGE10-20DAMAGE) or be frightened of the closest living creature. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This gas has no effect on undead and constructs.
+Poison: A creature that fails its saving throw to avoid the effects of this poisoned is frightened of the closest living creature for the duration of the poison's effects. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This poison has no effect on undead and constructs.
 Nebulizer: May cause a backfire.
+Infuser: Adds a random component effect to the finished product.

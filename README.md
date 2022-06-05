@@ -51,16 +51,16 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 
   1-10 | 11-20
 --- | ---
-1st:		1   | 11th:  6
-2nd:		1   | 12th: 	6
-3rd:		2   | 13th: 	7
-4th:		2   | 14th: 	7
-5th:		3   | 15th: 	8
-6th:		3   | 16th: 	8
-7th:		4   | 17th: 	9
-8th:		4   | 18th: 	9
-9th:		5   | 19th: 	10
-10th: 	5   | 20th: 	10
+1st:		1   | 11th:  5
+2nd:		1   | 12th: 	5
+3rd:		2   | 13th: 	5
+4th:		2   | 14th: 	6
+5th:		3   | 15th: 	6
+6th:		3   | 16th: 	6
+7th:		3   | 17th: 	7
+8th:		4   | 18th: 	7
+9th:		4   | 19th: 	8
+10th: 	4   | 20th: 	8
 
 ## Other goodies
 1) ___Pockets___ If you're playing with multiple players using this system, it can be hard to keep track of what components each player has and wants to use. Therefore, you can create a *pocket* for each player. Each pocket gets saved between sessions and can be altered independently. Pockets can be added or deleted as you require.

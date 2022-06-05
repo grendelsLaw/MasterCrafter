@@ -1,7 +1,8 @@
 Name: Wisp Stalks
-Description: Found near dead marshes, these stalks seem to crackle with a flickering light. Ensure proper insulation precautions are taken, never handle directly. Found at high altitudes of hills and mountainous regions. VALUE10-15VALUE GP
-Types: Bomb, Potion, Volatile
-Bomb: Creatures within DISTANCE5-20DISTANCE feet of the radius are subjected to the bomb's effect as if they were within the affected area.
-Potion: Melee attacks made with a metallic weapon deal an extra DAMAGE1-5DAMAGE lightning damage on a hit while under the effects of this potion.
+Description: Found near dead marshes, these stalks seem to crackle with a flickering light. Ensure proper insulation precautions are taken, never handle directly. Found at high altitudes of hills and mountainous regions. VALUE15-20VALUE GP
+Types: Bomb, Potion, Volatile, Amplifier
+Bomb: Creatures within DISTANCE5-10DISTANCE feet of the bomb's radius are subjected to the bomb's effects as if they were within the radius.
+Potion: Melee weapon attacks made with a metallic weapon deal an extra DAMAGE1-10DAMAGE lightning damage on a hit while under the effects of this potion.
 Potion: Cures Paralyzed status.
 Volatile: May cause a backfire.
+Amplifier: Boosts effectiveness of contraptions.

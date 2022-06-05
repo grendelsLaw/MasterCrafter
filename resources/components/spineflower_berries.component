@@ -1,6 +1,6 @@
 Name: Spineflower Berries
-Description: These tiny vibrant blue berries grow in the center of the Spineflower, a rare plant with sharp petals and a stem filled with spines. Found in open deserts and plains. VALUE1-10VALUE GP
+Description: These tiny vibrant blue berries grow in the center of the Spineflower, a rare plant with sharp petals and a stem filled with spines. Found in open deserts and plains. VALUE15-25VALUE GP
 Types: Bomb, Potion, Volatile
-Bomb: Each creature within the bomb's area must succeed on a Dexterity Saving Throw or take DAMAGE1-4DAMAGEd4 piercing damage.
+Bomb: A cloud of spines shoots out from the point of impact, and a DISTANCE5-20DISTANCE foot circle centered on the point of impact becomes difficult terrain for TIME1-5TIME turns. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 piercing damage or half as much damage on a successful save. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or take DAMAGE1-2DAMAGEd4 piercing damage.
 Potion: When you make a Charisma ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
 Volatile: May cause a backfire.

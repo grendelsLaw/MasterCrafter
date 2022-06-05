@@ -1,4 +1,5 @@
 Name: Bone Garlic
 Description: A bulbous plant that grows up to 3 feet in height. While it produces a beautiful white rounded flower, the bulb is the only part used in alchemy. Found in deserts, plains, and swamps. VALUE1-10VALUE GP
-Types: Bomb
-Bomb: Each creature in the bomb area must make a Constitution Saving Throw. A target takes DAMAGE1-3DAMAGEd6 necrotic damage on a failed save, or half as much damage on a successful one.
+Types: Bomb, Infuser
+Bomb: A blaze of ghoulish light emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 necrotic damage and is frightened of the point of impact for TIME1-3TIME turns, or half as much damage and is not frightened on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the frightened condition on a success.
+Infuser: Adds a random component effect to the finished product.

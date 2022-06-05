@@ -1,6 +1,6 @@
 Name: Hydrathistle
 Description: A flowering plant with up to five blossoms per stem, and sharp prickles on the margins. Caution should be taken to not impale one-self on the prickles, as they tend to leave festering wounds when in contact with blood. Commonly found in swamps, humid forests, plains-marshes, and coastal regions. VALUE20-30VALUE GP
 Types: Bomb, Gas, Poison
-Bomb: Releases slippery oil on the ground, creating difficult terrain in a DISTANCE5-20DISTANCE-foot square.
-Gas: Creatures within this gas who take piercing damage subtract DAMAGE1-2DAMAGEd4 from all Constitution Saving Throws until the end of their next turn.
+Bomb: A slippery oil spreads out from the point of impact, creating difficult terrain in a DISTANCE5-20DISTANCE foot square for TIME1-5TIME rounds. Each creature that fails its saving throw to avoid the effects of this bomb falls prone. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or fall prone.
+Gas: Creatures within this gas who take piercing damage subtract DAMAGE1-2DAMAGEd4 from all Constitution saving throws until the end of their next turn.
 Poison: Creatures exposed to this poison have disadvantage on Constitution Saving Throws to maintain Concentration on a spell for TIME2-4TIME rounds.
