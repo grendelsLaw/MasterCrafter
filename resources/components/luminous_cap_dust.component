@@ -1,5 +1,5 @@
 Name: Luminous Cap Dust
 Description: These spores glow with a sickly green light and tend to corrode anything they are in contact with for extended periods of time. Ensure proper protective precautions are taken, never handle directly. Commonly found in swamps, forests, and hills. VALUE10-20VALUE GP
 Types: Bomb, Gas
-Bomb: A caustic, glowing green fluid sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-5DAMAGEd4 acid damage, or half as much damage on a successful save. Objects within the area that are not being worn or held take maximum damage.
+Bomb: A caustic, glowing green fluid sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 acid damage, or half as much damage on a successful save. Objects within the area that are not being worn or held take maximum damage.
 Gas: Creatures within this gas glow brightly, as if under the effect of the Fairy Fire spell, for the duration.
