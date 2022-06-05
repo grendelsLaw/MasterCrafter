@@ -1193,7 +1193,7 @@ while True:
                         for tier in progression_map:
                             if tier in upgrade_dict:
                                 new_desc+=upgrade_dict[tier]+"\n\n"
-                        new_desc=roll_desc(new_desc, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                        new_desc=roll_desc(new_desc, False ,prof_bonus, False, 0, False, 0, False, 0)
                         new_comp.description=new_desc
                         if new_comp.name.lower() in components:
                             components.pop(new_comp.name.lower())
