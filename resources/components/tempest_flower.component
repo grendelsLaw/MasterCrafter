@@ -1,5 +1,5 @@
 Name: Tempest Flower
 Description: A plant that grows up to 10 feet tall, with simple or branched stems. The blue-green leaves are spirally arranged and the flowers are produced in daisy-like inflorescences, with yellow and orange florets arranged in a prominent, cone-shaped head. Generally found in disturbed areas of deserts, plains, and arid forests. VALUE1-5VALUE GP
 Types: Bomb, Volatile
-Bomb: A concussive wave explodes from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 thunder damage and is deafened, or half as much damage and is not deafened on a successful one.
+Bomb: A concussive wave explodes from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 thunder damage and is deafened, or half as much damage and is not deafened on a successful one.
 Volatile: May cause a backfire.
