@@ -1,6 +1,6 @@
 Name: Golden Coneflower
 Description: A plant that grows up to 4 feet tall with erect stems. The leaves are normally hairy with a rough texture, and the yellow flowers are collected together into single, rounded heads that glow softly in dim light. Can be found near caves among hills and mountainous regions. VALUE10-20VALUE GP
 Types: Bomb, Potion, Dampener
-Bomb: A blaze of golden light flashes out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 radiant damage and has any statuses affecting them end immediately, or half as much damage and any statuses persist on a successful one.
+Bomb: A blaze of golden light flashes out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 radiant damage and has any statuses affecting them end immediately, or half as much damage and any statuses persist on a successful one.
 Potion: Cures one disease.
 Dampener: Decreases effectiveness of contraptions.
