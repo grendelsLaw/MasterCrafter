@@ -775,10 +775,13 @@ while True:
             description=roll_desc(description, True)
 
             window["-item_description_2-"].update(description)
-            if pocket_name+"s " in selected_name:
-                selected_name=selected_name.replace(pocket_name+"s ", "")
-            elif "Personal " in selected_name:
-                selected_name=selected_name.replace("Personal ", "")
+
+
+            if selected_name.split(" ")[-1].capitalize() in progression_type:
+                if "Basic - " in description:
+                    flavor=description.split("Basic - ")[1].strip().split(":")[0].strip().lower()
+                    image_name=selected_name.split(" ")[-2]+" "+flavor +" "+selected_name.split(" ")[-1]
+                    selected_name=image_name
 
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
@@ -1213,6 +1216,30 @@ while True:
                         if len(pocket)>0 and pocket_name != "None":
                             pocket[pocket_name].append(new_comp.name)
                             secret_pocket[pocket_name].append(new_comp.name)
+
+
+                        desc_name=new_comp.name
+                        desc_desc=new_comp.description
+                        desc_types=new_comp.types
+                        description=desc_name+"\n\n"+desc_desc
+                        if len(new_comp.effects) > 0:
+                            description=description+"\n\nTypes:"
+                            for i in desc_types:
+                                description+="\n   -"+i+": "+new_comp.effects[i]
+
+                        window["-item_description_2-"].update(description)
+
+
+                        if new_comp.name.split(" ")[-1].capitalize() in progression_type:
+                            if "Basic - " in new_comp.description:
+                                flavor=new_comp.description.split("Basic - ")[1].strip().split(":")[0].strip().lower()
+                                image_name=new_comp.name.split(" ")[-2].lower()+" "+flavor +" "+new_comp.name.split(" ")[-1].lower()
+                                selected_name=image_name
+
+                        if selected_name+".png" in images_list:
+                            window["-item_image-"].update("resources/images/"+selected_name+".png")
+                        else:
+                            window["-item_image-"].update("resources/images/general_component.png")
 #                    except:
 #                        pass
 
