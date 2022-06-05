@@ -182,14 +182,15 @@ dampen=False):
                         desc+="s"
                     desc+="."
                 else:
-                    i=i.split(" ")
+                    i=i.strip().split(" ")
                     alt_word=i[0]
                     if alt_word == "add" or alt_word == "remove":
-                        desc+=alt_word.capitalize()+"s "
-                        for letter in i[1].split(" ")[1:len(i[1].split(" "))]:
+                        desc+=alt_word.capitalize()+"s -"
+                        for letter in i[1:len(i)-1]:
                             desc+=" "+letter
+                        desc+=" -"
                     else:
-                        desc+="Increases "+alt_word+" rolls by "+i[1].split(" ")[1]
+                        desc+="Increases "+alt_word+" rolls by "+i[1].split(" ")[0]
                     desc+=" for all previous tiers."
             else:
                 desc+=i
@@ -1055,7 +1056,7 @@ while True:
                 else:
 #                    try:
                         if original_item==progression_map[0]:
-                            new_name=sg.popup_get_text("You have begun to path to develop a new "+small_type_pool[0].lower()+". What should this path be called?")
+                            new_name=sg.popup_get_text("You have begun the path to develop a new "+small_type_pool[0].lower()+". What should this path be called?")
                             if new_name=="":
                                 new_name="Personal"
                             try:
