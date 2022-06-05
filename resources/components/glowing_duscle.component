@@ -1,6 +1,6 @@
 Name: Glowing Duscle
 Description: An herb that reaches a height of nearly 50 inches, with long, ovate leaves. The flowers have greenish-yellow petals and yellow dots. Can be found in forests and hills. VALUE1-5VALUE GP
 Types: Bomb, Volatile, Amplifier
-Bomb: A flash of crackling energy arcs out from the point of impact. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 lightning damage and is stunned for TIME1-2TIME rounds, or half as much damage and is not stunned on a successful one.
+Bomb: A flash of crackling energy arcs out from the point of impact. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 lightning damage and is stunned for TIME1-2TIME rounds, or half as much damage and is not stunned on a successful one.
 Volatile: May cause a backfire.
 Amplifier: Boosts effectiveness of contraptions.
