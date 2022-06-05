@@ -1,5 +1,5 @@
 Name: Wizard's Cap
 Description: A small pale-orange mushroom which grows a gray-blue cap that is similar in appearance to a traditional Wizard's pointed hat. Found in open fields of plains, hills, forests, and coastal regions. VALUE5-15VALUE GP
 Types: Bomb, Stabilizer
-Bomb: A disorienting wave of energy emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 psychic damage and has disadvantage on Concentration checks to maintain a spell, or half as much damage and no disadvantage on Concentration checks to maintain a spell on a successful one.
+Bomb: A disorienting wave of energy emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 psychic damage and has disadvantage on Concentration checks to maintain a spell, or half as much damage and no disadvantage on Concentration checks to maintain a spell on a successful one.
 Stabilizer: Reduces the chance of spontaneous detonation.
