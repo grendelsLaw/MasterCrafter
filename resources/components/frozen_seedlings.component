@@ -1,7 +1,7 @@
 Name: Frozen Seedlings
 Description: These black seedlings glow with a cold inner light that condenses and supercools the moisture in the air around themselves, causing tiny snowflakes to appear and frost to creep outward from them over inert surfaces. Often found at high altitudes in hills and mountains. VALUE10-20VALUE GP
 Types: Bomb, Potion, Amplifier, Infuser
-Bomb: A wave of supercooled fluid washes out from the point of impact. Each creature that failed its saving throw becomes takes an additional DAMAGE1-3DAMAGEd6 cold damage and is restrained for TIME1-5TIME rounds, or half as much damage and is not restrained on a successful one. Any creature may end this effect by taking an Action to clear the ice on themselves or another creature.
+Bomb: A wave of supercooled fluid washes out from the point of impact. Each creature that failed its saving throw becomes takes an additional DAMAGE1-3DAMAGEd4 cold damage and is restrained for TIME1-5TIME rounds, or half as much damage and is not restrained on a successful one. Any creature may end this effect by taking an Action to clear the ice on themselves or another creature.
 Potion: A creature ingesting this potion gains resistance to fire damage, and they and objects they are holding cannot be set on fire, for the duration of the potion's effects.
 Amplifier: Increases effectiveness of contraptions.
 Infuser: Adds a random component effect to the finished product.
