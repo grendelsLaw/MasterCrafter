@@ -1,8 +1,7 @@
-**Name: Greater Bifra Rune**
-Description: This rune symbolizes the bridge between realms, a path from the divine to mortalkind, allowing those who channel it to tap into the power of translocation.
+**Name: Jasons Greater Rune**
+Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued.  Market PriceSPACESPACEBasic - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACECorruptionSPACEAs an action, you can lash out at a creature with destructive energy. Make a melee spell attack against a creature within your reach. On a hit, the target takes 3d6 necrotic damage and must subtract 3d4 from the next ability check or saving throw it makes before the start of your next turn.SPACERequires Constitution 13 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot.SPACESPACELesser - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACEField of EntropySPACEAs a bonus action, you can conjure forth an aura of corroding energy in a 15 foot radius centered on you for 5 rounds or until you end the effect. All creatures that start their turn within or enter the aura must succeed on a Constitution saving throw or have their armor class reduced by 2 for the duration. This has no effect on magical or natural armor.SPACERequires Constitution 14 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. SPACESPACEGreater - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACERunic SmiteSPACEAs an action, you call down the power of chaos on a creature of your choice within 15 feet of you that you can see. The target must make a Dexterity saving throw, taking 1d10 necrotic damage and being knocked prone on a failed save, or half as much damage and not being knocked prone on a successful one. While prone as a result of this effect, the target must use all of its movement speed to stand up.SPACERequires Constitution 15 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots.  SPACESPACE
 Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACERealm AnchorSPACEAs an action, you emit a DISTANCE10-15DISTANCE foot radius aura which warps space around you for TIME2-4TIME rounds. For the duration, you can use a bonus action on each of your turns to force a creature you can see within DISTANCE15-30DISTANCE feet of you to make a Wisdom saving throw or be teleported to a random unoccupied space within the aura. A creature may willingly fail this saving throw.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Wisdom 16 or greater to attune for a creature who did not craft the rune.
-
+Rune:  Required for Runesmithing.
 
 
 **Name: Ebrium Fungus**
@@ -20,13 +19,6 @@ Potion: Damage that you would take from sources that deal radiant damage is redu
 
 
 
-**Name: Lesser Ragnr Rune**
-Description: This rune symbolizes destruction and chaos, allowing those who channel it to tap into the power of destruction.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEField of EntropySPACEAs a bonus action, you can conjure forth an aura of corroding energy in a DISTANCE10-15DISTANCE foot radius centered on you for TIME1-3TIME rounds or until you end the effect. All creatures that start their turn within or enter the aura must succeed on a Constitution saving throw or have their armor class reduced by DAMAGE1-2DAMAGE for the duration. This has no effect on magical or natural armor.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Constitution 14 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Spineflower Berries**
 Description: These tiny vibrant blue berries grow in the center of the Spineflower, a rare plant with sharp petals and a stem filled with spines. Found in open deserts and plains. VALUE1-10VALUE GP
 Types: Bomb, Potion, Volatile
@@ -36,35 +28,11 @@ Volatile: May cause a backfire.
 
 
 
-**Name: Basic Ragnr Rune**
-Description: This rune symbolizes destruction and chaos, allowing those who channel it to tap into the power of destruction.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECorruptionSPACEAs an action, you can lash out at a creature with destructive energy. Make a melee spell attack against a creature within your reach. On a hit, the target takes DAMAGE1-3DAMAGEd6 necrotic damage and must subtract DAMAGE1-2DAMAGEd4 from the next ability check or saving throw it makes before the start of your next turn.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot. Requires Constitution 13 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Leafweave**
 Description: Alchemically processed leaves that are as hard as leather but can be worked like metal, with the final armor having natural camouflage and stealth properties. VALUE100VALUE GP
 Types: Magic armor, Equipment
 Magic armor: A non-magical armor made with leafweave grants you a DAMAGE1-4DAMAGE bonus to Dexterity (Stealth) checks made to hide while lightly obscured by living plants.
 Equipment: Used to craft the Boots of Elvenkind and the Cloak of Elvenkind.
-
-
-
-**Name: Lesser Wuldr Rune**
-Description: This rune symbolizes war, combat skill, and honor. Those who channel it find that their martial prowess is enhanced.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEBerserker AspectSPACEAs a bonus action, you call upon the rage of warriors past. For the next TIME1-5TIME rounds, you reduce damage you take by an amount equal to your Wisdom modifier.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Constitution 14 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Aett Rune**
-Description: This rune symbolizes the words from a noble's mouth, the speech of a leader, the silvertongue of a merchant. It grants those who channel it greater charm and influence.
-Types: Rune 
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEFearsomeSPACEAs a bonus action, you impose your presence upon a creature within DISTANCE15-30DISTANCE feet of you. The target must make a Wisdom saving throw or become Frightened of you for TIME2-4TIME rounds. The creature may repeat this saving throw if it takes damage from you or your allies. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Charisma 15 or greater to attune for a creature who did not craft the rune.
-
-
-
 
 
 
@@ -113,6 +81,12 @@ Types: Magic armor, Equipment
 Magic armor: A non-magical armor made with monster feathers grants you a +DAMAGE1-4DAMAGE bonus to Wisdom (Animal Handling) checks you make.
 Equipment: Harvested monster feathers from a CR 9 or higher creature can be used to craft a Quaal's Feather Token.
 
+
+
+**Name: Jasons Epic Rune**
+Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued.  Market PriceSPACESPACEBasic - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACECorruptionSPACEAs an action, you can lash out at a creature with destructive energy. Make a melee spell attack against a creature within your reach. On a hit, the target takes 4d6 necrotic damage and must subtract 4d4 from the next ability check or saving throw it makes before the start of your next turn.SPACERequires Constitution 13 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot.SPACESPACELesser - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACEField of EntropySPACEAs a bonus action, you can conjure forth an aura of corroding energy in a 20 foot radius centered on you for 4 rounds or until you end the effect. All creatures that start their turn within or enter the aura must succeed on a Constitution saving throw or have their armor class reduced by 3 for the duration. This has no effect on magical or natural armor.SPACERequires Constitution 14 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. SPACESPACEGreater - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACERunic SmiteSPACEAs an action, you call down the power of chaos on a creature of your choice within 35 feet of you that you can see. The target must make a Dexterity saving throw, taking 3d10 necrotic damage and being knocked prone on a failed save, or half as much damage and not being knocked prone on a successful one. While prone as a result of this effect, the target must use all of its movement speed to stand up.SPACERequires Constitution 15 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots.   If the target was knocked prone since its last turn due to a rune ability, it cannot take the Dash action until the end of its nextSPACESPACEEpic - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACEAnnihilationSPACEAs an action, you unleash a wave of destructive force mingled with crippling despair. All creatures of your choice within a 10 foot radius sphere centered on you must make a Constitution saving throw, taking 3d10 necrotic damage and suffering 1 level of exhaustion on a failed save or half as much damage and no levels of exhaustion on a successful one. A creature may suffer a maximum of 1 levels of exhaustion as a result of this effect. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACERequires Constitution 16 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots.      SPACESPACE
+Types: Rune
+Rune:  Required for Runesmithing.
 
 
 **Name: Blood Herb**
@@ -193,13 +167,6 @@ Magic weapon: Two-handed weapons made of mithral lose the heavy property, while 
 
 
 
-**Name: Bifra Rune**
-Description: This rune symbolizes the bridge between realms, a path from the divine to mortalkind, allowing those who channel it to tap into the power of translocation.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEPrismatic BoltSPACEAs an action, you summon forth a bolt of chromatic light and launch it at a target within DISTANCE50-75DISTANCE feet of you. Make a ranged spell attack against a target within range. On a hit, the target takes DAMAGE2-4DAMAGEd10 radiant damage and are teleported to an unoccupied location of your choice within DAMAGE30-45DAMAGE feet of their original location. A creature teleported into the air as a result of this effect falls at a rate of DAMAGE15-20DAMAGE feet per round until it lands, taking no falling damage and can land on its feet.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Wisdom 15 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Bone Garlic**
 Description: A bulbous plant that grows up to 3 feet in height. While it produces a beautiful white rounded flower, the bulb is the only part used in alchemy. Found in deserts, plains, and swamps. VALUE1-10VALUE GP
 Types: Bomb
@@ -218,24 +185,26 @@ Nebulizer: May cause a backfire.
 
 **Name: Guayusa**
 Description: This fruiting evergreen dioecious tree can reach heights of 98 feet tall, with oblong leaves and small, white, thyrsed flowers, are typically found in coastal regions and humid forests. Fruits are small, spherical, and red, and known for their stimulative properties. VALUE10-20VALUE GP
-Types: Potion
-Potion: Increase movement speed by DISTANCE5-20DISTANCE feet for TIME1-5TIME hours.
+Types: Potion, Amplifier
 Potion: Gain advantage on Initiative rolls and Dexterity saving throws for TIME1-5TIME hours.
+Amplifier: Increases effectiveness of contraptions.
 
 
 
 **Name: Gray Gilliflower**
 Description: A plant that grows up to 30 inches tall, with glaucous, slender leaves. The silvery-purple flowers are produced singly or up to five together in a cyme. Typically found in swamps and plains-marshes. VALUE1-10VALUE GP
-Types: Bomb
+Types: Bomb, Amplifier
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 lightning damage on a failed save, or half as much damage on a successful one.
+Amplifier: Increases effectiveness of contraptions.
 
 
 
 **Name: Frozen Seedlings**
 Description: These black seedlings glow with a cold inner light that condenses and supercools the moisture in the air around themselves, causing tiny snowflakes to appear and frost to creep outward from them over inert surfaces. Often found at high altitudes in hills and mountains. VALUE10-20VALUE GP
-Types: Bomb, Potion
+Types: Bomb, Potion, Amplifier
 Bomb: Creatures within the impact radius must succeed on a Strength Saving Throw or become Paralyzed as frost begins forming on their bodies. Any creature may end this effect by taking an Action to clear the ice on themselves or another creature.
 Potion: A creature ingesting this potion gains resistance to fire damage for one minute, and they and objects they are holding cannot be set on fire for the duration.
+Amplifier: Increases effectiveness of contraptions.
 
 
 
@@ -246,8 +215,8 @@ Magic armor: A non-magical hide armor made with ellond hide reduces the fire dam
 
 
 
-**Name: Runestone**
-Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued.
+**Name: Rune**
+Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued. VALUE Market PriceVALUE
 Types: Rune
 Rune: Required for Runesmithing.
 
@@ -264,8 +233,9 @@ Potion: A creature ingesting this potion gains advantage on Charisma checks and 
 
 **Name: Storm Daisy**
 Description: A plant with rosettes of long, flat leaves that grow toward the sky with a spiked, silver flower. Commonly found in disturbed areas of plains, deserts, and forests. VALUE1-10VALUE GP
-Types: Poison
+Types: Poison, Amplifier
 Poison: Damage that the creature would take from a source that deals lightning damage is increased by DAMAGE1-4DAMAGE.
+Amplifier: Increases the potency of contraptions made with it.
 
 
 
@@ -273,16 +243,6 @@ Poison: Damage that the creature would take from a source that deals lightning d
 Description: These swirling elemental leaves are soft to the touch and known to never fall from a Thundertree due to wind alone. Found in open areas of deserts, plains, and hilly areas. VALUE1-10VALUE GP
 Types: Potion
 Potion: Damage that you would take from sources that deal thunder damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-
-
-
-**Name: Greater Aett Rune**
-Description: This rune symbolizes the words from a noble's mouth, the speech of a leader, the silvertongue of a merchant. It grants those who channel it greater charm and influence.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEEnsnaring VoiceSPACEAs an action, you muster forth your power and let it loose in a single word of runic power. Choose a creature within DISTANCE30-60DISTANCE feet of you that can hear you. The target must succeed on a Wisdom saving throw or become charmed by you for TIME2-6TIME hours, or until you end this effect. On a successful save, the target is only charmed by you for TIME1-3TIME minutes. You can only have DAMAGE1-2DAMAGE creatures under the effects of this rune at a time. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Charisma 16 or greater to attune for a creature who did not craft the rune.
-
-
-
 
 
 
@@ -306,9 +266,10 @@ Volatile: May cause a backfire.
 
 **Name: Golden Coneflower**
 Description: A plant that grows up to 4 feet tall with erect stems. The leaves are normally hairy with a rough texture, and the yellow flowers are collected together into single, rounded heads that glow softly in dim light. Can be found near caves among hills and mountainous regions. VALUE10-20VALUE GP
-Types: Bomb, Potion
+Types: Bomb, Potion, Dampener
 Bomb: Each creature in the bomb area must make a Constitution Saving Throw. A target takes DAMAGE1-3DAMAGEd6 radiant damage on a failed save, or half as much damage on a successful one.
 Potion: Cures one disease.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
@@ -340,15 +301,17 @@ Equipment: Used to craft anti-magic items, such as the Ring of Mind Shielding.
 
 **Name: Drojos Ivy**
 Description: A purple climbing or ground-creeping woody plant used by small animals as natural ropes in swamps, hilly jungles and humid forests. VALUE1-10VALUE GP
-Types: Potion
+Types: Potion, Dampener
 Potion: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
 **Name: Golden Hibiscus**
 Description: A plant with lanceolate leaves with a toothed margin and a large, brush-like yellow flower. Commonly found in disturbed areas of deserts, plains, and coastal regions. VALUE1-10VALUE GP
-Types: Poison
+Types: Poison, Dampener
 Poison: When the creature makes a Intelligence ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
@@ -381,23 +344,6 @@ Magic armor: Replaces the metal of any medium or heavy armor. While wearing a su
 
 
 
-**Name: Epic Aett Rune**
-Description: This rune symbolizes the words from a noble's mouth, the speech of a leader, the silvertongue of a merchant. It grants those who channel it greater charm and influence.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following features.SPACESilvered TongueSPACEAs an action, you speak honeyed words of deception and illusion. Choose a creature within DISTANCE30-45DISTANCE feet of you that can hear you. The target must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. On a failed save, the target becomes charmed by you for TIME3-5TIME minutes or until you or your companions do anything harmful to it. When this effect ends, the creature is unaware that it was charmed by you. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACECommanding SpeechSPACEAs an action, you give a speech to a creature within DISTANCE60-90DISTANCE feet of you that can hear you. The target must succeed on a Wisdom saving throw or be charmed by you. While charmed by you in this way, the target must take the Hide action on their turn. The creature may repeat this saving throw at the end of each of their turns, ending this effect on a success. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEFearsomeSPACEAs a bonus action, you impose your presence upon a creature within DISTANCE30-45DISTANCE feet of you. The target must make a Wisdom saving throw or become Frightened of you for TIME4-6TIME rounds. The creature may repeat this saving throw if it takes damage from you or your allies. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEEnsnaring VoiceSPACEAs an action, you muster forth your power and let it loose in a single word of runic power. Choose a creature within DISTANCE60-90DISTANCE feet of you that can hear you. The target must succeed on a Wisdom saving throw or become charmed by you for TIME6-10TIME hours, or until you end this effect. On a successful save, the target is only charmed by you for TIME3-5TIME minutes. You can only have DAMAGE2-3DAMAGE creatures under the effects of this rune at a time. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Charisma 17 or greater to attune for a creature who did not craft the rune.
-
-
-
-
-
-
-**Name: Saeg Rune**
-Description: This rune symbolizes the bond between brothers and sisters, the bond of family and clan, and supporting those you care about. Those who channel this rune are able to bolster their allies, strengthening their courage and resolve.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEInspiring PresenceSPACEAs a bonus action, you magically imbue a creature of your choice with divine inspiration. The target gains DAMAGE1-3DAMAGEd6's for the next TIME1-3TIME rounds. The target may spend a d6 to add it to an attack roll or saving throw for the duration.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Wisdom 15 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Aquastone**
 Description: Mostly used by sea- and waterborn creatures to create their weapons and armor. VALUE100VALUE GP
 Types: Magic armor, Magic weapon
@@ -413,13 +359,6 @@ Poison: Damage that the creature would take from a source that deals thunder dam
 
 
 
-**Name: Greater Kao Rune**
-Description: This rune symbolizes ill intent, lasting suffering, and misfortune. It is commonly known as the rune of curses, allowing those who wield it the ability to inflict calamity upon their foes.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECurse of DeathSPACEAs an action, you attempt to curse a target within DISTANCE15-30DISTANCE feet of you with inexorable awareness of their own mortality. The target must succeed on a Wisdom saving throw, or become cursed for TIME2-4TIME rounds. While cursed, the target becomes frightened of all creatures it can see, and you can use a reaction to deal DAMAGE2-4DAMAGEd6 necrotic damage to the target at the start of each of its turns. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Wisdom 16 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Valerian Root**
 Description: This dried root is obtained from the Valerian, a flowering plant that bears sweetly-scented pink or white flowers that attract many fly species. Found in swamps, damp forests, and coastal regions. VALUE1-10VALUE
 Types: Gas, Poison, Nebulizer
@@ -429,25 +368,11 @@ Nebulizer: May cause a backfire.
 
 
 
-**Name: Wuldr Rune**
-Description: This rune symbolizes war, combat skill, and honor. Those who channel it find that their martial prowess is enhanced.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACESpoiled for a FightSPACEAs a reaction, when you roll for initiative, you can make a single melee weapon attack against a creature within reach. In addition, if the attack hits, you can add DAMAGE2-4DAMAGEd8 radiant damage to the weapon's damage. On its first turn in combat, the target must choose whether it gets a move, an action, or a bonus action; it gets only two of the three.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Constitution 15 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Lunar Nectar**
 Description: The nectar from a small silver flower, named Lunar Dust, which can only be harvested under full moonlight. Exclusively found in mountainous regions. VALUE5-15VALUE GP
 Types: Potion, Stabilizer
 Potion: Damage that you would take from sources that deal force damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
 Stabilizer: Reduces the chance of spontaneous detonation.
-
-
-
-**Name: Greater Wuldr Rune**
-Description: This rune symbolizes war, combat skill, and honor. Those who channel it find that their martial prowess is enhanced.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECall to BattleSPACEAs an action, you can utter a warcry that bolsters your allies. All creatures of your choice within DISTANCE15-30DISTANCE feet of you that can hear you gain temporary hit points equal to your total number of Runic Attunement Slots + their Constitution modifier (minimum of 1).SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Constitution 16 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -461,22 +386,16 @@ Potion: Damage that you would take from a source that deals acid damage is reduc
 
 **Name: Goblin Mud**
 Description: A thick and dense bright green bulb that appears under rocks in swamps and plains-marshes. VALUE1-10VALUE GP
-Types: Poison
+Types: Poison, Amplifier
 Poison: Damage that the creature would take from a source that deals acid damage is increased by DAMAGE1-4DAMAGE.
+Amplifier: Increases effectiveness of contraptions.
 
 
 
-**Name: Lesser Bifra Rune**
-Description: This rune symbolizes the bridge between realms, a path from the divine to mortalkind, allowing those who channel it to tap into the power of translocation.
+**Name: Johns Epic Rune**
+Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued. VALUE Market PriceVALUE
 Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACESpatial BondSPACEAs a bonus action, you choose one willing creature within DISTANCE30-60DISTANCE feet of you and instantaneously swap locations with them. This does not provoke attacks of opportunity.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Wisdom 14 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Epic Wuldr Rune**
-Description: This rune symbolizes war, combat skill, and honor. Those who channel it find that their martial prowess is enhanced.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following features.SPACERunic StrikeSPACEAs an action, you can empower your next attack with runic energy. If you succeed on your next weapon attack, you can add DAMAGE3-5DAMAGEd8 radiant damage to the weapon's damage. Additionally, the target is unable to take reactions until the end of your next turn.SPACESPACEBerserker AspectSPACEAs a bonus action, you call upon the rage of warriors past. For the next TIME3-7TIME rounds, you reduce damage you take by an amount equal to twice your Wisdom modifier.SPACESPACESpoiled for a FightSPACEAs a reaction, when you roll for initiative, you can make a single melee weapon attack against a creature within reach. When you make an attack in this way, your reach extends by 5 feet. In addition, if the attack hits, you can add DAMAGE4-6DAMAGEd8 radiant damage to the weapon's damage. On its first turn in combat, the target must choose whether it gets a move, an action, or a bonus action; it gets only one of the three.SPACECall to BattleSPACEAs an action, you can utter a warcry that bolsters your allies. All creatures of your choice within DISTANCE30-45DISTANCE feet of you that can hear you gain temporary hit points equal to twice your number of Runic Attunement Slots + their Constitution modifier (minimum of 1).SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Constitution 17 or greater to attune for a creature who did not craft the rune.
+Rune: Required for Runesmithing.
 
 
 
@@ -484,20 +403,6 @@ Rune: While wearing or using an item imbued with this rune, you gain the followi
 Description: A purple-gray fibrous plant with straight stems, growing up to 3 feet tall. The leaves are spirally arranged, and are known for their poisonous properties. Generally found in open deserts and mountainous regions. VALUE1-10VALUE GP
 Types: Poison
 Poison: When the creature makes a ranged attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll.
-
-
-
-**Name: Lesser Kao Rune**
-Description: This rune symbolizes ill intent, lasting suffering, and misfortune. It is commonly known as the rune of curses, allowing those who wield it the ability to inflict calamity upon their foes.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECurse of IllnessSPACEAs an action, you inflict horrible disease upon a target within DISTANCE15-30DISTANCE feet of you. The target must succeed on a Constitution saving throw or become poisoned for TIME2-4TIME rounds. While poisoned, they take an additional DAMAGE2-3DAMAGEd4 poison damage whenever they take damage. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Wisdom 14 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Greater Saeg Rune**
-Description: This rune symbolizes the bond between brothers and sisters, the bond of family and clan, and supporting those you care about. Those who channel this rune are able to bolster their allies, strengthening their courage and resolve.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEBolstering BondSPACEAs an action, you forge a bond with a willing creature you can see within DISTANCE5-10DISTANCE feet of you for the next TIME2-4TIME rounds. While you and the chosen creature are within DISTANCE5-10DISTANCE feet of each other, you both gain temporary hit points equal to your total number of Runic Attunement Slots at the start of each of your turns and have advantage on saving throws against effects either of you can see.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Wisdom 16 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -539,13 +444,6 @@ Potion: Creature becomes invisible for the duration of this potion.
 
 
 
-**Name: Kao Rune**
-Description: This rune symbolizes ill intent, lasting suffering, and misfortune. It is commonly known as the rune of curses, allowing those who wield it the ability to inflict calamity upon their foes.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECurse of RegretSPACEAs an action, you attempt to curse a target within DISTANCE15-30DISTANCE feet of you with terrible regret. The target must succeed on a Wisdom saving throw or be cursed for TIME2-4TIME rounds. For the duration, whenever the target makes an attack against a creature they must take the Help action as a bonus action, helping the creature they targeted. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Wisdom 15 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Aniseed Sap**
 Description: A thick amber-like fluid extracted from an Aniseed tree which can be found in cold desert and mountain regions. VALUE1-5VALUE GP
 Types: Potion, Volatile
@@ -554,17 +452,10 @@ Volatile: May cause a backfire.
 
 
 
-**Name: Fenr Rune**
-Description: This rune symbolizes destruction and cataclysm, allowing those who channel it the ability to manifest aspects of the doom wolf.
+**Name: Rune Schema**
+Description: A set of magical instructions, which disappear even as they are read, for imbuing a runestone with greater power... VALUE Market PriceVALUE
 Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEServant of the WolfSPACEAs an action, you conjure a Winter Wolf that is under your control in an unoccupied space within DISTANCE5-10DISTANCE feet of you. It remains under your control for TIME2-4TIME rounds, after which it becomes hostile to all creatures. The wolf acts immediately after your turn and deals fire damage instead of cold damage, and is immune to fire damage instead of cold damage.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Constitution 15 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Basic Saeg Rune**
-Description: This rune symbolizes the bond between brothers and sisters, the bond of family and clan, and supporting those you care about. Those who channel this rune are able to bolster their allies, strengthening their courage and resolve.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACERitualistic BondSPACEYou can spend TIME5-10TIME minutes performing a ritual that binds you and up to four other creatures together for TIME1-2TIME hour. Whenever you or another bonded creatures takes damage, you or one other bonded creature can choose to reduce the damage by an amount up to your total number of Runic Attunement Slots, taking damage equal to the amount it was reduced by.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot. Requires Wisdom 13 or greater to attune for a creature who did not craft the rune.
+Rune: Required for Runesmithing.
 
 
 
@@ -601,6 +492,13 @@ Stabilizer: Reduces the chance of spontaneous detonation.
 
 
 
+**Name: Johns Basic Rune**
+Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued. VALUE Market PriceVALUE  SPACESPACE Basic - The Path of Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACECorruptionSPACEAs an action, you can lash out at a creature with destructive energy. Make a melee spell attack against a creature within your reach. On a hit, the target takes DAMAGE1-3DAMAGEd6 necrotic damage and must subtract DAMAGE1-2DAMAGEd4 from the next ability check or saving throw it makes before the start of your next turn.SPACERequires Constitution 13 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot.
+Types: Rune
+Rune: Required for Runesmithing.
+
+
+
 **Name: Eternal Ice**
 Description: This cold white-blue block of ice is resistant to high temperatures, and cannot be melted by non-magical means. VALUE500VALUE GP
 Types: Magic weapon, Equipment
@@ -621,8 +519,9 @@ Volatile: May cause backfire.
 
 **Name: Iron Thistle**
 Description: A silver-flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. Generally found in disturbed areas of deserts and plains. VALUE1-10VALUE GP
-Types: Potion
+Types: Potion, Dampener
 Potion: When you make a melee attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
@@ -656,13 +555,6 @@ Poison: Creatures exposed to this poison have disadvantage on Constitution Savin
 Description: Scales harvested from creatures, with a variety of colors, shapes, and sizes. VALUE10-20VALUE GP
 Types: Magic armor
 Magic armor: Replaces the metal. Used to craft a scale mail armor. Harvested monster scales from a CR 13 or higher dragon can be used to craft a suit of Dragon Scale Mail.
-
-
-
-**Name: Epic Fenr Rune**
-Description: This rune symbolizes destruction and cataclysm, allowing those who channel it the ability to manifest aspects of the doom wolf.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACERending ClawsSPACEAs an action, you summon forth claws on your hands for TIME4-6TIME rounds. For the duration, you can make an attack with these claws that deals DAMAGE2-4DAMAGEd6 magical slashing damage and the target has disadvantage on the next attack roll it makes before the end of your next turn.SPACESPACEBreak the ChainsSPACEAs a reaction to being grappled, you can choose for the creature grappling you to make a Strength saving throw. On a failed save, the creature takes DAMAGE3-5DAMAGEd6 fire damage and the grapple ends. Additionally, you can use this effect to immediately end the restrained condition on yourself.SPACESPACEServant of the WolfSPACEAs an action, you conjure DAMAGE2-3DAMAGE Winter Wolves that are under your control in unoccupied spaces within DISTANCE10-15DISTANCE feet of you. They remain under your control for TIME3-5TIME rounds, after which they become hostile to all creatures. The wolves act immediately after your turn and deal fire damage instead of cold damage, and are immune to fire damage instead of cold damage.SPACESPACEThe Burning EndSPACEAs an action, you summon forth a fiery storm centered on yourself. All creatures of your choice within DISTANCE30-45DISTANCE feet of you must make a Dexterity saving throw. A restrained creature automatically fails this saving throw. On a failed save, a creature takes DAMAGE6-8DAMAGEd6 fire damage and is blinded for TIME2-4TIME turns, or half as much damage and is not blinded on a success. SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Constitution 17 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -716,30 +608,18 @@ Nebulizer: May cause a backfire.
 
 **Name: Kreet Paste**
 Description: A thick viscous fluid extracted from a Kreet mushroom, found in cold, damp environments among hills, forests, and swamps. VALUE1-5VALUE GP
-Types: Potion, Volatile
+Types: Potion, Volatile, Infuser
 Potion: Damage that you would take from sources that deal lightning damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
 Volatile: May cause a backfire.
+Infuser: Adds a random component effect to the finished product.
 
 
 
 **Name: Ellond Shrub**
 Description: A dried-looking woody plant with several main stems arising at or near the ground. Commonly found in arid deserts, plains, and mountains. VALUE1-10VALUE GP
-Types: Bomb
+Types: Bomb, Dampener
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 fire damage on a failed save, or half as much damage on a successful one.
-
-
-
-**Name: Greater Kao Rune**
-Description: This rune symbolizes ill intent, lasting suffering, and misfortune. It is commonly known as the rune of curses, allowing those who wield it the ability to inflict calamity upon their foes.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECurse of SpeedSPACEAs an action, you attempt to curse a target within DISTANCE30-45DISTANCE feet of you. The target must succeed on a Wisdom saving throw or be forced to take the Dash action on their turns for the next TIME1-3TIME rounds, expending all of their available movement if possible. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACECurse of IllnessSPACEAs an action, you inflict horrible disease upon a target within DISTANCE30-45DISTANCE feet of you. The target must succeed on a Constitution saving throw or become poisoned for TIME3-5TIME rounds. While poisoned, they take an additional DAMAGE3-4DAMAGEd6 poison damage whenever they take damage. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACECurse of RegretSPACEAs an action, you attempt to curse a target within DISTANCE30-45DISTANCE feet of you with terrible regret. The target must succeed on a Wisdom saving throw or be cursed for TIME3-5TIME rounds. For the duration, whenever the target makes an attack against a creature they must take the Help action as a bonus action, helping the creature they targeted. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACECurse of DeathSPACEAs an action, you attempt to curse a target within DISTANCE30-45DISTANCE feet of you with inexorable awareness of their own mortality. The target must succeed on a Wisdom saving throw, or become cursed for TIME3-5TIME rounds. While cursed, the target becomes frightened of all creatures it can see, and you can use a reaction to deal DAMAGE3-5DAMAGEd6 necrotic damage to the target at the start of each of its turns. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Wisdom 17 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Greater Ragnr Rune**
-Description: This rune symbolizes destruction and chaos, allowing those who channel it to tap into the power of destruction.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEAnnihilationSPACEAs an action, you unleash a wave of destructive force mingled with crippling despair. All creatures of your choice within a DISTANCE5-10DISTANCE foot radius sphere centered on you must make a Constitution saving throw, taking DAMAGE3-5DAMAGEd10 necrotic damage and suffering 1 level of exhaustion on a failed save or half as much damage and no levels of exhaustion on a successful one. A creature may suffer a maximum of DAMAGE1-2DAMAGE levels of exhaustion as a result of this effect. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Constitution 16 or greater to attune for a creature who did not craft the rune.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
@@ -785,13 +665,6 @@ Magic weapon: When you hit a fiend or an undead with a stellar iron weapon, you 
 
 
 
-**Name: Epic Ragnr Rune**
-Description: This rune symbolizes destruction and chaos, allowing those who channel it to tap into the power of destruction.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following features.SPACECorruptionSPACEAs an action, you can lash out at a creature with destructive energy. Make a melee spell attack against a creature within your reach. On a hit, the target takes DAMAGE3-6DAMAGEd6 necrotic damage and has disadvantage on the next ability check or saving throw it makes before the end of your next turn.SPACESPACEField of EntropySPACEAs a bonus action, you can conjure forth an aura of corroding energy in a DISTANCE15-20DISTANCE foot radius centered on you for TIME3-5TIME rounds or until you end the effect. All creatures that start their turn within or enter the aura must succeed on a Constitution saving throw or have their armor class reduced by DAMAGE2-3DAMAGE for the duration.SPACESPACERunic SmiteSPACEAs an action, you call down the power of chaos on a creature of your choice within DISTANCE30-45DISTANCE feet of you that you can see. The target must make a Dexterity saving throw, taking DAMAGE3-5DAMAGEd10 necrotic damage and being knocked prone on a failed save, or half as much damage and not being knocked prone on a successful one. While prone as a result of this effect, the target must use all of its movement speed to stand up and cannot take the Dash action on the same turn.SPACESPACEAnnihilationSPACEAs an action, you unleash a wave of destructive force mingled with crippling despair. All creatures of your choice within a DISTANCE10-15DISTANCE foot radius sphere centered on you must make a Constitution saving throw, taking DAMAGE4-6DAMAGEd10 necrotic damage and suffering 1 level of exhaustion on a failed save or half as much damage and no levels of exhaustion on a successful one. A creature may suffer a maximum of DAMAGE2-3DAMAGE levels of exhaustion as a result of this effect. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Constitution 17 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Healer's Boon**
 Description: A medicinal red herb that grows near freshwater sources like rivers and lakes in forests, hills, and plains. VALUE5-15VALUE GP
 Types: Potion, Stabilizer
@@ -817,8 +690,9 @@ Poison: The target must succeed on a Constitution saving throw or be stricken wi
 
 **Name: Mermaid Braid**
 Description: A reddish-gold seaweed with purple tips that grows up to 30 feet long from its holdfast, found under the ocean and in deep, brackish rivers and lakes of plains, swamps, and coastal regions. VALUE1-10VALUE GP
-Types: Poison
+Types: Poison, Dampener
 Poison: When the creature makes a Charisma ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
+Dampener: Decreases the potency of contraptions made with it.
 
 
 
@@ -909,13 +783,6 @@ Magic weapon: You can use your Dexterity modifier for attacks and damage rolls m
 
 
 
-**Name: Ragnr Rune**
-Description: This rune symbolizes destruction and chaos, allowing those who channel it to tap into the power of destruction.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACERunic SmiteSPACEAs an action, you call down the power of chaos on a creature of your choice within DISTANCE15-30DISTANCE feet of you that you can see. The target must make a Dexterity saving throw, taking DAMAGE1-3DAMAGEd10 necrotic damage and being knocked prone on a failed save, or half as much damage and not being knocked prone on a successful one. While prone as a result of this effect, the target must use all of its movement speed to stand up.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Constitution 15 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Sillabean**
 Description: This annual plant native to hilly and mountainous regions grow hairy square stalks with long, oppositely-arranged, broad oval leaves and long leafstalks. The leaves are green with occasional touches of purple on the underside. The yellowish-pink flowers bloom on racemes at the end of the main stalk in late summer. VALUE1-5VALUE GP
 Types: Potion, Volatile
@@ -938,13 +805,6 @@ Types: Poison, Potion, Stabilizer
 Poison: The effects of this poison are negated, rendering it inert.
 Potion: Cures the poisoned condition.
 Stabilizer: Reduces the chance of spontaneous detonation.
-
-
-
-**Name: Greater Lokir Rune**
-Description: This rune symbolizes trickery and cunning, allowing those who channel it the ability to manipulate the conniving darkness.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEBackstabSPACEAs a bonus action, you conjure a dagger into your hand for TIME2-4TIME rounds and can make a melee spell attack with the dagger against a creature within reach as an action on each of your turns. On a hit, the target takes psychic damage equal to DAMAGE2-4DAMAGEd10 + your Charisma modifier and must make a Wisdom saving throw. On a failed save, you become invisible to the target until the start of your next turn.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Charisma 16 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -974,27 +834,11 @@ Volatile: May cause a backfire.
 
 
 
-**Name: Greater Fenr Rune**
-Description: This rune symbolizes destruction and cataclysm, allowing those who channel it the ability to manifest aspects of the doom wolf.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEThe Burning EndSPACEAs an action, you summon forth a fiery storm centered on yourself. All creatures of your choice within DISTANCE15-30DISTANCE feet of you must make a Dexterity saving throw. On a failed save, a creature takes DAMAGE4-6DAMAGEd6 fire damage and is blinded for TIME1-3TIME turns, or half as much damage and is not blinded on a success.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 4 runic attunement slots. Requires Constitution 16 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Dusk Itchweed**
 Description: A plant that grows up to 6 feet tall with a solid brown stem, numerous yellow flower clusters, and blue bulbs. The orange leaves are spirally arranged, long and broad. Often found in deserts, plains, and hills. VALUE1-10VALUE GP
-Types: Poison
+Types: Poison, Dampener
 Poison: Damage that the creature would take from a source that deals force damage is increased by DAMAGE1-4DAMAGE.
-
-
-
-**Name: Lesser Aett Rune**
-Description: This rune symbolizes the words from a noble's mouth, the speech of a leader, the silvertongue of a merchant. It grants those who channel it greater charm and influence.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECommanding SpeechSPACEAs an action, you give a speech to a creature within DISTANCE30-60DISTANCE feet of you that can hear you. The target must succeed on a Wisdom saving throw or be charmed by you. While charmed by you in this way, the target must take the Hide action on their turn. The creature may repeat this saving throw at the end of each of their turns, ending this effect on a success. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Charisma 14 or greater to attune for a creature who did not craft the rune.
-
-
-
+Dampener: Decreases effectiveness of contraptions.
 
 
 
@@ -1004,13 +848,6 @@ Types: Potion, Poison, Volatile
 Potion: You gain darkvision out to a range of DISTANCE30-90DISTANCE feet for the duration of the potion's effect. If you already have darkvision, your range increases by that amount instead.
 Poison: The creature must succeed on a Constitution Saving Throw or be blinded for TIME1-4TIME turns.
 Volatile: May cause a backfire.
-
-
-
-**Name: Lesser Fenr Rune**
-Description: This rune symbolizes destruction and cataclysm, allowing those who channel it the ability to manifest aspects of the doom wolf.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEBreak the ChainsSPACEAs a reaction to being grappled, you can choose for the creature grappling you to make a Strength saving throw. On a failed save, the creature takes DAMAGE1-3DAMAGEd6 fire damage and the grapple ends. Additionally, you can use this effect to immediately end the restrained condition on yourself as long as you are being restrained by nonmagical means.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Constitution 14 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -1028,32 +865,11 @@ Stabilizer: Reduces the chance of spontaneous detonation
 
 
 
-**Name: Epic Lokir Rune**
-Description: This rune symbolizes trickery and cunning, allowing those who channel it the ability to manipulate the conniving darkness.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following features.SPACEShroud of LiesSPACEAs an action, you summon forth a cloud of magical darkness that is centered on you in a DISTANCE10-15DISTANCE foot radius. This cloud lasts for TIME2-4TIME rounds. You can see in this magical darkness as if it were dim light.SPACESPACETrickster's IreSPACEAs an action, you speak words of malice toward a creature within DISTANCE30-45DISTANCE feet of you that can hear you. Make a ranged spell attack against the target. On a hit, the target takes DAMAGE2-4DAMAGEd10 psychic damage and are blinded with rage, becoming hostile to all creatures for TIME2-4TIME turns. Whenever the target makes an attack roll, it must succeed on a Wisdom saving throw or choose a new target for the attack. If no other target is available, the attack automatically misses.SPACESPACETapestry of FalsehoodSPACEAs an action, you attempt to twist the mind of a creature that you can see within DISTANCE30-45DISTANCE feet of you. The target must succeed on a Wisdom saving throw or see you as an ally and their allies as foes for TIME3-5TIME rounds.SPACESPACEBackstabSPACEAs a bonus action, you conjure a dagger into your hand for TIME4-6TIME rounds and can make a melee spell attack with the dagger against a creature within reach as an action on each of your turns. On a hit, the target takes psychic damage equal to DAMAGE3-5DAMAGEd10 + your Charisma modifier and must make a Wisdom saving throw. On a failed save, you become invisible to the target until the end of your next turn.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Charisma 17 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Ecire Laurel**
 Description: An aromatic evergreen shrub with glabrous green needles. It can be found in swamps and coastal regions. VALUE1-5VALUE GP
 Types: Potion, Volatile
 Potion: Damage that you would take from sources that deal poison damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
 Volatile: May cause a backfire.
-
-
-
-**Name: Epic Bifra Rune**
-Description: This rune symbolizes the bridge between realms, a path from the divine to mortalkind, allowing those who channel it to tap into the power of translocation.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following features.SPACEBridge StepSPACEAs an action, you can teleport to an unoccupied space you can see within DISTANCE20-30DISTANCE feet of you.SPACESPACESpatial BondSPACEAs a bonus action, you choose one willing creature within DISTANCE60-90DISTANCE feet of you and instantaneously swap locations with them. This does not provoke attacks of opportunity.SPACESPACEPrismatic BoltSPACEAs an action, you summon forth a bolt of chromatic light and launch it at a target within DISTANCE75-100DISTANCE feet of you. Make a ranged spell attack against a target within range. On a hit, the target takes DAMAGE3-5DAMAGEd10 radiant damage and are teleported to an unoccupied location of your choice within DISTANCE45-60DISTANCE feet of their original location. A creature teleported into the air as a result of this effect falls at a rate of DISTANCE10-15DISTANCE feet per round until it lands, taking no falling damage and can land on its feet.SPACESPACERealm AnchorSPACEAs an action, you emit a DISTANCE5-10DISTANCE foot radius aura which warps space around you for TIME3-5TIME rounds. For the duration, you can use a bonus action on each of your turns to force a creature you can see within DISTANCE30-45DISTANCE feet of you to make a Wisdom saving throw to be teleported to an unoccupied space within the aura. A creature may willingly fail this saving throw. In addition, as long as the aura persists, whenever a friendly creature that can see the aura casts a spell or uses an effect that lets it teleport, it can choose to teleport to a random unoccupied space within the aura, even if the aura is outside the range of the spell or effect.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Wisdom 17 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Basic Wuldr Rune**
-Description: This rune symbolizes war, combat skill, and honor. Those who channel it find that their martial prowess is enhanced.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACERunic StrikeSPACEAs an action, you can empower your next attack with runic energy. If you succeed on your next weapon attack, you can add DAMAGE1-3DAMAGEd8 radiant damage to the weapon's damage. Additionally, the target is unable to take reactions until the start of your next turn.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot. Requires Constitution 13 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -1065,23 +881,18 @@ Armor: Required for armor enchantments
 
 
 **Name: Olina Petals**
-Description: These pink petals from an Olina flower have small bright red dots, known for its poisonous properties. Typically found in dense swamps and forests. VALUE1-10VALUE GP
-Types: Poison
+Description: These pink petals from an Olina flower have small bright red dots, known for its poisonous properties. Typically found in dense swamps and forests. VALUE90-140VALUE GP
+Types: Poison, Infuser
 Poison: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+Infuser: Adds a random component effect to the finished product.
 
 
 
 **Name: Slime Thimbleberry**
 Description: A dense shrub that grows up to 8 feet tall with several canes growing in large clumps. This shrub produces a green fruit filled with a thick paste. Generally found in swamps, dense forests, and hilly regions. VALUE1-10VALUE GP
-Types: Bomb
+Types: Bomb, Dampener
 Bomb: Each creature in the bomb area must make a Dexterity Saving Throw. A target takes DAMAGE1-3DAMAGEd6 acid damage on a failed save, or half as much damage on a successful one.
-
-
-
-**Name: Lesser Lokir Rune**
-Description: This rune symbolizes trickery and cunning, allowing those who channel it the ability to manipulate the conniving darkness.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACETrickster's IreSPACEAs an action, you speak words of malice toward a creature within DISTANCE15-30DISTANCE feet of you that can hear you. Make a ranged spell attack against the target. On a hit, the target takes DAMAGE1-3DAMAGEd10 psychic damage and are blinded with rage, becoming hostile to all creatures for TIME1-3TIME turns. Whenever the target makes an attack roll, it must succeed on a Wisdom saving throw or choose a new target for the attack. If no other target is available, the attack is made against the original target with disadvantage.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Charisma 14 or greater to attune for a creature who did not craft the rune.
+Dampener: Decreases the potency of contraptions made with it.
 
 
 
@@ -1089,13 +900,6 @@ Rune: While wearing or using an item imbued with this rune, you gain the followi
 Description: This black, semi-translucent silk is carefully made by underground spiders and spider-like creatures. VALUE1-10VALUE GP
 Types: Magic armor
 Magic armor: A non-magical armor made with shadowsilk grants you a +DAMAGE1-4DAMAGE bonus to Dexterity (Stealth) checks to hide in lightly obscured areas (such as tree shadows). Harvested shadowsilk from a CR 13 or higher creature can be used to craft a Cloak of Arachnida.
-
-
-
-**Name: Basic Fenr Rune**
-Description: This rune symbolizes destruction and cataclysm, allowing those who channel it the ability to manifest aspects of the doom wolf.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACERending ClawsSPACEAs an action, you summon forth claws on your hands for TIME2-4TIME rounds. For the duration, you can make an attack with these claws that deals DAMAGE1-3DAMAGEd6 slashing damage and the target has disadvantage on the next attack roll it makes before the start of your next turn.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot. Requires Constitution 13 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -1116,20 +920,6 @@ Equipment: Used to craft fire-damage-dealing magic items, such as the Staff of F
 
 
 
-**Name: Basic Lokir Rune**
-Description: This rune symbolizes trickery and cunning, allowing those who channel it the ability to manipulate the conniving darkness.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACEShroud of LiesSPACEAs an action, you summon forth a cloud of magical darkness that is centered on you in a DISTANCE5-10DISTANCE foot radius. This cloud lasts for TIME1-3TIME rounds. You can see in this magical darkness as if it were dim light.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot. Requires Charisma 13 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Lesser Saeg Rune**
-Description: This rune symbolizes the bond between brothers and sisters, the bond of family and clan, and supporting those you care about. Those who channel this rune are able to bolster their allies, strengthening their courage and resolve.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECourageous StandSPACEAs an action, you can empower yourself to act as a beacon of inspiration for your allies. Choose a number of creatures you can see within DISTANCE15-30DISTANCE feet, up to your Wisdom modifier. The chosen creatures gain DAMAGE1-3DAMAGEd6 temporary hit points for TIME1-2TIME hour.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 2 runic attunement slots. Requires Wisdom 14 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Jimsonweed**
 Description: Also called Thorn Apple or Devil's Snare, this member of the nightshade family grows up to 5 feet tall with long, ovate leaves that are reddish-purple in color and produce flowers with cyan petals which glow faintly in dim light. Found in lowlands among plains, swamps, forests, and coastal regions. VALUE1-10VALUE GP
 Types: Gas, Poison, Nebulizer
@@ -1139,31 +929,10 @@ Nebulizer: May cause a backfire.
 
 
 
-**Name: Basic Aett Rune**
-Description: This rune symbolizes the words from a noble's mouth, the speech of a leader, the silvertongue of a merchant. It grants those who channel it greater charm and influence.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACESilvered TongueSPACEAs an action, you speak honeyed words of deception and illusion. Choose a creature within DISTANCE15-30DISTANCE feet of you that can hear you. The target must make on a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. On a failed save, the target becomes charmed by you for 1 minute or until you or your companions do anything harmful to it. When this effect ends, the creature is unaware that it was charmed by you. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is deplted. The rune will recharge from ambient magic as you copmlete a long rest. This rune occupies 1 runic attunement slot. Requires Charisma 13 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Blue Cress**
 Description: A plant with long stems topped with loose heads of blue, four-petalled flowers. Commonly found in forests, hills, and coastal areas along waterways. VALUE1-10VALUE GP
 Types: Potion
 Potion: When you make a ranged attack roll, you have a +DAMAGE1-4DAMAGE bonus on that roll for the duration of the potion's effect.
-
-
-
-**Name: Basic Bifra Rune**
-Description: This rune symbolizes the bridge between realms, a path from the divine to mortalkind, allowing those who channel it to tap into the power of translocation.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACESPACEWhile wearing or using an item imbued with this rune, you gain the following feature.SPACEBridge StepSPACEAs an action, you can teleport to an unoccupied space you can see within DISTANCE10-20DISTANCE feet of you.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot. Requires Wisdom 13 or greater to attune for a creature who did not craft the rune.
-
-
-
-**Name: Epic Saeg Rune**
-Description: This rune symbolizes the bond between brothers and sisters, the bond of family and clan, and supporting those you care about. Those who channel this rune are able to bolster their allies, strengthening their courage and resolve.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following features.SPACERitualistic BondSPACEYou can spend TIME1-5TIME minutes performing a ritual that binds you and up to four other creatures together for TIME2-4TIME hours. Whenever you or another bonded creatures takes damage, you or one other bonded creature can choose to reduce the damage by an amount up to twice your total number of Runic Attunement Slots, taking damage equal to the amount it was reduced by.SPACESPACECourageous StandSPACEAs an action, you can empower yourself to act as a beacon of inspiration for your allies. Choose a number of creatures you can see within DISTANCE30-45DISTANCE feet, up to your Wisdom modifier. The chosen creatures gain DAMAGE3-5DAMAGEd6 temporary hit points for TIME2-4TIME hours.SPACESPACEInspiring PresenceSPACEAs a bonus action, you magically imbue a creature of your choice with divine inspiration. The target gains DAMAGE3-5DAMAGEd6's for the next TIME2-4TIME rounds. The target may spend a d6 to add it to an attack roll, ability check, or saving throw for the duration.SPACESPACEBolstering BondSPACEAs an action, you forge a bond with a willing creature you can see within DISTANCE10-15DISTANCE feet of you for the next TIME3-5TIME rounds. While you and the chosen creature are within DISTANCE10-15DISTANCE feet of each other, you both gain temporary hit points equal to your total number of Runic Attunement Slots at the start of each of your turns and have advantage on saving throws against effects either of you can see.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 5 runic attunement slots. Requires Wisdom 17 or greater to attune for a creature who did not craft the rune.
 
 
 
@@ -1175,24 +944,10 @@ Volatile: May cause a backfire.
 
 
 
-**Name: Lokir Rune**
-Description: This rune symbolizes trickery and cunning, allowing those who channel it the ability to manipulate the conniving darkness.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACETapestry of FalsehoodSPACEAs an action, you attempt to twist the mind of a creature that you can see within DISTANCE15-30DISTANCE feet of you. The target must succeed on a Wisdom saving throw or see their allies as foes for TIME2-4TIME rounds.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 3 runic attunement slots. Requires Charisma 15 or greater to attune for a creature who did not craft the rune.
-
-
-
 **Name: Yeti's Parsley**
 Description: A short fungus with a thick stem and a clumped blue cap, producing red spores. Only produces spores in cold, mountainous climates. VALUE1-10VALUE GP
 Types: Bomb
 Bomb: Each creature in the bomb area must make a Constitution Saving Throw. A target takes DAMAGE1-3DAMAGEd6 cold damage on a failed save, or half as much damage on a successful one.
-
-
-
-**Name: Basic Kao Rune**
-Description: This rune symbolizes ill intent, lasting suffering, and misfortune. It is commonly known as the rune of curses, allowing those who wield it the ability to inflict calamity upon their foes.
-Types: Rune
-Rune: While wearing or using an item imbued with this rune, you gain the following feature.SPACECurse of SpeedSPACEAs an action, you attempt to curse a target within DISTANCE15-30DISTANCE feet of you. The target must succeed on a Wisdom saving throw or be forced to take the Dash action on their next turn, expending all of their available movement if possible. A creature that succeeds on its saving throw is immune to this effect for the next 24 hours.SPACESPACEYou may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot. Requires Wisdom 13 or greater to attune for a creature who did not craft the rune.
 
 
 

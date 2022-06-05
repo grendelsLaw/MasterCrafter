@@ -146,6 +146,54 @@ dampen=False):
         for i in new_desc:
             desc+=i
         new_desc=desc
+
+    if "ADDEND" in new_desc:
+        new_desc=new_desc.split("ADDEND")
+        ticker=1
+        desc=""
+        for i in new_desc:
+            if ticker%2==0:
+                desc+="\n   - "
+                # if the ADDEND has a tier modification
+                if " - " in i:
+                    i=i.split(" - ")
+                    if ", " in i[0]:
+                        alt_types=i[0].strip().split(", ")
+                    else:
+                        alt_types=[i[0].strip()]
+                    alt_word=i[1].split(" ")[0]
+                    if alt_word == "add" or alt_word == "remove":
+                        desc+=alt_word.capitalize()+"s -"
+                        for letter in i[1].split(" ")[1:len(i[1].split(" "))]:
+                            desc+=" "+letter
+                    else:
+                        desc+="Increases "+alt_word+" ranges by "+i[1].split(" ")[1]
+                    if alt_word=="add":
+                        desc+="- to "
+                    elif alt_word=="remove":
+                        desc+="- from "
+                    else:
+                        desc+= " for "
+                    for a in alt_types:
+                        desc+=a.lower()+", "
+                    desc=desc[0:len(desc)-2]+" tier"
+                    if len(alt_types)>1:
+                        desc+="s"
+                    desc+="."
+                else:
+                    i=i.split(" ")
+                    alt_word=i[0]
+                    if alt_word == "add" or alt_word == "remove":
+                        desc+=alt_word.capitalize()+"s "
+                        for letter in i[1].split(" ")[1:len(i[1].split(" "))]:
+                            desc+=" "+letter
+                    else:
+                        desc+="Increases "+alt_word+" rolls by "+i[1].split(" ")[1]
+                    desc+=" for all previous tiers."
+            else:
+                desc+=i
+            ticker+=1
+        new_desc=desc
     return new_desc
 
 # Makes the popups
@@ -243,6 +291,13 @@ class Type:
         self.description=description
         self.requirements=requirements
 
+class Prog:
+    def __init__(self, name, description, progression, effects):
+        self.name=name
+        self.description=description
+        self.progression=progression
+        self.effects=effects
+
 #-------------------------------------------------------------------------------
 
 # First, we generat a list of available components from the component files
@@ -254,7 +309,7 @@ component_list=os.listdir("resources/components/")
 for i in component_list:
     # Makes sure the file is a .component file
     if i.lower().endswith(".component"):
-        try:
+#        try:
             # Opens, loads, and closes the component file
             component_i=open("resources/components/"+i, "r")
             loaded_i=component_i.read()
@@ -294,8 +349,8 @@ for i in component_list:
                     new_comp.effects[effect_type]=tick
                 components[name_i.lower()]=new_comp
 
-        except:
-            print("Unable to parse file: "+i)
+#        except:
+#            print("Unable to parse file: "+i)
 
 #-------------------------------------------------------------------------------
 # Now we pull the recipes and load in any components missing from the component dictionary
@@ -407,6 +462,53 @@ for i in type_files:
 type_list=[]
 for i in types:
     type_list.append(types[i].name)
+
+prog_dict={}
+prog_present=False
+for i in type_files:
+    if i.endswith(".prog"):
+        try:
+            prog_i=open("resources/types/"+i, "r")
+            loaded_prog=prog_i.read()
+            prog_i.close()
+
+            loaded_prog=loaded_prog.split("\n")
+            prog_name=loaded_prog[0].split("Name:")[1].strip()
+            prog_desc=loaded_prog[1].split("Description:")[1].strip()
+            prog_progression=loaded_prog[2].split("Progression:")[1].strip().split(", ")
+            prog_type=prog_progression[0]
+            if prog_type not in prog_dict:
+                prog_dict[prog_type]={}
+            if prog_name not in prog_dict[prog_type]:
+                prog_effects=loaded_prog[3:len(loaded_prog)-1]
+                new_prog=Prog(prog_name, prog_desc, prog_progression, {})
+                for tier in prog_progression[1:len(prog_progression)]:
+                    tier=tier.strip()
+                    if tier not in new_prog.effects:
+                        tier_effect="Unknown"
+                        for effect in prog_effects:
+                            if tier+" "+prog_type+":" in effect:
+                                tier_effect = effect.split(tier+" "+prog_type+":")[1].strip()
+                                if "SPACE" in tier_effect:
+                                    tier_effect=tier_effect.replace("SPACE", "\n")
+                        new_prog.effects[tier]=tier_effect
+                prog_dict[prog_type][prog_name]=new_prog
+        except:
+            print("Unable to load file: ", i)
+
+for i in prog_dict:
+    if i not in progression_type:
+        progression_type.append(i)
+    for j in prog_dict[i]:
+        if j not in types:
+            types[i.lower()+": "+j.lower()]=Type(i+": "+j,
+            prog_dict[i][j].description+"\n",
+            [i])
+            for tier in prog_dict[i][j].progression[1:len(prog_dict[i][j].progression)]:
+                types[i.lower()+": "+j.lower()].description+="\n"+tier+": "+prog_dict[i][j].effects[tier]+"\n\n"
+            type_list.append(types[i.lower()+": "+j.lower()].name)
+
+
 
 #-------------------------------------------------------------------------------
 pocket={}
@@ -603,19 +705,13 @@ while True:
     # Adds selected components or selected recipes components to listbox 2 for artificing
     elif event=="Add component" and len(values["-lb_1-"]):
         for i in values["-lb_1-"]:
-            if pocket_name+"s " in i:
-                k=i.replace(pocket_name+"s ", "")
-            elif "Personal " in i:
-                k=i.replace("Personal ", "")
-            else:
-                k=i
             if i in component_list and list_type=="components":
                 materials.append(i)
-            elif k in recipe_keys and list_type=="recipes":
-                for j in recipes[k.lower()].components:
+            elif i in recipe_keys and list_type=="recipes":
+                for j in recipes[i.lower()].components:
                     materials.append(j)
             elif i in component_list and list_type=="pocket":
-                materials.append(k)
+                materials.append(i)
                 pocket[pocket_name].remove(i)
                 window["-lb_1-"].update(pocket[pocket_name])
         # Updates listbox 2
@@ -932,6 +1028,152 @@ while True:
                 window["-item_description_2-"].update(description)
                 window["-item_image-"].update("resources/images/failure.png")
 
+            elif len(small_type_pool)==1 and small_type_pool[0] in progression_type:
+                print("Found a progression")
+                prog_type=prog_dict[small_type_pool[0]]
+                prog_possibilities=list(prog_type.keys())
+                prog_possibilities.append("Random")
+                progression_map=prog_type[prog_possibilities[0]].progression
+                upgrade=progression_map[1]
+                original_item= progression_map[0]
+                for mat in materials:
+                    for tier in range(1,len(progression_map)):
+                        if progression_map[tier]+" "+small_type_pool[0] in mat:
+                            original_item=mat
+                            if progression_map[tier]==progression_map[len(progression_map)-1]:
+                                upgrade=False
+                            else:
+                                upgrade=progression_map[tier+1]
+                                new_name=original_item.replace(progression_map[tier], progression_map[tier+1])
+                if upgrade==False:
+                    sg.Popup("Max progression has been reached already.")
+                    # return the item to the pocket
+                else:
+#                    try:
+                        if original_item==progression_map[0]:
+                            new_name=sg.popup_get_text("You have begun to path to develop a new "+small_type_pool[0].lower()+". What should this path be called?")
+                            if new_name=="":
+                                new_name="Personal"
+                            try:
+                                new_name+=" "+upgrade+" "+small_type_pool[0].capitalize()
+                            except:
+                                new_name="Personal "+upgrade+" "+small_type_pool[0].capitalize()
+                        try:
+                            upgrade_flavor=popup_select("Which path should the "+new_name+" move to next?", prog_possibilities)
+                        except:
+                            upgrade_flavor="Random"
+                        if upgrade_flavor=="Random":
+                            upgrade_flavor=list(prog_type.keys())[rand.randint(0,len(list(prog_type.keys()))-1)]
+                        new_comp=components[progression_map[0].lower()]
+                        new_comp.name=new_name
+                        new_desc=new_comp.description+"\n\n"
+                        upgrade_dict={}
+                        for tier in progression_map[1:len(progression_map)]:
+                            if tier != upgrade:
+                                if tier+" - " in components[original_item.lower()].description:
+                                    tier_flavor=components[original_item.lower()].description.split(" - ")[1].strip().split(": ")[0].strip()
+                                    upgrade_dict[tier]=tier+" - "+tier_flavor+": "+prog_type[tier_flavor].effects[tier]
+                                else:
+                                    upgrade_dict[tier]=tier+" - "+upgrade_flavor+": "+prog_type[upgrade_flavor].effects[tier]
+                            elif tier == upgrade:
+                                upgrade_dict[tier]=tier+" - "+upgrade_flavor+": "+prog_type[upgrade_flavor].effects[tier]
+                                break
+                            else:
+                                break
+                        for tier in progression_map:
+                            if tier in upgrade_dict:
+                                new_tier=upgrade_dict[tier]
+                                if "ADDEND" in new_tier:
+                                    tick=1
+                                    best=""
+                                    new_tier=new_tier.split("ADDEND")
+                                    for exon in range(0, len(new_tier)):
+                                        if tick%2==0:
+#                                            print(new_tier[exon])
+                                            if " - " in new_tier[exon]:
+                                                exon=new_tier[exon].split(" - ")
+#                                                print(exon)
+                                                #here we find out which tiers need modifying
+                                                if ", " in exon:
+                                                    mod_tiers = exon[0].strip().split(", ")
+                                                else:
+                                                    mod_tiers = [exon[0].strip()]
+#                                                print(mod_tiers)
+                                                mod_desc=exon[1].strip().split(" ")
+                                                mod_type=mod_desc[0].upper()
+#                                                print(mod_desc)
+#                                                print(mod_type)
+                                                for tier2 in mod_tiers:
+                                                    if tier2 in upgrade_dict and tier2 != upgrade:
+                                                        if mod_type=="ADD":
+                                                            print("adding")
+                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                                upgrade_dict[tier2]+=" "+letter
+#                                                            print(upgrade_dict[tier2])
+                                                        elif mod_type=="REMOVE":
+                                                            print("removing")
+                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                                slip+=letter+" "
+                                                            slip=slip.strip()
+                                                            if slip in upgrade_dict[tier2]:
+                                                                upgrade_dict[tier2]=upgrade_dict[tier2].replace(slip, "")
+#                                                            print(upgrade_dict[tier2])
+                                                        else:
+                                                            print(mod_type+"ing")
+                                                            if mod_type in upgrade_dict[tier2]:
+                                                                newest_dec=""
+                                                                old_desc=upgrade_dict[tier2].split(mod_type)
+                                                                tick2=1
+                                                                for exon2 in old_desc:
+                                                                    if tick2%2==0:
+                                                                        newest_dec+=mod_type
+                                                                        exon2=exon2.split("-")
+                                                                        min_number=int(exon2[0])+int(mod_desc[1])
+                                                                        max_number=int(exon2[1])+int(mod_desc[1])
+                                                                        newest_dec+=str(min_number)+"-"+str(max_number)+mod_type
+                                                                    else:
+                                                                        newest_dec+=exon2
+                                                                    tick2+=1
+                                                                upgrade_dict[tier2]=newest_dec
+                                                    else:
+                                                        break
+                                            else:
+                                                print("Now we add to just everything..")
+                                        else:
+                                            best+=new_tier[exon]
+                                        tick+=1
+                                    upgrade_dict[tier]=best
+                                else:
+                                    pass
+                        for tier in progression_map:
+                            if tier in upgrade_dict:
+                                new_desc+=upgrade_dict[tier]+"\n\n"
+                        new_desc=roll_desc(new_desc, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                        new_comp.description=new_desc
+                        components[new_comp.name.lower()]=new_comp
+                        if original_item!=progression_map[0]:
+                            components.pop(original_item.lower())
+                        component_list=[]
+                        for i in components:
+                            component_list.append(components[i].name)
+                        component_list.sort()
+                        description=new_comp.description
+                        if "\n" in description:
+                            description=description.replace("\n", "SPACE")
+
+                        write_file="Name: "+new_comp.name+"\nDescription: "+description+"\nTypes: "+new_comp.types[0]+"\n"
+                        for ef in new_comp.effects:
+                            write_file+=ef+": "+new_comp.effects[ef]
+                        file_in=open("resources/components/."+new_comp.name.lower().replace(" ", "_")+".component", "w")
+                        file_in.write(write_file)
+                        file_in.close()
+                        if len(pocket)>0 and pocket_name != "None":
+                            pocket[pocket_name].append(new_comp.name)
+                            secret_pocket[pocket_name].append(new_comp.name)
+#                    except:
+#                        pass
+
+
             # If the components can make a recipe and nothing else, the recipe is made
             elif materials in recipe_values and len(small_type_pool) < 2:
 
@@ -1000,32 +1242,6 @@ while True:
                         window["-item_image-"].update("resources/images/"+desc_types.lower()+".png")
                     else:
                         window["-item_image-"].update("resources/images/success.png")
-
-# If its a progression type object, it gets saved as a personal object
-                    if desc_types in progression_type:
-                        if pocket_name == "None":
-                            owner="Personal"
-                        else:
-                            owner=pocket_name
-                        prog_comp=Component(owner+"s "+desc_name, description, [desc_types], {desc_types:"Inherent"})
-                        components[prog_comp.name.lower()]=prog_comp
-                        component_list=[]
-                        for i in components:
-                            component_list.append(components[i].name)
-                        component_list.sort()
-                        if "\n" in description:
-                            description=description.replace("\n", "SPACE")
-
-                        write_file="Name: "+prog_comp.name+"\n"+description+"\nTypes: "+desc_types+"\n"
-#                        print(write_file)
-                        for ty in prog_comp.effects:
-                            write_file+=ty+": "+prog_comp.effects[ty]
-                        file_in=open("resources/components/."+prog_comp.name.lower().replace(" ", "_")+".component", "w")
-                        file_in.write(write_file)
-                        file_in.close()
-                        if len(pocket)>0 and pocket_name != "None":
-                            pocket[pocket_name].append(prog_comp.name)
-                            secret_pocket[pocket_name].append(prog_comp.name)
 
                     for bkf in backfire_type:
                         if bkf in reduntant_type_pool:
