@@ -1111,13 +1111,13 @@ while True:
                                                     if tier2 in upgrade_dict and tier2 != upgrade:
                                                         if mod_type=="ADD":
 #                                                            print("adding")
-                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                            for letter in mod_desc[1:len(mod_desc)]:
                                                                 upgrade_dict[tier2]+=letter+" "
 #                                                            print(upgrade_dict[tier2])
                                                         elif mod_type=="REMOVE":
 #                                                            print("removing")
-                                                            slip=""
-                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                            slip=" "
+                                                            for letter in mod_desc[1:len(mod_desc)]:
                                                                 slip+=letter+" "
                                                             slip=slip.strip()
                                                             if slip in upgrade_dict[tier2]:
@@ -1152,13 +1152,13 @@ while True:
                                                     if tier2 in upgrade_dict and tier2 != upgrade:
                                                         if mod_type=="ADD":
 #                                                            print("adding to all")
-                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                            for letter in mod_desc[1:len(mod_desc)]:
                                                                 upgrade_dict[tier2]+=letter+" "
 #                                                            print(upgrade_dict[tier2])
                                                         elif mod_type=="REMOVE":
 #                                                            print("removing from all")
-                                                            slip=""
-                                                            for letter in mod_desc[1:len(mod_desc)-1]:
+                                                            slip=" "
+                                                            for letter in mod_desc[1:len(mod_desc)]:
                                                                 slip+=letter+" "
                                                             slip=slip.strip()
                                                             if slip in upgrade_dict[tier2]:
