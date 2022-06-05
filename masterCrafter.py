@@ -810,6 +810,8 @@ while True:
 
             description=roll_desc(description, True)
             window["-item_description_2-"].update(description)
+            if ":" in selected_name:
+                selected_name=selected_name.replace(":", "")
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
             else:
