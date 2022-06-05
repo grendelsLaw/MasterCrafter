@@ -182,14 +182,15 @@ dampen=False):
                         desc+="s"
                     desc+="."
                 else:
-                    i=i.split(" ")
+                    i=i.strip().split(" ")
                     alt_word=i[0]
                     if alt_word == "add" or alt_word == "remove":
-                        desc+=alt_word.capitalize()+"s "
-                        for letter in i[1].split(" ")[1:len(i[1].split(" "))]:
+                        desc+=alt_word.capitalize()+"s -"
+                        for letter in i[1:len(i)-1]:
                             desc+=" "+letter
+                        desc+=" -"
                     else:
-                        desc+="Increases "+alt_word+" rolls by "+i[1].split(" ")[1]
+                        desc+="Increases "+alt_word+" rolls by "+i[1].split(" ")[0]
                     desc+=" for all previous tiers."
             else:
                 desc+=i
@@ -809,6 +810,8 @@ while True:
 
             description=roll_desc(description, True)
             window["-item_description_2-"].update(description)
+            if ":" in selected_name:
+                selected_name=selected_name.replace(":", "")
             if selected_name+".png" in images_list:
                 window["-item_image-"].update("resources/images/"+selected_name+".png")
             else:
@@ -1055,7 +1058,7 @@ while True:
                 else:
 #                    try:
                         if original_item==progression_map[0]:
-                            new_name=sg.popup_get_text("You have begun to path to develop a new "+small_type_pool[0].lower()+". What should this path be called?")
+                            new_name=sg.popup_get_text("You have begun the path to develop a new "+small_type_pool[0].lower()+". What should this path be called?")
                             if new_name=="":
                                 new_name="Personal"
                             try:
@@ -1192,7 +1195,7 @@ while True:
                         for tier in progression_map:
                             if tier in upgrade_dict:
                                 new_desc+=upgrade_dict[tier]+"\n\n"
-                        new_desc=roll_desc(new_desc, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0)
+                        new_desc=roll_desc(new_desc, False ,prof_bonus, False, 0, False, 0, False, 0)
                         new_comp.description=new_desc
                         if new_comp.name.lower() in components:
                             components.pop(new_comp.name.lower())
