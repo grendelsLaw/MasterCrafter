@@ -1,6 +1,6 @@
 Name: Abyss Flower
 Description: A dark pink flower with a thorny stem found in swamps, forests, and coastal areas. VALUE1-10VALUE GP
 Types: Bomb, Poison, Volatile 
-Bomb: A dark energy rips out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd6 necrotic damage is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. Any other creature may take an Action to shake the creature, immediately ending the paralyzed status for the creature.
+Bomb: A dark energy rips out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 necrotic damage is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. Any other creature may take an Action to shake the creature, immediately ending the paralyzed status for the creature.
 Poison: When the creature makes a melee attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll.
 Volatile: May cause a backfire.
