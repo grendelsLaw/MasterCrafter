@@ -25,11 +25,11 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 ## Types of crafting objects
   First and foremost - all crafted objects require at least two components and all components must share a common "type". If all the objects share a "Potion-type", they can craft a potion. If the components share __multiple__ types, a type will be randomly selected from the list of shared types. All created objects will generate a recipe file which can be used to re-craft the object exactly as it was originally made. If a list of components can make multiple types, but not all types have been explored, you have the option to either create a known recipe or __tinker__ and try to craft __other types__. Therefore, the greater number of components used in a craft, the smaller the odds they will share a common type. However, the potential potency of a crafted object will increase with the number of components used. Some types require specific kinds of components to be crafted, which are listed in the recipe files. An example are bombs that require at least one `volatile` component. Certain subtypes have the ability to ___backfire___ and detonate immediately upon crafting. Currently, the only two types that will backfire are `volatile` and `nebulizer` but this can be changed in the python file. Additionally, some types will pull a random component effect. These are currently the `poison`s, `potion`s, and `magic armor/weapon`s but this too can be tweaked in the python script. Finally, there are other component subtypes that do not effect the type of final product, but will change the variables of crafting. Currently there are:
     - Volatile: As mentioned previously, these are required to make bombs. Furthermore, they may cause the product to explode upon completion.
-    - Nebulizer: As mentioned previously, these are required to make gases. Furthermore, they may cause the product to explode upon completion.
-    - Amplifiers: boost the damage, duration, and area rolls during crafting.
-    - Dampeners: correspondingly, these decrease the damage, duration, and area rolls during crafting.
+    - Nebulizer: These are required to make gases. Furthermore, they may cause the product to explode upon completion.
+    - Amplifiers: boost the damage, duration, and area-of-effect rolls during crafting.
+    - Dampeners: conversely, these decrease the damage, duration, and area-of-effect rolls during crafting.
     - Stabilizers: decrease the odds of backfire depending on the ratio of volatile to stabilizers. For each stabilizer in the components, one volatile/nebulizer component's chance of backfiring is removed. Types that require volatile/nebulizer components can still be crafted with the addition of a stabilizer - they just have a decreased chance of backfiring.
-    - Infusers: mimic the holistic crafter's ability and add a component effect to the crafted object.
+    - Infusers: mimic the holistic crafter's ability and add an extra component effect to the crafted object.
 
 1) ___Potions___ Crafting a potion will pull one random component effect, which will last for a duration specified on the generated recipe file.
 
@@ -37,7 +37,7 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 
 3) ___Poisons___ Like potions, poisons will pull one random component effect. Unlike potions, which must be ingested, poisons can be used to coat weapons or be ingested. The poison effects then last for the specified number of attacks or duration, respectively.
 
-4) ___Gases___ Gases require `nebulizer`s and disperse a given area for a certain amount of time. Similar to potions and poisons, gases will also pull at least one component effect.
+4) ___Gases___ Gases require `nebulizer`s and disperse in a given area for a certain amount of time. Similar to potions and poisons, gases will also pull at least one component effect.
 
 5) ___Magic weapons and armor___ Combining certain items with generic weapons or armor can add component effects and require `weapon` and `armor`, respectively.
 
@@ -63,13 +63,13 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 10th: 	5   | 20th: 	10
 
 ## Other goodies
-1) ___Pockets___ If you're playing with multiple players using this system, it can be hard to keep track of what components each player has and wants to use. Therefore, you can create a *pocket* for each player. Each pocket gets saved and can be altered independently. Pockets can be added or deleted as you require.
+1) ___Pockets___ If you're playing with multiple players using this system, it can be hard to keep track of what components each player has and wants to use. Therefore, you can create a *pocket* for each player. Each pocket gets saved between sessions and can be altered independently. Pockets can be added or deleted as you require.
 
-2) ___Shop___ Hitting the `shop` button allows you to simulate a shop for your players. You will be prompted for a number of components you would like the shop to have, after which the specified number of components will be selected randomly from the list of components along with a random price determined from the component file. Some components are listed at `market price` and should be up to the discretion of the GM given that these items are rare or extremely useful. Products can be viewed in the main window by double-clicking them, and can be loaded into specific pockets.
+2) ___Shop___ Hitting the `shop` button allows you to simulate a shop for your players. You will be prompted for a number of components you would like the shop to have, after which the specified number of components will be selected randomly from the list of components along with a random price within a set range, based on item utility and rarity, determined from the component file. Some components are listed at `market price` and should be up to the discretion of the GM given that these items are rare and/or extremely useful. Component descriptions can be viewed in the main window by double-clicking them in the shop inventory, and can also be loaded into specific pockets.
 
-3) ___Forage___ Since most of these components are natural products, the players should have the opportunity to find them in the wild. By hitting the `forage` button, you will be prompted to choose the type of terrain your players are in as well as an amount of time the player is spending to look for items. Based on the location and time spent, a random number of items native to that terrain will be presented. Similar the shop mechanic, these components can be viewed in the main window by double-clicking them, and can be loaded into specific pockets.
+3) ___Forage___ Since most of these components are natural products, the players should have the opportunity to find them in the wild. By hitting the `forage` button, you will be prompted to choose the type of terrain your players are in as well as an amount of time the player is spending to look for items. Based on the location and time spent, a random number of items native to that terrain will be presented. Similar to the shop mechanic, component descriptions can be viewed in the main window by double-clicking them, and can also be loaded into specific pockets.
 
-4) ___Subclasses___ Several subclasses have also been written into the program. It is up the GM how they would like these subclasses to be claimed by players, but a list and description of the subclasses can be found by selecting the `subclasses` button.
+4) ___Subclasses___ Several subclasses have also been written into the program. It is up the GM how they would like these subclasses to be pursued/achieved by players, but a list of the subclasses and description of their associated specializations can be found by selecting the `subclasses` button.
 
 ## Conclusion
-  We hope that you enjoy the MasterCrafter system and encourage you to experiment with it as well as modify the files to meet your own needs and desires. Simply add or remove files in the `resources` directories and verify they've loaded correctly in the program.
+  We hope that you enjoy the MasterCrafter system and encourage you to experiment with it as well as modify the files to meet your own needs and desires. Simply add or remove files in the `resources` directories and verify they've loaded correctly in the program. Constructive criticism (and shiny new components) welcome!
