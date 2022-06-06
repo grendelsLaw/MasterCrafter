@@ -1268,11 +1268,12 @@ while True:
 
                             # If the item is a potion, a random component effect is added
 
-                            if desc_name in types_w_effects:
+                            if desc_types in types_w_effects:
                                 mat_count=0
                                 random_material=materials[rand.randint(0,len(materials)-1)]
                                 poss_effects=components[random_material.lower()].effects
                                 while mat_count<len(materials):
+                                    print(random_material)
                                     if random_material==picked_material:
                                         random_material=materials[rand.randint(0,len(materials)-1)]
                                     elif len(components[random_material.lower()].types)<2 and components[random_material.lower()].types in modifiers:
@@ -1280,10 +1281,11 @@ while True:
                                     else:
                                         poss_effects=components[random_material.lower()].effects
                                         desc_desc+="\n   -"+poss_effects[desc_types]
+                                        print(desc_desc)
                                         break
                                     mat_count+=1
 
-                            desc_desc=roll_desc(types[desc_types.lower()].description, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
+                            desc_desc=roll_desc(desc_desc, False ,prof_bonus, values["-subclass_damage-"], 0, values["-subclass_duration-"], 0, values["-subclass_duration-"], 0, amp_it, damp_it)
                             recipes[selected_name].description=desc_desc
                             write_file="Name: "+desc_name+"\nTypes: "+desc_types+"\nComponents: "
                             for i in materials:
