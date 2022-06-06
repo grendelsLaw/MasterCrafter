@@ -1,3 +1,3 @@
 Name: Bomb
-Description: An explosive device. As an action while holding the device, a creature may take an Action to make a ranged attack roll, throwing the device which detonates upon impact. When detonated, creatures within DISTANCE5-15DISTANCE feet must make a Dexterity saving throw (DC=DAMAGE10-20DAMAGE). On a failed save, a creature takes DAMAGE1-3DAMAGEd4 force damage, taking half damage and avoiding any other effects of the bomb on a successful one.
+Description: An explosive device. As an Action while holding the device, a creature may make a ranged attack roll to throw the device which detonates upon impact. When detonated, creatures within DISTANCE5-15DISTANCE feet must make a Dexterity saving throw (DC=DAMAGE10-20DAMAGE). On a failed save, a creature takes DAMAGE1-3DAMAGEd4 force damage, taking half damage and avoiding any other effects of the bomb on a successful one.
 Requirements: Volatile
