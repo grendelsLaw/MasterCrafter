@@ -475,17 +475,14 @@ for i in type_files:
             prog_i.close()
 
             loaded_prog=loaded_prog.split("\n")
-#            print(loaded_prog)
             prog_name=loaded_prog[0].split("Name:")[1].strip()
             prog_desc=loaded_prog[1].split("Description:")[1].strip()
-#            print(prog_desc)
             prog_progression=loaded_prog[2].split("Progression:")[1].strip().split(", ")
             prog_type=prog_progression[0]
             if prog_type not in prog_dict:
                 prog_dict[prog_type]={}
             if prog_name not in prog_dict[prog_type]:
                 prog_effects=loaded_prog[3:len(loaded_prog)]
-#                print(prog_effects)
                 new_prog=Prog(prog_name, prog_desc, prog_progression, {})
                 for tier in prog_progression[1:len(prog_progression)]:
                     tier=tier.strip()
