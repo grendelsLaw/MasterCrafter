@@ -1078,7 +1078,7 @@ while True:
                         for tier in progression_map[1:len(progression_map)]:
                             if tier != upgrade:
                                 if tier+" - " in components[original_item.lower()].description:
-                                    tier_flavor=components[original_item.lower()].description.split(" - ")[1].strip().split(": ")[0].strip()
+                                    tier_flavor=components[original_item.lower()].description.split(tier+" - ")[1].strip().split(": ")[0].strip()
                                     upgrade_dict[tier]=tier+" - "+tier_flavor+": "+prog_type[tier_flavor].effects[tier]
                                 else:
                                     upgrade_dict[tier]=tier+" - "+upgrade_flavor+": "+prog_type[upgrade_flavor].effects[tier]
