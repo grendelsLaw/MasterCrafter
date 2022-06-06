@@ -851,35 +851,25 @@ while True:
             mat_count+=1
             if mat_count > total_components:
                 break
-            if component_list[hit] not in inv_names:
-                good=True
-                posssible_persons=["Personals "]
-                for pers in pocket:
-                    if pers != "None":
-                        posssible_persons.append(pers+"s ")
-                for pers in posssible_persons:
-                    if pers in component_list[hit]:
-                        good=False
-
-                if good ==True:
-                    inv_names.append(component_list[hit])
-                    inv_desc=components[component_list[hit].lower()].description
-                    if "VALUE" in inv_desc:
-                        inv_desc=inv_desc.split("VALUE")
-                        values=inv_desc[1].split("-")
-                        if len(values)<2:
-                            values=values[0]
-                            try:
-                                values=str(int(values))+" GP"
-                            except:
-                                values=str(values)
-                        else:
-                            values=rand.randint(int(values[0]), int(values[1]))
-                            values=str(values)+" GP"
+            if component_list[hit] not in inv_names and components[component_list[hit].lower()].types[0] not in progression_type:
+                inv_names.append(component_list[hit])
+                inv_desc=components[component_list[hit].lower()].description
+                if "VALUE" in inv_desc:
+                    inv_desc=inv_desc.split("VALUE")
+                    values=inv_desc[1].split("-")
+                    if len(values)<2:
+                        values=values[0]
+                        try:
+                            values=str(int(values))+" GP"
+                        except:
+                            values=str(values)
                     else:
-                        values=rand.randint(1,20)
+                        values=rand.randint(int(values[0]), int(values[1]))
                         values=str(values)+" GP"
-                    inventory.append(component_list[hit]+" - "+values)
+                else:
+                    values=rand.randint(1,20)
+                    values=str(values)+" GP"
+                inventory.append(component_list[hit]+" - "+values)
 
         popup_shop("Welcome to the shop! Here's what we have in stock:",inventory)
 

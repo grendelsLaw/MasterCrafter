@@ -1,39 +1,261 @@
-**Name: Ebrium Fungus**
-Description: A brown fungus which is known by its strong odor and potent poison when dried and ground. Can be found in damp forests and swamps. VALUE5-15VALUE GP
-Types: Poison, Stabilizer
-Poison: When the creature makes a Strength ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
-Stabilizer: Reduces the chance of spontaneous detonation.
+**Name: Monster Feathers**
+Description: Hippogriffs, rocs, giant eagles, and other flying creatures have beautiful feathers used to demonstrate their majesty. VALUE1-4VALUE GP
+Types: Magic armor, Equipment
+Magic armor: A non-magical armor made with monster feathers grants you a +DAMAGE1-4DAMAGE bonus to Wisdom (Animal Handling) checks you make.
+Equipment: Harvested monster feathers from a CR 9 or higher creature can be used to craft a Quaal's Feather Token.
 
 
 
-**Name: Ucre Bramble**
-Description: A low-growing shrub with thorny stems and dense-packed bulbs, demonstrating swirling color patterning, that grows in almost every terrain including deserts, forests, hills, mountains, plains, swamps, and coastal regions. VALUE1-10VALUE GP
-Types: Potion
-Potion: Damage that you would take from sources that deal radiant damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+**Name: Shadowsilk**
+Description: This black, semi-translucent silk is carefully made by underground spiders and spider-like creatures. VALUE1-10VALUE GP
+Types: Magic armor
+Magic armor: A non-magical armor made with shadowsilk grants you a +DAMAGE1-4DAMAGE bonus to Dexterity (Stealth) checks to hide in lightly obscured areas (such as tree shadows). Harvested shadowsilk from a CR 13 or higher creature can be used to craft a Cloak of Arachnida.
 
 
 
-**Name: Spineflower Berries**
-Description: These tiny vibrant blue berries grow in the center of the Spineflower, a rare plant with sharp petals and a stem filled with spines. Found in open deserts and plains. VALUE15-25VALUE GP
-Types: Bomb, Potion, Volatile
-Bomb: A cloud of spines shoots out from the point of impact, and a DISTANCE5-20DISTANCE foot circle centered on the point of impact becomes difficult terrain for TIME1-5TIME turns. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 piercing damage or half as much damage on a successful save. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or take DAMAGE1-2DAMAGEd4 piercing damage.
-Potion: When you make a Charisma ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+**Name: Monster Scales**
+Description: Scales harvested from creatures, with a variety of colors, shapes, and sizes. VALUE10-20VALUE GP
+Types: Magic armor
+Magic armor: Replaces the metal. Used to craft a scale mail armor. Harvested monster scales from a CR 13 or higher dragon can be used to craft a suit of Dragon Scale Mail.
+
+
+
+**Name: Bone Plate**
+Description: A series of bones joined together, mostly used by shamans and wildlings. VALUE20-30VALUE GP
+Types: Magic armor
+Magic armor: Replaces the metal. A non-magical armor made with bones grants you a +DAMAGE1-4DAMAGE bonus to Charisma (Intimidation) checks you make.
+
+
+
+**Name: Aerocrystal**
+Description: A light blue, glass-like crystal known for creating quick, precise weapons. VALUE500VALUE GP
+Types: Magic weapon
+Magic weapon: You can use your Dexterity modifier for attacks and damage rolls made with an aerocrystal weapon.
+
+
+
+**Name: Amplifier**
+Description: Boosts effectiveness of contraptions. VALUE20-30VALUE GP
+Types: Amplifier
+Amplifier: Boosts effectiveness of contraptions.
+
+
+
+**Name: Aquastone**
+Description: Mostly used by sea- and waterborn creatures to create their weapons and armor. VALUE100VALUE GP
+Types: Magic armor, Magic weapon
+Magic armor: Replaces the metal. While wearing a medium or heavy armor (non hide) made with aquastone, your speed while swimming increases by 10 feet.
+Magic weapon: Any melee weapon made with aquastone doesn't have disadvantage on attack rolls while underwater.
+
+
+
+**Name: Armor**
+Description: A standard, nonmagical set of armor VALUEMarket priceVALUE
+Types: Armor
+Armor: Required for armor enchantments
+
+
+
+**Name: Asmoroch Steel**
+Description: A black metal with a scorched appearance which is cold to the touch. VALUE500VALUE GP
+Types: Magic armor, Magic weapon
+Magic armor: A non-magical armor made with asmoroch steel reduces the necrotic damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Necrotic Resistance (metallic armor only).
+Magic weapon: A non-magical weapon made with asmoroch steel deals an additional DAMAGE1-2DAMAGEd4 necrotic damage. It's also used to craft necrotic-damage-dealing weapons such as the Sword of Life Stealing.
+
+
+
+**Name: Chitin Plate**
+Description: These flexible shells of chitinous creatures such as giant crabs or remorhaz are used to craft armors, known to be lighter than metallic armor. VALUEMarket priceVALUE
+Types: Magic armor
+Magic armor: Replaces the metal. While wearing a medium armor (non-hide) made with chitin, the armor's Dexterity bonus increases by DAMAGE1-3DAMAGE. While wearing a heavy armor made with chitin, reduce the Strength requirement by DAMAGE1-3DAMAGE.
+
+
+
+**Name: Cold Iron**
+Description: This iron is worked entirely while cold, known for its effectiveness against fey and fiendish creatures. VALUE100VALUE GP
+Types: Magic weapon
+Magic weapon: When you hit a fey or fiend with a cold iron weapon, you can roll the damage again and use either result.
+
+
+
+**Name: Combustive powder**
+Description: A secretive mix of powders known only to a few. While very dangerous to handle as it possesses explosive effects VALUE1-10VALUE GP
+Types: Volatile
 Volatile: May cause a backfire.
 
 
 
-**Name: Leafweave**
-Description: Alchemically processed leaves that are as hard as leather but can be worked like metal, with the final armor having natural camouflage and stealth properties. VALUE100VALUE GP
-Types: Magic armor, Equipment
-Magic armor: A non-magical armor made with leafweave grants you a DAMAGE1-4DAMAGE bonus to Dexterity (Stealth) checks made to hide while lightly obscured by living plants.
-Equipment: Used to craft the Boots of Elvenkind and the Cloak of Elvenkind.
+**Name: Darksteel**
+Description: A darkened blue metal that only forms in areas affected by thunderstorms, known for trapping that energy inside of it. VALUE250VALUE GP
+Types: Magic armor, Magic weapon, Equipment
+Magic armor: A non-magical armor made with darksteel reduces the lightning damage you take by DAMAGE1-4DAMAGE. It's also used to craft an Armor of Lightning Resistance (metallic armor only).
+Magic weapon: A non-magical weapon made of darksteel deals an additional DAMAGE1-2DAMAGEd4 lightning damage. It's also used to craft lightning-damage-dealing weapons such as the Javelin of Lightning.
+Equipment: Used to craft lightning-damage-dealing magic items, such as the Wand of Lightning Bolt.
 
 
 
-**Name: Dragontongue Petals**
-Description: A plant with golden petals which are spicy and, when eaten, give a similar sensation as if you were drinking firewater. Exclusively found in mountainous regions. VALUE1-5VALUE GP
-Types: Potion, Nebulizer
-Potion: Damage that you would take from sources that deal fire damage is reduced by DAMAGE1-4DAMAGE.
+**Name: Darkwood**
+Description: This blue-black wood is as hard as steel, but very light. VALUE100VALUE GP
+Types: Magic armor
+Magic armor: Replaces the metal of any medium or heavy armor. Reduces the weight of the suit of armor by up to 20 lbs.
+
+
+
+**Name: Dwarvenstone**
+Description: This marble-like ore is used by dwarves to create their ceremonial armor for the defenders of their cities, even though it is heavier and bulkier than other metallic armors. VALUE500VALUE GP
+Types: Magic armor
+Magic armor: Used to craft a suit of Dwarven Plate.
+
+
+
+**Name: Ellond Hide**
+Description: This brown-orange hide is harvested from creatures found in deserts and arid-climates. VALUEMarket priceVALUE
+Types: Magic armor
+Magic armor: A non-magical hide armor made with ellond hide reduces the fire damage you take by DAMAGE1-4DAMAGE. It's also used to craft a Hide Armor of Fire Resistance.
+
+
+
+**Name: Eternal Ice**
+Description: This cold white-blue block of ice is resistant to high temperatures, and cannot be melted by non-magical means. VALUE500VALUE GP
+Types: Magic weapon, Equipment
+Magic weapon: A non-magical weapon made with eternal ice deals an additional DAMAGE1-2DAMAGEd4 cold damage. It's also used to craft cold-damage-dealing magic weapons, such as the Frost Brand.
+Equipment: Used to craft cold-damage-dealing magic items, such as the Staff of Frost.
+
+
+
+**Name: Ignum**
+Description: This black semi-translucent stone has a swirling mass of lava-like matter glowing and flowing inside of it. VALUE500VALUE GP
+Types: Magic weapon, Equipment
+Magic weapon: A non-magical weapon made with ignum deals an additional DAMAGE1-2DAMAGEd4 fire damage. It's also used to craft fire-damage-dealing magic weapons, such as the Flame Tongue.
+Equipment: Used to craft fire-damage-dealing magic items, such as the Staff of Fire.
+
+
+
+**Name: Infernal Leather**
+Description: A hard reddish leather created in the infernal planes. VALUE750VALUE GP
+Types: Magic armor
+Magic armor: A non-magical armor made with infernal leather reduces the fire damage you take by DAMAGE1-4DAMAGE and grants you a +DAMAGE1-4DAMAGE bonus to Charisma (Persuasion) checks when talking with fiends. It's also used to craft a suit of Armor of Fire Resistance (leather or studded leather).
+
+
+
+**Name: Infernal Steel**
+Description: A blood-red metal crafted in the lower planes, known for being used by demons and devils to fight celestials. VALUE750VALUE GP
+Types: Magic armor, Magic weapon
+Magic armor: A non-magical armor made with infernal steel reduces the fire damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Fire Resistance (metallic armor only) or Demon Armor.
+Magic weapon: When you hit a celestial or any good-aligned creature with an infernal steel weapon, you can roll the damage again and use either result.
+
+
+
+**Name: Item**
+Description: A standard, nonmagical item VALUEMarket priceVALUE
+Types: Item
+Item: Required for equipment enchantments.
+
+
+
+**Name: Mithral**
+Description: This white-silver metal is lighter and more flexible than common steel. VALUE250VALUE GP
+Types: Magic armor, Magic weapon
+Magic armor: Used to craft a suit of Mithral Armor.
+Magic weapon: Two-handed weapons made of mithral lose the heavy property, while all other weapons made of mithral gain the light property.
+
+
+
+**Name: Nebulizer**
+Description: A curious simple machine used to vaporize an array of liquids. VALUEMarket priceVALUE
+Types: Nebulizer
+Nebulizer: Required for gas contraptions
+
+
+
+**Name: Obsidian**
+Description: This purple-black glass-like stone is known to be very sharp. VALUE250VALUE GP
+Types: Magic armor, Magic weapon
+Magic armor: While wearing a suit of non-magical medium or heavy armor (non hide) made with obsidian, enemies who successfully grapple you take DAMAGE1-2DAMAGEd4 slashing damage.
+Magic weapon: A non-magical weapon made with obsidian deals an additional DAMAGE1-2DAMAGEd4 slashing damage. It's also used for crafting the Sword of Sharpness.
+
+
+
+**Name: Orichalcum**
+Description: This bronzed-orange metal is used to absorb the essence of magic. VALUE500VALUE GP
+Types: Magic armor, Magic weapon, Equipment
+Magic armor: A non-magical armor made with orichalcum reduces the force damage you take by DAMAGE1-4DAMAGE. It's also used to craft an Armor of Force Resistance (metallic armor only).
+Magic weapon: A non-magical weapon made with orichalcum deals an additional DAMAGE1-2DAMAGEd4 force damage.
+Equipment: Used to craft anti-magic items, such as the Ring of Mind Shielding.
+
+
+
+**Name: Plaguesteel**
+Description: This ancient moss-like metal has small spores floating around it. VALUE250VALUE GP
+Types: Magic weapon, Equipment
+Magic weapon: A non-magical weapon made with plaguesteel deals an additional DAMAGE1-2DAMAGEd4 poison damage. It's also used to craft poison-damage-dealing magic weapons, such as the Dagger of Venom.
+Equipment: Used to craft poison-damage-dealing magic items, such as the Staff of the Adder.
+
+
+
+**Name: Shadowfell Linen**
+Description: A dark-purple linen woven in the shadowfell. VALUE750VALUE GP
+Types: Magic armor
+Magic armor: A non-magical armor made with shadowfell linen reduces the psychic damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Psychic Resistance (leather or studded leather).
+
+
+
+**Name: Spiritual Wood**
+Description: This cyan-tinted wood has a natural connection with magic. VALUE250VALUE GP
+Types: Magic armor
+Magic armor: Replaces the metal of any medium or heavy armor. While wearing a suit of spiritual wood armor, you gain a +DAMAGE1-4DAMAGE bonus to concentration checks to maintain a spell.
+
+
+
+**Name: Stabilizer**
+Description: An inert substances that stabilizes highly reactive compounds. VALUEMarket priceVALUE
+Types: Stabilizer
+Stabilizer: Reduces the chance of spontaneous detonation
+
+
+
+**Name: Stellar Iron**
+Description: A bright white metal, soft to touch but very resilient. Known for being used by celestial beings. VALUE750VALUE GP
+Types: Magic armor, Magic weapon
+Magic armor: A non-magical suit of armor made with stellar iron reduces the radiant damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Radiant Resistance (metallic armor only).
+Magic weapon: When you hit a fiend or an undead with a stellar iron weapon, you can roll the damage again and use either result. It's also used to craft radiant-damage-dealing weapons, such as the Sun Blade.
+
+
+
+**Name: Weapon**
+Description: A standard, nonmagical weapon VALUEMarket priceVALUE
+Types: Weapon
+Weapon: Required for weapon enchantments
+
+
+
+**Name: Adamantine**
+Description: A shiny red-black metal, known as one of the hardest substances in existence. VALUE250VALUE GP
+Types: Magic armor, Magic weapon
+Magic armor: Used to craft a suit of Adamantine Armor.
+Magic weapon: When you hit an object with an adamantine weapon or piece of ammunition, the hit is a critical hit.
+
+
+
+**Name: Angel Flower**
+Description: A small clump of orange-yellow flowers found in mountains, hills, and forests near rocks and stones. VALUE1-10VALUE GP
+Types: Potion
+Potion: When you make a Wisdom ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+
+
+
+**Name: Aniseed Sap**
+Description: A thick amber-like fluid extracted from an Aniseed tree which can be found in cold desert and mountain regions. VALUE1-5VALUE GP
+Types: Potion, Volatile
+Potion: Damage that you would take from sources that deal cold damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Volatile: May cause a backfire.
+
+
+
+**Name: Ash Chives**
+Description: A plant that grows in clumps from underground bulbs and produce round, hollow gray tubes. Can be found in plains and deserts. VALUE1-5VALUE GP
+Types: Poison, Nebulizer
+Poison: Damage that the creature would take from sources that deal fire damage is increased by DAMAGE1-4DAMAGE.
 Nebulizer: May cause a backfire.
 
 
@@ -46,17 +268,271 @@ Nebulizer: May cause a backfire.
 
 
 
-**Name: Cold Iron**
-Description: This iron is worked entirely while cold, known for its effectiveness against fey and fiendish creatures. VALUE100VALUE GP
-Types: Magic weapon
-Magic weapon: When you hit a fey or fiend with a cold iron weapon, you can roll the damage again and use either result.
+**Name: Blue Cress**
+Description: A plant with long stems topped with loose heads of blue, four-petalled flowers. Commonly found in forests, hills, and coastal areas along waterways. VALUE1-10VALUE GP
+Types: Potion
+Potion: When you make a ranged attack roll, you have a +DAMAGE1-4DAMAGE bonus on that roll for the duration of the potion's effect.
 
 
 
-**Name: Glowing Duscle**
-Description: An herb that reaches a height of nearly 50 inches, with long, ovate leaves. The flowers have greenish-yellow petals and yellow dots. Can be found in forests and hills. VALUE1-5VALUE GP
-Types: Bomb, Volatile, Amplifier
-Bomb: A flash of crackling energy arcs out from the point of impact. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 lightning damage and is stunned for TIME1-2TIME rounds, or half as much damage and is not stunned on a successful one.
+**Name: Cane Toad**
+Description: These giant neotropical toads have large toxin glands behind their eyes, making them poisonous. Their skin varies in color and can be grey, tinged yellow, auburn, or dark green, and are typically found near bodies of water in forests and swamps. VALUE1-10VALUE gp
+Types: Gas, Poison, Nebulizer
+Gas: Increase the DC of saving throws to avoid the effects of this gas by DAMAGE1-5DAMAGE.
+Poison: Increase the DC of saving throws to avoid the effects of this poison by DAMAGE1-5DAMAGE.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Crimson Brittlebrush**
+Description: A shrub that grows up to 30 inches tall, with fragrant leaves and a capitula with red-yellow ray florets and crimson disc florets. Commonly found in open, disturbed areas in deserts, plains, and mountains. VALUE1-5VALUE GP
+Types: Poison, Volatile
+Poison: Damage that the creature would take from a source that deals psychic damage is increased by DAMAGE1-4DAMAGE.
+Volatile: May cause a backfire.
+
+
+
+**Name: Dragontongue Petals**
+Description: A plant with golden petals which are spicy and, when eaten, give a similar sensation as if you were drinking firewater. Exclusively found in mountainous regions. VALUE1-5VALUE GP
+Types: Potion, Nebulizer
+Potion: Damage that you would take from sources that deal fire damage is reduced by DAMAGE1-4DAMAGE.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Ebrium Fungus**
+Description: A brown fungus which is known by its strong odor and potent poison when dried and ground. Can be found in damp forests and swamps. VALUE5-15VALUE GP
+Types: Poison, Stabilizer
+Poison: When the creature makes a Strength ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
+Stabilizer: Reduces the chance of spontaneous detonation.
+
+
+
+**Name: Ecire Laurel**
+Description: An aromatic evergreen shrub with glabrous green needles. It can be found in swamps and coastal regions. VALUE1-5VALUE GP
+Types: Potion, Volatile
+Potion: Damage that you would take from sources that deal poison damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Volatile: May cause a backfire.
+
+
+
+**Name: Frenn Moss**
+Description: A blue-gray moss with red caps that grows in swamps and plains-marshes. VALUE1-5VALUE GP
+Types: Poison, Nebulizer
+Poison: Damage that the creature would take from a source that deals poison damage is increased by DAMAGE1-4DAMAGE.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Ghostly Snowdrop**
+Description: A tiny plant with two linear leaves and a single small semi-translucent white drooping bell-shaped flower with blue markings. Typically found in swamps and forests. VALUE1-10VALUE GP
+Types: Bomb, Poison, Volatile
+Bomb: A dense fog appears in the area, obscuring vision for TIME2-4TIME turns or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.
+Poison: Damage that the creature would take from a source that deals necrotic damage is increased by DAMAGE1-4DAMAGE.
+Volatile: May cause a backfire.
+
+
+
+**Name: Leafweave**
+Description: Alchemically processed leaves that are as hard as leather but can be worked like metal, with the final armor having natural camouflage and stealth properties. VALUE100VALUE GP
+Types: Magic armor, Equipment
+Magic armor: A non-magical armor made with leafweave grants you a DAMAGE1-4DAMAGE bonus to Dexterity (Stealth) checks made to hide while lightly obscured by living plants.
+Equipment: Used to craft the Boots of Elvenkind and the Cloak of Elvenkind.
+
+
+
+**Name: Lunar Nectar**
+Description: The nectar from a small silver flower, named Lunar Dust, which can only be harvested under full moonlight. Exclusively found in mountainous regions. VALUE5-15VALUE GP
+Types: Potion, Stabilizer
+Potion: Damage that you would take from sources that deal force damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Stabilizer: Reduces the chance of spontaneous detonation.
+
+
+
+**Name: Mandrake Root**
+Description: The roots from a Mandrake plant are known for having small pockets of air in its interior and, when squished, the compressed air sounds like a faint scream. Generally found in swamps and damp forests. VALUE1-10VALUE GP
+Types: Bomb, Potion, Volatile
+Bomb: Double the number of all damage dice for this bomb. 
+Potion: Damage that you would take from sources that deal psychic damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Volatile: May cause a backfire.
+
+
+
+**Name: Nightshade**
+Description: A rich purple-blue flower with soft, long and pointy petals, and a gray stem with a dried appearance. Common in forests, plains, and swamps. VALUE1-10VALUE GP
+Types: Gas, Poison, Nebulizer
+Gas: Increase the DC of all saving throws against the effects of this gas by DAMAGE1-5DAMAGE.
+Poison: When you make a Wisdom ability check or saving throw, you have a -DAMAGE1-4DAMAGE bonus on that roll.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Sugar-Hibiscus Berries**
+Description: A plant with flat pink leaves, that grow in sheets, on purple stems and a large white taproot. The flowers are also white, followed by purple-black berries which are highly poisonous. Typically found in swamps, forests, hills, and coastal regions. VALUE1-10VALUE GP
+Types: Poison
+Poison: Damage that the creature would take from a source that deals radiant damage is increased by DAMAGE1-4DAMAGE.
+
+
+
+**Name: Thunderleaf**
+Description: These swirling elemental leaves are soft to the touch and known to never fall from a Thundertree due to wind alone. Found in open areas of deserts, plains, and hilly areas. VALUE1-10VALUE GP
+Types: Potion
+Potion: Damage that you would take from sources that deal thunder damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+
+
+
+**Name: Twilight wormwood**
+Description: A purple-gray fibrous plant with straight stems, growing up to 3 feet tall. The leaves are spirally arranged, and are known for their poisonous properties. Generally found in open deserts and mountainous regions. VALUE1-10VALUE GP
+Types: Poison
+Poison: When the creature makes a ranged attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll.
+
+
+
+**Name: Ucre Bramble**
+Description: A low-growing shrub with thorny stems and dense-packed bulbs, demonstrating swirling color patterning, that grows in almost every terrain including deserts, forests, hills, mountains, plains, swamps, and coastal regions. VALUE1-10VALUE GP
+Types: Potion
+Potion: Damage that you would take from sources that deal radiant damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+
+
+
+**Name: White Poppy**
+Description: A beautiful flower that grows up to 4 feet tall, with 5 petals surrounding a central, glowing bulb which give it a star-like silhouette. Generally found in disturbed areas of deserts, plains, and forests. VALUE1-5VALUE GP
+Types: Potion, Volatile
+Potion: Damage that you would take from sources that deal necrotic damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Volatile: May cause a backfire.
+
+
+
+**Name: Winter Turtlehead**
+Description: A small fungus which grows on stout, upright stems. The caps are white and formed by two-lipped petals, which give them the appearance of a snapping beak. Commonly found near large bodies of water among forests, hills, plains, swamps, and coastal regions. VALUE1-10VALUE GP
+Types: Poison
+Poison: Damage that the creature would take from a source that deals poison damage is increased by DAMAGE1-4DAMAGE.
+
+
+
+**Name: Wispy Starmantle**
+Description: This tiny flower looks like a bright blue dandelion seed head. Even though it looks pretty, the stem is the only usable part for alchemical concoctions. Found near running water of forests, hills, plains, swamps, and coastal regions. VALUE1-10VALUE GP
+Types: Potion
+Potion: When you make a Strength ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+
+
+
+**Name: Wolf Hair**
+Description: A pale gray moss that grows dull orange fibers which looks and feels like fur, growing on trees and rocks in temperate environments. Found in forests, plains, and hills. VALUE1-10VALUE GP
+Types: Poison
+Poison: Damage that the creature would take from a source that deals thunder damage is increased by DAMAGE1-4DAMAGE.
+
+
+
+**Name: Tiger Snake Venom**
+Description: These highly aggressive and extremely venomous snakes, with black and yellow banding, can reach up to 4 feet in length and are often found in swamps, damp forests, plains-marshes, and coastal regions. VALUE10-15VALUE GP
+Types: Bomb, Gas, Poison, Nebulizer 
+Bomb: The effects of this bomb ignore resistance.
+Gas: The effects of this gas ignore resistance.
+Poison: The effects of this poison ignore resistance.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Infuser**
+Description: A curious device capable of distilling and transferring the essence of various products. VALUE100-150VALUE GP
+Types: Infuser
+Infuser: Adds a random component effect to the finished product.
+
+
+
+**Name: Abyss Flower**
+Description: A dark pink flower with a thorny stem found in swamps, forests, and coastal areas. VALUE1-10VALUE GP
+Types: Bomb, Poison, Volatile 
+Bomb: A dark energy rips out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 necrotic damage is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. Any other creature may take an Action to shake the creature, immediately ending the paralyzed status for the creature.
+Poison: When the creature makes a melee attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll.
+Volatile: May cause a backfire.
+
+
+
+**Name: Ashwagandha**
+Description: These low-growing perennial shrubs with star-shaped branches extending radiallly from a central stem, with squat velvety leaves and bell flowers that contain orange berries, are typically found in open plains and coastlands. VALUE5-15VALUE GP
+Types: Potion, Stabilizer, Dampener
+Potion: Cures one level of exhaustion.
+Stabilizer: Reduces the chance of spontaneous detonation.
+Dampener: Decreases effectiveness of contraptions.
+
+
+
+**Name: Banshee's Lament**
+Description: A plant with leaf rosettes and bright, vibrant colours, with either blooms or inflorescence being produced on a stalk. The color varies between blue and pink. Found exclusively in swamps. VALUE1-10VALUE GP
+Types: Bomb, Poison, Volatile
+Bomb: A bloodcurdling shriek emanates from the point of impact as the bomb explodes. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 psychic damage and is frightened of the point of impact for TIME1-5TIME turns, or half as much damage and is not frightened on a successful one.
+Poison: When the creature makes a ranged attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll. 
+Volatile: May cause a backfire.
+
+
+
+**Name: Blood Herb**
+Description: A dark red poisonous herb which can be found in hills and coastal regions, with a similar shape to the Healer's Boon herb. VALUE1-10VALUE GP
+Types: Poison
+Poison: A creature that fails its saving throw to avoid the effects of this poison takes an additional DAMAGE1-3DAMAGEd6 poison damage and is poisoned for the duration of the poison's effects, or half as much damage and is not poisoned on a successful one. The creature may repeat this saving throw at the end of each of its turns, ending the poisoned condition on a success.
+
+
+
+**Name: Blue Seaweed**
+Description: A bright blue seaweed that appears as a fuzzy patch of tubular fingers that hang down from rocks nearby water. Typically found in brackish coastal regions and swamps. VALUE5-15VALUE GP
+Types: Potion, Stabilizer
+Potion: You can breathe underwater for the duration of the potion's effects.
+Potion: Gain resistance to cold damage for the duration of the potion's effects.
+Stabilizer: Reduces the chance of spontaneous detonation.
+
+
+
+**Name: Blue Toadshade**
+Description: Contrary to its name, this white mushroom has a relatively slender cap which gently vaporizes liquid in the immediate area, causing them to generally be found within small, localized clouds. Grow among thick undergrowth in forests and hills. VALUE1-10VALUE GP
+Types: Gas, Potion, Nebulizer
+Gas: Effects of this gas repeat for an extra TIME2-4TIME rounds for creatures affected by the gas after it dissipates.
+Potion: A creature ingesting this potion fades from the material plane, as if under the effects of the Etherealness spell, for the duration of the potion's effects.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Bone Garlic**
+Description: A bulbous plant that grows up to 3 feet in height. While it produces a beautiful white rounded flower, the bulb is the only part used in alchemy. Found in deserts, plains, and swamps. VALUE1-10VALUE GP
+Types: Bomb, Infuser
+Bomb: A blaze of ghoulish light emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 necrotic damage and is frightened of the point of impact for TIME1-3TIME turns, or half as much damage and is not frightened on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the frightened condition on a success.
+Infuser: Adds a random component effect to the finished product.
+
+
+
+**Name: Chromatic Mud**
+Description: A strange viscous fungus that reflects the light from any light source, glowing faintly. It can be found near oceans, rivers, and lakes in hills, swamps, and coastal areas. VALUE10-20VALUE GP
+Types: Bomb, Potion
+Bomb: A flash of sticky mud explodes out from the point of impact. Each creature in the area that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 radiant damage and is blinded for TIME1-5TIME turns, or half as much damage and is not blinded on a success. Any creature may take an Action to clear the mud from themselves or another creature, ending the blinded condition.
+Potion: Damage that you would take from a source that deals acid damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effects.
+
+
+
+**Name: Dampener**
+Description: Decreases effectiveness of contraptions. VALUE20-30VALUE GP
+Types: Dampener
+Dampener: Decreases effectiveness of contraptions.
+
+
+
+**Name: Deathstalker Scorpion**
+Description: These highly-venemous predatory arachnids feature a signature pattern of dots ressembling a humanoid skull on their abdomens. Extreme caution is recommended when attempting to differentiate between these and other scorpion species. Typically found in deserts, though on rare occassions may be found in swamps and plains. VALUE10-15VALUE GP
+Types: Bomb, Gas, Poison, Volatile, Amplifier
+Bomb: A thin red liquid sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 poison damage and becomes paralyzed for TIME1-4TIME turns, or half as much damage and is not paralyzed on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the paralyzed condition on a success.
+Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw (DC=DAMAGE10-20DAMAGE) or become paralyzed. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
+Poison: On a failed save, the target takes an additional DAMAGE1-3DAMAGEd4 poison damage and become paralyzed for TIME2-5TIME turns. On a successful save the target takes half damage and is not paralyzed.
+Volatile: May cause backfire.
+Amplifier: Boosts effectiveness of contraptions.
+
+
+
+**Name: Drakus Flower**
+Description: These carnivorous flowers secrete an oil within the folds of their lobed petals which combust when exposed to organic matter. Handle and mix with inert materials only. Commonly found in forests, hills, and coastal regions. VALUE10-15VALUE GP
+Types: Bomb, Poison, Potion, Volatile, Amplifier
+Bomb: A sticky burning mixture sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-10DAMAGE fire damage immediately and at the start of their turn for TIME1-5TIME turns. This bomb has no effect on constructs and non-organic creatures.
+Poison: On a failed save, the target becomes vulnerable to fire damage. A creature may repeat this saving throw at the start of each of their turns, ending the effect on a success.
+Potion: Cures Charmed status and the creature must succeed on a Constitution saving throw (DC=DAMAGE1-10DAMAGE) or take DAMAGE1-10DAMAGE fire damage at the start of their next turn.
 Volatile: May cause a backfire.
 Amplifier: Boosts effectiveness of contraptions.
 
@@ -70,123 +546,46 @@ Dampener: Decreases effectiveness of contraptions.
 
 
 
-**Name: Monster Feathers**
-Description: Hippogriffs, rocs, giant eagles, and other flying creatures have beautiful feathers used to demonstrate their majesty. VALUE1-4VALUE GP
-Types: Magic armor, Equipment
-Magic armor: A non-magical armor made with monster feathers grants you a +DAMAGE1-4DAMAGE bonus to Wisdom (Animal Handling) checks you make.
-Equipment: Harvested monster feathers from a CR 9 or higher creature can be used to craft a Quaal's Feather Token.
+**Name: Drojos Ivy**
+Description: A purple climbing or ground-creeping woody plant used by small animals as natural ropes in swamps, hilly jungles and humid forests. VALUE1-10VALUE GP
+Types: Potion, Dampener
+Potion: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
-**Name: Blood Herb**
-Description: A dark red poisonous herb which can be found in hills and coastal regions, with a similar shape to the Healer's Boon herb. VALUE1-10VALUE GP
-Types: Poison
-Poison: A creature that fails its saving throw to avoid the effects of this poison takes an additional DAMAGE1-3DAMAGEd6 poison damage and is poisoned for the duration of the poison's effects, or half as much damage and is not poisoned on a successful one. The creature may repeat this saving throw at the end of each of its turns, ending the poisoned condition on a success.
+**Name: Dusk Itchweed**
+Description: A plant that grows up to 6 feet tall with a solid brown stem, numerous yellow flower clusters, and blue bulbs. The orange leaves are spirally arranged, long and broad. Often found in deserts, plains, and hills. VALUE1-10VALUE GP
+Types: Poison, Dampener
+Poison: Damage that the creature would take from a source that deals force damage is increased by DAMAGE1-4DAMAGE.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
-**Name: Amplifier**
-Description: Boosts effectiveness of contraptions. VALUE20-30VALUE GP
-Types: Amplifier
-Amplifier: Boosts effectiveness of contraptions.
+**Name: Ellond Shrub**
+Description: A dried-looking woody plant with several main stems arising at or near the ground. Commonly found in arid deserts, plains, and mountains. VALUE1-10VALUE GP
+Types: Bomb, Dampener
+Bomb: A resounding crack emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 thunder damage and is deafened for TIME1-3TIME turns, or half as much damage and is not deafened on a successful one.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
-**Name: Cane Toad**
-Description: These giant neotropical toads have large toxin glands behind their eyes, making them poisonous. Their skin varies in color and can be grey, tinged yellow, auburn, or dark green, and are typically found near bodies of water in forests and swamps. VALUE1-10VALUE gp
-Types: Gas, Poison, Nebulizer
-Gas: Increase the DC of saving throws to avoid the effects of this gas by DAMAGE1-5DAMAGE.
-Poison: Increase the DC of saving throws to avoid the effects of this poison by DAMAGE1-5DAMAGE.
-Nebulizer: May cause a backfire.
+**Name: Feverfew**
+Description: These short, blue perennial plants produce flat, dimly glowing, white flowers with a long stem and white petals. Known for its anti-toxin properties. Generally found among other plants in plains, forests, and hills. VALUE5-15VALUE GP
+Types: Poison, Potion, Stabilizer, Dampener
+Poison: The effects of this poison are negated, rendering it inert.
+Potion: Cures the poisoned condition. 
+Stabilizer: Reduces the chance of spontaneous detonation.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
-**Name: Bone Plate**
-Description: A series of bones joined together, mostly used by shamans and wildlings. VALUE20-30VALUE GP
-Types: Magic armor
-Magic armor: Replaces the metal. A non-magical armor made with bones grants you a +DAMAGE1-4DAMAGE bonus to Charisma (Intimidation) checks you make.
-
-
-
-**Name: Infernal Leather**
-Description: A hard reddish leather created in the infernal planes. VALUE750VALUE GP
-Types: Magic armor
-Magic armor: A non-magical armor made with infernal leather reduces the fire damage you take by DAMAGE1-4DAMAGE and grants you a +DAMAGE1-4DAMAGE bonus to Charisma (Persuasion) checks when talking with fiends. It's also used to craft a suit of Armor of Fire Resistance (leather or studded leather).
-
-
-
-**Name: Abyss Flower**
-Description: A dark pink flower with a thorny stem found in swamps, forests, and coastal areas. VALUE1-10VALUE GP
-Types: Bomb, Poison, Volatile 
-Bomb: A dark energy rips out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 necrotic damage is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. Any other creature may take an Action to shake the creature, immediately ending the paralyzed status for the creature.
-Poison: When the creature makes a melee attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll.
-Volatile: May cause a backfire.
-
-
-
-**Name: Mandrake Root**
-Description: The roots from a Mandrake plant are known for having small pockets of air in its interior and, when squished, the compressed air sounds like a faint scream. Generally found in swamps and damp forests. VALUE1-10VALUE GP
-Types: Bomb, Potion, Volatile
-Bomb: Double the number of all damage dice for this bomb. 
-Potion: Damage that you would take from sources that deal psychic damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-Volatile: May cause a backfire.
-
-
-
-**Name: White Poppy**
-Description: A beautiful flower that grows up to 4 feet tall, with 5 petals surrounding a central, glowing bulb which give it a star-like silhouette. Generally found in disturbed areas of deserts, plains, and forests. VALUE1-5VALUE GP
-Types: Potion, Volatile
-Potion: Damage that you would take from sources that deal necrotic damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-Volatile: May cause a backfire.
-
-
-
-**Name: Angel Flower**
-Description: A small clump of orange-yellow flowers found in mountains, hills, and forests near rocks and stones. VALUE1-10VALUE GP
-Types: Potion
-Potion: When you make a Wisdom ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
-
-
-
-**Name: Mithral**
-Description: This white-silver metal is lighter and more flexible than common steel. VALUE250VALUE GP
-Types: Magic armor, Magic weapon
-Magic armor: Used to craft a suit of Mithral Armor.
-Magic weapon: Two-handed weapons made of mithral lose the heavy property, while all other weapons made of mithral gain the light property.
-
-
-
-**Name: Bone Garlic**
-Description: A bulbous plant that grows up to 3 feet in height. While it produces a beautiful white rounded flower, the bulb is the only part used in alchemy. Found in deserts, plains, and swamps. VALUE1-10VALUE GP
-Types: Bomb, Infuser
-Bomb: A blaze of ghoulish light emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 necrotic damage and is frightened of the point of impact for TIME1-3TIME turns, or half as much damage and is not frightened on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the frightened condition on a success.
+**Name: Fomorian Stomach Lining**
+Description: The inner flesh from the stomach of a deformed giant - known for their curious ability to digest anything. VALUE100-150VALUE GP
+Types: Poison, Potion, Infuser
+Poison: A creature that fails its saving throw to avoid the effects of this poison takes an additional DAMAGE1-3DAMAGEd4 poison damage immediately and at the start of their turn for TIME1-5TIME turns. At the end of each turn the creature may repeat their saving throw, ending all effects of this poison on a success.
+Potion: Grants protection from disease and advantage on saving throws to avoid the poisoned status for the duration of the potion's effects.
 Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Nightshade**
-Description: A rich purple-blue flower with soft, long and pointy petals, and a gray stem with a dried appearance. Common in forests, plains, and swamps. VALUE1-10VALUE GP
-Types: Gas, Poison, Nebulizer
-Gas: Increase the DC of all saving throws against the effects of this gas by DAMAGE1-5DAMAGE.
-Poison: When you make a Wisdom ability check or saving throw, you have a -DAMAGE1-4DAMAGE bonus on that roll.
-Nebulizer: May cause a backfire.
-
-
-
-**Name: Guayusa**
-Description: This fruiting evergreen dioecious tree can reach heights of 98 feet tall, with oblong leaves and small, white, thyrsed flowers, are typically found in coastal regions and humid forests. Fruits are small, spherical, and red, and known for their stimulative properties. VALUE15-25VALUE GP
-Types: Potion, Amplifier
-Potion: Gain advantage on Initiative rolls and Dexterity saving throws for the duration of the potion's effects.
-Potion: Add +DAMAGE1-5DAMAGE to your passive perception for the duration of the potion's effects.
-Amplifier: Increases effectiveness of contraptions.
-
-
-
-**Name: Gray Gilliflower**
-Description: A plant that grows up to 30 inches tall, with glaucous, slender leaves. The silvery-purple flowers are produced singly or up to five together in a cyme. Typically found in swamps and plains-marshes. VALUE1-10VALUE GP
-Types: Bomb, Amplifier
-Bomb: A flash of crackling energy arcs out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 lightning damage and is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the paralyzed condition on a success.
-Amplifier: Increases effectiveness of contraptions.
 
 
 
@@ -200,51 +599,44 @@ Infuser: Adds a random component effect to the finished product.
 
 
 
-**Name: Ellond Hide**
-Description: This brown-orange hide is harvested from creatures found in deserts and arid-climates. VALUEMarket priceVALUE
-Types: Magic armor
-Magic armor: A non-magical hide armor made with ellond hide reduces the fire damage you take by DAMAGE1-4DAMAGE. It's also used to craft a Hide Armor of Fire Resistance.
-
-
-
-**Name: Rune**
-Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued. VALUE Market PriceVALUE
-Types: Rune
-Rune: Required for Runesmithing.
-
-
-
-**Name: Radiant Synthseed**
-Description: These crystals vibrate at soothing harmonic frequencies when exposed to natural sunlight. When crushed, the powder make a delightfully invigorating snuff. Rare, though generally found in hills and mountains near coastal regions. VALUE50-70VALUE GP
-Types: Bomb, Gas, Potion, Amplifier, Infuser
-Bomb: Double the number of all damage dice for this bomb. Extend the radius of this bomb by DISTANCE5-10DISTANCE feet.
-Gas: Creatures within this gas have advantage on saving throws against being Charmed or Frightened, and cannot be put to sleep magically.
-Potion: A creature ingesting this potion gains advantage on Charisma checks and saving throws for the duration of the potion's effects.
-Amplifier: Boosts effectiveness of contraptions.
+**Name: Ghost Ectoplasm**
+Description: The curious, glowing residual fluid left after a ghost. VALUE100-150VALUE GP
+Types: Potion, Infuser
+Potion: The creature becomes invisible for the duration of the potion's effects.
 Infuser: Adds a random component effect to the finished product.
 
 
 
-**Name: Storm Daisy**
-Description: A plant with rosettes of long, flat leaves that grow toward the sky with a spiked, silver flower. Commonly found in disturbed areas of plains, deserts, and forests. VALUE1-10VALUE GP
+**Name: Glowing Duscle**
+Description: An herb that reaches a height of nearly 50 inches, with long, ovate leaves. The flowers have greenish-yellow petals and yellow dots. Can be found in forests and hills. VALUE1-5VALUE GP
+Types: Bomb, Volatile, Amplifier
+Bomb: A flash of crackling energy arcs out from the point of impact. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 lightning damage and is stunned for TIME1-2TIME rounds, or half as much damage and is not stunned on a successful one.
+Volatile: May cause a backfire.
+Amplifier: Boosts effectiveness of contraptions.
+
+
+
+**Name: Goblin Mud**
+Description: A thick and dense bright green bulb that appears under rocks in swamps and plains-marshes. VALUE1-10VALUE GP
 Types: Poison, Amplifier
-Poison: Damage that the creature would take from a source that deals lightning damage is increased by DAMAGE1-4DAMAGE.
-Amplifier: Increases the potency of contraptions made with it.
+Poison: Damage that the creature would take from a source that deals acid damage is increased by DAMAGE1-4DAMAGE.
+Amplifier: Increases effectiveness of contraptions.
 
 
 
-**Name: Thunderleaf**
-Description: These swirling elemental leaves are soft to the touch and known to never fall from a Thundertree due to wind alone. Found in open areas of deserts, plains, and hilly areas. VALUE1-10VALUE GP
-Types: Potion
-Potion: Damage that you would take from sources that deal thunder damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+**Name: Golden Coneflower**
+Description: A plant that grows up to 4 feet tall with erect stems. The leaves are normally hairy with a rough texture, and the yellow flowers are collected together into single, rounded heads that glow softly in dim light. Can be found near caves among hills and mountainous regions. VALUE10-20VALUE GP
+Types: Bomb, Potion, Dampener
+Bomb: A blaze of golden light flashes out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 radiant damage and has any statuses affecting them end immediately, or half as much damage and any statuses persist on a successful one.
+Potion: Cures one disease.
+Dampener: Decreases effectiveness of contraptions.
 
 
 
-**Name: Ashwagandha**
-Description: These low-growing perennial shrubs with star-shaped branches extending radiallly from a central stem, with squat velvety leaves and bell flowers that contain orange berries, are typically found in open plains and coastlands. VALUE5-15VALUE GP
-Types: Potion, Stabilizer, Dampener
-Potion: Cures one level of exhaustion.
-Stabilizer: Reduces the chance of spontaneous detonation.
+**Name: Golden Hibiscus**
+Description: A plant with lanceolate leaves with a toothed margin and a large, brush-like yellow flower. Commonly found in disturbed areas of deserts, plains, and coastal regions. VALUE1-10VALUE GP
+Types: Poison, Dampener
+Poison: When the creature makes an Intelligence ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
 Dampener: Decreases effectiveness of contraptions.
 
 
@@ -261,394 +653,20 @@ Amplifier: Boosts effectiveness of contraptions.
 
 
 
-**Name: Golden Coneflower**
-Description: A plant that grows up to 4 feet tall with erect stems. The leaves are normally hairy with a rough texture, and the yellow flowers are collected together into single, rounded heads that glow softly in dim light. Can be found near caves among hills and mountainous regions. VALUE10-20VALUE GP
-Types: Bomb, Potion, Dampener
-Bomb: A blaze of golden light flashes out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 radiant damage and has any statuses affecting them end immediately, or half as much damage and any statuses persist on a successful one.
-Potion: Cures one disease.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
-**Name: Adamantine**
-Description: A shiny red-black metal, known as one of the hardest substances in existence. VALUE250VALUE GP
-Types: Magic armor, Magic weapon
-Magic armor: Used to craft a suit of Adamantine Armor.
-Magic weapon: When you hit an object with an adamantine weapon or piece of ammunition, the hit is a critical hit.
-
-
-
-**Name: Wormwood**
-Description: A conical purple shrub with known medicinal properties. Toxic in high doses as it may induce delirium. Found in temperate forests, plains, and hills. VALUE20-30VALUE GP
-Types: Gas, Poison, Potion
-Gas: Creatures within this gas subtract DAMAGE1-4DAMAGE from all Wisdom saving throws while in the gas cloud.
-Poison: A creature that fails its saving throw to avoid the effects of this poison has disadvantage on their next Wisdom saving throw.
-Potion: Cures Poison status.
-
-
-
-**Name: Orichalcum**
-Description: This bronzed-orange metal is used to absorb the essence of magic. VALUE500VALUE GP
-Types: Magic armor, Magic weapon, Equipment
-Magic armor: A non-magical armor made with orichalcum reduces the force damage you take by DAMAGE1-4DAMAGE. It's also used to craft an Armor of Force Resistance (metallic armor only).
-Magic weapon: A non-magical weapon made with orichalcum deals an additional DAMAGE1-2DAMAGEd4 force damage.
-Equipment: Used to craft anti-magic items, such as the Ring of Mind Shielding.
-
-
-
-**Name: Drojos Ivy**
-Description: A purple climbing or ground-creeping woody plant used by small animals as natural ropes in swamps, hilly jungles and humid forests. VALUE1-10VALUE GP
-Types: Potion, Dampener
-Potion: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
-**Name: Golden Hibiscus**
-Description: A plant with lanceolate leaves with a toothed margin and a large, brush-like yellow flower. Commonly found in disturbed areas of deserts, plains, and coastal regions. VALUE1-10VALUE GP
-Types: Poison, Dampener
-Poison: When the creature makes an Intelligence ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
-**Name: Wrackwort Bulbs**
-Description: These silver bulbs smell faintly of burnt bread and broken dreams, releasing a cloud of fine particles when smashed. Under no circumstances should they be smashed in an enclosed environment. Found in deserts, swamps, and plains. VALUE1-5VALUE GP
-Types: Gas, Nebulizer
-Gas: Creatures within this gas must succeed on a Wisdom Saving Throw (DC=DAMAGE10-20DAMAGE) or become frightened and must use their Action on their next turn to Dash in a random direction. If a creature starts its turn within this gas while already under its effect, the creature becomes Incapacitated. A creature may repeat this saving throw at the end of each of its turns, ending the effect on a success. Creatures outside of this gas have advantage on saving throws to end this effect.
-Nebulizer: May cause a backfire.
-
-
-
-**Name: Shadowfell Linen**
-Description: A dark-purple linen woven in the shadowfell. VALUE750VALUE GP
-Types: Magic armor
-Magic armor: A non-magical armor made with shadowfell linen reduces the psychic damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Psychic Resistance (leather or studded leather).
-
-
-
-**Name: Item**
-Description: A standard, nonmagical item VALUEMarket priceVALUE
-Types: Item
-Item: Required for equipment enchantments.
-
-
-
-**Name: Spiritual Wood**
-Description: This cyan-tinted wood has a natural connection with magic. VALUE250VALUE GP
-Types: Magic armor
-Magic armor: Replaces the metal of any medium or heavy armor. While wearing a suit of spiritual wood armor, you gain a +DAMAGE1-4DAMAGE bonus to concentration checks to maintain a spell.
-
-
-
-**Name: Aquastone**
-Description: Mostly used by sea- and waterborn creatures to create their weapons and armor. VALUE100VALUE GP
-Types: Magic armor, Magic weapon
-Magic armor: Replaces the metal. While wearing a medium or heavy armor (non hide) made with aquastone, your speed while swimming increases by 10 feet.
-Magic weapon: Any melee weapon made with aquastone doesn't have disadvantage on attack rolls while underwater.
-
-
-
-**Name: Wolf Hair**
-Description: A pale gray moss that grows dull orange fibers which looks and feels like fur, growing on trees and rocks in temperate environments. Found in forests, plains, and hills. VALUE1-10VALUE GP
-Types: Poison
-Poison: Damage that the creature would take from a source that deals thunder damage is increased by DAMAGE1-4DAMAGE.
-
-
-
-**Name: Valerian Root**
-Description: This dried root is obtained from the Valerian, a flowering plant that bears sweetly-scented pink or white flowers that attract many fly species. Found in swamps, damp forests, and coastal regions. VALUE1-10VALUE
-Types: Gas, Poison, Nebulizer
-Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw (DC=DAMAGE10-20DAMAGE) or have its speed reduced by DISTANCE5-20DISTANCE feet for TIME1-5TIME turns.
-Poison: A creature that fails its saving throw to avoid the effects of this poison falls asleep. Any other creature may take an Action to shake the creature awake, ending the unconscious condition for the creature. The unconscious condition ends immediately if the creature takes damage from any source.
-Nebulizer: May cause a backfire.
-
-
-
-**Name: Lunar Nectar**
-Description: The nectar from a small silver flower, named Lunar Dust, which can only be harvested under full moonlight. Exclusively found in mountainous regions. VALUE5-15VALUE GP
-Types: Potion, Stabilizer
-Potion: Damage that you would take from sources that deal force damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-Stabilizer: Reduces the chance of spontaneous detonation.
-
-
-
-**Name: Chromatic Mud**
-Description: A strange viscous fungus that reflects the light from any light source, glowing faintly. It can be found near oceans, rivers, and lakes in hills, swamps, and coastal areas. VALUE10-20VALUE GP
-Types: Bomb, Potion
-Bomb: A flash of sticky mud explodes out from the point of impact. Each creature in the area that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 radiant damage and is blinded for TIME1-5TIME turns, or half as much damage and is not blinded on a success. Any creature may take an Action to clear the mud from themselves or another creature, ending the blinded condition.
-Potion: Damage that you would take from a source that deals acid damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effects.
-
-
-
-**Name: Goblin Mud**
-Description: A thick and dense bright green bulb that appears under rocks in swamps and plains-marshes. VALUE1-10VALUE GP
-Types: Poison, Amplifier
-Poison: Damage that the creature would take from a source that deals acid damage is increased by DAMAGE1-4DAMAGE.
+**Name: Gray Gilliflower**
+Description: A plant that grows up to 30 inches tall, with glaucous, slender leaves. The silvery-purple flowers are produced singly or up to five together in a cyme. Typically found in swamps and plains-marshes. VALUE1-10VALUE GP
+Types: Bomb, Amplifier
+Bomb: A flash of crackling energy arcs out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 lightning damage and is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the paralyzed condition on a success.
 Amplifier: Increases effectiveness of contraptions.
 
 
 
-**Name: Twilight wormwood**
-Description: A purple-gray fibrous plant with straight stems, growing up to 3 feet tall. The leaves are spirally arranged, and are known for their poisonous properties. Generally found in open deserts and mountainous regions. VALUE1-10VALUE GP
-Types: Poison
-Poison: When the creature makes a ranged attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll.
-
-
-
-**Name: Combustive powder**
-Description: A secretive mix of powders known only to a few. While very dangerous to handle as it possesses explosive effects VALUE1-10VALUE GP
-Types: Volatile
-Volatile: May cause a backfire.
-
-
-
-**Name: Ash Chives**
-Description: A plant that grows in clumps from underground bulbs and produce round, hollow gray tubes. Can be found in plains and deserts. VALUE1-5VALUE GP
-Types: Poison, Nebulizer
-Poison: Damage that the creature would take from sources that deal fire damage is increased by DAMAGE1-4DAMAGE.
-Nebulizer: May cause a backfire.
-
-
-
-**Name: Dwarvenstone**
-Description: This marble-like ore is used by dwarves to create their ceremonial armor for the defenders of their cities, even though it is heavier and bulkier than other metallic armors. VALUE500VALUE GP
-Types: Magic armor
-Magic armor: Used to craft a suit of Dwarven Plate.
-
-
-
-**Name: Luminous Cap Dust**
-Description: These spores glow with a sickly green light and tend to corrode anything they are in contact with for extended periods of time. Ensure proper protective precautions are taken, never handle directly. Commonly found in swamps, forests, and hills. VALUE10-20VALUE GP
-Types: Bomb, Gas
-Bomb: A caustic, glowing green fluid sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 acid damage, or half as much damage on a successful save. Objects within the area that are not being worn or held take maximum damage.
-Gas: Creatures within this gas glow brightly, as if under the effect of the Fairy Fire spell, for the duration.
-
-
-
-**Name: Ghost Ectoplasm**
-Description: The curious, glowing residual fluid left after a ghost. VALUE100-150VALUE GP
-Types: Potion, Infuser
-Potion: The creature becomes invisible for the duration of the potion's effects.
-Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Aniseed Sap**
-Description: A thick amber-like fluid extracted from an Aniseed tree which can be found in cold desert and mountain regions. VALUE1-5VALUE GP
-Types: Potion, Volatile
-Potion: Damage that you would take from sources that deal cold damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-Volatile: May cause a backfire.
-
-
-
-**Name: Rune Schema**
-Description: A set of magical instructions, which disappear even as they are read, for imbuing a runestone with greater power... VALUE Market PriceVALUE
-Types: Rune
-Rune: Required for Runesmithing.
-
-
-
-**Name: Frenn Moss**
-Description: A blue-gray moss with red caps that grows in swamps and plains-marshes. VALUE1-5VALUE GP
-Types: Poison, Nebulizer
-Poison: Damage that the creature would take from a source that deals poison damage is increased by DAMAGE1-4DAMAGE.
-Nebulizer: May cause a backfire.
-
-
-
-**Name: Darksteel**
-Description: A darkened blue metal that only forms in areas affected by thunderstorms, known for trapping that energy inside of it. VALUE250VALUE GP
-Types: Magic armor, Magic weapon, Equipment
-Magic armor: A non-magical armor made with darksteel reduces the lightning damage you take by DAMAGE1-4DAMAGE. It's also used to craft an Armor of Lightning Resistance (metallic armor only).
-Magic weapon: A non-magical weapon made of darksteel deals an additional DAMAGE1-2DAMAGEd4 lightning damage. It's also used to craft lightning-damage-dealing weapons such as the Javelin of Lightning.
-Equipment: Used to craft lightning-damage-dealing magic items, such as the Wand of Lightning Bolt.
-
-
-
-**Name: Kasuni Juice**
-Description: A viscous white liquid extracted from the spherical fruit of a Kasuni shrub. Often found in freshwater environments among forests, hills, and plains. VALUE10-20VALUE GP
-Types: Bomb, Potion, Infuser
-Bomb: Slippery oil is released on the ground in a DISTANCE5-20DISTANCE foot square centered on the point of impact, becoming difficult terrain for TIME1-5TIME turns. Each creature that failed its saving throw to avoid the effects of this bomb is knocked prone. Each creature that enters or starts its turn in the area must make a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or be knocked prone.
-Potion: When you make an Intelligence ability check or saving throw, you have a DAMAGE1-4DAMAGE bonus on that roll.
-Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Primrose**
-Description: An herbacious perennial that has fragrant, showy yellow to red-gold flowers. It forms a basal rosette of wrinkled leaves and blooms in temperate climates. Often found in the forests and hills near coastal regions. VALUE5-15VALUE GP
-Types: Potion, Stabilizer
-Potion: Grants DAMAGE2-4DAMAGEd4 temporary hit points for the duration of the potion's effects. While a creature has these temporary hitpoints its skin is suffused with an alluring glow, and it has advantage on Charisma (Persuasion) and Charisma (Performance) checks.
-Stabilizer: Reduces the chance of spontaneous detonation.
-
-
-
-**Name: Eternal Ice**
-Description: This cold white-blue block of ice is resistant to high temperatures, and cannot be melted by non-magical means. VALUE500VALUE GP
-Types: Magic weapon, Equipment
-Magic weapon: A non-magical weapon made with eternal ice deals an additional DAMAGE1-2DAMAGEd4 cold damage. It's also used to craft cold-damage-dealing magic weapons, such as the Frost Brand.
-Equipment: Used to craft cold-damage-dealing magic items, such as the Staff of Frost.
-
-
-
-**Name: Deathstalker Scorpion**
-Description: These highly-venemous predatory arachnids feature a signature pattern of dots ressembling a humanoid skull on their abdomens. Extreme caution is recommended when attempting to differentiate between these and other scorpion species. Typically found in deserts, though on rare occassions may be found in swamps and plains. VALUE10-15VALUE GP
-Types: Bomb, Gas, Poison, Volatile, Amplifier
-Bomb: A thin red liquid sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 poison damage and becomes paralyzed for TIME1-4TIME turns, or half as much damage and is not paralyzed on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the paralyzed condition on a success.
-Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw (DC=DAMAGE10-20DAMAGE) or become paralyzed. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
-Poison: On a failed save, the target takes an additional DAMAGE1-3DAMAGEd4 poison damage and become paralyzed for TIME2-5TIME turns. On a successful save the target takes half damage and is not paralyzed.
-Volatile: May cause backfire.
-Amplifier: Boosts effectiveness of contraptions.
-
-
-
-**Name: Iron Thistle**
-Description: A silver-flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. Generally found in disturbed areas of deserts and plains. VALUE1-10VALUE GP
-Types: Potion, Dampener
-Potion: When you make a melee attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
-**Name: Wizard's Cap**
-Description: A small pale-orange mushroom which grows a gray-blue cap that is similar in appearance to a traditional Wizard's pointed hat. Found in open fields of plains, hills, forests, and coastal regions. VALUE5-15VALUE GP
-Types: Bomb, Stabilizer
-Bomb: A disorienting wave of energy emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 psychic damage and has disadvantage on Concentration checks to maintain a spell, or half as much damage and no disadvantage on Concentration checks to maintain a spell on a successful one.
-Stabilizer: Reduces the chance of spontaneous detonation.
-
-
-
-**Name: Ironwood Heart**
-Description: The dark heartwood of an Ironwood tree, smells not unlike an active smithy on a crips winter's day. Often found in swamps, forests, and hills. VALUE1-10VALUE GP
-Types: Bomb, Potion, Volatile
-Bomb: Piercing shrapnel shoots out from the point of impact, and a DISTANCE5-20DISTANCE foot circle centered on the point of impact becomes difficult terrain for TIME1-5TIME turns. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 piercing damage or half as much damage on a successful save. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or take DAMAGE1-2DAMAGEd4 piercing damage.
-Potion: Grants resistance to nonmagical piercing, slashing, and bludgeoning damage for the duration of the potion's effects.
-Volatile: May cause a backfire.
-
-
-
-**Name: Hydrathistle**
-Description: A flowering plant with up to five blossoms per stem, and sharp prickles on the margins. Caution should be taken to not impale one-self on the prickles, as they tend to leave festering wounds when in contact with blood. Commonly found in swamps, humid forests, plains-marshes, and coastal regions. VALUE20-30VALUE GP
-Types: Bomb, Gas, Poison
-Bomb: A slippery oil spreads out from the point of impact, creating difficult terrain in a DISTANCE5-20DISTANCE foot square for TIME1-5TIME rounds. Each creature that fails its saving throw to avoid the effects of this bomb falls prone. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or fall prone.
-Gas: Creatures within this gas who take piercing damage subtract DAMAGE1-2DAMAGEd4 from all Constitution saving throws until the end of their next turn.
-Poison: Creatures exposed to this poison have disadvantage on Constitution Saving Throws to maintain Concentration on a spell for TIME2-4TIME rounds.
-
-
-
-**Name: Monster Scales**
-Description: Scales harvested from creatures, with a variety of colors, shapes, and sizes. VALUE10-20VALUE GP
-Types: Magic armor
-Magic armor: Replaces the metal. Used to craft a scale mail armor. Harvested monster scales from a CR 13 or higher dragon can be used to craft a suit of Dragon Scale Mail.
-
-
-
-**Name: Banshee's Lament**
-Description: A plant with leaf rosettes and bright, vibrant colours, with either blooms or inflorescence being produced on a stalk. The color varies between blue and pink. Found exclusively in swamps. VALUE1-10VALUE GP
-Types: Bomb, Poison, Volatile
-Bomb: A bloodcurdling shriek emanates from the point of impact as the bomb explodes. Each creature that failed its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 psychic damage and is frightened of the point of impact for TIME1-5TIME turns, or half as much damage and is not frightened on a successful one.
-Poison: When the creature makes a ranged attack roll, it has a -DAMAGE1-4DAMAGE penalty to that roll. 
-Volatile: May cause a backfire.
-
-
-
-**Name: Sugar-Hibiscus Berries**
-Description: A plant with flat pink leaves, that grow in sheets, on purple stems and a large white taproot. The flowers are also white, followed by purple-black berries which are highly poisonous. Typically found in swamps, forests, hills, and coastal regions. VALUE1-10VALUE GP
-Types: Poison
-Poison: Damage that the creature would take from a source that deals radiant damage is increased by DAMAGE1-4DAMAGE.
-
-
-
-**Name: Nebulizer**
-Description: A curious simple machine used to vaporize an array of liquids. VALUEMarket priceVALUE
-Types: Nebulizer
-Nebulizer: Required for gas contraptions
-
-
-
-**Name: Asmoroch Steel**
-Description: A black metal with a scorched appearance which is cold to the touch. VALUE500VALUE GP
-Types: Magic armor, Magic weapon
-Magic armor: A non-magical armor made with asmoroch steel reduces the necrotic damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Necrotic Resistance (metallic armor only).
-Magic weapon: A non-magical weapon made with asmoroch steel deals an additional DAMAGE1-2DAMAGEd4 necrotic damage. It's also used to craft necrotic-damage-dealing weapons such as the Sword of Life Stealing.
-
-
-
-**Name: Winter Turtlehead**
-Description: A small fungus which grows on stout, upright stems. The caps are white and formed by two-lipped petals, which give them the appearance of a snapping beak. Commonly found near large bodies of water among forests, hills, plains, swamps, and coastal regions. VALUE1-10VALUE GP
-Types: Poison
-Poison: Damage that the creature would take from a source that deals poison damage is increased by DAMAGE1-4DAMAGE.
-
-
-
-**Name: Tiger Snake Venom**
-Description: These highly aggressive and extremely venomous snakes, with black and yellow banding, can reach up to 4 feet in length and are often found in swamps, damp forests, plains-marshes, and coastal regions. VALUE10-15VALUE GP
-Types: Bomb, Gas, Poison, Nebulizer 
-Bomb: The effects of this bomb ignore resistance.
-Gas: The effects of this gas ignore resistance.
-Poison: The effects of this poison ignore resistance.
-Nebulizer: May cause a backfire.
-
-
-
-**Name: Kreet Paste**
-Description: A thick viscous fluid extracted from a Kreet mushroom, found in cold, damp environments among hills, forests, and swamps. VALUE1-5VALUE GP
-Types: Potion, Volatile, Infuser
-Potion: Damage that you would take from sources that deal lightning damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-Volatile: May cause a backfire.
-Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Ellond Shrub**
-Description: A dried-looking woody plant with several main stems arising at or near the ground. Commonly found in arid deserts, plains, and mountains. VALUE1-10VALUE GP
-Types: Bomb, Dampener
-Bomb: A resounding crack emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 thunder damage and is deafened for TIME1-3TIME turns, or half as much damage and is not deafened on a successful one.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
-**Name: Viper Thistle**
-Description: A poisonous flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the banded leaves. The flowerhead have a bright red-purple hue. Typically found in arid deserts, plains, hills, and mountainous regions. VALUE5-15VALUE GP
-Types: Bomb, Infuser
-Bomb: Sharp, poisonous spines explode out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 poison damage and is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the paralyzed condition on a success.
-Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Ghostly Snowdrop**
-Description: A tiny plant with two linear leaves and a single small semi-translucent white drooping bell-shaped flower with blue markings. Typically found in swamps and forests. VALUE1-10VALUE GP
-Types: Bomb, Poison, Volatile
-Bomb: A dense fog appears in the area, obscuring vision for TIME2-4TIME turns or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.
-Poison: Damage that the creature would take from a source that deals necrotic damage is increased by DAMAGE1-4DAMAGE.
-Volatile: May cause a backfire.
-
-
-
-**Name: Plaguesteel**
-Description: This ancient moss-like metal has small spores floating around it. VALUE250VALUE GP
-Types: Magic weapon, Equipment
-Magic weapon: A non-magical weapon made with plaguesteel deals an additional DAMAGE1-2DAMAGEd4 poison damage. It's also used to craft poison-damage-dealing magic weapons, such as the Dagger of Venom.
-Equipment: Used to craft poison-damage-dealing magic items, such as the Staff of the Adder.
-
-
-
-**Name: Drakus Flower**
-Description: These carnivorous flowers secrete an oil within the folds of their lobed petals which combust when exposed to organic matter. Handle and mix with inert materials only. Commonly found in forests, hills, and coastal regions. VALUE10-15VALUE GP
-Types: Bomb, Poison, Potion, Volatile, Amplifier
-Bomb: A sticky burning mixture sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-10DAMAGE fire damage immediately and at the start of their turn for TIME1-5TIME turns. This bomb has no effect on constructs and non-organic creatures.
-Poison: On a failed save, the target becomes vulnerable to fire damage. A creature may repeat this saving throw at the start of each of their turns, ending the effect on a success.
-Potion: Cures Charmed status and the creature must succeed on a Constitution saving throw (DC=DAMAGE1-10DAMAGE) or take DAMAGE1-10DAMAGE fire damage at the start of their next turn.
-Volatile: May cause a backfire.
-Amplifier: Boosts effectiveness of contraptions.
-
-
-
-**Name: Stellar Iron**
-Description: A bright white metal, soft to touch but very resilient. Known for being used by celestial beings. VALUE750VALUE GP
-Types: Magic armor, Magic weapon
-Magic armor: A non-magical suit of armor made with stellar iron reduces the radiant damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Radiant Resistance (metallic armor only).
-Magic weapon: When you hit a fiend or an undead with a stellar iron weapon, you can roll the damage again and use either result. It's also used to craft radiant-damage-dealing weapons, such as the Sun Blade.
+**Name: Guayusa**
+Description: This fruiting evergreen dioecious tree can reach heights of 98 feet tall, with oblong leaves and small, white, thyrsed flowers, are typically found in coastal regions and humid forests. Fruits are small, spherical, and red, and known for their stimulative properties. VALUE15-25VALUE GP
+Types: Potion, Amplifier
+Potion: Gain advantage on Initiative rolls and Dexterity saving throws for the duration of the potion's effects.
+Potion: Add +DAMAGE1-5DAMAGE to your passive perception for the duration of the potion's effects.
+Amplifier: Increases effectiveness of contraptions.
 
 
 
@@ -661,41 +679,73 @@ Infuser: Adds a random component effect to the finished product.
 
 
 
-**Name: Wispy Starmantle**
-Description: This tiny flower looks like a bright blue dandelion seed head. Even though it looks pretty, the stem is the only usable part for alchemical concoctions. Found near running water of forests, hills, plains, swamps, and coastal regions. VALUE1-10VALUE GP
-Types: Potion
-Potion: When you make a Strength ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
-
-
-
-**Name: Peyotl**
-Description: This spineless blue-green cactus, growing in clustered bulbs resembling caterpillar cocoons, is known to contain strong psychoactive alkaloids. Exclusively found in desert regions. VALUE10-30VALUE GP
-Types: Gas, Poison
-Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw (DC=DAMAGE10-20DAMAGE) or be stricken with hallucinations for TIME1-5TIME turns. When the target makes an attack roll while under the effects of this gas, it must succeed on an Intelligence saving throw or choose a new target for the attack. If no other valid target is available, the attack automatically misses.
-Poison: The target must succeed on a Constitution saving throw or be stricken with hallucinations for the duration of the poison's effects. When the target makes an attack roll while under the effects of this poison, it must succeed on an Intelligence saving throw or choose a new target for the attack. If no other valid target is available, the attack is made against the original target with disadvantage.
-
-
-
-**Name: Mermaid Braid**
-Description: A reddish-gold seaweed with purple tips that grows up to 30 feet long from its holdfast, found under the ocean and in deep, brackish rivers and lakes of plains, swamps, and coastal regions. VALUE1-10VALUE GP
-Types: Poison, Dampener
-Poison: When the creature makes a Charisma ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
-Dampener: Decreases the potency of contraptions made with it.
-
-
-
-**Name: Chitin Plate**
-Description: These flexible shells of chitinous creatures such as giant crabs or remorhaz are used to craft armors, known to be lighter than metallic armor. VALUEMarket priceVALUE
-Types: Magic armor
-Magic armor: Replaces the metal. While wearing a medium armor (non-hide) made with chitin, the armor's Dexterity bonus increases by DAMAGE1-3DAMAGE. While wearing a heavy armor made with chitin, reduce the Strength requirement by DAMAGE1-3DAMAGE.
-
-
-
 **Name: Hemlock**
 Description: This notoriously poisonous plant produces umbrella-like clusters of white flowers in warm, humid climates. It can be found in damp places such as ditches, riverbanks, and waste ground among swamps, plains, and forests. VALUE10-20VALUE GP
 Types: Gas, Poison
 Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw (DC=DAMAGE10-20DAMAGE) or be poisoned. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
 Poison: A creature that fails its saving throw to avoid the effects of this poison is poisoned for TIME2-5TIME turns. The creature may repeat this saving throw, ending the poisoned status on a success.
+
+
+
+**Name: Hydrathistle**
+Description: A flowering plant with up to five blossoms per stem, and sharp prickles on the margins. Caution should be taken to not impale one-self on the prickles, as they tend to leave festering wounds when in contact with blood. Commonly found in swamps, humid forests, plains-marshes, and coastal regions. VALUE20-30VALUE GP
+Types: Bomb, Gas, Poison
+Bomb: A slippery oil spreads out from the point of impact, creating difficult terrain in a DISTANCE5-20DISTANCE foot square for TIME1-5TIME rounds. Each creature that fails its saving throw to avoid the effects of this bomb falls prone. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or fall prone.
+Gas: Creatures within this gas who take piercing damage subtract DAMAGE1-2DAMAGEd4 from all Constitution saving throws until the end of their next turn.
+Poison: Creatures exposed to this poison have disadvantage on Constitution Saving Throws to maintain Concentration on a spell for TIME2-4TIME rounds.
+
+
+
+**Name: Iron Thistle**
+Description: A silver-flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. Generally found in disturbed areas of deserts and plains. VALUE1-10VALUE GP
+Types: Potion, Dampener
+Potion: When you make a melee attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Dampener: Decreases effectiveness of contraptions.
+
+
+
+**Name: Ironwood Heart**
+Description: The dark heartwood of an Ironwood tree, smells not unlike an active smithy on a crips winter's day. Often found in swamps, forests, and hills. VALUE1-10VALUE GP
+Types: Bomb, Potion, Volatile
+Bomb: Piercing shrapnel shoots out from the point of impact, and a DISTANCE5-20DISTANCE foot circle centered on the point of impact becomes difficult terrain for TIME1-5TIME turns. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 piercing damage or half as much damage on a successful save. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or take DAMAGE1-2DAMAGEd4 piercing damage.
+Potion: Grants resistance to nonmagical piercing, slashing, and bludgeoning damage for the duration of the potion's effects.
+Volatile: May cause a backfire.
+
+
+
+**Name: Jimsonweed**
+Description: Also called Thorn Apple or Devil's Snare, this member of the nightshade family grows up to 5 feet tall with long, ovate leaves that are reddish-purple in color and produce flowers with cyan petals which glow faintly in dim light. Found in lowlands among plains, swamps, forests, and coastal regions. VALUE1-10VALUE GP
+Types: Gas, Poison, Nebulizer, Infuser
+Gas: Each creature that starts its turn or enters this gas must succeed on a Charisma saving throw (DC=DAMAGE10-20DAMAGE) or be frightened of the closest living creature. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This gas has no effect on undead and constructs.
+Poison: A creature that fails its saving throw to avoid the effects of this poisoned is frightened of the closest living creature for the duration of the poison's effects. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This poison has no effect on undead and constructs.
+Nebulizer: May cause a backfire.
+Infuser: Adds a random component effect to the finished product.
+
+
+
+**Name: Kasuni Juice**
+Description: A viscous white liquid extracted from the spherical fruit of a Kasuni shrub. Often found in freshwater environments among forests, hills, and plains. VALUE10-20VALUE GP
+Types: Bomb, Potion, Infuser
+Bomb: Slippery oil is released on the ground in a DISTANCE5-20DISTANCE foot square centered on the point of impact, becoming difficult terrain for TIME1-5TIME turns. Each creature that failed its saving throw to avoid the effects of this bomb is knocked prone. Each creature that enters or starts its turn in the area must make a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or be knocked prone.
+Potion: When you make an Intelligence ability check or saving throw, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Infuser: Adds a random component effect to the finished product.
+
+
+
+**Name: Kreet Paste**
+Description: A thick viscous fluid extracted from a Kreet mushroom, found in cold, damp environments among hills, forests, and swamps. VALUE1-5VALUE GP
+Types: Potion, Volatile, Infuser
+Potion: Damage that you would take from sources that deal lightning damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Volatile: May cause a backfire.
+Infuser: Adds a random component effect to the finished product.
+
+
+
+**Name: Luminous Cap Dust**
+Description: These spores glow with a sickly green light and tend to corrode anything they are in contact with for extended periods of time. Ensure proper protective precautions are taken, never handle directly. Commonly found in swamps, forests, and hills. VALUE10-20VALUE GP
+Types: Bomb, Gas
+Bomb: A caustic, glowing green fluid sprays out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 acid damage, or half as much damage on a successful save. Objects within the area that are not being worn or held take maximum damage.
+Gas: Creatures within this gas glow brightly, as if under the effect of the Fairy Fire spell, for the duration.
 
 
 
@@ -708,66 +758,69 @@ Stabilizer: Reduces the chance of spontaneous detonation.
 
 
 
-**Name: Weapon**
-Description: A standard, nonmagical weapon VALUEMarket priceVALUE
-Types: Weapon
-Weapon: Required for weapon enchantments
+**Name: Mermaid Braid**
+Description: A reddish-gold seaweed with purple tips that grows up to 30 feet long from its holdfast, found under the ocean and in deep, brackish rivers and lakes of plains, swamps, and coastal regions. VALUE1-10VALUE GP
+Types: Poison, Dampener
+Poison: When the creature makes a Charisma ability check or saving throw, it has a -DAMAGE1-4DAMAGE penalty to that roll.
+Dampener: Decreases the potency of contraptions made with it.
 
 
 
-**Name: Dampener**
-Description: Decreases effectiveness of contraptions. VALUE20-30VALUE GP
-Types: Dampener
-Dampener: Decreases effectiveness of contraptions.
-
-
-
-**Name: Infuser**
-Description: A curious device capable of distilling and transferring the essence of various products. VALUE100-150VALUE GP
-Types: Infuser
+**Name: Olina Petals**
+Description: These pink petals from an Olina flower have small bright red dots, known for its poisonous properties. Typically found in dense swamps and forests. VALUE90-140VALUE GP
+Types: Poison, Infuser
+Poison: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
 Infuser: Adds a random component effect to the finished product.
 
 
 
-**Name: Strangler Fig**
-Description: A parasitic purple plant that grows on host trees, fanning out and consuming the tree's sunlight, often resulting in the host's death. Found exclusively on host trees in forests, hills, swamps, and coastal regions. VALUE1-10VALUE GP
-Types: Gas, Poison, Nebulizer
-Gas: Each creature that starts its turn or enters this gas must succeed on a Wisdom saving throw (DC=DAMAGE10-20DAMAGE). On a failed save the target considers all creatures hostile and chooses targets to attack at random for TIME1-5TIME turns. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
-Poison: The next time the target attempts to cast a spell within TIME1-4TIME hours of being poisoned, they take DAMAGE1-3DAMAGEd4 psychic damage and must succeed on a Concentration check or the spell fails.
-Nebulizer: May cause a backfire.
+**Name: Peyotl**
+Description: This spineless blue-green cactus, growing in clustered bulbs resembling caterpillar cocoons, is known to contain strong psychoactive alkaloids. Exclusively found in desert regions. VALUE10-30VALUE GP
+Types: Gas, Poison
+Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw (DC=DAMAGE10-20DAMAGE) or be stricken with hallucinations for TIME1-5TIME turns. When the target makes an attack roll while under the effects of this gas, it must succeed on an Intelligence saving throw or choose a new target for the attack. If no other valid target is available, the attack automatically misses.
+Poison: The target must succeed on a Constitution saving throw or be stricken with hallucinations for the duration of the poison's effects. When the target makes an attack roll while under the effects of this poison, it must succeed on an Intelligence saving throw or choose a new target for the attack. If no other valid target is available, the attack is made against the original target with disadvantage.
 
 
 
-**Name: Obsidian**
-Description: This purple-black glass-like stone is known to be very sharp. VALUE250VALUE GP
-Types: Magic armor, Magic weapon
-Magic armor: While wearing a suit of non-magical medium or heavy armor (non hide) made with obsidian, enemies who successfully grapple you take DAMAGE1-2DAMAGEd4 slashing damage.
-Magic weapon: A non-magical weapon made with obsidian deals an additional DAMAGE1-2DAMAGEd4 slashing damage. It's also used for crafting the Sword of Sharpness.
-
-
-
-**Name: Blue Toadshade**
-Description: Contrary to its name, this white mushroom has a relatively slender cap which gently vaporizes liquid in the immediate area, causing them to generally be found within small, localized clouds. Grow among thick undergrowth in forests and hills. VALUE1-10VALUE GP
-Types: Gas, Potion, Nebulizer
-Gas: Effects of this gas repeat for an extra TIME2-4TIME rounds for creatures affected by the gas after it dissipates.
-Potion: A creature ingesting this potion fades from the material plane, as if under the effects of the Etherealness spell, for the duration of the potion's effects.
-Nebulizer: May cause a backfire.
-
-
-
-**Name: Voidroot**
-Description: These jet-black plants produce a thick mucous which seem to absorb surrounding light, giving them a darker-than-life appearance. Caution should be taken when preparing elixirs, as mishandling can leave ones-self susceptible to a fugue-like state of crushing despair. Exclusively found in swamps. VALUE15-25VALUE GP
-Types: Gas, Poison, Stabilizer
-Gas: The area within this gas is pitch-black, as if under the effects of the Darkness spell, for the duration.
-Poison: A creature that fails its saving throw to avoid the effects of this poison becomes stunned for the duration of the poison's effects. The creature may repeat this saving throw at the end of each of its turns, ending this effect on a success. If the creature takes damage from any source, this effect immediately ends.
+**Name: Primrose**
+Description: An herbacious perennial that has fragrant, showy yellow to red-gold flowers. It forms a basal rosette of wrinkled leaves and blooms in temperate climates. Often found in the forests and hills near coastal regions. VALUE5-15VALUE GP
+Types: Potion, Stabilizer
+Potion: Grants DAMAGE2-4DAMAGEd4 temporary hit points for the duration of the potion's effects. While a creature has these temporary hitpoints its skin is suffused with an alluring glow, and it has advantage on Charisma (Persuasion) and Charisma (Performance) checks.
 Stabilizer: Reduces the chance of spontaneous detonation.
 
 
 
-**Name: Aerocrystal**
-Description: A light blue, glass-like crystal known for creating quick, precise weapons. VALUE500VALUE GP
-Types: Magic weapon
-Magic weapon: You can use your Dexterity modifier for attacks and damage rolls made with an aerocrystal weapon.
+**Name: Radiant Synthseed**
+Description: These crystals vibrate at soothing harmonic frequencies when exposed to natural sunlight. When crushed, the powder make a delightfully invigorating snuff. Rare, though generally found in hills and mountains near coastal regions. VALUE50-70VALUE GP
+Types: Bomb, Gas, Potion, Amplifier, Infuser
+Bomb: Double the number of all damage dice for this bomb. Extend the radius of this bomb by DISTANCE5-10DISTANCE feet.
+Gas: Creatures within this gas have advantage on saving throws against being Charmed or Frightened, and cannot be put to sleep magically.
+Potion: A creature ingesting this potion gains advantage on Charisma checks and saving throws for the duration of the potion's effects.
+Amplifier: Boosts effectiveness of contraptions.
+Infuser: Adds a random component effect to the finished product.
+
+
+
+**Name: Raven Silkweed**
+Description: A plant that grows up to 5 feet tall with simple and opposite leaves that are up to 1 feet long. The highly-fragrant bell-shaped flowers vary from black through vibrant purple. Typically found in swamps, damp forests, and coastal regions. VALUE1-10VALUE GP
+Types: Potion, Poison, Volatile
+Potion: You gain darkvision out to a range of DISTANCE30-90DISTANCE feet for the duration of the potion's effects. If you already have darkvision, your range increases by that amount instead.
+Poison: A creature that fails its saving throw is blinded for the duration of the poison's effects. A creature may repeat this saving throw at the end of each of its turns, ending the blinded condition on a success.
+Volatile: May cause a backfire.
+
+
+
+**Name: Rune Schema**
+Description: A set of magical instructions, which disappear even as they are read, for imbuing a runestone with greater power... VALUE Market PriceVALUE
+Types: Rune
+Rune: Required for Runesmithing.
+
+
+
+**Name: Rune**
+Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued. VALUE Market PriceVALUE
+Types: Rune
+Rune: Required for Runesmithing.
 
 
 
@@ -781,21 +834,71 @@ Infuser: Adds a random component effect to the finished product.
 
 
 
-**Name: Infernal Steel**
-Description: A blood-red metal crafted in the lower planes, known for being used by demons and devils to fight celestials. VALUE750VALUE GP
-Types: Magic armor, Magic weapon
-Magic armor: A non-magical armor made with infernal steel reduces the fire damage you take by DAMAGE1-4DAMAGE. It's also used to craft a suit of Armor of Fire Resistance (metallic armor only) or Demon Armor.
-Magic weapon: When you hit a celestial or any good-aligned creature with an infernal steel weapon, you can roll the damage again and use either result.
+**Name: Slime Thimbleberry**
+Description: A dense shrub that grows up to 8 feet tall with several canes growing in large clumps. This shrub produces a green fruit filled with a thick paste. Generally found in swamps, dense forests, and hilly regions. VALUE1-10VALUE GP
+Types: Bomb, Dampener
+Bomb: A thick green slime scatters out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 acid damage, or half as much damage on a successful one. Objects that are not being worn or held take maximum damage.
+Dampener: Decreases the potency of contraptions made with it.
 
 
 
-**Name: Feverfew**
-Description: These short, blue perennial plants produce flat, dimly glowing, white flowers with a long stem and white petals. Known for its anti-toxin properties. Generally found among other plants in plains, forests, and hills. VALUE5-15VALUE GP
-Types: Poison, Potion, Stabilizer, Dampener
-Poison: The effects of this poison are negated, rendering it inert.
-Potion: Cures the poisoned condition. 
+**Name: Spineflower Berries**
+Description: These tiny vibrant blue berries grow in the center of the Spineflower, a rare plant with sharp petals and a stem filled with spines. Found in open deserts and plains. VALUE15-25VALUE GP
+Types: Bomb, Potion, Volatile
+Bomb: A cloud of spines shoots out from the point of impact, and a DISTANCE5-20DISTANCE foot circle centered on the point of impact becomes difficult terrain for TIME1-5TIME turns. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 piercing damage or half as much damage on a successful save. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or take DAMAGE1-2DAMAGEd4 piercing damage.
+Potion: When you make a Charisma ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+Volatile: May cause a backfire.
+
+
+
+**Name: Storm Daisy**
+Description: A plant with rosettes of long, flat leaves that grow toward the sky with a spiked, silver flower. Commonly found in disturbed areas of plains, deserts, and forests. VALUE1-10VALUE GP
+Types: Poison, Amplifier
+Poison: Damage that the creature would take from a source that deals lightning damage is increased by DAMAGE1-4DAMAGE.
+Amplifier: Increases the potency of contraptions made with it.
+
+
+
+**Name: Strangler Fig**
+Description: A parasitic purple plant that grows on host trees, fanning out and consuming the tree's sunlight, often resulting in the host's death. Found exclusively on host trees in forests, hills, swamps, and coastal regions. VALUE1-10VALUE GP
+Types: Gas, Poison, Nebulizer
+Gas: Each creature that starts its turn or enters this gas must succeed on a Wisdom saving throw (DC=DAMAGE10-20DAMAGE). On a failed save the target considers all creatures hostile and chooses targets to attack at random for TIME1-5TIME turns. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success.
+Poison: The next time the target attempts to cast a spell within TIME1-4TIME hours of being poisoned, they take DAMAGE1-3DAMAGEd4 psychic damage and must succeed on a Concentration check or the spell fails.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Tempest Flower**
+Description: A plant that grows up to 10 feet tall, with simple or branched stems. The blue-green leaves are spirally arranged and the flowers are produced in daisy-like inflorescences, with yellow and orange florets arranged in a prominent, cone-shaped head. Generally found in disturbed areas of deserts, plains, and arid forests. VALUE1-5VALUE GP
+Types: Bomb, Volatile
+Bomb: A concussive wave explodes from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 thunder damage and is deafened, or half as much damage and is not deafened on a successful one.
+Volatile: May cause a backfire.
+
+
+
+**Name: Valerian Root**
+Description: This dried root is obtained from the Valerian, a flowering plant that bears sweetly-scented pink or white flowers that attract many fly species. Found in swamps, damp forests, and coastal regions. VALUE1-10VALUE
+Types: Gas, Poison, Nebulizer
+Gas: Each creature that starts its turn or enters this gas must succeed on a Constitution saving throw (DC=DAMAGE10-20DAMAGE) or have its speed reduced by DISTANCE5-20DISTANCE feet for TIME1-5TIME turns.
+Poison: A creature that fails its saving throw to avoid the effects of this poison falls asleep. Any other creature may take an Action to shake the creature awake, ending the unconscious condition for the creature. The unconscious condition ends immediately if the creature takes damage from any source.
+Nebulizer: May cause a backfire.
+
+
+
+**Name: Viper Thistle**
+Description: A poisonous flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the banded leaves. The flowerhead have a bright red-purple hue. Typically found in arid deserts, plains, hills, and mountainous regions. VALUE5-15VALUE GP
+Types: Bomb, Infuser
+Bomb: Sharp, poisonous spines explode out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 poison damage and is paralyzed for TIME1-5TIME turns, or half as much damage and is not paralyzed on a successful one. The creature may repeat its saving throw at the end of each of its turns, ending the paralyzed condition on a success.
+Infuser: Adds a random component effect to the finished product.
+
+
+
+**Name: Voidroot**
+Description: These jet-black plants produce a thick mucous which seem to absorb surrounding light, giving them a darker-than-life appearance. Caution should be taken when preparing elixirs, as mishandling can leave ones-self susceptible to a fugue-like state of crushing despair. Exclusively found in swamps. VALUE15-25VALUE GP
+Types: Gas, Poison, Stabilizer
+Gas: The area within this gas is pitch-black, as if under the effects of the Darkness spell, for the duration.
+Poison: A creature that fails its saving throw to avoid the effects of this poison becomes stunned for the duration of the poison's effects. The creature may repeat this saving throw at the end of each of its turns, ending this effect on a success. If the creature takes damage from any source, this effect immediately ends.
 Stabilizer: Reduces the chance of spontaneous detonation.
-Dampener: Decreases effectiveness of contraptions.
 
 
 
@@ -810,131 +913,28 @@ Amplifier: Boosts effectiveness of contraptions.
 
 
 
-**Name: Blue Seaweed**
-Description: A bright blue seaweed that appears as a fuzzy patch of tubular fingers that hang down from rocks nearby water. Typically found in brackish coastal regions and swamps. VALUE5-15VALUE GP
-Types: Potion, Stabilizer
-Potion: You can breathe underwater for the duration of the potion's effects.
-Potion: Gain resistance to cold damage for the duration of the potion's effects.
+**Name: Wizard's Cap**
+Description: A small pale-orange mushroom which grows a gray-blue cap that is similar in appearance to a traditional Wizard's pointed hat. Found in open fields of plains, hills, forests, and coastal regions. VALUE5-15VALUE GP
+Types: Bomb, Stabilizer
+Bomb: A disorienting wave of energy emanates from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 psychic damage and has disadvantage on Concentration checks to maintain a spell, or half as much damage and no disadvantage on Concentration checks to maintain a spell on a successful one.
 Stabilizer: Reduces the chance of spontaneous detonation.
 
 
 
-**Name: Tempest Flower**
-Description: A plant that grows up to 10 feet tall, with simple or branched stems. The blue-green leaves are spirally arranged and the flowers are produced in daisy-like inflorescences, with yellow and orange florets arranged in a prominent, cone-shaped head. Generally found in disturbed areas of deserts, plains, and arid forests. VALUE1-5VALUE GP
-Types: Bomb, Volatile
-Bomb: A concussive wave explodes from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 thunder damage and is deafened, or half as much damage and is not deafened on a successful one.
-Volatile: May cause a backfire.
+**Name: Wormwood**
+Description: A conical purple shrub with known medicinal properties. Toxic in high doses as it may induce delirium. Found in temperate forests, plains, and hills. VALUE20-30VALUE GP
+Types: Gas, Poison, Potion
+Gas: Creatures within this gas subtract DAMAGE1-4DAMAGE from all Wisdom saving throws while in the gas cloud.
+Poison: A creature that fails its saving throw to avoid the effects of this poison has disadvantage on their next Wisdom saving throw.
+Potion: Cures Poison status.
 
 
 
-**Name: Dusk Itchweed**
-Description: A plant that grows up to 6 feet tall with a solid brown stem, numerous yellow flower clusters, and blue bulbs. The orange leaves are spirally arranged, long and broad. Often found in deserts, plains, and hills. VALUE1-10VALUE GP
-Types: Poison, Dampener
-Poison: Damage that the creature would take from a source that deals force damage is increased by DAMAGE1-4DAMAGE.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
-**Name: Raven Silkweed**
-Description: A plant that grows up to 5 feet tall with simple and opposite leaves that are up to 1 feet long. The highly-fragrant bell-shaped flowers vary from black through vibrant purple. Typically found in swamps, damp forests, and coastal regions. VALUE1-10VALUE GP
-Types: Potion, Poison, Volatile
-Potion: You gain darkvision out to a range of DISTANCE30-90DISTANCE feet for the duration of the potion's effects. If you already have darkvision, your range increases by that amount instead.
-Poison: A creature that fails its saving throw is blinded for the duration of the poison's effects. A creature may repeat this saving throw at the end of each of its turns, ending the blinded condition on a success.
-Volatile: May cause a backfire.
-
-
-
-**Name: Darkwood**
-Description: This blue-black wood is as hard as steel, but very light. VALUE100VALUE GP
-Types: Magic armor
-Magic armor: Replaces the metal of any medium or heavy armor. Reduces the weight of the suit of armor by up to 20 lbs.
-
-
-
-**Name: Stabilizer**
-Description: An inert substances that stabilizes highly reactive compounds. VALUEMarket priceVALUE
-Types: Stabilizer
-Stabilizer: Reduces the chance of spontaneous detonation
-
-
-
-**Name: Ecire Laurel**
-Description: An aromatic evergreen shrub with glabrous green needles. It can be found in swamps and coastal regions. VALUE1-5VALUE GP
-Types: Potion, Volatile
-Potion: Damage that you would take from sources that deal poison damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-Volatile: May cause a backfire.
-
-
-
-**Name: Armor**
-Description: A standard, nonmagical set of armor VALUEMarket priceVALUE
-Types: Armor
-Armor: Required for armor enchantments
-
-
-
-**Name: Olina Petals**
-Description: These pink petals from an Olina flower have small bright red dots, known for its poisonous properties. Typically found in dense swamps and forests. VALUE90-140VALUE GP
-Types: Poison, Infuser
-Poison: When you make a Dexterity ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
-Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Slime Thimbleberry**
-Description: A dense shrub that grows up to 8 feet tall with several canes growing in large clumps. This shrub produces a green fruit filled with a thick paste. Generally found in swamps, dense forests, and hilly regions. VALUE1-10VALUE GP
-Types: Bomb, Dampener
-Bomb: A thick green slime scatters out from the point of impact. Each creature that fails its saving throw to avoid the effects of this bomb takes an additional DAMAGE1-3DAMAGEd4 acid damage, or half as much damage on a successful one. Objects that are not being worn or held take maximum damage.
-Dampener: Decreases the potency of contraptions made with it.
-
-
-
-**Name: Shadowsilk**
-Description: This black, semi-translucent silk is carefully made by underground spiders and spider-like creatures. VALUE1-10VALUE GP
-Types: Magic armor
-Magic armor: A non-magical armor made with shadowsilk grants you a +DAMAGE1-4DAMAGE bonus to Dexterity (Stealth) checks to hide in lightly obscured areas (such as tree shadows). Harvested shadowsilk from a CR 13 or higher creature can be used to craft a Cloak of Arachnida.
-
-
-
-**Name: Fomorian Stomach Lining**
-Description: The inner flesh from the stomach of a deformed giant - known for their curious ability to digest anything. VALUE100-150VALUE GP
-Types: Poison, Potion, Infuser
-Poison: A creature that fails its saving throw to avoid the effects of this poison takes an additional DAMAGE1-3DAMAGEd4 poison damage immediately and at the start of their turn for TIME1-5TIME turns. At the end of each turn the creature may repeat their saving throw, ending all effects of this poison on a success.
-Potion: Grants protection from disease and advantage on saving throws to avoid the poisoned status for the duration of the potion's effects.
-Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Ignum**
-Description: This black semi-translucent stone has a swirling mass of lava-like matter glowing and flowing inside of it. VALUE500VALUE GP
-Types: Magic weapon, Equipment
-Magic weapon: A non-magical weapon made with ignum deals an additional DAMAGE1-2DAMAGEd4 fire damage. It's also used to craft fire-damage-dealing magic weapons, such as the Flame Tongue.
-Equipment: Used to craft fire-damage-dealing magic items, such as the Staff of Fire.
-
-
-
-**Name: Jimsonweed**
-Description: Also called Thorn Apple or Devil's Snare, this member of the nightshade family grows up to 5 feet tall with long, ovate leaves that are reddish-purple in color and produce flowers with cyan petals which glow faintly in dim light. Found in lowlands among plains, swamps, forests, and coastal regions. VALUE1-10VALUE GP
-Types: Gas, Poison, Nebulizer, Infuser
-Gas: Each creature that starts its turn or enters this gas must succeed on a Charisma saving throw (DC=DAMAGE10-20DAMAGE) or be frightened of the closest living creature. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This gas has no effect on undead and constructs.
-Poison: A creature that fails its saving throw to avoid the effects of this poisoned is frightened of the closest living creature for the duration of the poison's effects. The target may repeat this saving throw at the end of each of its turns, ending the effect on a success. This poison has no effect on undead and constructs.
+**Name: Wrackwort Bulbs**
+Description: These silver bulbs smell faintly of burnt bread and broken dreams, releasing a cloud of fine particles when smashed. Under no circumstances should they be smashed in an enclosed environment. Found in deserts, swamps, and plains. VALUE1-5VALUE GP
+Types: Gas, Nebulizer
+Gas: Creatures within this gas must succeed on a Wisdom Saving Throw (DC=DAMAGE10-20DAMAGE) or become frightened and must use their Action on their next turn to Dash in a random direction. If a creature starts its turn within this gas while already under its effect, the creature becomes Incapacitated. A creature may repeat this saving throw at the end of each of its turns, ending the effect on a success. Creatures outside of this gas have advantage on saving throws to end this effect.
 Nebulizer: May cause a backfire.
-Infuser: Adds a random component effect to the finished product.
-
-
-
-**Name: Blue Cress**
-Description: A plant with long stems topped with loose heads of blue, four-petalled flowers. Commonly found in forests, hills, and coastal areas along waterways. VALUE1-10VALUE GP
-Types: Potion
-Potion: When you make a ranged attack roll, you have a +DAMAGE1-4DAMAGE bonus on that roll for the duration of the potion's effect.
-
-
-
-**Name: Crimson Brittlebrush**
-Description: A shrub that grows up to 30 inches tall, with fragrant leaves and a capitula with red-yellow ray florets and crimson disc florets. Commonly found in open, disturbed areas in deserts, plains, and mountains. VALUE1-5VALUE GP
-Types: Poison, Volatile
-Poison: Damage that the creature would take from a source that deals psychic damage is increased by DAMAGE1-4DAMAGE.
-Volatile: May cause a backfire.
 
 
 
@@ -945,5 +945,11 @@ Bomb: A wave of red-tinged freezing water blasts out from the point of impact. E
 Potion: Gain resistance to cold damage for the duration of the potion's effects.
 Amplifier: Boosts effectiveness of contraptions.
 
+
+
+**Name: Power Basic Rune**
+Description: A blank chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued.  Market PriceSPACESPACEBasic - Ragnr: While wearing or using an item imbued with this rune, you gain the following feature:SPACESPACECorruptionSPACEAs an action, you can lash out at a creature with destructive energy. Make a melee spell attack against a creature within your reach. On a hit, the target takes 1d6 necrotic damage and must subtract 2d4 from the next ability check or saving throw it makes before the start of your next turn.SPACERequires Constitution 13 or greater to attune for a creature who did not craft the rune. You may invoke this rune a number of times equal to your proficiency bonus before its magic is depleted. The rune will recharge from ambient magic as you complete a long rest. This rune occupies 1 runic attunement slot.SPACESPACE
+Types: Rune
+Rune:  Required for Runesmithing.
 
 
