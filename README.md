@@ -4,6 +4,9 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 ![Image of the UI of masterCrafter](https://github.com/grendelsLaw/MasterCrafter/blob/main/resources/images/mastercrafter.png)
 
   This project is meant to be a (relatively) easy way to develop and deploy a crafting option for your D&D players. The script uses three main types of files to do this: Component files, Recipe files, and Type files. All of these can be edited, removed, or added easily to adapt to the player or campaign - so long as they follow the generic formula.
+  
+  
+![Image of the UI of masterCrafter for various base feature](https://github.com/grendelsLaw/MasterCrafter/blob/main/resources/images/base_1.png)
 
 1) ___Component files___ represent the array of components that can be combined to generate objects. Components that are submitted are compared to see if they share common possible types (see below). Any combination of components can **only** generate objects of a shared type. Components may also possess modifier types, which may alter the likelihood of certain object types being crafted. These files have 4 parts:
     - Name: The name of the Component
@@ -63,6 +66,9 @@ Python-gui for generating semi-random crafting recipes for Dungeons and Dragons
 10th: 	4   | 20th: 	8
 
 ## Other goodies
+
+![Image of the UI of masterCrafter for various goodies](https://github.com/grendelsLaw/MasterCrafter/blob/main/resources/images/base_2.png)
+
 1) ___Pockets___ If you're playing with multiple players using this system, it can be hard to keep track of what components each player has and wants to use. Therefore, you can create a *pocket* for each player. Each pocket gets saved between sessions and can be altered independently. Pockets can be added or deleted as you require.
 
 2) ___Shop___ Hitting the `shop` button allows you to simulate a shop for your players. You will be prompted for a number of components you would like the shop to have, after which the specified number of components will be selected randomly from the list of components along with a random price within a set range, based on item utility and rarity, determined from the component file. Some components are listed at `market price` and should be up to the discretion of the GM given that these items are rare and/or extremely useful. Component descriptions can be viewed in the main window by double-clicking them in the shop inventory, and can also be loaded into specific pockets.
