@@ -727,6 +727,15 @@ while True:
                 secret_pocket[pocket_name].append(i)
                 secret_pocket[pocket_name].sort()
 
+    elif event == "Add to pocket" and len(values["-lb_1-"]) and list_type=="recipes":
+        if pocket_name != "None":
+            for i in values["-lb_1-"]:
+                for j in recipes[i.lower()].components:
+                    pocket[pocket_name].append(j)
+                    pocket[pocket_name].sort()
+                    secret_pocket[pocket_name].append(j)
+                    secret_pocket[pocket_name].sort()
+
     elif event == "Delete pocket":
         try:
             delet_name=popup_select("Which pocket should be deleted?", list(pocket.keys()))
