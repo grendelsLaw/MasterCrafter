@@ -450,15 +450,6 @@ Volatile: May cause a backfire.
 
 
 
-**Name: Ashwagandha**
-Description: These low-growing perennial shrubs with star-shaped branches extending radiallly from a central stem, with squat velvety leaves and bell flowers that contain orange berries, are typically found in open plains and coastlands. VALUE5-15VALUE GP
-Types: Potion, Stabilizer, Dampener
-Potion: Cures one level of exhaustion.
-Stabilizer: Reduces the chance of spontaneous detonation.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
 **Name: Banshee's Lament**
 Description: A plant with leaf rosettes and bright, vibrant colours, with either blooms or inflorescence being produced on a stalk. The color varies between blue and pink. Found exclusively in swamps. VALUE1-10VALUE GP
 Types: Bomb, Poison, Volatile
@@ -944,6 +935,16 @@ Rune: Required for Runesmithing.
 Description: A chunk of runestone which is inscribed and infused with powerful magic. VALUE Market PriceVALUE SPACEWhile wearing or using an item imbued with this rune, you gain the following features:SPACE
 Types: Rune
 Rune: Required for Runesmithing.
+
+
+
+**Name: Ashwagandha**
+Description: These low-growing perennial shrubs with star-shaped branches extending radiallly from a central stem, with squat velvety leaves and bell flowers that contain orange berries, are typically found in open plains and coastlands. VALUE5-15VALUE GP
+Types: Potion, Ration, Stabilizer, Dampener
+Potion: Cures one level of exhaustion.
+Ration: Cures one level of exhaustion.
+Stabilizer: Reduces the chance of spontaneous detonation.
+Dampener: Decreases effectiveness of contraptions.
 
 
 

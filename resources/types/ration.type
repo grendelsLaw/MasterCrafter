@@ -1,3 +1,3 @@
-Name: Ration
-Description: A delicious, or at least mostly edible, fare made with exotic ingredients. Eat it and taste the powerful satisfaction! When ingested, this ration's effects last for TIME1-10TIME minutes or TIME1-8TIME hours (DM's discretion).
+Name: Rations
+Description: A delicious, or at least mostly edible, fare made with exotic ingredients. Eat it and taste the powerful satisfaction! When ingested, this ration's grant DAMAGE1-10DAMAGE temporary HP. Any additional effects last for TIME1-10TIME minutes or TIME1-8TIME hours (DM's discretion).
 Requirements: None
