@@ -1,6 +1,6 @@
 Name: Dried Ephedra
 Description: A brown shrub found in warm arid regions which has tiny scale-like leaves. Generally found in arid climates such as deserts, plains, and mountains. VALUE1-10VALUE GP
-Types: Potion, Ration, Dampener, Rations
+Types: Potion, Dampener, Rations
 Potion: When you make a Constitution ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
-Ration: When consumed, this ration helps give adventurers a boost when they thought they couldn't go on. Gain a number of temporary hit points equal to DAMAGE1-2DAMAGEd4 + Constitution modifier (minimum of 1).
+Rations: When consumed, this ration helps give adventurers a boost when they thought they couldn't go on. Gain a number of temporary hit points equal to DAMAGE1-2DAMAGEd4 + Constitution modifier (minimum of 1).
 Dampener: Decreases effectiveness of contraptions.
