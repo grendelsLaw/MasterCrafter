@@ -578,7 +578,7 @@ all_submitted_column = [
 main_font=("Arial bold", 11)
 item_description = [
     sg.Image("resources/images/none.png", key = "-item_image-"),
-    sg.Multiline(description, size=(52,15),key = "-item_description_2-", font=main_font),
+    sg.Multiline(description, size=(55,15),key = "-item_description_2-", font=main_font),
 ]
 
 # This new column lets you select a artificing subtype. It may get switched to a checkbox system

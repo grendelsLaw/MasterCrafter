@@ -941,7 +941,7 @@ Rune: Required for Runesmithing.
 
 
 **Name: Rune**
-Description: A chunk of runestone, upon which an inscription can be applied and into which powerful magic may be imbued. VALUE Market PriceVALUE
+Description: A chunk of runestone which is inscribed and infused with powerful magic. VALUE Market PriceVALUE SPACEWhile wearing or using an item imbued with this rune, you gain the following features:SPACE
 Types: Rune
 Rune: Required for Runesmithing.
 
