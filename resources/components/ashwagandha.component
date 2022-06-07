@@ -1,6 +1,6 @@
 Name: Ashwagandha
 Description: These low-growing perennial shrubs with star-shaped branches extending radiallly from a central stem, with squat velvety leaves and bell flowers that contain orange berries, are typically found in open plains and coastlands. VALUE5-15VALUE GP
-Types: Potion, Ration, Stabilizer, Dampener
+Types: Potion, Ration, Stabilizer, Dampener, Rations
 Potion: When consumed, this potion helps adventurers power through their struggles. Their level of exhaustion is reduced by DAMAGE1-2DAMAGE.
 Ration: When consumed, this ration helps adventurers power through their struggles. Their level of exhaustion is reduced by DAMAGE1-2DAMAGE.
 Stabilizer: Reduces the chance of spontaneous detonation.
