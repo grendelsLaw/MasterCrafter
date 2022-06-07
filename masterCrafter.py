@@ -398,7 +398,7 @@ for i in recipe_files:
                         j,
                         "A material of unknown use.",
                         [loaded_recipe[1].split("Types:")[1].strip()],
-                        {}
+                        {loaded_recipe[1].split("Types:")[1].strip():"Used in "+name_i}
                         )
                         modifiers.append(j)
                         components[j.lower()]=new_comp
