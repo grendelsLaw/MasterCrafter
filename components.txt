@@ -529,14 +529,6 @@ Amplifier: Boosts effectiveness of contraptions.
 
 
 
-**Name: Dried Ephedra**
-Description: A brown shrub found in warm arid regions which has tiny scale-like leaves. Generally found in arid climates such as deserts, plains, and mountains. VALUE1-10VALUE GP
-Types: Potion, Dampener
-Potion: When you make a Constitution ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
-Dampener: Decreases effectiveness of contraptions.
-
-
-
 **Name: Drojos Ivy**
 Description: A purple climbing or ground-creeping woody plant used by small animals as natural ropes in swamps, hilly jungles and humid forests. VALUE1-10VALUE GP
 Types: Potion, Dampener
@@ -684,14 +676,6 @@ Types: Bomb, Gas, Poison
 Bomb: A slippery oil spreads out from the point of impact, creating difficult terrain in a DISTANCE5-20DISTANCE foot square for TIME1-5TIME rounds. Each creature that fails its saving throw to avoid the effects of this bomb falls prone. Each creature that starts its turn or enters this difficult terrain must succeed on a Dexterity saving throw (DC=DAMAGE10-20DAMAGE) or fall prone.
 Gas: Creatures within this gas who take piercing damage subtract DAMAGE1-2DAMAGEd4 from all Constitution saving throws until the end of their next turn.
 Poison: Creatures exposed to this poison have disadvantage on Constitution Saving Throws to maintain Concentration on a spell for TIME2-4TIME rounds.
-
-
-
-**Name: Iron Thistle**
-Description: A silver-flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. Generally found in disturbed areas of deserts and plains. VALUE1-10VALUE GP
-Types: Potion, Dampener
-Potion: When you make a melee attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll.
-Dampener: Decreases effectiveness of contraptions.
 
 
 
@@ -941,9 +925,27 @@ Rune: Required for Runesmithing.
 **Name: Ashwagandha**
 Description: These low-growing perennial shrubs with star-shaped branches extending radiallly from a central stem, with squat velvety leaves and bell flowers that contain orange berries, are typically found in open plains and coastlands. VALUE5-15VALUE GP
 Types: Potion, Ration, Stabilizer, Dampener
-Potion: Cures one level of exhaustion.
-Ration: Cures one level of exhaustion.
+Potion: When consumed, this potion helps adventurers power through their struggles. Their level of exhaustion is reduced by DAMAGE1-2DAMAGE.
+Ration: When consumed, this ration helps adventurers power through their struggles. Their level of exhaustion is reduced by DAMAGE1-2DAMAGE.
 Stabilizer: Reduces the chance of spontaneous detonation.
+Dampener: Decreases effectiveness of contraptions.
+
+
+
+**Name: Dried Ephedra**
+Description: A brown shrub found in warm arid regions which has tiny scale-like leaves. Generally found in arid climates such as deserts, plains, and mountains. VALUE1-10VALUE GP
+Types: Potion, Ration, Dampener
+Potion: When you make a Constitution ability check or saving throw, you have a +DAMAGE1-4DAMAGE bonus on that roll.
+Ration: When consumed, this ration helps give adventurers a boost when they thought they couldn't go on. Gain a number of temporary hit points equal to DAMAGE1-2DAMAGEd4 + Constitution modifier (minimum of 1). 
+Dampener: Decreases effectiveness of contraptions.
+
+
+
+**Name: Iron Thistle**
+Description: A silver-flowering plant characterized by leaves with sharp prickles on the stem and flat parts of the leaves. Generally found in disturbed areas of deserts and plains. VALUE1-10VALUE GP
+Types: Potion, Ration, Dampener
+Potion: When you make a melee attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll.
+Ration: When consumed, this ration allows the adventurer to get the most out of any respite. If a creature spends a Hit Dice during the rest, they may add DAMAGE1-2DAMAGEd8 to the total number of hit points recovered.
 Dampener: Decreases effectiveness of contraptions.
 
 
