@@ -1212,7 +1212,16 @@ while True:
                         write_file="Name: "+new_comp.name+"\nDescription: "+description+"\nTypes: "+new_comp.types[0]+"\n"
                         for ef in new_comp.effects:
                             write_file+=ef+": "+new_comp.effects[ef]
-                        file_in=open("resources/components/."+new_comp.name.lower().replace(" ", "_")+".component", "w")
+                        try:
+                            file_in=open("resources/components/."+new_comp.name.lower().replace(" ", "_")+".component", "w")
+                        except:
+                            johnny=0
+                            new_recipe_name=".new_"+str(johnny)
+                            if new_recipe_name+".component" in component_list:
+                                while new_recipe_name+".component" in component_list:
+                                    johnny+=1
+                                    new_recipe_name=".new_"+str(johnny)
+                            file_in=open("resources/components/"+new_recipe_name+".component", "w")
                         file_in.write(write_file)
                         file_in.close()
                         if len(pocket)>0 and pocket_name != "None":
@@ -1422,7 +1431,16 @@ while True:
                                         write_file+=i+", "
                                     write_file=write_file[0:len(write_file)-2]
                                     write_file+="\nDescription: "+desc_desc
-                                    file_in=open("resources/recipes/"+selected_name+".recipe", "w")
+                                    try:
+                                        file_in=open("resources/recipes/"+selected_name+".recipe", "w")
+                                    except:
+                                        johnny=0
+                                        new_recipe_name="new_"+str(johnny)
+                                        if new_recipe_name+".recipe" in recipe_files:
+                                            while new_recipe_name+".recipe" in recipe_files:
+                                                johnny+=1
+                                                new_recipe_name="new_"+str(johnny)
+                                        file_in=open("resources/recipes/"+new_recipe_name+".recipe", "w")
                                     file_in.write(write_file)
                                     file_in.close()
                                     description=desc_name+"\nType: "+desc_types+"\n\n"+desc_desc+"\n\nRequired components:"
@@ -1452,7 +1470,18 @@ while True:
                                 write_file="Name: "+prog_comp.name+"\n"+description+"\nTypes: "+desc_types+"\n"
                                 for ty in prog_comp.effects:
                                     write_file+=ty+": "+prog_comp.effects[ty]
-                                file_in=open("resources/components/."+prog_comp.name.lower().replace(" ", "_")+".component", "w")
+
+                                try:
+                                    file_in=open("resources/components/."+prog_comp.name.lower().replace(" ", "_")+".component", "w")
+                                except:
+                                    johnny=0
+                                    new_recipe_name=".new_"+str(johnny)
+                                    if new_recipe_name+".component" in component_list:
+                                        while new_recipe_name+".component" in component_list:
+                                            johnny+=1
+                                            new_recipe_name=".new_"+str(johnny)
+                                    file_in=open("resources/components/"+new_recipe_name+".component", "w")
+
                                 file_in.write(write_file)
                                 file_in.close()
                                 if len(pocket)>0 and pocket_name != "None":
@@ -1565,7 +1594,17 @@ while True:
                                     write_file=write_file[0:len(write_file)-2]
                                     write_file+="\nDescription: "+desc_desc
 
-                                    file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                                    try:
+                                        file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                                    except:
+                                        johnny=0
+                                        new_recipe_name="new_"+str(johnny)
+                                        if new_recipe_name+".recipe" in recipe_files:
+                                            while new_recipe_name+".recipe" in recipe_files:
+                                                johnny+=1
+                                                new_recipe_name="new_"+str(johnny)
+                                        file_in=open("resources/recipes/"+new_recipe_name+".recipe", "w")
+
                                     file_in.write(write_file)
                                     file_in.close()
 
@@ -1674,7 +1713,17 @@ while True:
                                     write_file+=i+", "
                                 write_file=write_file[0:len(write_file)-2]
                                 write_file+="\nDescription: "+desc_desc
-                                file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                                try:
+                                    file_in=open("resources/recipes/"+new_name.lower()+".recipe", "w")
+                                except:
+                                    johnny=0
+                                    new_recipe_name="new_"+str(johnny)
+                                    if new_recipe_name+".recipe" in recipe_files:
+                                        while new_recipe_name+".recipe" in recipe_files:
+                                            johnny+=1
+                                            new_recipe_name="new_"+str(johnny)
+                                    file_in=open("resources/recipes/"+new_recipe_name+".recipe", "w")
+
                                 file_in.write(write_file)
                                 file_in.close()
 

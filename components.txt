@@ -244,14 +244,6 @@ Potion: When you make a Wisdom ability check or saving throw, you have a +DAMAGE
 
 
 
-**Name: Aniseed Sap**
-Description: A thick amber-like fluid extracted from an Aniseed tree which can be found in cold desert and mountain regions. VALUE1-5VALUE GP
-Types: Potion, Volatile
-Potion: Damage that you would take from sources that deal cold damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
-Volatile: May cause a backfire.
-
-
-
 **Name: Ash Chives**
 Description: A plant that grows in clumps from underground bulbs and produce round, hollow gray tubes. Can be found in plains and deserts. VALUE1-5VALUE GP
 Types: Poison, Nebulizer
@@ -944,6 +936,15 @@ Description: A silver-flowering plant characterized by leaves with sharp prickle
 Types: Potion, Dampener
 Potion: When you make a melee attack roll, you have a DAMAGE1-4DAMAGE bonus on that roll.
 Dampener: Decreases effectiveness of contraptions.
+
+
+
+**Name: Aniseed Sap**
+Description: A thick amber-like fluid extracted from an Aniseed tree which can be found in cold desert and mountain regions. VALUE1-5VALUE GP
+Types: Potion, Rations, Volatile
+Potion: Damage that you would take from sources that deal cold damage is reduced by DAMAGE1-4DAMAGE for the duration of the potion's effect.
+Rations: When consumed, this ration enhances muscles and increases flexibility. Movement speed is increased by 10 feet for one hour.
+Volatile: May cause a backfire.
 
 
 
