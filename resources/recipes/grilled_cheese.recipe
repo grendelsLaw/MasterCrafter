@@ -1,4 +1,4 @@
 Name: Grilled Cheese
 Types: Rations
-Components: Cheese, Bread, Butter
 Description: A delicious grilled sandwich that can be enjoyed on the go! Grants 5 temporary HP.
+components: Cheese, Bread, Butter

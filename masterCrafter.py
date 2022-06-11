@@ -311,18 +311,28 @@ component_list=os.listdir("resources/components/")
 for i in component_list:
     # Makes sure the file is a .component file
     if i.lower().endswith(".component"):
-#        try:
+        try:
             # Opens, loads, and closes the component file
             component_i=open("resources/components/"+i, "r")
             loaded_i=component_i.read()
             component_i.close()
+            comp_effects=[]
             # Strips and splits the component file based on newlines
             loaded_i=loaded_i.strip().split("\n")
-            # Gets the component name
-            name_i=loaded_i[0].strip().split("Name:")[1].strip()
+            for line in loaded_i:
+                line=line.strip()
+                # Gets the component name
+                if "name:" in line.lower():
+                    name_i=line.strip().split("ame:")[1].strip()
+                elif "description:" in line.lower():
+                    pre_splice=line.split("Description:")[1].strip()
+                elif "types" in line.lower():
+                    comp_type=line.split("Types:")[1].strip().split(", ")
+                elif line != "\n":
+                    comp_effects.append(line)
+
             # If the component isn't in the component dictionary, it gets added
             if name_i not in components:
-                pre_splice=loaded_i[1].split("Description:")[1].strip()
 
                 if "SPACE" in pre_splice:
                     post_splice=""
@@ -334,10 +344,10 @@ for i in component_list:
                 new_comp=Component(
                 name_i,
                 post_splice,
-                loaded_i[2].split("Types:")[1].strip().split(", "),
+                comp_type,
                 {}
                 )
-                for j in loaded_i[3:len(loaded_i)]:
+                for j in comp_effects:
                     effect_type=j.split(":")[0].rstrip()
                     effect_effect=j.split(":")[1].rstrip()
                     if "SPACE" in effect_effect:
@@ -351,8 +361,8 @@ for i in component_list:
                     new_comp.effects[effect_type]=tick
                 components[name_i.lower()]=new_comp
 
-#        except:
-#            print("Unable to parse file: "+i)
+        except:
+            print("Unable to parse file: "+i)
 
 #-------------------------------------------------------------------------------
 # Now we pull the recipes and load in any components missing from the component dictionary
@@ -369,18 +379,28 @@ for i in recipe_files:
             possible_recipe=open("resources/recipes/"+i, "r")
             loaded_recipe=possible_recipe.read()
             possible_recipe.close()
+            rec_effects=[]
             # We split the recipe based on the newlines
             loaded_recipe=loaded_recipe.strip().split("\n")
-            # We pull the name of the recipe
-            name_i=loaded_recipe[0].strip().split("Name:")[1].strip()
+            for line in loaded_recipe:
+                line=line.strip()
+                # We pull the name of the recipe
+                if "name:" in line.lower():
+                    name_i=line.strip().split("ame:")[1].strip()
+                elif "components:" in line.lower():
+                    comp_i=line.split("omponents:")[1].strip().split(", ")
+                elif "types:" in line.lower():
+                    type_i=line.split("ypes:")[1].strip()
+                else:
+                    rec_effects.append(line)
             # If the name isn't in the recipe list, we add it
             if name_i not in recipes:
                 # Set the first list value to be the description of the recipe
                 new_recipe=Recipe(
                 name_i,
-                loaded_recipe[3:len(loaded_recipe)],
-                loaded_recipe[2].split("Components:")[1].strip().split(", "),
-                loaded_recipe[1].split("Types:")[1].strip()
+                rec_effects,
+                comp_i,
+                type_i
                 )
                 thingo=""
                 for desc_effect in new_recipe.description:
@@ -440,11 +460,18 @@ for i in type_files:
             type_i.close()
             # Then it gets stripped and split by the newlines
             loaded_i=loaded_i.strip().split("\n")
-            # The name of the type is pulled
-            name_i=loaded_i[0].split("Name:")[1].strip()
+            for line in loaded_i:
+                line=line.strip()
+                # The name of the type is pulled
+                if "name:" in line.lower():
+                    name_i=line.split("ame:")[1].strip()
+                elif "description:" in line.lower():
+                    pre_splice=line.split("escription:")[1].strip()
+                elif "requirements:" in line.lower():
+                    reqs=line.split("equirements:")[1].strip()
+
             # If the type doesn't exist int he type directory, it gets added!
             if name_i.lower() not in types:
-                pre_splice=loaded_i[1].split("Description:")[1].strip()
                 if "SPACE" in pre_splice[0]:
                     post_splice=""
                     for exon in pre_splice[0].split("SPACE"):
@@ -455,7 +482,7 @@ for i in type_files:
                 new_type=Type(
                 name_i,
                 post_splice,
-                [loaded_i[2].split("Requirements:")[1].strip()],
+                [reqs],
                 )
                 types[name_i.lower()]=new_type
         except:
@@ -473,16 +500,23 @@ for i in type_files:
             prog_i=open("resources/types/"+i, "r")
             loaded_prog=prog_i.read()
             prog_i.close()
+            prog_effects=[]
 
             loaded_prog=loaded_prog.split("\n")
-            prog_name=loaded_prog[0].split("Name:")[1].strip()
-            prog_desc=loaded_prog[1].split("Description:")[1].strip()
-            prog_progression=loaded_prog[2].split("Progression:")[1].strip().split(", ")
+            for line in loaded_prog:
+                line=line.strip()
+                if "name:" in line.lower():
+                    prog_name=line.split("ame:")[1].strip()
+                elif "description:" in line.lower():
+                    prog_desc=line.split("escription:")[1].strip()
+                elif "progression:" in line.lower():
+                    prog_progression=line.split("rogression:")[1].strip().split(", ")
+                else:
+                    prog_effects.append(line)
             prog_type=prog_progression[0]
             if prog_type not in prog_dict:
                 prog_dict[prog_type]={}
             if prog_name not in prog_dict[prog_type]:
-                prog_effects=loaded_prog[3:len(loaded_prog)]
                 new_prog=Prog(prog_name, prog_desc, prog_progression, {})
                 for tier in prog_progression[1:len(prog_progression)]:
                     tier=tier.strip()
