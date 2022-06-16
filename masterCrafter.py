@@ -586,9 +586,14 @@ for i in components:
 #-------------------------------------------------------------------------------
 # Generate the columns
 # First column is the search box and buttons to toggle between components, recipes, and types
+bitty=["All"]
+for i in type_list:
+    bitty.append(i)
+
 material_entry_column = [
-    sg.Button("Search"),
-    sg.In(size=(10, 2), key="-search_key-"),
+    sg.Combo(bitty, default_value="All", key="-search_type-"),
+    [sg.Button("Search"),
+    sg.In(size=(10, 2), key="-search_key-")],
     sg.Push(),
     sg.Button("Components"),
     sg.Button("Types"),
@@ -677,7 +682,12 @@ while True:
         if list_type=="components":
             for i in components:
                 if values["-search_key-"].lower() in components[i].name.lower():
-                    search_list.append(components[i].name)
+                    if values["-search_type-"]=="All":
+                        search_list.append(components[i].name)
+                    elif values["-search_type-"] in components[i].types:
+                        search_list.append(components[i].name)
+                    else:
+                        pass
 
         # if the list type is types, types are searched
         elif list_type=="types":
@@ -689,7 +699,13 @@ while True:
         elif list_type=="recipes":
             for i in recipes:
                 if values["-search_key-"].lower() in recipes[i].name.lower():
-                    search_list.append(recipes[i].name)
+                    if values["-search_type-"]=="All":
+                        search_list.append(recipes[i].name)
+                    elif values["-search_type-"] in recipes[i].types:
+                        search_list.append(recipes[i].name)
+                    else:
+                        pass
+
         # Finally, listbox 1 is updated with the search list
         search_list.sort()
         window["-lb_1-"].update(search_list)
