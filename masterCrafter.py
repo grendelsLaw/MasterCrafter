@@ -616,7 +616,7 @@ all_submitted_column = [
 # Third column shows the item image and the procedurally generated description
 main_font=("Arial bold", 11)
 item_description = [
-    sg.Image("resources/images/none.png", key = "-item_image-"),
+    sg.Image("resources/images/mastercrafter_logo.png", key = "-item_image-"),
     sg.Multiline(description, size=(55,15),key = "-item_description_2-", font=main_font),
 ]
 
