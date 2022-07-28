@@ -641,6 +641,7 @@ pockets_column=[
     sg.In(pocket_name, size=(10, 2),key="-pocket-"),
     sg.Button("View pocket"),
     sg.Button("Switch pocket"),
+    sg.Button("Give item"),
     sg.Push(),
     sg.Button("Add new"),
     sg.Button("Delete pocket")
@@ -745,6 +746,24 @@ while True:
                 window["-lb_1-"].update(pocket[pocket_name])
         else:
             sg.Popup("There are no pockets! Try making one.")
+
+    elif event=="Give item":
+        if len(pocket)>1 and list_type=="pocket" and len(values["-lb_1-"]) and pocket_name != "None":
+            try:
+                pocket_name_new=popup_select("Which pocket should the "+values["-lb_1-"][0]+" be given to:", list(pocket.keys()))
+                for i in values["-lb_1-"]:
+                    pocket[pocket_name].remove(i)
+                    pocket[pocket_name].sort()
+                    secret_pocket[pocket_name].remove(i)
+                    secret_pocket[pocket_name].sort()
+                    pocket[pocket_name_new].append(i)
+                    pocket[pocket_name_new].sort()
+                    secret_pocket[pocket_name_new].append(i)
+                    secret_pocket[pocket_name_new].sort()
+                    window["-lb_1-"].update(pocket[pocket_name])
+
+            except:
+                pass
 
     elif event == "Add new":
         pocket_name=sg.popup_get_text("What is player's name:")
