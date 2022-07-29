@@ -641,7 +641,7 @@ pockets_column=[
     sg.In(pocket_name, size=(10, 2),key="-pocket-"),
     sg.Button("View pocket"),
     sg.Button("Switch pocket"),
-    sg.Button("Give item"),
+
     sg.Push(),
     sg.Button("Add new"),
     sg.Button("Delete pocket")
@@ -653,6 +653,7 @@ layout=[
     subclass_buttons,
     all_submitted_column,
     [sg.Button("Add to pocket"),
+    sg.Button("Give item"),
     sg.Push(),
     sg.Push(),
     sg.Button("Shop"),
