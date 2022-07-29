@@ -603,7 +603,7 @@ material_entry_column = [
 # Second column has the first listbox, which you can select items to check characteristics,
 # and the second listbox, which shows you list items you've selected, as well as the artifice button
 all_submitted_column = [
-    sg.Listbox(values=component_list, enable_events=True, size = (43,15), key="-lb_1-"),
+    sg.Listbox(values=component_list, enable_events=True, size = (43,12), key="-lb_1-"),
     [sg.Button("Add component"),
     sg.Push(),
     sg.Push(),
@@ -611,13 +611,13 @@ all_submitted_column = [
     sg.Push(),
     sg.Button("Clear list"),],
     sg.Push(),
-    sg.Listbox(values=materials, size = (43,15), key="-lb_2-"),
+    sg.Listbox(values=materials, size = (43,12), key="-lb_2-"),
 ]
 # Third column shows the item image and the procedurally generated description
 main_font=("Arial bold", 11)
 item_description = [
     sg.Image("resources/images/mastercrafter_logo.png", key = "-item_image-"),
-    sg.Multiline(description, size=(55,15),key = "-item_description_2-", font=main_font),
+    sg.Multiline(description, size=(59,12),key = "-item_description_2-", font=main_font),
 ]
 
 # This new column lets you select a artificing subtype. It may get switched to a checkbox system
