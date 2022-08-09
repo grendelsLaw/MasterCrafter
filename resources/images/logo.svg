@@ -24,8 +24,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.5037599"
-     inkscape:cx="269.32492"
-     inkscape:cy="335.1599"
+     inkscape:cx="227.09742"
+     inkscape:cy="335.15989"
      inkscape:window-width="1920"
      inkscape:window-height="1038"
      inkscape:window-x="0"
@@ -75,7 +75,11 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g2613">
+       id="g2613"
+       transform="translate(12.476683,-31.354088)"
+       inkscape:export-filename="mastercrafter_logo.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <circle
          style="fill:#fefefe;fill-opacity:1;stroke:#414141;stroke-width:2.665;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="path20672"
