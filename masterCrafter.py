@@ -591,14 +591,15 @@ for i in type_list:
     bitty.append(i)
 
 material_entry_column = [
-    sg.Combo(bitty, default_value="All", key="-search_type-"),
     [sg.Button("Search"),
-    sg.In(size=(10, 2), key="-search_key-")],
+    sg.In(size=(15, 2), key="-search_key-"),
+    sg.Combo(bitty, default_value="All", key="-search_type-")],
     sg.Push(),
     sg.Button("Components"),
     sg.Button("Types"),
     sg.Button("Known recipes"),
-    sg.Button("Subclasses")
+    sg.Button("Subclasses"),
+    sg.Push()
 ]
 # Second column has the first listbox, which you can select items to check characteristics,
 # and the second listbox, which shows you list items you've selected, as well as the artifice button
